@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Obsidian per-machine config & cache (not worth tracking)
+.obsidian/
+.trash/
+
+# Stray/unused default vault that Obsidian keeps regenerating
+Personal Web/
+
+# Editor / tooling
+.claude/
+.vscode/
