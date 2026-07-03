@@ -17,6 +17,13 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Map of content
 - [[00 - START HERE]] — master map (MOC) of the whole project · `private`
 
+## Build system (root)
+| Page | Summary | Visibility | Status |
+|---|---|---|---|
+| [[BUILD-PLAN]] | 16 session-sized chunks with done-criteria + Progress tracker — read to resume a build session | `private` | in-progress |
+| [[DECISIONS-NEEDED]] | All ⚠️ decisions (D1–D10) + content Istiaque must write (C1–C7), answerable inline | `private` | in-progress |
+| [[IMAGE-MANIFEST]] | Every image the design needs — aspect, alt text, placeholder status | `private` | in-progress |
+
 ## Sources (`raw/` — immutable)
 | Page | Summary | Visibility |
 |---|---|---|
@@ -34,8 +41,8 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Site
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[Site Architecture]] | Every page mapped — purpose + CMS-managed or not | `private` | planned |
-| [[Design System]] | Dark cinematic aesthetic: colour, type, motion | `private` | planned |
+| [[Site Architecture]] | Every page mapped + Portfolite-inspired Home section map | `private` | in-progress |
+| [[Design System]] | Dark cinematic; **locked: monochrome (no accent) + Fraunces/Inter + tokens** | `private` | in-progress |
 
 ## Pages (one brief each)
 | Page | Job of the page | Visibility | Status |
