@@ -219,7 +219,7 @@ Only one row may be `in-progress` at a time.
 | 00 | Strategy, codebase baseline, and complete session plan | `done` (2026-07-15) |
 | 01 | Foundations hardening and verification baseline | `done` (2026-07-15) |
 | 02 | Visual system v2 and reusable interaction primitives | `done` (2026-07-15) |
-| 03 | Global shell, all routes, navigation, and page transitions | `in-progress` (2026-07-15) |
+| 03 | Global shell, all routes, navigation, and page transitions | `done` (2026-07-15) |
 | 04 | Author-friendly Sanity schemas and Studio structure | `todo` |
 | 05 | Live Sanity data, draft preview, visual editing, and images | `todo` |
 | 06 | Home v2: Presence, point of view, and Father doorway | `todo` |
@@ -349,21 +349,26 @@ shared metadata helper, and polished 404.
 branded placeholder inside the final shell.
 
 **Handoff**
-- Status: in-progress; paused at Istiaque's request on 2026-07-15
-- Built so far: shared desktop/mobile navigation, Writing submenu, scroll progress, footer route
-  directory, skip link, page transitions, scroll restoration, Lenis tuning, metadata helper,
-  polished 404, all thirteen public route shells, and Blog/Journal/Father/Project detail shells
+- Status: done
+- Completed: 2026-07-15
+- Built: final shared desktop/mobile navigation, active Writing submenu, focus-contained mobile
+  menu, scroll progress, complete footer directory, skip links, page transitions, scroll
+  restoration, Lenis tuning, shared metadata, polished 404, all thirteen public route shells, and
+  Blog/Journal/Father/Project detail shells
 - Files/areas: `site/app/(site)/`, root 404, shared Nav/Footer/transition/scroll components,
   `site/lib/navigation.ts`, `site/lib/metadata.ts`, `site/lib/page-config.ts`, and global shell CSS
-- Verified so far: strict TypeScript, zero-warning ESLint, and the production build pass; Home
-  loaded locally at desktop width. The complete route matrix and mobile interaction pass remain pending.
+- Verified: strict TypeScript, zero-warning ESLint, and production build pass; all thirteen routes,
+  four detail routes, and 404 checked at 1440px and 390px; all thirteen checked again at 360px;
+  no overflow, failed route, or new browser/server warning; skip navigation, Escape close, focus
+  wrapping, 44px menu target, active states, and Writing transition verified
 - Assets/content: route shells use labelled personal-photo placeholders; no personal photos or
-  unconfirmed facts were invented
+  unconfirmed facts were invented; screenshots at `site/.preview/session-03-shell-{desktop,mobile}.png`
 - Decisions: seven top-navigation entries remain the navigation layer; the footer and route shells
   preserve all thirteen public pages; unfinished page content remains `noindex`
-- Remaining: finish desktop/mobile route and keyboard checks, capture Session 03 screenshots, then
-  close Session 03 before starting Session 04
-- Next entry point: resume Session 03 verification; do not start Session 04 yet
+- Remaining: no Session 03 product work; codebase-memory refresh should retry at Session 04 start
+  because its local transport disconnected during three refresh attempts
+- Next entry point: Session 04, retry the graph refresh, then inventory the existing Sanity models
+  before adding singletons and plain-language Studio navigation
 
 ## Session 04 — Sanity Studio authoring
 

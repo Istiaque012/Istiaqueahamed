@@ -115,9 +115,10 @@ services" to "one person, one whole life."
 
 The final shared shell and all thirteen public route paths are implemented as responsive,
 honest scaffolds. The seven top-navigation entries organise those destinations; the footer keeps
-the complete public route directory visible. Session 03 is paused before its full route-matrix,
-mobile-menu, keyboard, and production-build verification, so the unfinished page scaffolds remain
-`noindex` until their dedicated build sessions.
+the complete public route directory visible. Session 03 passed the complete desktop and mobile
+route matrix, narrow 360px overflow checks, keyboard skip/Escape/focus containment, active states,
+Writing transitions, and the production build. Unfinished page scaffolds remain `noindex` until
+their dedicated build sessions replace them with approved content.
 
 ---
 

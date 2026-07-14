@@ -42,7 +42,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Site
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[Site Architecture]] | All 13 routes mapped; shared shell implementation is in progress | `private` | in-progress |
+| [[Site Architecture]] | Final shared shell and all 13 public routes built and verified | `private` | done |
 | [[Design System]] | Visual system v2 built: locked monochrome tokens, primitives, motion, placeholders, and lab | `private` | done |
 
 ## Pages (one brief each)
