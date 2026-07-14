@@ -217,9 +217,9 @@ Only one row may be `in-progress` at a time.
 | Session | Production outcome | Status |
 |---|---|---|
 | 00 | Strategy, codebase baseline, and complete session plan | `done` (2026-07-15) |
-| 01 | Foundations hardening and verification baseline | `todo` |
-| 02 | Visual system v2 and reusable interaction primitives | `todo` |
-| 03 | Global shell, all routes, navigation, and page transitions | `todo` |
+| 01 | Foundations hardening and verification baseline | `done` (2026-07-15) |
+| 02 | Visual system v2 and reusable interaction primitives | `done` (2026-07-15) |
+| 03 | Global shell, all routes, navigation, and page transitions | `in-progress` (2026-07-15) |
 | 04 | Author-friendly Sanity schemas and Studio structure | `todo` |
 | 05 | Live Sanity data, draft preview, visual editing, and images | `todo` |
 | 06 | Home v2: Presence, point of view, and Father doorway | `todo` |
@@ -298,7 +298,20 @@ in the public bundle.
 
 **Done when:** the baseline passes and every later session has one documented verification path.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: upgraded Next.js/React/Sanity foundation; strict type, lint, environment, and error-state
+  safeguards; one `npm run quality` verification path
+- Files/areas: `site/package*.json`, TypeScript/ESLint/env config, root error boundaries, site README
+- Verified: strict TypeScript and ESLint pass; Next.js 16.2.10 production build passes; Home checked at
+  1440px and 390px with no console errors or horizontal overflow; Studio baseline captured at both sizes
+- Assets/content: screenshots in `site/.preview/session-01-*`; no personal assets changed
+- Decisions: current supported Next 16/React 19/Sanity 6 line; Node >=22.12; public Sanity defaults are
+  validated and server-only tokens remain optional/private
+- Remaining: 14 moderate upstream/transitive npm advisories; Sanity CORS approval for localhost:3001;
+  no high or critical audit findings remain
+- Next entry point: Session 02, convert the locked visual language into reusable primitives and a visual lab
 
 ## Session 02 — Visual system v2
 
@@ -310,7 +323,20 @@ behaviour; add a private visual-lab route; define mobile and reduced-motion vari
 **Done when:** primitives work in dark/light/Father registers, survive long text, and render from
 360px through wide desktop without adopting a generic component-kit appearance.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: locked visual tokens plus Button, IconButton, TextLink, SectionLabel, MediaPlaceholder,
+  EditorialImage, Reveal, TextReveal, FilterButton, and FormField primitives; private `/visual-lab`
+- Files/areas: `site/components/ui/`, shared Reveal, visual lab route, global CSS/tokens, Tailwind aliases
+- Verified: `npm run quality` stages pass with production build completed using network font access;
+  visual lab checked at desktop and 390px with no console warnings or horizontal overflow; 44px
+  minimum touch controls and long-text/light/Father/reduced-motion states reviewed
+- Assets/content: labelled personal portrait and Father archive placeholders; no invented photographs
+- Decisions: native accessible controls where sufficient; custom visual layer; no component-kit styling;
+  visual lab is private and `noindex`
+- Remaining: none
+- Next entry point: Session 03, move the landing page onto the final shared shell and scaffold all routes
 
 ## Session 03 — Global shell and all routes
 
@@ -322,7 +348,22 @@ shared metadata helper, and polished 404.
 **Done when:** every page is reachable through intended navigation and renders a responsive,
 branded placeholder inside the final shell.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: in-progress; paused at Istiaque's request on 2026-07-15
+- Built so far: shared desktop/mobile navigation, Writing submenu, scroll progress, footer route
+  directory, skip link, page transitions, scroll restoration, Lenis tuning, metadata helper,
+  polished 404, all thirteen public route shells, and Blog/Journal/Father/Project detail shells
+- Files/areas: `site/app/(site)/`, root 404, shared Nav/Footer/transition/scroll components,
+  `site/lib/navigation.ts`, `site/lib/metadata.ts`, `site/lib/page-config.ts`, and global shell CSS
+- Verified so far: strict TypeScript, zero-warning ESLint, and the production build pass; Home
+  loaded locally at desktop width. The complete route matrix and mobile interaction pass remain pending.
+- Assets/content: route shells use labelled personal-photo placeholders; no personal photos or
+  unconfirmed facts were invented
+- Decisions: seven top-navigation entries remain the navigation layer; the footer and route shells
+  preserve all thirteen public pages; unfinished page content remains `noindex`
+- Remaining: finish desktop/mobile route and keyboard checks, capture Session 03 screenshots, then
+  close Session 03 before starting Session 04
+- Next entry point: resume Session 03 verification; do not start Session 04 yet
 
 ## Session 04 — Sanity Studio authoring
 

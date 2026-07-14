@@ -2,6 +2,9 @@
 title: Tech Stack Decision
 type: tech
 created: 2026-06-28
+updated: 2026-07-15
+status: done
+visibility: private
 tags: [project/website, tech, decision]
 ---
 
@@ -28,6 +31,21 @@ Back to [[00 - START HERE]]
 | Analytics | **Vercel Analytics** + **Google Search Console** | Traffic + search visibility |
 | SEO | Next.js Metadata API + **JSON-LD Person schema** | Owns your name in search (see [[SEO & Discoverability]]) |
 | Images | `next/image` + **Sanity image CDN** | Auto-optimised, fast-loading photography |
+
+## Foundation baseline — 2026-07-15
+
+- **Next.js 16.2.10**, **React 19.2.7**, and strict TypeScript.
+- **Sanity 6.5.0** with `next-sanity` 13.1.2, aligned before the authoring work in
+  [[Tech - Sanity CMS Setup]].
+- Node.js **22.12 or newer** is required by the current Studio toolchain.
+- `npm run quality` is the one repeatable handoff gate: strict typecheck, zero-warning ESLint, then
+  a production build.
+- Public Sanity connection values have validated safe defaults; any future preview token remains
+  server-only and is documented in the tracked `.env.example`.
+- Route and global error boundaries preserve the monochrome editorial register on failure.
+- The 2026-07-15 production audit reports **zero high or critical findings**. Fourteen moderate
+  upstream/transitive findings remain in Next/Sanity tooling and are recorded for dependency
+  review rather than “fixed” with unsafe downgrades.
 
 ---
 

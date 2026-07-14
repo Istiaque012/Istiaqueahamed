@@ -11,14 +11,17 @@ export default function SmoothScroll() {
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        window.matchMedia("(pointer: coarse)").matches)
     ) {
       return;
     }
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.9,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
     });
 
     let raf = 0;

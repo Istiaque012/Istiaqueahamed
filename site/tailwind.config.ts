@@ -8,13 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0A0A0A",
-        surface: "#141414",
-        "surface-2": "#101010",
-        text: "#F5F5F5",
-        muted: "#A0A0A0",
-        faint: "#5A5A5A",
-        hairline: "#262626",
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        text: "var(--text)",
+        muted: "var(--text-muted)",
+        faint: "var(--text-faint)",
+        hairline: "var(--hairline)",
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
@@ -27,6 +27,11 @@ const config: Config = {
       },
       maxWidth: {
         content: "1120px",
+      },
+      spacing: {
+        "section-sm": "var(--section-space-sm)",
+        section: "var(--section-space)",
+        "section-lg": "var(--section-space-lg)",
       },
     },
   },

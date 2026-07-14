@@ -1,10 +1,10 @@
 ---
 title: Design System
 type: design
-status: in-progress
+status: done
 visibility: private
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, design]
 ---
 
@@ -106,6 +106,22 @@ This is what makes it feel premium. Built with Framer Motion + a smooth-scroll l
 - Wide, breathing margins
 - A consistent vertical rhythm
 - Mobile-first — most visitors are on phones; the cinematic feel must survive on a small screen
+
+## Implemented component language — 2026-07-15
+
+The code implementation now includes shared `Button`, `IconButton`, `TextLink`, `SectionLabel`,
+`MediaPlaceholder`, `EditorialImage`, `Reveal`, `TextReveal`, `FilterButton`, and `FormField`
+primitives. The private `/visual-lab` route stress-tests:
+
+- Dark, soft-ivory light, and warmer Father registers.
+- Long action copy and editorial headlines.
+- 44–48px touch controls, visible focus, and native form/filter semantics.
+- Missing personal photography through labelled, fixed-ratio placeholders with alt-text direction.
+- Motion governed by the global reduced-motion preference.
+
+Visible styling remains bespoke; native elements supply behaviour where an external accessibility
+layer is unnecessary. The visual lab is excluded from indexing and is not part of the thirteen
+public pages.
 
 ## The "different room" rule
 

@@ -42,8 +42,8 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Site
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[Site Architecture]] | Every page mapped + Portfolite-inspired Home section map | `private` | in-progress |
-| [[Design System]] | Dark cinematic; **locked: monochrome (no accent) + Fraunces/Inter + tokens** | `private` | in-progress |
+| [[Site Architecture]] | All 13 routes mapped; shared shell implementation is in progress | `private` | in-progress |
+| [[Design System]] | Visual system v2 built: locked monochrome tokens, primitives, motion, placeholders, and lab | `private` | done |
 
 ## Pages (one brief each)
 | Page | Job of the page | Visibility | Status |
@@ -65,7 +65,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Tech
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[Tech Stack Decision]] | Next.js + Sanity + Framer + Vercel — the analysis and call | `private` | done |
+| [[Tech Stack Decision]] | Hardened Next.js 16 + React 19 + Sanity 6 foundation and repeatable quality gate | `private` | done |
 | [[Tech - Sanity CMS Setup]] | Existing schemas plus planned Home curation, visual preview, and author-friendly Studio | `private` | in-progress |
 | [[Tech - Deployment & Domain]] | Vercel hosting + istiaqueahamed.com | `private` | planned |
 
