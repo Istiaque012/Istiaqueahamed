@@ -3,6 +3,8 @@ title: Page - About
 type: page
 status: planned
 created: 2026-06-28
+updated: 2026-07-14
+visibility: public
 tags: [project/website, page]
 ---
 
@@ -30,7 +32,11 @@ Prominently surface the **Bangladesh ↔ Australia** arc. It's central to the br
 
 ## Source material
 
-All raw content in [[Discovery Answers]]. ⚠️ Confirm public-facing role wording before publishing.
+All raw content in [[Discovery Answers]]. The confirmed public summary is: **"Doctor, healthcare
+leader, and founder working across Bangladesh and Australia."** Detailed current employer and
+company titles are intentionally omitted from the public biography; see [[DECISIONS-NEEDED]].
+
+Editable first-pass copy: [[Sample Content Drafts#C1 · About narrative]].
 
 ## Design notes
 

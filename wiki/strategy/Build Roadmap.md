@@ -1,7 +1,10 @@
 ---
 title: Build Roadmap
 type: strategy
+status: in-progress
+visibility: private
 created: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, roadmap, planning]
 ---
 
@@ -9,79 +12,64 @@ tags: [project/website, roadmap, planning]
 
 Back to [[00 - START HERE]]
 
-The order we build in. Each phase produces something reviewable before moving on.
+> [!abstract] Complete scope
+> All thirteen public pages remain in the roadmap. The seven-item top navigation organises them;
+> it does not replace them. The session-level source of truth is [[BUILD-PLAN]].
 
----
+## Phase 0 — Control and foundations
 
-## Phase 0 — Foundations (before any page)
+- [x] Reconcile research, existing build, and complete page scope.
+- [x] Define per-session continuity and Handoff rules.
+- [ ] Harden build, types, lint, environment handling, and test baseline.
+- [ ] Finalise visual system and reusable interaction/motion primitives.
 
-- [ ] Lock the [[Design System]] — colours, type, spacing, motion language
-- [ ] Set up the repo: Next.js + TypeScript + Tailwind (see [[Tech Stack Decision]])
-- [ ] Set up Sanity project + schemas (see [[Tech - Sanity CMS Setup]])
-- [ ] Connect domain + deploy a blank site to Vercel (see [[Tech - Deployment & Domain]])
-- [ ] Collect assets: headshot + photo set, StudyRise screenshots, documentary links
+## Phase 1 — Shell and publishing foundation
 
-## Phase 1 — The shell
-
-- [ ] Global layout: header, footer, navigation
-- [ ] Dark cinematic theme applied
-- [ ] Smooth scroll + page transitions working
-- [ ] Person schema + base SEO in the layout
+- [ ] Global shell, navigation, footer, transitions, and all thirteen route placeholders.
+- [ ] Sanity schemas and author-friendly Studio structure.
+- [ ] Draft preview, Visual Editing, live publishing, and image workflow.
 
 ## Phase 2 — First impression
 
-- [ ] [[Page - Home]] — hero, tagline, photo, intro, feed preview
-- [ ] [[Page - About]] — the six-block story
+- [ ] [[Page - Home]] — eight cinematic scenes and live content previews.
+- [ ] [[Page - About]] — complete story and identity.
+- [ ] [[Page - My Beloved Father]] — the different room and personal pieces.
 
-## Phase 3 — The writing engine
+## Phase 3 — Writing system
 
-- [ ] [[Page - Blog]] — list + single post + categories
-- [ ] [[Page - Journal]] — list + single entry + types
-- [ ] [[Page - Feed]] — merged stream + filters
+- [ ] Shared Writing navigation/components — the doorway to the three writing experiences.
+- [ ] [[Page - Blog]] — long-form index and article pages.
+- [ ] [[Page - Journal]] — short-form index and entry pages.
+- [ ] [[Page - Feed]] — merged chronology and Home integration.
 
-## Phase 4 — The personal core
+## Phase 4 — Work and making
 
-- [ ] [[Page - My Beloved Father]] — opening + essays + notes + photos
+- [ ] [[Page - Projects]] — StudyRise case study and future-ready index.
+- [ ] [[Page - Work]] — curated public professional record.
+- [ ] [[Page - Documentaries]] — films, context, and performant embeds.
 
-## Phase 5 — The builder
+## Phase 5 — Life archive and contact
 
-- [ ] [[Page - Projects]] — StudyRise feature + others
-- [ ] [[Page - Work]] — credentials & roles
-- [ ] [[Page - Documentaries]] — embeds + context
+- [ ] [[Page - Timeline]] — visual life arc.
+- [ ] [[Page - Bookshelf]] — books and personal notes.
+- [ ] [[Page - Course (AI in Healthcare)]] — intentional current state and future structure.
+- [ ] [[Page - Contact]] — secure form and social links.
 
-## Phase 6 — Depth & extras
+## Phase 6 — Finish and launch
 
-- [ ] [[Page - Timeline]] — visual life arc
-- [ ] [[Page - Bookshelf]] — reading list
-- [ ] [[Page - Course (AI in Healthcare)]] — coming-soon page
-- [ ] [[Page - Contact]] — form + socials
+- [ ] Search/AI discoverability, schema, metadata, sitemap, and RSS.
+- [ ] Full mobile, accessibility, animation, and performance audit.
+- [ ] Personal-photo integration, approved content seeding, and Sanity author rehearsal.
+- [ ] Vercel preview/production, Namecheap DNS, analytics, Search Console, and launch.
+- [ ] Post-launch QA, backup procedure, monitoring, and handover.
 
-## Phase 7 — Polish & launch
+## Session rule
 
-- [ ] SEO pass against [[SEO & Discoverability]] checklist
-- [ ] Performance + mobile pass
-- [ ] Verify Google Search Console
-- [ ] Seed starter content (see [[Content Strategy#Starter content first month]])
-- [ ] Launch 🚀
-
----
-
-## Rough effort guide
-
-| Phase | Relative effort |
-|---|---|
-| 0 — Foundations | Medium |
-| 1 — Shell | Medium |
-| 2 — Home + About | High (most design-heavy) |
-| 3 — Writing engine | High |
-| 4 — Father | Low–Medium |
-| 5 — Builder | Medium |
-| 6 — Extras | Medium |
-| 7 — Polish | Medium |
-
-> [!tip] We go one page at a time
-> Each page gets built and reviewed before the next. The per-page notes are the briefs we build from.
+Each checkbox above spans one or more numbered sessions in [[BUILD-PLAN]]. At the end of every
+session, update the plan's Progress row and Handoff block, then update this roadmap only when a
+phase-level checkbox changes.
 
 ---
 
-Related: [[Site Architecture]] · [[Tech Stack Decision]]
+Related: [[BUILD-PLAN]] · [[Site Architecture]] · [[Creative Direction - Full Freedom]] ·
+[[Tech Stack Decision]]

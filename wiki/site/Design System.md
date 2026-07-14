@@ -1,7 +1,10 @@
 ---
 title: Design System
 type: design
+status: in-progress
+visibility: private
 created: 2026-06-28
+updated: 2026-06-28
 tags: [project/website, design]
 ---
 
@@ -30,17 +33,52 @@ Back to [[00 - START HERE]]
 | Primary text | off-white `#F5F5F5` | body, headings |
 | Secondary text | grey `#A0A0A0` | meta, captions |
 | Hairline | `#262626` | borders, dividers |
-| Accent | **one** restrained accent | links, highlights, key CTAs |
+| Accent | **none — monochrome** | brightness and type carry emphasis; CTAs use hairline/inverted styling |
 
-> [!note] Pick ONE accent
-> Dark-luxury sites work best with a single restrained accent (a warm gold/amber, a deep clay, or a cool electric tone). Hold it back so it carries meaning instead of becoming wallpaper. Decide the exact accent when we lock the design.
+> [!success] LOCKED 2026-06-28 — Monochrome
+> The accent is **no chromatic accent**. The site is off-white on near-black; contrast,
+> scale, whitespace, and photography do all the work. This is the most serious, timeless,
+> editorial choice and lets the imagery carry any color. Earlier candidates (gold `#C8A24B`,
+> clay, teal, blue) were rejected — gold read decorative, blues read corporate.
+> CTAs: a solid **inverted** button (off-white fill, near-black text) for the primary action;
+> a **hairline-outline** button (`#2E2E2E` border) for secondary. Links: underline-on-hover, no color.
 
 ## Typography
 
-- **Display/headings:** a characterful serif or a refined grotesk. Big, confident, sentence case.
-- **Body:** a clean, readable sans or a warm serif for long reads.
-- **Pairing idea:** editorial serif headings + neutral sans body (premium magazine feel). The [[Page - My Beloved Father]] and [[Page - Blog]] can lean more serif/editorial; UI chrome stays sans.
+> [!success] LOCKED 2026-06-28 — Type pairing
+> **Display/headings: Fraunces** (editorial serif, with its italic for emphasis) ·
+> **Body & UI: Inter** (neutral grotesk, weights 300/400/500). Premium-magazine feel that
+> pairs cleanly with the monochrome palette. [[Page - My Beloved Father]] and [[Page - Blog]]
+> lean harder on Fraunces; UI chrome stays Inter.
+
 - **Hierarchy:** few sizes, lots of contrast between them. Let whitespace do the work.
+
+## Design tokens (locked)
+
+```
+/* Colour */
+--bg:            #0A0A0A;   /* page base */
+--surface:       #141414;   /* cards, raised panels */
+--surface-2:     #101010;   /* alt card */
+--text:          #F5F5F5;   /* primary */
+--text-muted:    #A0A0A0;   /* meta, captions */
+--text-faint:    #5A5A5A;   /* labels, eyebrows */
+--hairline:      #262626;   /* borders, dividers */
+/* no chromatic accent — monochrome */
+
+/* Type */
+--font-display:  'Fraunces', serif;
+--font-body:     'Inter', sans-serif;
+--w-light: 300; --w-reg: 400; --w-med: 500; --w-semi: 600;
+
+/* Radius */
+--r-sm: 2px;   /* buttons */
+--r-md: 8px;   /* cards */
+--r-lg: 10px;  /* panels */
+```
+
+> [!info] Motion tokens live in [[Tech Stack Decision#Animation]] (Framer Motion + Lenis).
+> Suggested durations: entrance 0.6s / ease-out; page transition 0.5s cross-fade.
 
 ## Photography
 

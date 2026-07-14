@@ -3,6 +3,8 @@ title: Page - Work
 type: page
 status: planned
 created: 2026-06-28
+updated: 2026-07-14
+visibility: public
 tags: [project/website, page]
 ---
 
@@ -22,17 +24,18 @@ Back to [[Site Architecture]]
 - Master of Public Health — Macquarie University, Australia
 - Australian pathway — preparing for AMC
 
-## Roles
+## Selected public work
 
-- RMO — CD Path & Hospital (2024 Dec – present)
 - MO — Green Life Hospital & CD Path Hospital (2016–2018)
-- Director — upcoming hospital in Bangladesh
 - Founder — StudyRise (studyrise.app)
-- Founder & Managing Director — My Care Pro, Australia
 
 ## Areas of focus
 
 Preventive medicine · public health · healthcare systems & operations · healthcare leadership · healthcare technology
+
+## Public summary
+
+**Doctor, healthcare leader, and founder working across Bangladesh and Australia.**
 
 ## Publications / media
 
@@ -44,8 +47,9 @@ Preventive medicine · public health · healthcare systems & operations · healt
 - Not a dense CV; curated and confident
 - Optional CV download
 
-> [!warning] Confirm before publishing
-> Public-facing wording for titles/roles needs Istiaque's sign-off (see [[Discovery Answers]]).
+> [!note] Publication boundary
+> Detailed current professional titles are intentionally omitted. The broad public summary
+> above is the complete wording for the initial site.
 
 ## Design notes
 

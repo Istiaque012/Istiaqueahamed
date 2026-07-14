@@ -3,6 +3,8 @@ title: Page - Timeline
 type: page
 status: planned
 created: 2026-06-28
+updated: 2026-07-14
+visibility: public
 tags: [project/website, page]
 ---
 
@@ -15,18 +17,15 @@ Back to [[Site Architecture]]
 
 ---
 
-## Draft milestones
+## Confirmed and draft milestones
 
-(from [[Discovery Answers]] — fill in dates/details with Istiaque)
+(from [[Discovery Answers]] and D7 in [[DECISIONS-NEEDED]])
 
-- MBBS — Sylhet North East Medical College
-- Internship — BIRDEM
+- 2010–2015 — MBBS, Sylhet North East Medical College
+- 2015 — Internship, BIRDEM
 - 2016–2018 — MO, Green Life Hospital & CD Path Hospital
-- Master of Public Health — Macquarie University, Australia
-- Founded **StudyRise**
-- Founded **My Care Pro**, Australia
-- 2024 Dec – present — RMO, CD Path Hospital
-- Director — upcoming hospital in Bangladesh
+- 2019 — Master of Public Health, Macquarie University, Australia
+- 2026 — Founded **StudyRise**
 - AMC pathway — in progress
 - ⚠️ Personal milestones to add as he wishes (birth, school, faith, fitness journey, etc.)
 

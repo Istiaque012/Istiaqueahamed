@@ -1,7 +1,7 @@
 ---
 title: Index
 type: system
-updated: 2026-06-28
+updated: 2026-07-15
 ---
 
 # 📇 Index
@@ -20,9 +20,9 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Build system (root)
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[BUILD-PLAN]] | 16 session-sized chunks with done-criteria + Progress tracker — read to resume a build session | `private` | in-progress |
+| [[BUILD-PLAN]] | Complete 26-session plan for all 13 pages, Sanity authoring, QA, and launch | `private` | in-progress |
 | [[DECISIONS-NEEDED]] | All ⚠️ decisions (D1–D10) + content Istiaque must write (C1–C7), answerable inline | `private` | in-progress |
-| [[IMAGE-MANIFEST]] | Every image the design needs — aspect, alt text, placeholder status | `private` | in-progress |
+| [[IMAGE-MANIFEST]] | Image slots and placeholders; photos are non-blocking and My Care Pro is omitted | `private` | in-progress |
 
 ## Sources (`raw/` — immutable)
 | Page | Summary | Visibility |
@@ -35,8 +35,9 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Vision & Positioning]] | One site for one whole life — not a CV; who he is and is becoming | `private` | planned |
 | [[Audience & Goals]] | Who the site is for and what success looks like | `private` | planned |
 | [[SEO & Discoverability]] | Own "Istiaque Ahamed" on Google and in AI search | `mixed` | planned |
-| [[Content Strategy]] | Consistency over frequency; one person talking to one person | `private` | planned |
-| [[Build Roadmap]] | The phased order of the build, each phase reviewable | `private` | planned |
+| [[Content Strategy]] | Distinct Blog/Journal/Father formats, complete Feed, and Sanity-curated Home writing | `private` | in-progress |
+| [[Creative Direction - Full Freedom]] | Seven clear navigation entrances organising the complete 13-page cinematic site | `private` | proposed |
+| [[Build Roadmap]] | All 13 pages preserved across six reviewable production phases | `private` | in-progress |
 
 ## Site
 | Page | Summary | Visibility | Status |
@@ -47,14 +48,14 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Pages (one brief each)
 | Page | Job of the page | Visibility | Status |
 |---|---|---|---|
-| [[Page - Home]] | Make a stranger want to know more in 30 seconds | `public` | planned |
+| [[Page - Home]] | Landing v1 built and browser-verified; portrait + live Feed wiring remain | `public` | in-progress |
 | [[Page - About]] | Curious → convinced; story-first, credentials in support | `public` | planned |
 | [[Page - Feed]] | One reverse-chronological stream of everything published | `public` | planned |
 | [[Page - Blog]] | Crafted long-form authority; the SEO engine | `public` | planned |
 | [[Page - Journal]] | Rawer, honest "letters to the internet" | `public` | planned |
 | [[Page - My Beloved Father]] | Emotional root of the site — the man who shaped everything | `public` | planned |
 | [[Page - Projects]] | The doctor who builds — StudyRise and more, for a general audience | `public` | planned |
-| [[Page - Work]] | Professional credentials laid out cleanly | `public` | planned |
+| [[Page - Work]] | Education and public professional framing; detailed current titles omitted | `public` | planned |
 | [[Page - Documentaries]] | His films — a doctor who tells stories on camera | `public` | planned |
 | [[Page - Course (AI in Healthcare)]] | AI-for-doctors course — minimal "coming soon" for now | `public` | planned-minimal |
 | [[Page - Timeline]] | The whole life arc in one scroll, Bangladesh → Australia | `public` | planned |
@@ -65,10 +66,11 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
 | [[Tech Stack Decision]] | Next.js + Sanity + Framer + Vercel — the analysis and call | `private` | done |
-| [[Tech - Sanity CMS Setup]] | Content models (schemas) mapped to pages | `private` | planned |
+| [[Tech - Sanity CMS Setup]] | Existing schemas plus planned Home curation, visual preview, and author-friendly Studio | `private` | in-progress |
 | [[Tech - Deployment & Domain]] | Vercel hosting + istiaqueahamed.com | `private` | planned |
 
 ## Reference
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
 | [[Social Links]] | Canonical social URLs — footer, Contact, `Person.sameAs` | `public` | in-progress |
+| [[Sample Content Drafts]] | Private editable copy for the landing page and Part B content prompts | `private` | in-progress |

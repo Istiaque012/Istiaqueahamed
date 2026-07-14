@@ -3,6 +3,8 @@ title: Page - Course (AI in Healthcare)
 type: page
 status: planned-minimal
 created: 2026-06-28
+updated: 2026-07-14
+visibility: public
 tags: [project/website, page, future]
 ---
 
@@ -22,6 +24,9 @@ Back to [[Site Architecture]]
 - 2–3 lines on what it is and who it's for
 - "Coming soon" + a simple **register interest / waitlist** capture (or just "get notified")
 - Nothing more — don't over-build
+
+Editable placeholder copy: [[Sample Content Drafts#C7 · Contact and course]]. This page is not
+needed for the initial landing-page production milestone.
 
 ## Scope for later (v2 — when ready)
 

@@ -3,6 +3,8 @@ title: Page - Projects
 type: page
 status: planned
 created: 2026-06-28
+updated: 2026-07-14
+visibility: public
 tags: [project/website, page]
 ---
 
@@ -24,15 +26,17 @@ A study-planning platform that turns exams and academic courses into structured 
 - **Stage:** MBBS Bangladesh Mode production-ready; Exam Mode built/refining
 - **Stack:** React + Vite, Supabase, Vercel
 - **Link:** studyrise.app
+- **GitHub profile:** https://github.com/Istiaque012
 - Include a short **build story** — why he made it, what problem it solves
 
-## Other projects (ongoing)
+## Other projects (later)
 
 - MedLink / hospital operations tools (concept)
 - CD Path operational systems & process improvement
 - Smoking health-tracker app idea
 - Healthcare tech & automation ideas
-- ⚠️ Confirm live status + any links/GitHub before publishing
+- Omit these concepts from the initial public Projects page. Add them only when Istiaque confirms
+  that each one is ready to be named publicly.
 
 ## Structure
 
@@ -49,6 +53,7 @@ A study-planning platform that turns exams and academic courses into structured 
 - Screenshots matter — get clean StudyRise captures
 - Tech is shown but explained in human terms
 - Project updates flow into the [[Page - Feed]]
+- Editable project copy: [[Sample Content Drafts#C5 · StudyRise and documentary copy]]
 
 ---
 

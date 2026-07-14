@@ -1,7 +1,10 @@
 ---
 title: Content Strategy
 type: strategy
+status: in-progress
+visibility: private
 created: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, strategy, content]
 ---
 
@@ -26,6 +29,20 @@ Consistency over frequency. A few honest, well-made things beat a flood of shall
 | Documentary | Video + context | On release | [[Page - Documentaries]] |
 
 All of these surface together in the [[Page - Feed]].
+
+## What appears on Home
+
+Every newly published Blog post or Journal entry automatically enters Home's **Latest Writing**
+list. Sanity also adds **Feature on Home**, which optionally pins one published piece in the more
+prominent position without changing code.
+
+- A draft never appears on Home.
+- Turning **Feature on Home** off removes only the prominent pin. The piece can still appear in
+  Latest Writing while it is among the newest published items.
+- Father pieces stay in the Father space and Feed unless a separate, deliberate Home treatment is
+  approved; they are not mixed into ordinary promotional cards.
+- Home shows one optional featured piece plus the three newest Blog/Journal items. If no piece is
+  featured, it shows the four newest. [[Page - Feed]] remains the complete chronology.
 
 ## Blog categories
 

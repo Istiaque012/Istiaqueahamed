@@ -2,6 +2,8 @@
 title: Social Links
 type: reference
 created: 2026-06-28
+updated: 2026-07-14
+visibility: public
 tags: [project/website, reference, social]
 ---
 
@@ -18,6 +20,7 @@ The canonical list. These go in the footer, the [[Page - Contact]], the Person s
 | Facebook | https://www.facebook.com/istiaqueamd | |
 | X (Twitter) | https://x.com/istiaqueahmd | |
 | LinkedIn | https://www.linkedin.com/in/istiaque-amd/ | Optimise — ranks for the name |
+| GitHub | https://github.com/Istiaque012 | Public development profile; link from Projects |
 
 ## Consistency checklist
 
