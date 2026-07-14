@@ -252,3 +252,14 @@ Paused the global-shell session at Istiaque's request and recorded a continuatio
   public pages; unfinished page shells remain `noindex` and use labelled photo placeholders.
 - Strict TypeScript, zero-warning ESLint, and the production build pass. Full route, keyboard,
   mobile, and screenshot verification are deliberately left for the resumption of Session 03.
+
+## [2026-07-15] build | Session 03 global shell completed
+Completed and verified the final navigation layer and route foundation for all thirteen pages.
+- Added visible mobile active states, focus containment, Escape restoration, desktop Writing-menu
+  closure after navigation, the 404 skip link, and responsive long-title treatment.
+- Verified all thirteen public routes, four detail routes, and 404 at desktop and mobile widths;
+  repeated the public matrix at 360px with no overflow and confirmed 44px menu controls.
+- Strict TypeScript, zero-warning ESLint, and the production build pass. Saved final desktop and
+  mobile shell screenshots in `site/.preview/session-03-shell-*`.
+- The required codebase-memory refresh was attempted three times but its local transport was
+  disconnected; Session 04 should retry before schema discovery.

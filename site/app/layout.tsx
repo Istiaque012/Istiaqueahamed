@@ -57,7 +57,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html
+      className={`${fraunces.variable} ${inter.variable}`}
+      data-scroll-behavior="smooth"
+      lang="en"
+    >
       <body>
         <script
           type="application/ld+json"

@@ -6,7 +6,9 @@ export default function RoutePlaceholder({ config }: { config: PageConfig }) {
     <main className={`route-placeholder route-placeholder--${config.tone ?? "dark"}`}>
       <section className="route-placeholder__hero">
         <SectionLabel index={config.session}>{config.eyebrow}</SectionLabel>
-        <h1>{config.title}</h1>
+        <h1 className={config.title.length >= 12 ? "route-placeholder__title--compact" : undefined}>
+          {config.title}
+        </h1>
         <p>{config.intro}</p>
         <div className="route-placeholder__status">
           <span>Page in production</span>
