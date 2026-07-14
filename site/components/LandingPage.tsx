@@ -2,18 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll } from "framer-motion";
-import { useState, type ReactNode } from "react";
-
-const navigation = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Father", href: "/father" },
-  { label: "Writing", href: "#writing" },
-  { label: "Projects", href: "#projects" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
-];
+import { motion } from "framer-motion";
+import Reveal from "@/components/Reveal";
 
 const socials = [
   { label: "Instagram", href: "https://instagram.com/istiaqueahmd" },
@@ -53,72 +43,9 @@ const writing = [
   { type: "Technology", title: "Why I build software as a doctor" },
 ];
 
-function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-70px" }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function LandingPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
-
   return (
     <main className="landing-page">
-      <motion.div className="scroll-progress" style={{ scaleX: scrollYProgress }} />
-
-      <header className="site-header">
-        <div className="header-inner">
-          <Link href="#home" className="brand-mark" aria-label="Istiaque Ahamed home">
-            <span>IA</span>
-            <span className="brand-name">Istiaque Ahamed</span>
-          </Link>
-
-          <nav className="desktop-nav" aria-label="Main navigation">
-            {navigation.map((item) => (
-              <Link key={item.label} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <button
-            type="button"
-            className="menu-toggle"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            {menuOpen ? "Close" : "Menu"}
-          </button>
-        </div>
-
-        {menuOpen && (
-          <motion.nav
-            id="mobile-navigation"
-            className="mobile-nav"
-            aria-label="Mobile navigation"
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            {navigation.map((item, index) => (
-              <Link key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                {item.label}
-              </Link>
-            ))}
-          </motion.nav>
-        )}
-      </header>
-
       <section id="home" className="hero-section">
         <motion.div
           className="hero-image"
@@ -366,13 +293,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="site-footer">
-        <div className="section-shell footer-grid">
-          <p>Istiaque Ahamed</p>
-          <p>Medicine, technology, and the life in between.</p>
-          <p>© {new Date().getFullYear()}</p>
-        </div>
-      </footer>
     </main>
   );
 }

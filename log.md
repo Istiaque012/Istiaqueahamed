@@ -224,3 +224,31 @@ Added a reusable prompt to [[BUILD-PLAN]] for starting each future production se
   Handoff/log/index/wiki files before stopping.
 - It also reminds Codex to keep placeholders for missing personal photos and verify UI work locally
   in desktop and mobile views.
+
+## [2026-07-15] build | Session 01 foundations hardened
+Completed the repeatable production baseline for istiaqueahamed.com.
+- Upgraded to Next.js 16.2.10, React 19.2.7, Sanity 6.5.0, and next-sanity 13.1.2; the current
+  production audit has zero high or critical findings.
+- Added strict TypeScript checks, zero-warning ESLint, validated environment handling, tracked
+  `.env.example`, route/global error boundaries, and the single `npm run quality` command.
+- Production build passed; Home and Studio baselines were captured at desktop and mobile sizes.
+  Home showed no console errors or horizontal overflow; localhost:3001 Studio awaits CORS approval.
+
+## [2026-07-15] build | Session 02 visual system v2
+Converted the locked cinematic editorial direction into reusable interface code.
+- Added shared action, link, label, image/placeholder, reveal, filter, and form primitives, with
+  44–48px touch targets, visible focus, and reduced-motion behaviour.
+- Added a private noindex `/visual-lab` covering dark, light, and Father registers, long copy,
+  personal-photo placeholders, and form states.
+- Typecheck, zero-warning ESLint, production build, desktop review, and 390px review passed with no
+  new console warnings or horizontal overflow.
+
+## [2026-07-15] build | Session 03 paused checkpoint
+Paused the global-shell session at Istiaque's request and recorded a continuation-safe checkpoint.
+- Implemented the shared header, accessible mobile menu, Writing submenu, route directory footer,
+  transitions, scroll behaviour, metadata helper, branded 404, all thirteen public route shells,
+  and Blog/Journal/Father/Project detail shells.
+- Preserved the seven-item top navigation as an organising layer while retaining all thirteen
+  public pages; unfinished page shells remain `noindex` and use labelled photo placeholders.
+- Strict TypeScript, zero-warning ESLint, and the production build pass. Full route, keyboard,
+  mobile, and screenshot verification are deliberately left for the resumption of Session 03.

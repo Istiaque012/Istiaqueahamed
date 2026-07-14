@@ -6,7 +6,7 @@ systems builder. Dark, cinematic, monochrome. Built from the locked design syste
 
 ## Stack
 
-- **Next.js 14** (App Router) + **TypeScript**
+- **Next.js 16.2.10** (App Router) + **React 19** + strict **TypeScript**
 - **Tailwind CSS** — design tokens mirrored in `tailwind.config.ts` + `app/globals.css`
 - **Framer Motion** — entrance reveals + (respects `prefers-reduced-motion`)
 - **Lenis** — weighted smooth-scroll (`components/SmoothScroll.tsx`)
@@ -20,9 +20,18 @@ npm install
 npm run dev      # http://localhost:3000
 ```
 
+Public Sanity defaults are committed and validated. Copy `.env.example` to `.env.local` only when
+you need local overrides or the server-only draft-preview token.
+
 ```bash
 npm run build    # production build
 npm start        # serve the build
+```
+
+Run the complete repeatable quality gate before every handoff or deployment:
+
+```bash
+npm run quality  # strict types → ESLint → production build
 ```
 
 > Note: `next/font/google` downloads Fraunces & Inter at build time, so the first build needs

@@ -111,6 +111,14 @@ services" to "one person, one whole life."
 - Smooth page transitions (see [[Design System#Motion]])
 - Person schema + correct meta on every page (see [[SEO & Discoverability]])
 
+### Implementation checkpoint — 2026-07-15
+
+The final shared shell and all thirteen public route paths are implemented as responsive,
+honest scaffolds. The seven top-navigation entries organise those destinations; the footer keeps
+the complete public route directory visible. Session 03 is paused before its full route-matrix,
+mobile-menu, keyboard, and production-build verification, so the unfinished page scaffolds remain
+`noindex` until their dedicated build sessions.
+
 ---
 
 Related: [[Design System]] · [[Build Roadmap]] · [[Tech Stack Decision]]
