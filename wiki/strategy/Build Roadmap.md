@@ -1,7 +1,7 @@
 ---
 title: Build Roadmap
 type: strategy
-status: in-progress
+status: done
 visibility: private
 created: 2026-06-28
 updated: 2026-07-15
@@ -65,7 +65,7 @@ Back to [[00 - START HERE]]
 - [x] Linked Vercel/Namecheap/HTTPS infrastructure, analytics and Search Console code, launch order,
   and rollback are ready; final branch push, production promotion, and account activation are on
   the owner checklist.
-- [ ] Post-launch QA, backup procedure, monitoring, and handover.
+- [x] Production QA checklist, backup procedure, monitoring, incident response, and complete owner handover.
 
 ## Session rule
 

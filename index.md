@@ -20,7 +20,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Build system (root)
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[BUILD-PLAN]] | Complete 26-session plan for all 13 pages, Sanity authoring, QA, and launch | `private` | in-progress |
+| [[BUILD-PLAN]] | Completed 26-session engineering plan; owner content/account activation is filed separately | `private` | done |
 | [[DECISIONS-NEEDED]] | All ⚠️ decisions (D1–D10) + content Istiaque must write (C1–C7), answerable inline | `private` | in-progress |
 | [[IMAGE-MANIFEST]] | Image slots and placeholders; photos are non-blocking and My Care Pro is omitted | `private` | in-progress |
 
@@ -37,7 +37,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[SEO & Discoverability]] | Confirmed entity, metadata, structured data, sitemap, robots, RSS, and AI-readable site summary | `mixed` | done |
 | [[Content Strategy]] | Distinct Blog/Journal/Father formats, complete Feed, and Sanity-curated Home writing | `private` | in-progress |
 | [[Creative Direction - Full Freedom]] | Seven clear navigation entrances organising the complete 13-page cinematic site | `private` | proposed |
-| [[Build Roadmap]] | All 13 pages preserved across six reviewable production phases | `private` | in-progress |
+| [[Build Roadmap]] | All 13 pages completed across six reviewable production phases, with owner launch tasks separated | `private` | done |
 | [[Codex Capability Strategy]] | Targeted skills, plugins, custom workflow, and adoption order for building and operating the site | `private` | in-progress |
 
 ## Site
@@ -69,6 +69,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Tech Stack Decision]] | Hardened Next.js 16 + React 19 + Sanity 6 foundation and repeatable quality gate | `private` | done |
 | [[Tech - Sanity CMS Setup]] | Guided schemas, Studio desk, live preview wiring, signed revalidation, and the publish/update/unpublish rehearsal are done | `private` | done |
 | [[Tech - Deployment & Domain]] | Linked Vercel/Namecheap/HTTPS state, environment inventory, launch order, preferred host, and rollback | `private` | in-progress |
+| [[Website Operations & Maintenance]] | Sanity backups, five-minute monthly checks, incidents, environment names, and future enhancements | `private` | done |
 
 ## Reference
 | Page | Summary | Visibility | Status |

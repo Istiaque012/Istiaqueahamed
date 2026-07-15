@@ -577,3 +577,18 @@ Finished every code-owned launch integration and documented the remaining accoun
 - No push, deployment, DNS, or domain-routing change was made because repository rules require
   Istiaque's explicit approval. The production dependency audit has no high or critical finding;
   fourteen moderate transitive findings remain for routine dependency maintenance.
+
+## [2026-07-15] build | Session 25 operations and final handover completed
+Closed the 26-session engineering plan and separated every owner-only activation from the finished build.
+- Added [[Website Operations & Maintenance]] with the verified Sanity export command, restore
+  boundary, backup ownership, five-minute monthly checks, quarterly maintenance, incident actions,
+  environment-name inventory, and optional future enhancements.
+- Closed the Contact page as an implemented fail-closed experience while keeping provider/inbox
+  activation explicit; marked the built `rel="me"` social task complete and retained the off-site
+  identity consistency items for Istiaque.
+- Updated the master MOC, index, roadmap, build plan, owner guide, deployment guide, and page truths
+  so the next helper can resume from files rather than chat history.
+- The finished code remains on `codex/complete-website-build` and has not been pushed or promoted.
+  The current live domain serves the earlier production build; the new production recheck therefore
+  follows owner approval to merge/push/deploy, as documented in the handover.
+- Refreshed the final codebase-memory graph: 15,730 nodes and 16,238 edges, status ready.

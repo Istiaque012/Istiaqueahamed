@@ -1,7 +1,7 @@
 ---
 title: Build Plan
 type: system
-status: in-progress
+status: done
 visibility: private
 updated: 2026-07-15
 tags: [project/website, planning, build, sessions]
@@ -53,7 +53,7 @@ fourteenth public page. Father remains a direct top-level link.
 | 13 | Contact | `/contact` | Private contact form and confirmed social links |
 
 Supporting routes include `/blog/[slug]`, `/journal/[slug]`, `/father/[slug]`,
-`/projects/[slug]`, `/studio`, `/sitemap.xml`, `/robots.txt`, `/feed/rss.xml`, and a styled
+`/projects/[slug]`, `/studio`, `/sitemap.xml`, `/robots.txt`, `/feed.xml`, and a styled
 not-found page.
 
 ### Home narrative
@@ -241,7 +241,7 @@ Only one row may be `in-progress` at a time.
 | 22 | Full mobile, accessibility, motion, and performance pass | `done` (2026-07-15) |
 | 23 | Photography integration, content seeding, author rehearsal | `done` (2026-07-15; owner photos and approved launch writing deferred) |
 | 24 | Vercel, Namecheap, analytics, Search Console, and launch | `done` (2026-07-15; final deploy and account activation deferred to owner) |
-| 25 | Post-launch QA, backup, monitoring, and handover | `in-progress` (2026-07-15) |
+| 25 | Post-launch QA, backup, monitoring, and handover | `done` (2026-07-15; live recheck follows owner production promotion) |
 
 ---
 
@@ -1056,7 +1056,28 @@ record future enhancements.
 **Done when:** the website can be maintained without reconstructing knowledge from chat and the
 next improvement has a clear starting point.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15 (operations/handover; live recheck deferred until promotion)
+- Built: [[Website Operations & Maintenance]] with code/content/asset/deployment backup ownership,
+  verified Sanity export syntax, restore boundary, a five-minute monthly routine, quarterly
+  maintenance, incident shortcuts, environment-name inventory, and ranked future enhancements;
+  final owner-guide cross-links and closed build/page statuses
+- Files/areas: operations and owner documentation, Contact/Social/MOC truth alignment, index,
+  roadmap, build record, and final log
+- Verified: Sanity 6 export/import CLI help; current Git/Vercel/Sanity/domain state; live domain
+  currently renders the earlier Home client experience while the finished branch remains local;
+  the latest code quality gate and all Session 22 accessibility/performance evidence remain green;
+  the final code graph is ready with 15,730 nodes and 16,238 edges
+- Assets/content: personal images, approved launch writing, Contact/Search Console values, and
+  provider credentials remain intentionally outside the repository and on the owner checklist
+- Decisions: keep backups outside git; export Sanity monthly and after major publishing batches;
+  use Vercel rollback and Studio unpublish/Contact-disable actions during incidents; consider future
+  enhancements only when real demand exists
+- Remaining: owner-only activation listed in [[Website Owner Guide]] — approve content/photos,
+  connect Contact, ask for branch push/promotion, align the apex primary host, enable dashboards,
+  verify Search Console, and run the production smoke check after the new deployment
+- Next entry point: [[Website Owner Guide]] for normal use; [[Tech - Deployment & Domain]] for launch; [[Website Operations & Maintenance]] for monthly care
 
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: Social Links
 type: reference
+status: in-progress
 created: 2026-06-28
-updated: 2026-07-14
+updated: 2026-07-15
 visibility: public
 tags: [project/website, reference, social]
 ---
@@ -28,7 +29,7 @@ The canonical list. These go in the footer, the [[Page - Contact]], the Person s
 - [ ] Same headshot across all
 - [ ] Same short bio line across all
 - [ ] Each profile links back to istiaqueahamed.com
-- [ ] Use `rel="me"` on the site's links to these
+- [x] Use `rel="me"` on the site's links to these
 
 ---
 

@@ -123,6 +123,9 @@ The engineering is ready; these need your material, accounts, or final approval.
 - Add more writing, films, books, timeline events, or approved projects gradually.
 - Review analytics, Search Console, links, contact delivery, accuracy, and image size once a month.
 
+The exact five-minute routine, Sanity backup command, incident actions, environment-name inventory,
+and future-enhancement list live in [[Website Operations & Maintenance]].
+
 ## If you need technical help
 
 Send the helper this repository and say: “Read `AGENTS.md`, `index.md`, `BUILD-PLAN.md`, the last
@@ -131,5 +134,5 @@ or secret values in chat or commit them to git.
 
 ---
 
-Related: [[Tech - Sanity CMS Setup]] · [[Tech - Deployment & Domain]] · [[IMAGE-MANIFEST]] ·
-[[DECISIONS-NEEDED]]
+Related: [[Tech - Sanity CMS Setup]] · [[Tech - Deployment & Domain]] ·
+[[Website Operations & Maintenance]] · [[IMAGE-MANIFEST]] · [[DECISIONS-NEEDED]]
