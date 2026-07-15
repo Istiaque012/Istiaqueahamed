@@ -129,6 +129,14 @@ Draft Mode will keep unpublished work private while letting Istiaque preview it 
 mobile sizes. Image fields already support upload, alt text, captions, and hotspot/crop controls so
 the same personal picture can be art-directed for different layouts.
 
+> [!success] Session 05 verified
+> Typed live queries, strict `next-sanity` live fetching, Presentation routes, Visual Editing hooks,
+> fail-closed draft/revalidation APIs, Sanity CDN image support, blur helpers, and Portable Text
+> image rendering are built. `SANITY_API_READ_TOKEN` and `SANITY_REVALIDATE_SECRET` are configured
+> locally and in Vercel Production/Preview. A labelled test Blog draft was created, published,
+> updated, unpublished/deleted, and confirmed cleaned up; signed revalidation returned the expected
+> Blog, Feed, and Home tags.
+
 ---
 
 ## Publishing workflow (what you'll actually do)

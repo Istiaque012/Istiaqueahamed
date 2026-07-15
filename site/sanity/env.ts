@@ -35,3 +35,24 @@ export const projectId = readPublicEnv(
   publicDefaults.projectId,
   (value) => /^[a-z0-9-]+$/.test(value),
 )
+
+function readOptionalEnv(name: string, isValid: (value: string) => boolean): string | undefined {
+  const value = process.env[name]?.trim()
+
+  if (!value) {
+    return undefined
+  }
+
+  if (!isValid(value)) {
+    throw new Error(`Invalid environment variable: ${name}`)
+  }
+
+  return value
+}
+
+export const sanityReadToken = readOptionalEnv('SANITY_API_READ_TOKEN', (value) => value.length > 12)
+
+export const sanityRevalidateSecret = readOptionalEnv(
+  'SANITY_REVALIDATE_SECRET',
+  (value) => value.length >= 24,
+)

@@ -310,3 +310,48 @@ Finalized the generated code graph after the Session 04 merge.
   relationships, replacing the incomplete pre-merge artifact.
 - Updated the Session 04 Handoff so Session 05 can begin with the fresh graph instead of retrying a
   resolved transport issue. No website or Sanity content changed.
+
+## [2026-07-15] build | Session 05 live preview checkpoint
+Started Session 05 and built the live Sanity/preview infrastructure, but left the session
+in-progress because the real publish rehearsal and browser QA are still blocked.
+- Added typed query projections for all content families, shared Sanity content/image types,
+  strict live-fetch helpers, Sanity Presentation/Visual Editing wiring, draft-mode routes,
+  signed webhook revalidation, Sanity CDN image config, blur/image helpers, and a Portable Text
+  image renderer.
+- Added `npm run verify:sanity-live` and wired it into `npm run quality`; typecheck,
+  zero-warning lint, Sanity authoring verification, and Sanity live verification pass.
+- Escalated `npm run build` passes after the sandboxed quality build fails only on Google Fonts
+  network access. Local HTTP checks return 200 for `/` and `/studio`, and the new draft/revalidate
+  APIs return explicit 503 configuration errors when secrets are absent.
+- Session 05 remains incomplete: no `SANITY_API_READ_TOKEN` or `SANITY_REVALIDATE_SECRET` is
+  configured, no Sanity test draft was saved/published/unpublished, and Chromium browser QA is
+  blocked by macOS sandbox launch failure (`bootstrap_check_in ... Permission denied (1100)`).
+
+## [2026-07-15] build | Session 05 continuation blocked
+Resumed the in-progress Session 05 and confirmed the implementation remains healthy, but did not
+start Session 06 because the real Sanity rehearsal is still missing its required secrets.
+- Refreshed codebase-memory successfully, then reran `npm run typecheck`, zero-warning
+  `npm run lint`, `npm run verify:sanity-live`, and an escalated `npm run build`; all passed.
+- The chained `npm run quality` again passed typecheck, lint, authoring verification, and live
+  verification, then failed only when sandboxed Google Fonts fetching blocked the final build.
+- Escalated local HTTP checks returned 200 for `/` and `/studio`; `/api/draft-mode/enable` and
+  `/api/revalidate` returned explicit 503 configuration errors because `SANITY_API_READ_TOKEN` and
+  `SANITY_REVALIDATE_SECRET` are not configured locally or in the pulled Vercel production env file.
+- Session 05 remains in-progress. No Sanity test draft was saved, published, updated, or
+  unpublished; no branch, PR, merge, deployment, or Session 06 work was started.
+
+## [2026-07-15] build | Session 05 live preview completed
+Closed the live Sanity data, preview, and image pipeline session after Istiaque supplied the
+required preview and revalidation secrets.
+- Added the secrets to local `.env.local` for verification and confirmed Vercel Production/Preview
+  variables are present from Istiaque's screenshot.
+- `npm run typecheck`, zero-warning `npm run lint`, `npm run verify:sanity-authoring`,
+  `npm run verify:sanity-live`, and an escalated production build pass.
+- Local `/` and `/studio` return 200; direct draft-mode access now fails closed with 401; a signed
+  `/api/revalidate` request returns 200 and revalidates Blog, Feed, and Home tags.
+- The authenticated Sanity owner session created a labelled Blog test draft, published it, updated
+  it, unpublished/deleted it, and confirmed no test document remained.
+- Home and Studio were checked at 1440px and 390px with no console errors or horizontal overflow;
+  screenshots were saved under `site/.preview/session-05-*`.
+  The final codebase-memory refresh was retried but its local transport disconnected again, so
+  Session 06 should retry before code discovery.

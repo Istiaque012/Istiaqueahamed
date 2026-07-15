@@ -1,6 +1,7 @@
 'use client'
 
 import { defineConfig } from 'sanity'
+import { presentationTool } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { createElement } from 'react'
@@ -8,6 +9,11 @@ import { Icon, type IconSymbol } from '@sanity/icons'
 
 import { apiVersion, dataset, projectId } from './sanity/env'
 import { schemaTypes, singletonNames } from './sanity/schemaTypes'
+import {
+  presentationLocations,
+  presentationMainDocuments,
+  presentationPreviewUrl,
+} from './sanity/presentation'
 import { structure } from './sanity/structure'
 
 const sanityIcon = (symbol: IconSymbol) =>
@@ -105,5 +111,17 @@ export default defineConfig({
           )
         : input,
   },
-  plugins: [structureTool({ structure }), visionTool({ defaultApiVersion: apiVersion })],
+  plugins: [
+    structureTool({ structure }),
+    presentationTool({
+      title: 'Preview',
+      previewUrl: presentationPreviewUrl,
+      allowOrigins: [presentationPreviewUrl.initial],
+      resolve: {
+        mainDocuments: presentationMainDocuments,
+        locations: presentationLocations,
+      },
+    }),
+    visionTool({ defaultApiVersion: apiVersion }),
+  ],
 })

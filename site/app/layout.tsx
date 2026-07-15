@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import { personJsonLd, SITE_URL } from "@/lib/person";
+import { SanityLive } from "@/lib/sanity/live";
+import { sanityReadToken } from "@/sanity/env";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -51,11 +55,14 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { isEnabled: isDraftMode } = await draftMode();
+  const draftPreviewEnabled = isDraftMode && Boolean(sanityReadToken);
+
   return (
     <html
       className={`${fraunces.variable} ${inter.variable}`}
@@ -68,6 +75,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <Providers>{children}</Providers>
+        <SanityLive includeDrafts={draftPreviewEnabled} />
+        {draftPreviewEnabled ? <VisualEditing /> : null}
       </body>
     </html>
   );
