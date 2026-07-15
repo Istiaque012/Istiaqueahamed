@@ -20,19 +20,19 @@ Back to [[00 - START HERE]]
 
 - [x] Reconcile research, existing build, and complete page scope.
 - [x] Define per-session continuity and Handoff rules.
-- [ ] Harden build, types, lint, environment handling, and test baseline.
-- [ ] Finalise visual system and reusable interaction/motion primitives.
+- [x] Harden build, types, lint, environment handling, and test baseline.
+- [x] Finalise visual system and reusable interaction/motion primitives.
 
 ## Phase 1 — Shell and publishing foundation
 
-- [ ] Global shell, navigation, footer, transitions, and all thirteen route placeholders.
-- [ ] Sanity schemas and author-friendly Studio structure.
-- [ ] Draft preview, Visual Editing, live publishing, and image workflow.
+- [x] Global shell, navigation, footer, transitions, and all thirteen route placeholders.
+- [x] Sanity schemas and author-friendly Studio structure.
+- [x] Draft preview, Visual Editing, live publishing, and image workflow.
 
 ## Phase 2 — First impression
 
-- [ ] [[Page - Home]] — eight cinematic scenes and live content previews.
-- [ ] [[Page - About]] — complete story and identity.
+- [x] [[Page - Home]] — eight cinematic scenes and live content previews.
+- [x] [[Page - About]] — complete story and identity.
 - [ ] [[Page - My Beloved Father]] — the different room and personal pieces.
 
 ## Phase 3 — Writing system
