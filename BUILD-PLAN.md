@@ -225,10 +225,10 @@ Only one row may be `in-progress` at a time.
 | 06 | Home v2: Presence, point of view, and Father doorway | `done` (2026-07-15) |
 | 07 | Home v2: Foundation, StudyRise, live content, life, contact | `done` (2026-07-15) |
 | 08 | About page | `done` (2026-07-15) |
-| 09 | Father index and Father detail pages | `todo` |
-| 10 | Shared Writing navigation and editorial components | `todo` |
-| 11 | Blog index and Blog detail pages | `todo` |
-| 12 | Journal index and Journal detail pages | `todo` |
+| 09 | Father index and Father detail pages | `done` (2026-07-15) |
+| 10 | Shared Writing navigation and editorial components | `done` (2026-07-15) |
+| 11 | Blog index and Blog detail pages | `done` (2026-07-15) |
+| 12 | Journal index and Journal detail pages | `done` (2026-07-15) |
 | 13 | Unified Feed and Home feed integration | `todo` |
 | 14 | Projects index and StudyRise case study | `todo` |
 | 15 | Work page | `todo` |
@@ -555,7 +555,29 @@ preserving accessibility.
 **Done when:** the space feels distinct and Istiaque can publish his own words and images without a
 developer.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a distinct quiet Father index with approved singleton opening copy, one opening archive
+  image, separate Essay and Note lists, restrained archive gallery, honest empty states, and a
+  dynamic `/father/[slug]` reading view with Portable Text, images, captions, dates, reading time,
+  metadata, and a clean unpublished-piece 404
+- Files/areas: Father index/detail routes, `Father` and `FatherArticle` components, Father Sanity
+  projections/types, route-group 404 boundary, and responsive Father-register styling
+- Verified: strict TypeScript, zero-warning ESLint, both Sanity contract checks, optimized production
+  build, and `http://localhost:3000/father` at 1440×1000 and 390×844; no horizontal overflow,
+  clipped Father controls, console warnings, or console errors; missing detail is noindex and
+  settles to one header/footer/main; refreshed graph contains 1,054 nodes and 1,327 edges
+- Assets/content: Father portrait and three archive spaces remain labelled Sanity-authorable
+  placeholders; the public dataset contains no Father pieces, so no memory, caption, photograph,
+  date, or personal writing was invented
+- Decisions: keep the global accessible shell but remove promotional UI and decorative motion from
+  the Father body; use the first approved archive image as the opening portrait and the next four
+  as the optional gallery; publish Essay and Note lists separately
+- Remaining: approved opening words, Father portrait/archive images, captions, and Istiaque's first
+  Father piece can be added entirely through Sanity; no engineering blocker remains
+- Next entry point: Session 10, extract the shared Writing navigation, metadata, editorial row/card,
+  filters, and pagination language used by Feed, Blog, and Journal without creating `/writing`
 
 ## Session 10 — Shared Writing system
 
@@ -567,7 +589,27 @@ fourteenth `/writing` page.
 **Done when:** visitors can move among long-form Blog, short Journal, and complete Feed through one
 consistent navigation and visual language without learning the CMS structure.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a shared in-page Writing navigation with Feed as the default, active Feed/Blog/Journal
+  states, responsive page scaffolds, reusable editorial metadata, card, row, filter, empty state,
+  no-image state, pagination, and cross-link components, plus shared date/type/href helpers now
+  used by Home
+- Files/areas: `site/components/writing/`, shared editorial helpers, Feed/Blog/Journal route
+  scaffolds, Home writing links, and responsive Writing-system styling
+- Verified: strict TypeScript, zero-warning ESLint, both Sanity contract checks, and optimized
+  production build pass; Feed, Blog, and Journal reviewed at 1440×1000 and 390×844 with correct
+  active states, no horizontal overflow, console warnings, or console errors; mobile Writing opens
+  to `/feed`, exposes all three destinations, and restores focus/scroll after Escape; refreshed
+  graph contains 1,079 nodes and 1,379 edges
+- Assets/content: no public post, opinion, date, excerpt, or cover was invented; current routes show
+  honest no-content states and remain noindex until their dedicated production sessions
+- Decisions: Writing remains a navigation group rather than a `/writing` page; Feed is its default;
+  Blog uses the light editorial register while Feed and Journal use the dark register; all later
+  indexes share the same metadata and navigation contracts without exposing CMS type names
+- Remaining: Sessions 11–13 will connect the shared components to real Blog, Journal, and Feed data
+- Next entry point: Session 11, build the Blog index/detail experience on the shared Writing system
 
 ## Session 11 — Blog
 
@@ -578,7 +620,30 @@ related posts, print style, metadata, social image, and Article schema.
 **Done when:** publishing a Sanity Blog post creates the index item, detail page, correct category,
 Feed entry, and optional Home feature automatically.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a live Blog index on the shared light editorial register (featured essay hero, category
+  filters derived from published posts, `Load more` pagination, cover/no-image cards, and an honest
+  empty state); a `/blog/[slug]` article with cover, Portable Text body, category/date/reading-time
+  meta, up-to-three related essays (same-category first), branded 404 for unknown slugs, article
+  Open Graph metadata, and `Article` JSON-LD
+- Files/areas: `app/(site)/blog/page.tsx`, `app/(site)/blog/[slug]/page.tsx`,
+  `components/writing/BlogIndex.tsx`, `components/BlogArticle.tsx`, `lib/jsonld.ts`,
+  `lib/metadata.ts` (article OG support), and the Blog index/article CSS in `app/globals.css`
+- Verified: `npm run typecheck`, zero-warning `npm run lint`, `verify:sanity-authoring`,
+  `verify:sanity-live`, and the Next.js 16 production build pass; `/blog` reviewed at 1280px and
+  375px with correct Writing-nav active state, no console errors, and no horizontal overflow;
+  `/blog/no-such-essay` returns the branded noindex 404; Blog is now indexable (noindex removed)
+- Assets/content: the public dataset is intentionally empty, so the empty state renders and no post,
+  category, date, excerpt, or cover was invented; cover slots resolve author-uploaded Sanity images
+- Decisions: reuse the Session 10 shared Writing components/register; featured hero shows only in the
+  "All" view; category filters appear only when more than one category exists; related essays prefer
+  the same category; detail pages stay dynamic (no build-time Sanity calls), matching Father
+- Remaining: the populated index/detail paths are type- and build-verified but not yet
+  runtime-reviewed against real content; exercise them during Session 23 content seeding or with a
+  labelled test draft, as in Session 05
+- Next entry point: Session 12, build the Journal index and detail on the same shared system
 
 ## Session 12 — Journal
 
@@ -589,7 +654,29 @@ metadata.
 **Done when:** all three Journal formats publish distinctly, appear in Feed, and can optionally be
 featured on Home.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a live Journal index on the shared dark register (entries grouped by month, Thought/Read/
+  Observation filters shown only when present, related-book line on Read rows, minimal editorial
+  rows, and an honest empty state); a minimal `/journal/[slug]` view with type/date/reading-time
+  meta, Portable Text body, a related-book aside linking to the Bookshelf for Read entries, branded
+  404 for unknown slugs, article metadata, and `Article` JSON-LD
+- Files/areas: `app/(site)/journal/page.tsx`, `app/(site)/journal/[slug]/page.tsx`,
+  `components/writing/JournalIndex.tsx`, `components/JournalArticle.tsx`, and the Journal index/
+  article CSS in `app/globals.css`
+- Verified: `npm run typecheck`, zero-warning `npm run lint`, both Sanity contract checks, and the
+  production build pass; `/journal` reviewed at 1280px with the correct Writing-nav active state,
+  no console errors, and no horizontal overflow; the empty state renders against the empty dataset;
+  Journal is now indexable (noindex removed)
+- Assets/content: no thought, read, observation, date, or book was invented; the related-book line
+  reads from the existing `journalEntry.relatedBook` reference
+- Decisions: keep Journal deliberately minimal and text-first (no cover images); month grouping is
+  derived at render time from `publishedAt`; type order is Thought → Read → Observation; Read entries
+  surface their book and route to `/bookshelf`; detail pages stay dynamic, matching Blog and Father
+- Remaining: populated grouping/filter/detail paths are type- and build-verified but not yet
+  runtime-reviewed with real content; exercise them during Session 23 seeding or with a test draft
+- Next entry point: Session 13, unify the Feed data source and align the Home preview with it
 
 ## Session 13 — Feed
 

@@ -6,6 +6,14 @@ type PageMetadataInput = {
   noIndex?: boolean;
   path: string;
   title: string;
+  /** Absolute or root-relative social image. Defaults to the site card. */
+  imageUrl?: string;
+  imageAlt?: string;
+  /** Set to "article" for Blog/Journal detail pages so OG renders as an article. */
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  section?: string;
 };
 
 export function createPageMetadata({
@@ -13,8 +21,16 @@ export function createPageMetadata({
   noIndex = false,
   path,
   title,
+  imageUrl,
+  imageAlt,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  section,
 }: PageMetadataInput): Metadata {
   const canonical = new URL(path, SITE_URL).toString();
+  const image = imageUrl ?? "/og.png";
+  const alt = imageAlt ?? `${title} · Istiaque Ahamed`;
 
   return {
     title,
@@ -24,16 +40,24 @@ export function createPageMetadata({
     openGraph: {
       title,
       description,
-      type: "website",
+      type,
       url: canonical,
       siteName: "Istiaque Ahamed",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: `${title} · Istiaque Ahamed` }],
+      images: [{ url: image, width: 1200, height: 630, alt }],
+      ...(type === "article"
+        ? {
+            authors: ["Istiaque Ahamed"],
+            ...(publishedTime ? { publishedTime } : {}),
+            ...(modifiedTime ? { modifiedTime } : {}),
+            ...(section ? { section } : {}),
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og.png"],
+      images: [image],
     },
   };
 }

@@ -1,8 +1,10 @@
 ---
 title: Page - My Beloved Father
 type: page
-status: planned
+status: done
+visibility: public
 created: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, page, personal]
 ---
 
@@ -42,6 +44,27 @@ This space must feel **quieter and more minimal** than the rest of the site (see
 
 > [!note] Handle with care
 > This is the most personal part of the site. Build it last in its phase, slowly, and let Istiaque set the words. The design should never feel like "content" here — it should feel like a room.
+
+## Production checkpoint — 2026-07-15
+
+The public `/father` route and dynamic `/father/[slug]` reading experience are complete.
+
+- The index opens in a dedicated warm-dark register with no promotional cards or decorative
+  motion. Confirmed source material supplies the fallback opening; Sanity can replace it with
+  Istiaque's approved words.
+- Essays and Notes remain visibly separate. Each published piece automatically receives its date,
+  reading time, and reading route; empty lists explicitly wait for Istiaque rather than presenting
+  sample memories.
+- The first approved singleton archive image becomes the opening portrait. Up to four remaining
+  images form a restrained gallery with supplied captions. All current spaces are labelled,
+  fixed-ratio, Sanity-authorable placeholders.
+- Detail pages render Portable Text, approved inline images, captions, metadata, and an accessible
+  return path. Unknown or unpublished slugs return a clean noindex 404 inside one shared shell.
+
+The empty public dataset was reviewed at 1440×1000 and 390×844 with no overflow, clipped Father
+controls, console warnings, or console errors. TypeScript, zero-warning lint, both Sanity contracts,
+and the optimized production build pass. No personal memory, photograph, caption, or date was
+invented.
 
 ---
 

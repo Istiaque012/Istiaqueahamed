@@ -33,13 +33,13 @@ Back to [[00 - START HERE]]
 
 - [x] [[Page - Home]] — eight cinematic scenes and live content previews.
 - [x] [[Page - About]] — complete story and identity.
-- [ ] [[Page - My Beloved Father]] — the different room and personal pieces.
+- [x] [[Page - My Beloved Father]] — the different room and personal pieces.
 
 ## Phase 3 — Writing system
 
-- [ ] Shared Writing navigation/components — the doorway to the three writing experiences.
-- [ ] [[Page - Blog]] — long-form index and article pages.
-- [ ] [[Page - Journal]] — short-form index and entry pages.
+- [x] Shared Writing navigation/components — the doorway to the three writing experiences.
+- [x] [[Page - Blog]] — long-form index and article pages.
+- [x] [[Page - Journal]] — short-form index and entry pages.
 - [ ] [[Page - Feed]] — merged chronology and Home integration.
 
 ## Phase 4 — Work and making

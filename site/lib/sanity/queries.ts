@@ -190,7 +190,16 @@ export const aboutPageQuery = defineQuery(`
       }
     }
   }`)
-export const fatherPageQuery = defineQuery(`*[_type == "fatherPage"][0]`)
+export const fatherPageQuery = defineQuery(`
+  *[_type == "fatherPage"][0] {
+    _id, _type, _updatedAt,
+    opening,
+    archiveImages[] {
+      _key,
+      caption,
+      "image": image ${IMAGE}
+    }
+  }`)
 export const workPageQuery = defineQuery(`*[_type == "workPage"][0]`)
 export const coursePageQuery = defineQuery(`*[_type == "coursePage"][0]`)
 export const contactPageQuery = defineQuery(`*[_type == "contactPage"][0]`)

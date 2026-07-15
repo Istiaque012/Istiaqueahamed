@@ -18,8 +18,8 @@ This is the master map (MOC) for the whole project. Every other note links back 
 
 ## 🤖 Wiki system
 
-This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — I source and decide, Claude writes and keeps it consistent.
-- [[CLAUDE]] — the schema: how the wiki is structured and how Claude maintains it
+This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — I source and decide, Codex writes and keeps it consistent.
+- [[AGENTS]] — the schema: how the wiki is structured and how Codex maintains it
 - [[index]] — catalog of every page + public/private visibility
 - [[log]] — chronological record of ingests, queries, and lint passes
 
@@ -33,6 +33,7 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 - [[SEO & Discoverability]] — how to own my name on Google + AI search
 - [[Content Strategy]] — what to write, how often, the rules
 - [[Build Roadmap]] — the order we build everything in
+- [[Codex Capability Strategy]] — which skills, plugins, and operating workflows to use when
 
 ### The site itself
 - [[Site Architecture]] — every page, mapped

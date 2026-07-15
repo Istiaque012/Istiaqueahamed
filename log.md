@@ -385,3 +385,80 @@ Completed the story-led About page and connected its personal imagery to Sanity.
   pass. Desktop, mobile, and narrow-mobile browser review found no horizontal overflow, clipped
   controls, console warnings, or console errors; previews are saved in
   `site/.preview/session-08-about-*`. The refreshed code graph contains 978 nodes and 1,180 edges.
+
+## [2026-07-15] build | Session 09 Father completed
+Completed the quieter Father index, archive, and reading experience without inventing personal material.
+- Replaced the placeholder with an approved-copy opening, separate Essay and Note publishing lists,
+  a restrained Sanity-authorable image archive, honest empty states, and a quieter warm-dark register.
+- `/father/[slug]` now renders published Portable Text, archive images, captions, dates, reading
+  time, and page metadata; unknown or unpublished slugs return a clean noindex route-group 404.
+- Fixed the nested 404 boundary so a missing detail no longer duplicates the shared header and footer.
+- TypeScript, zero-warning lint, both Sanity contract checks, and the optimized production build
+  pass. The empty public dataset was reviewed at 1440×1000 and 390×844 with no Father-page overflow,
+  clipped controls, console warnings, or console errors. The refreshed graph contains 1,054 nodes
+  and 1,327 edges.
+
+## [2026-07-15] build | Session 10 shared Writing system completed
+Completed the reusable visitor language for Feed, Blog, and Journal without starting their page sessions.
+- Added an in-page Writing navigator with Feed as its default, responsive active states, and clear
+  plain-language distinctions among the complete stream, long-form Blog, and shorter Journal.
+- Added shared editorial metadata, cards, rows, filters, no-image and empty states, pagination,
+  cross-links, and canonical date/type/destination helpers; Home now uses the same helpers.
+- Replaced the three generic route placeholders with noindex dark/light Writing scaffolds that invent
+  no post, opinion, excerpt, cover, or date while their public datasets are empty.
+- TypeScript, zero-warning lint, both Sanity contract checks, and the optimized production build
+  pass. Feed, Blog, and Journal were reviewed at 1440×1000 and 390×844 with correct active states,
+  no horizontal overflow, console warnings, or console errors. The refreshed graph contains 1,079
+  nodes and 1,379 edges. Session 11 was not started.
+
+## [2026-07-15] query | Codex capability strategy
+Assessed the wiki, production build, remaining sessions, and available Codex capabilities.
+- Filed [[Codex Capability Strategy]] with a staged recommendation for existing skills, the Sites
+  plugin, official Sanity and Vercel skills, one project-local session skill, and post-launch
+  monitoring.
+- Recommended keeping Next.js + Sanity + Vercel as the production path; Sites remains useful for
+  separate prototypes or a deliberate migration, not as an automatic replacement for the current
+  application.
+- Identified planning-layer drift for a future lint pass; no unrelated status or naming fixes were
+  applied without approval.
+
+## [2026-07-15] query | Codex skills installed and session skill created
+Installed the first specialist skills and turned the capability strategy into a reusable Codex setup.
+- Installed `sanity-best-practices`, `react-best-practices`, `web-design-guidelines`,
+  `fixing-metadata`, and `vercel-optimize` into the local Codex skills folder.
+- Created and validated the local `istiaque-site-session` skill for this project's wiki, build-plan,
+  code-discovery, QA, Sites-plugin, and handoff rules.
+- Updated [[Codex Capability Strategy]] to mark the installed skills and custom session skill.
+- Cleaned up approved planning drift: [[Build Roadmap]] now marks Father and shared Writing as
+  complete, and root navigation now points to Codex/[[AGENTS]] instead of the old Claude wording.
+
+## [2026-07-15] build | Claude + Codex interoperability and graph refresh
+Set up the vault so both Claude and Codex maintain the site interchangeably.
+- Made `AGENTS.md` (Codex) and `CLAUDE.md` (Claude) byte-identical except for the title and tree
+  marker, and added a "Working with two agents" section: the previous session's Handoff + last two
+  log entries + `git log` are the resume contract, only one session is `in-progress` at a time, and
+  each agent commits at a clean `npm run quality` checkpoint before handing off.
+- Recorded Istiaque's photo workflow: keep personal-photo placeholders for now; photos arrive
+  alongside the Blog, Feed, Father, and Journal writing they belong to, uploaded through Sanity.
+- Rebuilt the lost codebase-memory index for `site/` (the prior graph had dropped); the correct
+  MCP prefix is `codebase-memory-mcp`. Fresh graph: 575 nodes, 930 edges after Sessions 11–12.
+
+## [2026-07-15] build | Sessions 11–12 Blog and Journal completed
+Completed the Blog and Journal reading experiences on the Session 10 shared Writing system.
+- **Blog**: live index in the light editorial register with a featured essay hero, category filters
+  derived from published posts, `Load more` pagination, cover/no-image cards, and an honest empty
+  state; `/blog/[slug]` renders the cover, Portable Text body, meta, up-to-three related essays,
+  article Open Graph, and `Article` JSON-LD, with a branded 404 for unknown slugs.
+- **Journal**: live index in the dark register grouped by month with Thought/Read/Observation
+  filters and a related-book line on Read rows; a minimal `/journal/[slug]` view with a related-book
+  aside that links to the Bookshelf, article metadata, and `Article` JSON-LD.
+- Added `lib/jsonld.ts` and article-aware Open Graph in `lib/metadata.ts`; both pages are now
+  indexable (noindex removed). No post, entry, date, category, excerpt, cover, or book was invented;
+  the empty public dataset renders the designed empty states.
+- Verified: `npm run typecheck`, zero-warning `npm run lint`, `verify:sanity-authoring`,
+  `verify:sanity-live`, and the Next.js 16 production build pass. `/blog` reviewed at 1280px and
+  375px, `/journal` at 1280px, and `/blog/no-such-essay` returns the branded noindex 404 — no
+  console errors and no horizontal overflow. Populated paths are type/build-verified and await real
+  content (Session 23) or a labelled test draft for runtime review.
+- Updated the [[Build Roadmap]] Phase 3 checkboxes, the [[BUILD-PLAN]] progress table and Session
+  11–12 Handoffs, and the [[Page - Blog]]/[[Page - Journal]] rows in `index.md`.
