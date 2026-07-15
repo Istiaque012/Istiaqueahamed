@@ -23,9 +23,11 @@ tags: [project/website, planning, decisions]
 ### D1 · Sanity account — *needed by Chunk 1*
 Create (or share access to) a Sanity account at sanity.io — free tier is fine. I need the project
 ID + a token to wire the CMS.
-> **Answer:** ✅ Resolved 2026-07-03 — project `gtq6sx9w`, dataset `production`. Schemas + embedded
-> `/studio` built in `site/`. Still needed for content seeding & any draft/preview: run `sanity login`
-> (interactive) and, if drafts are wanted, create a Viewer API token → `SANITY_API_READ_TOKEN`.
+> **Answer:** ✅ Resolved 2026-07-15 — project `gtq6sx9w`, dataset `production`. Schemas + embedded
+> `/studio` are built in `site/`; Sanity owner sign-in works; `SANITY_API_READ_TOKEN` is configured
+> as a read-only preview token; `SANITY_REVALIDATE_SECRET` is configured locally and in Vercel
+> Production/Preview. A labelled test Blog draft was created, published, updated, unpublished, and
+> cleaned up.
 
 ### D2 · GitHub + Vercel + DNS access — *needed by Chunk 2*
 Confirm: deploy from the existing private repo (`Istiaque012/Istiaqueahamed`, root = `site/`)?

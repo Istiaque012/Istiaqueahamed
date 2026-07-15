@@ -221,7 +221,7 @@ Only one row may be `in-progress` at a time.
 | 02 | Visual system v2 and reusable interaction primitives | `done` (2026-07-15) |
 | 03 | Global shell, all routes, navigation, and page transitions | `done` (2026-07-15) |
 | 04 | Author-friendly Sanity schemas and Studio structure | `done` (2026-07-15) |
-| 05 | Live Sanity data, draft preview, visual editing, and images | `todo` |
+| 05 | Live Sanity data, draft preview, visual editing, and images | `done` (2026-07-15) |
 | 06 | Home v2: Presence, point of view, and Father doorway | `todo` |
 | 07 | Home v2: Foundation, StudyRise, live content, life, contact | `todo` |
 | 08 | About page | `todo` |
@@ -252,7 +252,7 @@ until the build can show the exact slot or workflow being decided.
 
 | Needed for | Input | Placeholder/continuation rule |
 |---|---|---|
-| Session 05 | Sanity sign-in and secure preview token | Schema/queries can be built first; live draft preview waits for access |
+| Session 05 | Sanity sign-in and secure preview token | Resolved 2026-07-15; read token and revalidation secret configured locally and in Vercel Production/Preview |
 | Session 06–09 | Personal portraits and Father archive images | Exact-ratio labelled placeholders remain until supplied |
 | Session 14 | Three clean StudyRise interface captures | Existing official preview remains temporarily |
 | Session 16 | One or two approved films and Istiaque's context | Build with private test data; do not publish invented context |
@@ -419,7 +419,38 @@ hotspot/crop previews; responsive URLs and blur placeholders; seed labelled draf
 **Done when:** a test item can be drafted, visually previewed, published, updated, and unpublished
 without a code change.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: typed Sanity query projections for every content/page family; shared content/image types;
+  server-only live fetch helper using `next-sanity` strict mode; Sanity Presentation/Visual Editing
+  wiring; draft-mode enable/disable routes; signed webhook revalidation route; Sanity CDN image
+  configuration; responsive image URL/blur helpers; Portable Text image renderer; automated
+  Session 05 contract check in `npm run quality`; local and Vercel Production/Preview environment
+  variables for draft reads and signed revalidation
+- Files/areas: `site/lib/sanity/`, `site/app/api/`, `site/sanity/presentation.ts`,
+  `site/sanity.config.ts`, root layout, image config, Portable Text component, CSS,
+  `.env.example`, package scripts, and codebase-memory artifact
+- Verified: `npm run typecheck`, zero-warning `npm run lint`, `npm run verify:sanity-authoring`,
+  `npm run verify:sanity-live`, and an escalated `npm run build` pass; `/` and `/studio` return
+  200 locally after restart; direct draft-mode access now fails closed with 401 instead of 503;
+  a signed local `/api/revalidate` request returns 200 and revalidates `sanity:blogPost`,
+  `sanity:feed`, and `sanity:homePage`; an authenticated Sanity owner rehearsal created a labelled
+  test Blog draft, published it, updated it, unpublished/deleted it, and confirmed cleanup; browser
+  checks at 1440px and 390px showed no console errors or horizontal overflow for Home or Studio;
+  screenshots saved at `site/.preview/session-05-{home,studio}-{desktop,mobile}.png`
+- Assets/content: no public content remains; the labelled test Blog document was fully cleaned up;
+  no personal facts, photos, testimonials, dates, or contact details were invented; personal image
+  placeholders remain author-editable
+- Decisions: keep `SANITY_API_READ_TOKEN` read-only for preview; use the authenticated Sanity owner
+  session for write rehearsals; preview and revalidation fail closed when secrets/signatures are
+  absent or invalid; Home writing queries remain Blog/Journal-only; Feed query remains Blog,
+  Journal, Father, Projects, and Documentaries
+- Remaining: codebase-memory refresh was retried at close and its transport disconnected; retry at
+  the start of Session 06. Production Vercel now has the environment names in Production/Preview,
+  so the next deploy should verify those values in the deployed preview before publishing forward
+- Next entry point: Session 06, retry the graph refresh first, then build Home v2 scenes 1-3 with
+  the portrait placeholder, point-of-view scene, and early Father doorway
 
 ## Session 06 — Home v2, scenes 1–3
 

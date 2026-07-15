@@ -1,88 +1,158 @@
-import { groq } from 'next-sanity'
+import { defineQuery } from 'next-sanity'
 
 /**
  * GROQ queries. Reading-time is derived from Portable Text at query time
  * (~200 wpm over block children) so we never store a stale count.
  */
 const READING_TIME = `"readingTime": round(length(pt::text(body)) / 5 / 200)`
+const IMAGE = `{
+  ...,
+  asset->{
+    _id,
+    url,
+    metadata {
+      lqip,
+      dimensions {
+        width,
+        height,
+        aspectRatio
+      }
+    }
+  }
+}`
 
 // ── Blog ─────────────────────────────────────────────────────────────────────
-export const blogPostsQuery = groq`
+export const blogPostsQuery = defineQuery(`
   *[_type == "blogPost" && defined(slug.current)] | order(publishedAt desc) {
-    _id, title, "slug": slug.current, category, excerpt, coverImage,
+    _id, _type, _updatedAt, title, "slug": slug.current, category, excerpt,
+    "coverImage": coverImage ${IMAGE},
     publishedAt, featured, featureOnHome, homeFeatureRank, seoTitle, seoDescription, ${READING_TIME}
-  }`
+  }`)
 
-export const blogPostBySlugQuery = groq`
+export const blogPostBySlugQuery = defineQuery(`
   *[_type == "blogPost" && slug.current == $slug][0] {
-    _id, title, "slug": slug.current, category, excerpt, coverImage, body,
+    _id, _type, _updatedAt, title, "slug": slug.current, category, excerpt,
+    "coverImage": coverImage ${IMAGE}, body,
     publishedAt, featured, featureOnHome, homeFeatureRank, seoTitle, seoDescription, ${READING_TIME}
-  }`
+  }`)
 
-export const blogSlugsQuery = groq`*[_type == "blogPost" && defined(slug.current)].slug.current`
+export const blogSlugsQuery = defineQuery(`*[_type == "blogPost" && defined(slug.current)].slug.current`)
 
 // ── Journal ──────────────────────────────────────────────────────────────────
-export const journalEntriesQuery = groq`
+export const journalEntriesQuery = defineQuery(`
   *[_type == "journalEntry" && defined(slug.current)] | order(publishedAt desc) {
-    _id, title, "slug": slug.current, type, publishedAt, featureOnHome, homeFeatureRank,
-    relatedBook->{ _id, title, author }
-  }`
+    _id, _type, _updatedAt, title, "slug": slug.current, type, publishedAt,
+    featureOnHome, homeFeatureRank, ${READING_TIME},
+    relatedBook->{ _id, _type, title, author }
+  }`)
 
-export const journalEntryBySlugQuery = groq`
+export const journalEntryBySlugQuery = defineQuery(`
   *[_type == "journalEntry" && slug.current == $slug][0] {
-    _id, title, "slug": slug.current, type, body, publishedAt, featureOnHome, homeFeatureRank,
-    relatedBook->{ _id, title, author, coverImage }
-  }`
+    _id, _type, _updatedAt, title, "slug": slug.current, type, body, publishedAt,
+    featureOnHome, homeFeatureRank, ${READING_TIME},
+    relatedBook->{ _id, _type, title, author, "coverImage": coverImage ${IMAGE} }
+  }`)
 
 // ── Father pieces ────────────────────────────────────────────────────────────
-export const fatherPiecesQuery = groq`
+export const fatherPiecesQuery = defineQuery(`
   *[_type == "fatherPiece" && defined(slug.current)] | order(publishedAt desc) {
-    _id, title, "slug": slug.current, format, image, publishedAt
-  }`
+    _id, _type, _updatedAt, title, "slug": slug.current, format,
+    "image": image ${IMAGE}, publishedAt, ${READING_TIME}
+  }`)
+
+export const fatherPieceBySlugQuery = defineQuery(`
+  *[_type == "fatherPiece" && slug.current == $slug][0] {
+    _id, _type, _updatedAt, title, "slug": slug.current, format, body,
+    "image": image ${IMAGE}, publishedAt, ${READING_TIME}
+  }`)
 
 // ── Projects ─────────────────────────────────────────────────────────────────
-export const projectsQuery = groq`
+export const projectsQuery = defineQuery(`
   *[_type == "project"] | order(featured desc, name asc) {
-    _id, name, "slug": slug.current, tagline, coverImage, techStack,
+    _id, _type, _updatedAt, name, "slug": slug.current, tagline,
+    "coverImage": coverImage ${IMAGE}, techStack,
     liveUrl, githubUrl, status, featured
-  }`
+  }`)
+
+export const projectBySlugQuery = defineQuery(`
+  *[_type == "project" && slug.current == $slug][0] {
+    _id, _type, _updatedAt, name, "slug": slug.current, tagline,
+    "coverImage": coverImage ${IMAGE}, summary, body, techStack,
+    liveUrl, githubUrl, status, featured
+  }`)
 
 // ── Documentaries ────────────────────────────────────────────────────────────
-export const documentariesQuery = groq`
+export const documentariesQuery = defineQuery(`
   *[_type == "documentary"] | order(publishedAt desc) {
-    _id, title, youtubeUrl, thumbnail, description, topic, publishedAt
-  }`
+    _id, _type, _updatedAt, title, youtubeUrl, "thumbnail": thumbnail ${IMAGE},
+    description, topic, publishedAt
+  }`)
 
 // ── Books ────────────────────────────────────────────────────────────────────
-export const booksQuery = groq`
+export const booksQuery = defineQuery(`
   *[_type == "book"] | order(_createdAt desc) {
-    _id, title, author, coverImage, note, status
-  }`
+    _id, _type, _updatedAt, title, author, "coverImage": coverImage ${IMAGE}, note, status
+  }`)
 
 // ── Timeline ─────────────────────────────────────────────────────────────────
-export const timelineQuery = groq`
+export const timelineQuery = defineQuery(`
   *[_type == "timelineEvent"] | order(year asc) {
-    _id, year, title, description, category
-  }`
+    _id, _type, _updatedAt, year, title, description, category
+  }`)
 
 // ── Singletons ───────────────────────────────────────────────────────────────
-export const siteSettingsQuery = groq`*[_type == "siteSettings"][0]`
-export const homePageQuery = groq`*[_type == "homePage"][0]`
-export const aboutPageQuery = groq`*[_type == "aboutPage"][0]`
-export const fatherPageQuery = groq`*[_type == "fatherPage"][0]`
-export const workPageQuery = groq`*[_type == "workPage"][0]`
-export const coursePageQuery = groq`*[_type == "coursePage"][0]`
-export const contactPageQuery = groq`*[_type == "contactPage"][0]`
+export const siteSettingsQuery = defineQuery(`*[_type == "siteSettings"][0]`)
+export const homePageQuery = defineQuery(`*[_type == "homePage"][0]`)
+export const aboutPageQuery = defineQuery(`*[_type == "aboutPage"][0]`)
+export const fatherPageQuery = defineQuery(`*[_type == "fatherPage"][0]`)
+export const workPageQuery = defineQuery(`*[_type == "workPage"][0]`)
+export const coursePageQuery = defineQuery(`*[_type == "coursePage"][0]`)
+export const contactPageQuery = defineQuery(`*[_type == "contactPage"][0]`)
 
 // ── The merged Feed ──────────────────────────────────────────────────────────
 // Pulls blogPost, journalEntry, fatherPiece, project, documentary into one
 // stream sorted by publishedAt desc. Each item keeps its _type so the UI can
 // render the right tag and filter. Projects have no publishedAt → fall back to
 // _createdAt so they still interleave.
-export const feedQuery = groq`
+export const feedQuery = defineQuery(`
   *[_type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"]]
     | order(coalesce(publishedAt, _createdAt) desc) {
-      _id, _type,
+      _id, _type, _updatedAt,
+      "date": coalesce(publishedAt, _createdAt),
+      "title": select(_type == "project" => name, title),
+      "slug": slug.current,
+      "excerpt": select(
+        _type == "blogPost" => excerpt,
+        _type == "project" => tagline,
+        _type == "documentary" => description,
+        null
+      ),
+      "tag": select(
+        _type == "blogPost" => category,
+        _type == "journalEntry" => type,
+        _type == "fatherPiece" => format,
+        _type == "project" => status,
+        _type == "documentary" => topic,
+        _type
+      ),
+      "readingTime": select(
+        _type in ["blogPost", "journalEntry", "fatherPiece"] => round(length(pt::text(body)) / 5 / 200),
+        null
+      ),
+      "image": select(
+        _type == "blogPost" => coverImage ${IMAGE},
+        _type == "fatherPiece" => image ${IMAGE},
+        _type == "project" => coverImage ${IMAGE},
+        _type == "documentary" => thumbnail ${IMAGE},
+        null
+      )
+    }`)
+
+// A short teaser for the Home page — top N of the same feed.
+export const feedTeaserQuery = defineQuery(`
+  *[_type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"]]
+    | order(coalesce(publishedAt, _createdAt) desc)[0...$limit] {
+      _id, _type, _updatedAt,
       "date": coalesce(publishedAt, _createdAt),
       "title": select(_type == "project" => name, title),
       "slug": slug.current,
@@ -95,10 +165,33 @@ export const feedQuery = groq`
         _type
       ),
       "readingTime": select(
-        _type in ["blogPost"] => round(length(pt::text(body)) / 5 / 200),
+        _type in ["blogPost", "journalEntry", "fatherPiece"] => round(length(pt::text(body)) / 5 / 200),
         null
       )
-    }`
+    }`)
 
-// A short teaser for the Home page — top N of the same feed.
-export const feedTeaserQuery = groq`${feedQuery}[0...$limit]`
+export const homeWritingQuery = defineQuery(`
+  {
+    "featured": *[
+      _type in ["blogPost", "journalEntry"] &&
+      defined(slug.current) &&
+      featureOnHome == true
+    ] | order(coalesce(homeFeatureRank, 99) asc, publishedAt desc)[0] {
+      _id, _type, _updatedAt, title, "slug": slug.current,
+      "date": publishedAt,
+      "tag": select(_type == "blogPost" => category, _type == "journalEntry" => type),
+      "excerpt": select(_type == "blogPost" => excerpt, null),
+      "image": select(_type == "blogPost" => coverImage ${IMAGE}, null),
+      ${READING_TIME}
+    },
+    "latest": *[
+      _type in ["blogPost", "journalEntry"] &&
+      defined(slug.current)
+    ] | order(publishedAt desc)[0...4] {
+      _id, _type, _updatedAt, title, "slug": slug.current,
+      "date": publishedAt,
+      "tag": select(_type == "blogPost" => category, _type == "journalEntry" => type),
+      "excerpt": select(_type == "blogPost" => excerpt, null),
+      ${READING_TIME}
+    }
+  }`)

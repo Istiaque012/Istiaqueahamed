@@ -1901,6 +1901,26 @@ textarea:focus-visible {
   line-height: 1.8;
 }
 
+.portable-image {
+  margin: clamp(36px, 6vw, 72px) 0;
+}
+
+.portable-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-dark);
+  object-fit: cover;
+}
+
+.portable-image figcaption {
+  max-width: 680px;
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 @media (max-width: 980px) {
   .global-nav { display: none; }
   .global-menu-button { display: inline-flex; }
