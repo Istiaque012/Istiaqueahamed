@@ -22,6 +22,7 @@ const requiredFiles = [
   'app/api/draft-mode/enable/route.ts',
   'app/api/draft-mode/disable/route.ts',
   'app/api/revalidate/route.ts',
+  'app/feed.xml/route.ts',
   'sanity/presentation.ts',
 ]
 
@@ -43,10 +44,19 @@ for (const queryName of [
   'booksQuery',
   'timelineQuery',
   'feedQuery',
+  'feedTeaserQuery',
   'homeWritingQuery',
+  'workPageQuery',
 ]) {
   assert(queries.includes(`export const ${queryName} = defineQuery`), `Missing typed query: ${queryName}`)
 }
+
+const projectSchema = read('sanity/schemaTypes/documents/project.ts')
+assert(projectSchema.includes("name: 'screenshots'"), 'Project schema must expose approved screenshot media')
+assert(projectSchema.includes("name: 'publishedAt'"), 'Project schema must provide Feed publication timing')
+
+const workSchema = read('sanity/schemaTypes/singletons/workPage.ts')
+assert(workSchema.includes("name: 'cvFile'"), 'Work schema must keep the approved CV file separate from its toggle')
 
 for (const imageField of ['coverImage', 'image', 'thumbnail']) {
   assert(queries.includes(`"${imageField}":`), `Missing image projection for ${imageField}`)

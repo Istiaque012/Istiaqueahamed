@@ -40,12 +40,12 @@ Back to [[00 - START HERE]]
 - [x] Shared Writing navigation/components — the doorway to the three writing experiences.
 - [x] [[Page - Blog]] — long-form index and article pages.
 - [x] [[Page - Journal]] — short-form index and entry pages.
-- [ ] [[Page - Feed]] — merged chronology and Home integration.
+- [x] [[Page - Feed]] — merged chronology, RSS, and Home integration.
 
 ## Phase 4 — Work and making
 
-- [ ] [[Page - Projects]] — StudyRise case study and future-ready index.
-- [ ] [[Page - Work]] — curated public professional record.
+- [x] [[Page - Projects]] — StudyRise case study and future-ready index.
+- [x] [[Page - Work]] — curated public professional record.
 - [ ] [[Page - Documentaries]] — films, context, and performant embeds.
 
 ## Phase 5 — Life archive and contact

@@ -462,3 +462,20 @@ Completed the Blog and Journal reading experiences on the Session 10 shared Writ
   content (Session 23) or a labelled test draft for runtime review.
 - Updated the [[Build Roadmap]] Phase 3 checkboxes, the [[BUILD-PLAN]] progress table and Session
   11–12 Handoffs, and the [[Page - Blog]]/[[Page - Journal]] rows in `index.md`.
+
+## [2026-07-15] build | Sessions 13–15 Feed, Projects, and Work completed
+Completed the unified publishing stream and the first two Work-and-making pages without publishing
+unapproved content or professional detail.
+- **Feed**: live merged Blog/Journal/Father/Project/Documentary chronology, URL-backed filters,
+  stable image/no-image rows, load-more pagination, aligned Home teaser rules, and `/feed.xml` RSS.
+- **Projects**: StudyRise-led index and full general-audience case study with the official preview,
+  three Sanity-authorable screenshot placeholders, live/GitHub links, and future approved-project support.
+- **Work**: approved broad D5 framing, confirmed training and selected experience, five focus areas,
+  optional work image, future media room, PDF-gated CV control, and About/Projects/Writing paths.
+- Added project publication/screenshot fields, the Work CV file field, stricter live-contract checks,
+  indexable page metadata, canonical/RSS alternates, and responsive styling. Detailed current roles,
+  unapproved projects, publications, CV, personal photographs, and product claims remain absent.
+- Strict TypeScript, zero-warning lint, both Sanity contracts, enforced schema extraction, and the
+  Next.js production build pass. Desktop and phone review found and fixed one StudyRise title overflow;
+  all final reviewed routes have no horizontal overflow, clipped controls, console warnings, or errors.
+- Refreshed the codebase-memory graph after the final code pass: 612 nodes and 1,036 edges.

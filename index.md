@@ -51,12 +51,12 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 |---|---|---|---|
 | [[Page - Home]] | Eight-scene Home v2 complete with early Father doorway, StudyRise proof, live writing/Feed, and photo placeholders | `public` | done |
 | [[Page - About]] | Story-led identity complete: training, Father, human side, two-country arc, purpose, and photo slots | `public` | done |
-| [[Page - Feed]] | Complete stream planned; shared Writing navigation, editorial primitives, and honest scaffold are built | `public` | planned |
+| [[Page - Feed]] | Live unified chronology with filters, stable rows, load-more, RSS, and aligned Home teaser | `public` | done |
 | [[Page - Blog]] | Live long-form index (featured, category filters, load-more) and article pages with related essays and Article schema | `public` | done |
 | [[Page - Journal]] | Live short-form index grouped by month with Thought/Read/Observation filters and minimal entry pages | `public` | done |
 | [[Page - My Beloved Father]] | Quiet Father room complete with Essay/Note publishing, reading view, archive gallery, and honest empty states | `public` | done |
-| [[Page - Projects]] | The doctor who builds — StudyRise and more, for a general audience | `public` | planned |
-| [[Page - Work]] | Education and public professional framing; detailed current titles omitted | `public` | planned |
+| [[Page - Projects]] | Complete StudyRise-led index and case study with Sanity product media and no unapproved concepts | `public` | done |
+| [[Page - Work]] | Curated approved training, experience, focus, future media, and gated CV record | `public` | done |
 | [[Page - Documentaries]] | His films — a doctor who tells stories on camera | `public` | planned |
 | [[Page - Course (AI in Healthcare)]] | AI-for-doctors course — minimal "coming soon" for now | `public` | planned-minimal |
 | [[Page - Timeline]] | The whole life arc in one scroll, Bangladesh → Australia | `public` | planned |

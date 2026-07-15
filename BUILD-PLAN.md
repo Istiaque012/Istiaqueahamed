@@ -229,9 +229,9 @@ Only one row may be `in-progress` at a time.
 | 10 | Shared Writing navigation and editorial components | `done` (2026-07-15) |
 | 11 | Blog index and Blog detail pages | `done` (2026-07-15) |
 | 12 | Journal index and Journal detail pages | `done` (2026-07-15) |
-| 13 | Unified Feed and Home feed integration | `todo` |
-| 14 | Projects index and StudyRise case study | `todo` |
-| 15 | Work page | `todo` |
+| 13 | Unified Feed and Home feed integration | `done` (2026-07-15) |
+| 14 | Projects index and StudyRise case study | `done` (2026-07-15) |
+| 15 | Work page | `done` (2026-07-15) |
 | 16 | Documentaries page and film presentation | `todo` |
 | 17 | Timeline page | `todo` |
 | 18 | Bookshelf page | `todo` |
@@ -254,7 +254,7 @@ until the build can show the exact slot or workflow being decided.
 |---|---|---|
 | Session 05 | Sanity sign-in and secure preview token | Resolved 2026-07-15; read token and revalidation secret configured locally and in Vercel Production/Preview |
 | Session 06–09 | Personal portraits and Father archive images | Exact-ratio labelled placeholders remain until supplied |
-| Session 14 | Three clean StudyRise interface captures | Existing official preview remains temporarily |
+| Session 14 | Three clean StudyRise interface captures | Three exact-purpose placeholders are built and Sanity-authorable; existing official preview remains the primary visual |
 | Session 16 | One or two approved films and Istiaque's context | Build with private test data; do not publish invented context |
 | Session 18 | Personal notes for starter books | Covers/placeholders can be prepared; notes stay draft |
 | Session 20 | Contact recipient and final delivery provider | Form UI can be built; real delivery waits for configuration |
@@ -686,7 +686,27 @@ preview to the same source of truth.
 
 **Done when:** all supported content interleaves correctly and the Home preview agrees with Feed.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: live merged Feed over Blog, Journal, Father, Projects, and Documentaries; deterministic
+  publish-date ordering; URL-backed accessible type filters; stable image/no-image rows; eight-item
+  load-more pagination; RSS at `/feed.xml`; an RSS metadata alternate; Home and Feed queries aligned
+  to the same eligible content, ordering, labels, and destinations
+- Files/areas: `app/(site)/feed/page.tsx`, `components/writing/FeedIndex.tsx`,
+  `app/feed.xml/route.ts`, shared metadata/editorial helpers, Feed GROQ, and Feed CSS
+- Verified: strict TypeScript, zero-warning lint, both Sanity contracts, schema extraction, and the
+  optimized production build pass; `/feed` and `/feed.xml` return 200 and are indexable; RSS has the
+  correct content type and alternate link; desktop and phone review found no overflow, clipped
+  controls, console warnings, or console errors
+- Assets/content: the public dataset remains intentionally empty, so the honest complete-stream
+  state renders; no post, project update, film, date, excerpt, or image was invented
+- Decisions: filters deep-link through `?type=`; project publication uses `publishedAt`; films link
+  to their index until Session 16 supplies their full presentation; the Home teaser remains a
+  smaller projection of the same Feed contract
+- Remaining: populated interleaving, filter counts, and load-more behaviour are type/build-verified
+  but await real content in Session 23 or a labelled temporary draft rehearsal
+- Next entry point: Session 14, present StudyRise as the initial complete project
 
 ## Session 14 — Projects and StudyRise
 
@@ -697,7 +717,29 @@ and GitHub; Sanity media with three screenshot placeholders; omit unapproved con
 **Done when:** StudyRise proves the builder positioning to a general visitor without becoming a
 technical feature list.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: cinematic Projects index with StudyRise as the complete initial project; a general-audience
+  `/projects/studyrise` case study covering the study problem, system, capabilities, build story,
+  product views, stack, live site, and GitHub; future approved-project rendering; branded 404 for
+  unknown projects; expanded Sanity project authoring for publication timing and up to five product
+  screenshots
+- Files/areas: `app/(site)/projects/`, `components/ProjectIndex.tsx`,
+  `components/ProjectCaseStudy.tsx`, project schema/query/types, official StudyRise preview, and
+  Projects/case-study CSS
+- Verified: the shared quality gate and schema extraction pass; `/projects` and
+  `/projects/studyrise` were reviewed at 1440×1000 and 390×844 with correct metadata, links, image
+  behaviour, active navigation, no final horizontal overflow, and no console warnings/errors;
+  an unapproved slug returns the branded 404
+- Assets/content: the existing official StudyRise preview is the primary visual; Today dashboard,
+  Study plan, and Progress & analytics have exact-purpose placeholders wired to Sanity; no MedLink,
+  hospital tool, smoking tracker, user claim, result, date, or unapproved project was published
+- Decisions: confirmed source facts provide the launch fallback so Projects feels complete before
+  Sanity seeding; published Sanity copy/media can replace and extend that record without code
+- Remaining: replace the three product placeholders with clean approved captures when supplied;
+  runtime-review a fully Sanity-authored project during Session 23
+- Next entry point: Session 15, build the curated public Work record
 
 ## Session 15 — Work
 
@@ -708,7 +750,26 @@ approved document exists; links to About, Projects, and Writing.
 **Done when:** Work establishes trust using only approved public facts and does not read like a
 dense résumé.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: responsive editorial Work page with approved D5 public framing, confirmed medical/public
+  health training, selected 2016–2018 experience, StudyRise founder role, five areas of focus,
+  optional Sanity work image, future publications/media room, an approved-PDF-only CV control, and
+  direct paths to About, Projects, and Writing
+- Files/areas: `app/(site)/work/page.tsx`, `components/Work.tsx`, Work singleton query/type/schema,
+  global RSS metadata support, and Work CSS
+- Verified: the shared quality gate and schema extraction pass; `/work` was reviewed at 1440×1000
+  and 390×844 with the photo placeholder, disabled CV state, full chronology, correct active nav,
+  no horizontal overflow, and no console warnings/errors; refreshed code graph has 612 nodes and
+  1,036 edges
+- Assets/content: no current RMO, hospital-director, My Care Pro, publication, talk, CV, employer
+  date, or work photograph was invented; the detailed titles excluded by D5 remain absent
+- Decisions: use the approved broad D5 role line while keeping the Home's confirmed identity line;
+  enable CV only when both the Studio toggle and a real uploaded PDF are present
+- Remaining: optional work photograph, public CV, interviews, publications, and detailed current
+  roles remain intentionally absent until separately approved and supplied
+- Next entry point: Session 16, build the documentary index and performant film presentation
 
 ## Session 16 — Documentaries
 

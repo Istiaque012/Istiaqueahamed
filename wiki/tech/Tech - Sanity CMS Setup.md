@@ -54,9 +54,11 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - slug
 - tagline
 - coverImage
+- screenshots (up to five approved product views)
 - description (Portable Text)
 - techStack (array)
 - liveUrl / githubUrl
+- publishedAt (Feed ordering)
 - status (Live / In progress / Concept)
 - featured (boolean — StudyRise is featured)
 
@@ -86,7 +88,7 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - `homePage` — editable Home copy and personal-image slots
 - `aboutPage` — the six story blocks for [[Page - About]]
 - `fatherPage` — opening copy and archive image slots
-- `workPage` — approved public framing and optional work image
+- `workPage` — approved public framing, focus areas, optional work image, and approved-PDF-only CV control
 - `coursePage` — content for [[Page - Course (AI in Healthcare)]]
 - `contactPage` — welcome copy and form destination settings
 
@@ -95,6 +97,10 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 ## The feed query
 
 The [[Page - Feed]] doesn't have its own schema. It's a GROQ query that pulls `blogPost`, `journalEntry`, `fatherPiece`, `project`, and `documentary`, merges them, and sorts by `publishedAt` descending. Each item carries a `_type` so the UI can show the right tag and filter.
+
+Session 13 now exposes that same contract as the complete visitor Feed and `/feed.xml` RSS. Home's
+smaller teaser keeps the same eligibility, order, label, and destination rules, so the two surfaces
+cannot disagree about what is newest.
 
 Home uses two related queries: one optional published Blog/Journal item with
 `featureOnHome == true`, plus the three newest published Blog/Journal items excluding that item.

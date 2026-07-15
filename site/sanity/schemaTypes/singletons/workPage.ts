@@ -37,6 +37,14 @@ export const workPage = defineType({
       initialValue: false,
       description: 'Keep off until a real approved public CV exists.',
     }),
+    defineField({
+      name: 'cvFile',
+      title: 'Approved public CV',
+      type: 'file',
+      options: { accept: 'application/pdf' },
+      description: 'Upload the final public PDF before switching the CV control on.',
+      hidden: ({ parent }) => parent?.cvEnabled !== true,
+    }),
   ],
   preview: { prepare: () => ({ title: 'Work Page' }) },
 })

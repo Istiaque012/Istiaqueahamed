@@ -106,14 +106,32 @@ export type Project = BaseContent & {
   name: string
   slug?: string
   tagline?: string
-  summary?: string
-  body?: PortableTextBlock[]
+  description?: PortableTextBlock[]
   coverImage?: SanityImageWithMetadata
+  screenshots?: Array<SanityImageWithMetadata & { _key: string }>
   techStack?: string[]
   liveUrl?: string
   githubUrl?: string
   status?: string
   featured?: boolean
+}
+
+export type WorkPage = BaseContent & {
+  _type: 'workPage'
+  publicFraming?: PortableTextBlock[]
+  areasOfFocus?: Array<{
+    _key: string
+    title: string
+    description?: string
+  }>
+  workImage?: SanityImageWithMetadata
+  cvEnabled?: boolean
+  cvFile?: {
+    asset?: {
+      url?: string
+      originalFilename?: string
+    }
+  }
 }
 
 export type Documentary = BaseContent & {
