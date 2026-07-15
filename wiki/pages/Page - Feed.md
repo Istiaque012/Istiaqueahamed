@@ -3,6 +3,7 @@ title: Page - Feed
 type: page
 status: planned
 created: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, page]
 ---
 
@@ -41,6 +42,13 @@ Back to [[Site Architecture]]
 - Clean list rows, type tag, title, date, reading time
 - Restrained motion as items enter on scroll (see [[Design System#Motion]])
 - The father items can carry a subtler, quieter tag treatment
+
+## Shared foundation — 2026-07-15
+
+The `/feed` route now carries the completed Writing navigator, dark editorial scaffold, honest
+empty state, and cross-links into Blog and Journal. Shared row/card, metadata, filter, no-image,
+pagination, and destination helpers are ready for Session 13 to connect to the existing merged GROQ
+query. The route remains noindex and `status: planned` until that real stream is produced.
 
 ---
 

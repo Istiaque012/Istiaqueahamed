@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import SanityPortableText from "@/components/SanityPortableText";
 import { EditorialImage } from "@/components/ui";
+import { feedItemHref, feedItemLabel, formatEditorialDate } from "@/lib/editorial";
 import { socialLinks } from "@/lib/navigation";
 import type { ResolvedSanityImage } from "@/lib/sanity/image";
 import type { FeedItem, HomePage, HomeWriting } from "@/lib/sanity/types";
@@ -48,37 +49,6 @@ type LandingPageProps = {
   lifeImages: LifeImage[];
   portrait?: ResolvedSanityImage;
 };
-
-const dateFormatter = new Intl.DateTimeFormat("en-GB", {
-  day: "2-digit",
-  month: "short",
-  year: "numeric",
-});
-
-function formatDate(date?: string) {
-  if (!date) return "Undated";
-  const value = new Date(date);
-  return Number.isNaN(value.getTime()) ? "Undated" : dateFormatter.format(value);
-}
-
-function itemHref(item: FeedItem) {
-  if (item._type === "documentary") return "/documentaries";
-  if (item._type === "project") return item.slug ? `/projects/${item.slug}` : "/projects";
-  if (item._type === "fatherPiece") return item.slug ? `/father/${item.slug}` : "/father";
-  if (item._type === "journalEntry") return item.slug ? `/journal/${item.slug}` : "/journal";
-  return item.slug ? `/blog/${item.slug}` : "/blog";
-}
-
-function itemType(item: FeedItem) {
-  const labels: Record<FeedItem["_type"], string> = {
-    blogPost: "Blog",
-    documentary: "Film",
-    fatherPiece: "Father",
-    journalEntry: "Journal",
-    project: "Project",
-  };
-  return labels[item._type];
-}
 
 export default function LandingPage({
   fatherImage,
@@ -311,10 +281,10 @@ export default function LandingPage({
           <div className="home-writing">
             {homeWriting.featured ? (
               <Reveal className="home-writing__featured">
-                <Link href={itemHref(homeWriting.featured)}>
+                <Link href={feedItemHref(homeWriting.featured)}>
                   <div className="home-writing__meta">
                     <span>Featured on Home</span>
-                    <span>{itemType(homeWriting.featured)} · {formatDate(homeWriting.featured.date)}</span>
+                    <span>{feedItemLabel(homeWriting.featured)} · {formatEditorialDate(homeWriting.featured.date)}</span>
                   </div>
                   <h3>{homeWriting.featured.title}</h3>
                   {homeWriting.featured.excerpt ? <p>{homeWriting.featured.excerpt}</p> : null}
@@ -327,10 +297,10 @@ export default function LandingPage({
               {latestWriting.length ? (
                 latestWriting.map((item, index) => (
                   <Reveal key={item._id} className="home-writing__row" delay={index * 0.06}>
-                    <Link href={itemHref(item)}>
+                    <Link href={feedItemHref(item)}>
                       <div className="home-writing__meta">
-                        <span>{itemType(item)}{item.tag ? ` · ${item.tag}` : ""}</span>
-                        <span>{formatDate(item.date)}</span>
+                        <span>{feedItemLabel(item)}{item.tag ? ` · ${item.tag}` : ""}</span>
+                        <span>{formatEditorialDate(item.date)}</span>
                       </div>
                       <h3>{item.title}</h3>
                       <span className="home-writing__arrow" aria-hidden="true">↗</span>
@@ -357,11 +327,11 @@ export default function LandingPage({
               <div className="home-feed__list">
                 {feed.map((item, index) => (
                   <Reveal key={item._id} className="home-feed__item" delay={index * 0.05}>
-                    <Link href={itemHref(item)}>
+                    <Link href={feedItemHref(item)}>
                       <span>0{index + 1}</span>
-                      <span>{itemType(item)}</span>
+                      <span>{feedItemLabel(item)}</span>
                       <strong>{item.title}</strong>
-                      <span>{formatDate(item.date)}</span>
+                      <span>{formatEditorialDate(item.date)}</span>
                     </Link>
                   </Reveal>
                 ))}

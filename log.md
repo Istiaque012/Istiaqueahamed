@@ -385,3 +385,28 @@ Completed the story-led About page and connected its personal imagery to Sanity.
   pass. Desktop, mobile, and narrow-mobile browser review found no horizontal overflow, clipped
   controls, console warnings, or console errors; previews are saved in
   `site/.preview/session-08-about-*`. The refreshed code graph contains 978 nodes and 1,180 edges.
+
+## [2026-07-15] build | Session 09 Father completed
+Completed the quieter Father index, archive, and reading experience without inventing personal material.
+- Replaced the placeholder with an approved-copy opening, separate Essay and Note publishing lists,
+  a restrained Sanity-authorable image archive, honest empty states, and a quieter warm-dark register.
+- `/father/[slug]` now renders published Portable Text, archive images, captions, dates, reading
+  time, and page metadata; unknown or unpublished slugs return a clean noindex route-group 404.
+- Fixed the nested 404 boundary so a missing detail no longer duplicates the shared header and footer.
+- TypeScript, zero-warning lint, both Sanity contract checks, and the optimized production build
+  pass. The empty public dataset was reviewed at 1440×1000 and 390×844 with no Father-page overflow,
+  clipped controls, console warnings, or console errors. The refreshed graph contains 1,054 nodes
+  and 1,327 edges.
+
+## [2026-07-15] build | Session 10 shared Writing system completed
+Completed the reusable visitor language for Feed, Blog, and Journal without starting their page sessions.
+- Added an in-page Writing navigator with Feed as its default, responsive active states, and clear
+  plain-language distinctions among the complete stream, long-form Blog, and shorter Journal.
+- Added shared editorial metadata, cards, rows, filters, no-image and empty states, pagination,
+  cross-links, and canonical date/type/destination helpers; Home now uses the same helpers.
+- Replaced the three generic route placeholders with noindex dark/light Writing scaffolds that invent
+  no post, opinion, excerpt, cover, or date while their public datasets are empty.
+- TypeScript, zero-warning lint, both Sanity contract checks, and the optimized production build
+  pass. Feed, Blog, and Journal were reviewed at 1440×1000 and 390×844 with correct active states,
+  no horizontal overflow, console warnings, or console errors. The refreshed graph contains 1,079
+  nodes and 1,379 edges. Session 11 was not started.

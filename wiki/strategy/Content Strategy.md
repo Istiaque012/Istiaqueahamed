@@ -83,6 +83,22 @@ To launch with substance, aim for:
 
 Depth and consistency are what build the entity authority described in [[SEO & Discoverability]]. Writing isn't decoration here; it's the engine of recognition.
 
+## Shared publishing experience — 2026-07-15
+
+The visitor-facing Writing language is now implemented before the individual indexes are populated:
+
+- Writing is a navigation group, never a separate fourteenth page. It opens to **Feed** by default.
+- Feed, Blog, and Journal share one in-page three-destination navigator with clear active states and
+  plain-language descriptions; the interface does not require visitors to understand Sanity types.
+- Reusable metadata, editorial card, row, filter, pagination, no-image, empty-state, and cross-link
+  patterns are ready for Sessions 11–13.
+- Home now uses the same canonical date, content label, and destination helpers as the future indexes.
+- Empty public datasets display an explicit quiet state. No sample post, date, opinion, excerpt, or
+  cover is created merely to fill the design.
+
+The three route scaffolds remain noindex until their dedicated sessions connect the real published
+datasets and finish the page-specific behavior.
+
 ---
 
 Related: [[Vision & Positioning]] · [[SEO & Discoverability]] · [[Page - Blog]] · [[Page - Journal]]

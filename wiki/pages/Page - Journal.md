@@ -3,6 +3,7 @@ title: Page - Journal
 type: page
 status: planned
 created: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, page]
 ---
 
@@ -41,6 +42,13 @@ Back to [[Site Architecture]]
 
 - Minimal, typography-forward, lots of space
 - Type tag colour-coded but subtle
+
+## Shared foundation — 2026-07-15
+
+The `/journal` route now carries the completed Writing navigator, dark editorial scaffold, honest
+empty state, and cross-links into Feed and Blog. Shared row/card, metadata, type-filter, no-image,
+pagination, date, and destination helpers are ready for Session 12. The route remains noindex and
+`status: planned` until the real Journal index and detail renderer are complete.
 
 ---
 

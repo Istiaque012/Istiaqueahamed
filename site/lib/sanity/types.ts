@@ -197,3 +197,13 @@ export type AboutPage = BaseContent & {
     label?: string
   }>
 }
+
+export type FatherPage = BaseContent & {
+  _type: 'fatherPage'
+  opening?: PortableTextBlock[]
+  archiveImages?: Array<{
+    _key?: string
+    caption?: string
+    image?: SanityImageWithMetadata
+  }>
+}

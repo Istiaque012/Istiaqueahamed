@@ -225,8 +225,8 @@ Only one row may be `in-progress` at a time.
 | 06 | Home v2: Presence, point of view, and Father doorway | `done` (2026-07-15) |
 | 07 | Home v2: Foundation, StudyRise, live content, life, contact | `done` (2026-07-15) |
 | 08 | About page | `done` (2026-07-15) |
-| 09 | Father index and Father detail pages | `todo` |
-| 10 | Shared Writing navigation and editorial components | `todo` |
+| 09 | Father index and Father detail pages | `done` (2026-07-15) |
+| 10 | Shared Writing navigation and editorial components | `done` (2026-07-15) |
 | 11 | Blog index and Blog detail pages | `todo` |
 | 12 | Journal index and Journal detail pages | `todo` |
 | 13 | Unified Feed and Home feed integration | `todo` |
@@ -555,7 +555,29 @@ preserving accessibility.
 **Done when:** the space feels distinct and Istiaque can publish his own words and images without a
 developer.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a distinct quiet Father index with approved singleton opening copy, one opening archive
+  image, separate Essay and Note lists, restrained archive gallery, honest empty states, and a
+  dynamic `/father/[slug]` reading view with Portable Text, images, captions, dates, reading time,
+  metadata, and a clean unpublished-piece 404
+- Files/areas: Father index/detail routes, `Father` and `FatherArticle` components, Father Sanity
+  projections/types, route-group 404 boundary, and responsive Father-register styling
+- Verified: strict TypeScript, zero-warning ESLint, both Sanity contract checks, optimized production
+  build, and `http://localhost:3000/father` at 1440×1000 and 390×844; no horizontal overflow,
+  clipped Father controls, console warnings, or console errors; missing detail is noindex and
+  settles to one header/footer/main; refreshed graph contains 1,054 nodes and 1,327 edges
+- Assets/content: Father portrait and three archive spaces remain labelled Sanity-authorable
+  placeholders; the public dataset contains no Father pieces, so no memory, caption, photograph,
+  date, or personal writing was invented
+- Decisions: keep the global accessible shell but remove promotional UI and decorative motion from
+  the Father body; use the first approved archive image as the opening portrait and the next four
+  as the optional gallery; publish Essay and Note lists separately
+- Remaining: approved opening words, Father portrait/archive images, captions, and Istiaque's first
+  Father piece can be added entirely through Sanity; no engineering blocker remains
+- Next entry point: Session 10, extract the shared Writing navigation, metadata, editorial row/card,
+  filters, and pagination language used by Feed, Blog, and Journal without creating `/writing`
 
 ## Session 10 — Shared Writing system
 
@@ -567,7 +589,27 @@ fourteenth `/writing` page.
 **Done when:** visitors can move among long-form Blog, short Journal, and complete Feed through one
 consistent navigation and visual language without learning the CMS structure.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a shared in-page Writing navigation with Feed as the default, active Feed/Blog/Journal
+  states, responsive page scaffolds, reusable editorial metadata, card, row, filter, empty state,
+  no-image state, pagination, and cross-link components, plus shared date/type/href helpers now
+  used by Home
+- Files/areas: `site/components/writing/`, shared editorial helpers, Feed/Blog/Journal route
+  scaffolds, Home writing links, and responsive Writing-system styling
+- Verified: strict TypeScript, zero-warning ESLint, both Sanity contract checks, and optimized
+  production build pass; Feed, Blog, and Journal reviewed at 1440×1000 and 390×844 with correct
+  active states, no horizontal overflow, console warnings, or console errors; mobile Writing opens
+  to `/feed`, exposes all three destinations, and restores focus/scroll after Escape; refreshed
+  graph contains 1,079 nodes and 1,379 edges
+- Assets/content: no public post, opinion, date, excerpt, or cover was invented; current routes show
+  honest no-content states and remain noindex until their dedicated production sessions
+- Decisions: Writing remains a navigation group rather than a `/writing` page; Feed is its default;
+  Blog uses the light editorial register while Feed and Journal use the dark register; all later
+  indexes share the same metadata and navigation contracts without exposing CMS type names
+- Remaining: Sessions 11–13 will connect the shared components to real Blog, Journal, and Feed data
+- Next entry point: Session 11, build the Blog index/detail experience on the shared Writing system
 
 ## Session 11 — Blog
 
