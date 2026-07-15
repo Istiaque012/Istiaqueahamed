@@ -134,6 +134,33 @@ export type WorkPage = BaseContent & {
   }
 }
 
+export type RouteLink = {
+  label?: string
+  href?: string
+}
+
+export type CoursePage = BaseContent & {
+  _type: 'coursePage'
+  status?: 'comingLater' | 'inDevelopment' | 'available'
+  headline?: string
+  body?: PortableTextBlock[]
+  intendedAudience?: string[]
+  themes?: Array<{
+    _key: string
+    title: string
+    description?: string
+  }>
+  writingLink?: RouteLink
+  primaryAction?: RouteLink
+}
+
+export type ContactPage = BaseContent & {
+  _type: 'contactPage'
+  welcomeCopy?: PortableTextBlock[]
+  formEnabled?: boolean
+  successMessage?: string
+}
+
 export type Documentary = BaseContent & {
   _type: 'documentary'
   title: string

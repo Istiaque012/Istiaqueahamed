@@ -499,3 +499,21 @@ Completed the final film, life-archive, and reading pages before the minimal Cou
 - Approved film selection/context, book covers/notes, and populated playback/filter rehearsal move
   to Session 23 alongside the planned content-seeding pass.
 - Refreshed the final codebase-memory graph: 651 nodes and 1,069 edges.
+
+## [2026-07-15] build | Sessions 19–20 Course and Contact advanced
+Completed the honest Course experience and all code-owned Contact work without accepting messages
+before a private inbox is connected.
+- **Course:** replaced the placeholder with a complete indexable Coming later room, factual audience,
+  broad future themes, current Writing doorway, and a Sanity model that reveals a course action only
+  after explicit Available status. No waitlist, price, date, format, module, outcome, or sales claim
+  is published.
+- **Contact:** built the indexable form/social route, canonical six-link directory, no-public-email
+  boundary, shared client/server validation, first-error focus, async states, honeypot, same-origin
+  and size checks, hashed per-instance rate limiting, and a fail-closed Resend handoff.
+- The shared quality gate, schema extraction, and Contact contract pass. Local API checks returned
+  the expected 400/403/503/429 results; 1440×1000 and 390×844 reviews found no overflow, public
+  email link, console warning, or console error. The refreshed graph contains 708 nodes and 1,172
+  edges.
+- Session 19 is done. Session 20 remains in-progress because D8 still defers the provider/recipient:
+  the live form stays clearly disabled until four private delivery variables are configured, the
+  Sanity switch is enabled, and a real message is confirmed in Istiaque's inbox.

@@ -235,8 +235,8 @@ Only one row may be `in-progress` at a time.
 | 16 | Documentaries page and film presentation | `done` (2026-07-15; approved film rehearsal in Session 23) |
 | 17 | Timeline page | `done` (2026-07-15) |
 | 18 | Bookshelf page | `done` (2026-07-15; personal notes in Session 23) |
-| 19 | Course page | `todo` |
-| 20 | Contact page and secure form delivery | `todo` |
+| 19 | Course page | `done` (2026-07-15) |
+| 20 | Contact page and secure form delivery | `in-progress` (page/protections done; real delivery configuration deferred) |
 | 21 | Search, AI discoverability, metadata, sitemap, and RSS | `todo` |
 | 22 | Full mobile, accessibility, motion, and performance pass | `todo` |
 | 23 | Photography integration, content seeding, author rehearsal | `todo` |
@@ -868,7 +868,23 @@ Sanity fields so a future course can replace the minimal state without a redesig
 
 **Done when:** the page feels intentional while making no promise beyond current reality.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: complete indexable Course route with an intentional Coming later state, factual purpose
+  and audience, broad future themes, current Writing doorway, and no signup, price, date, module,
+  outcome, or enrolment claim
+- Files/areas: Course route/component/styles; explicit Course GROQ projection and TypeScript type;
+  expanded Course singleton with status, audience, themes, Writing link, and available-only action
+- Verified: shared quality gate and schema extraction pass; `http://localhost:3000/course` reviewed
+  at 1440×1000 and 390×844 with no horizontal overflow or console warning/error
+- Assets/content: no image is required; neutral fallback copy publishes only the confirmed future
+  direction, while a published Sanity singleton can replace it without changing the layout
+- Decisions: keep registration, waitlist, format, dates, curriculum, pricing, and outcomes absent
+  until approved; show a course action only when the CMS status is explicitly Available
+- Remaining: none for the honest Coming later version; future offer/content approval remains a
+  separate enhancement
+- Next entry point: Session 20, complete Contact while preserving the deferred delivery decision
 
 ## Session 20 — Contact
 
@@ -878,7 +894,28 @@ where appropriate, and delivery through the selected provider.
 
 **Done when:** a real test message reaches Istiaque and invalid/repeated submissions fail safely.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: in-progress
+- Completed: 2026-07-15 (implementation; delivery rehearsal pending)
+- Built: complete indexable Contact route; confirmed social directory; no public email; accessible
+  Name/Email/Message form with inline errors, first-error focus, pending/success/error states,
+  honeypot, same-origin and content-size checks, shared client/server validation, hashed per-instance
+  rate limiting, and a fail-closed Resend handoff
+- Files/areas: Contact route/components/styles; `/api/contact`; contact validation and private
+  delivery helpers; Contact GROQ/type/schema; environment example; automated Contact contract
+- Verified: shared quality gate and schema extraction pass; invalid payload returns 400, cross-origin
+  submission 403, honeypot 200 without delivery, unconfigured delivery 503, and the sixth repeated
+  valid request 429; `http://localhost:3000/contact` reviewed at 1440×1000 and 390×844 with no
+  overflow, public email link, console warning, or console error; refreshed code graph has 708
+  nodes and 1,172 edges
+- Assets/content: canonical six social URLs come from the same public register as the Footer and
+  Person entity; no recipient, sender, token, or email address is committed or sent to the browser
+- Decisions: require both the Sanity Enable contact form switch and four private server variables;
+  keep the form clearly unavailable rather than accepting messages that cannot be delivered
+- Remaining: D8 is still deferred. Configure `CONTACT_FORM_ENABLED`, `RESEND_API_KEY`,
+  `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL`, enable the Contact singleton, send one real message,
+  confirm arrival, and repeat the production abuse checks before marking Session 20 done
+- Next entry point: configure and verify real delivery; then close Session 20 and begin Session 21
 
 ## Session 21 — Search and discoverability
 

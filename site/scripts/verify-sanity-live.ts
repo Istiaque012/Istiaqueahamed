@@ -51,6 +51,8 @@ for (const queryName of [
   'feedTeaserQuery',
   'homeWritingQuery',
   'workPageQuery',
+  'coursePageQuery',
+  'contactPageQuery',
 ]) {
   assert(queries.includes(`export const ${queryName} = defineQuery`), `Missing typed query: ${queryName}`)
 }
@@ -75,7 +77,17 @@ for (const field of ['note', 'status', 'sortOrder']) {
   assert(bookSchema.includes(`name: '${field}'`), `Book schema must expose ${field}`)
 }
 
-for (const route of ['documentaries', 'timeline', 'bookshelf']) {
+const courseSchema = read('sanity/schemaTypes/singletons/coursePage.ts')
+for (const field of ['status', 'intendedAudience', 'themes', 'writingLink', 'primaryAction']) {
+  assert(courseSchema.includes(`name: '${field}'`), `Course schema must expose ${field}`)
+}
+
+const contactSchema = read('sanity/schemaTypes/singletons/contactPage.ts')
+for (const field of ['welcomeCopy', 'formEnabled', 'successMessage']) {
+  assert(contactSchema.includes(`name: '${field}'`), `Contact schema must expose ${field}`)
+}
+
+for (const route of ['documentaries', 'timeline', 'bookshelf', 'course', 'contact']) {
   const page = read(`app/(site)/${route}/page.tsx`)
   assert(!page.includes('noIndex: true'), `${route} must be indexable after its page session`)
 }

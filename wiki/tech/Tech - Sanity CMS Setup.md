@@ -93,8 +93,10 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - `aboutPage` — the six story blocks for [[Page - About]]
 - `fatherPage` — opening copy and archive image slots
 - `workPage` — approved public framing, focus areas, optional work image, and approved-PDF-only CV control
-- `coursePage` — content for [[Page - Course (AI in Healthcare)]]
-- `contactPage` — welcome copy and form destination settings
+- `coursePage` — status, approved context, intended audience, broad themes, current Writing link,
+  and an Available-only action for [[Page - Course (AI in Healthcare)]]
+- `contactPage` — welcome copy, success message, and the author-controlled form switch for
+  [[Page - Contact]]; delivery credentials and recipient stay in private server variables
 
 ---
 

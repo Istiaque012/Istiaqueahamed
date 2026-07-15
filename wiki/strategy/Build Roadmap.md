@@ -52,8 +52,9 @@ Back to [[00 - START HERE]]
 
 - [x] [[Page - Timeline]] — visual life arc.
 - [x] [[Page - Bookshelf]] — books and personal notes.
-- [ ] [[Page - Course (AI in Healthcare)]] — intentional current state and future structure.
-- [ ] [[Page - Contact]] — secure form and social links.
+- [x] [[Page - Course (AI in Healthcare)]] — intentional current state and future structure.
+- [ ] [[Page - Contact]] — page, form protections, and social links are built; real inbox delivery
+  remains deferred under D8.
 
 ## Phase 6 — Finish and launch
 

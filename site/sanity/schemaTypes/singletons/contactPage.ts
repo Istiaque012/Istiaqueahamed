@@ -22,7 +22,14 @@ export const contactPage = defineType({
       title: 'Enable contact form',
       type: 'boolean',
       initialValue: false,
-      description: 'Keep disabled until Session 20 configures real delivery.',
+      description: 'Enable only after the delivery provider and private environment variables are verified.',
+    }),
+    defineField({
+      name: 'successMessage',
+      title: 'Success message',
+      type: 'string',
+      description: 'Shown after confirmed delivery. Keep it short and do not promise a response time.',
+      validation: (rule) => rule.max(160),
     }),
     defineField({
       name: 'formDestinationLabel',

@@ -58,10 +58,10 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Page - Projects]] | Complete StudyRise-led index and case study with Sanity product media and no unapproved concepts | `public` | done |
 | [[Page - Work]] | Curated approved training, experience, focus, future media, and gated CV record | `public` | done |
 | [[Page - Documentaries]] | Performant film room with approved context, lazy YouTube playback, and exact Feed anchors | `public` | done |
-| [[Page - Course (AI in Healthcare)]] | AI-for-doctors course — minimal "coming soon" for now | `public` | planned-minimal |
+| [[Page - Course (AI in Healthcare)]] | Intentional Coming later room with factual audience, future-ready Sanity structure, and no sales promise | `public` | done |
 | [[Page - Timeline]] | Confirmed seven-event life arc with four threads, accessible motion, and deep links | `public` | done |
 | [[Page - Bookshelf]] | Five-title reading library with Sanity status/notes, URL filters, and honest fallbacks | `public` | done |
-| [[Page - Contact]] | Easy, confident ways to reach and follow him | `public` | planned |
+| [[Page - Contact]] | Private form UI, secure fail-closed endpoint, and confirmed socials; real inbox delivery still deferred | `public` | in-progress |
 
 ## Tech
 | Page | Summary | Visibility | Status |

@@ -20,28 +20,36 @@ export function FilterButton({
 
 type FormFieldProps = {
   autoComplete?: string;
+  disabled?: boolean;
   error?: string;
   hint?: string;
   label: string;
+  maxLength?: number;
+  minLength?: number;
   name: string;
   onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   placeholder?: string;
   required?: boolean;
   rows?: number;
+  spellCheck?: boolean;
   type?: "email" | "text" | "url";
   value?: string;
 };
 
 export function FormField({
   autoComplete,
+  disabled,
   error,
   hint,
   label,
+  maxLength,
+  minLength,
   name,
   onChange,
   placeholder,
   required,
   rows,
+  spellCheck,
   type = "text",
   value,
 }: FormFieldProps) {
@@ -50,10 +58,14 @@ export function FormField({
     "aria-describedby": describedBy,
     "aria-invalid": Boolean(error),
     id: name,
+    disabled,
+    maxLength,
+    minLength,
     name,
     onChange,
     placeholder,
     required,
+    spellCheck,
     value,
   };
 

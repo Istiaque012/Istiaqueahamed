@@ -209,8 +209,17 @@ export const workPageQuery = defineQuery(`
     cvEnabled,
     cvFile { asset->{ url, originalFilename } }
   }`)
-export const coursePageQuery = defineQuery(`*[_type == "coursePage"][0]`)
-export const contactPageQuery = defineQuery(`*[_type == "contactPage"][0]`)
+export const coursePageQuery = defineQuery(`
+  *[_type == "coursePage"][0] {
+    _id, _type, _updatedAt, status, headline, body, intendedAudience,
+    themes[] { _key, title, description },
+    writingLink { label, href },
+    primaryAction { label, href }
+  }`)
+export const contactPageQuery = defineQuery(`
+  *[_type == "contactPage"][0] {
+    _id, _type, _updatedAt, welcomeCopy, formEnabled, successMessage
+  }`)
 
 // ── The merged Feed ──────────────────────────────────────────────────────────
 // Pulls blogPost, journalEntry, fatherPiece, project, documentary into one

@@ -1,0 +1,231 @@
+.page {
+  background: var(--black);
+  color: var(--white);
+}
+
+.hero {
+  min-height: calc(100svh - 72px);
+  padding: clamp(154px, 17vw, 230px) 0 clamp(90px, 11vw, 154px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 18%, rgba(255, 255, 255, 0.075), transparent 28%),
+    linear-gradient(124deg, transparent 0 67%, rgba(255, 255, 255, 0.025) 67% 68%, transparent 68%);
+}
+
+.heroGrid {
+  display: grid;
+  min-height: 610px;
+  align-items: end;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+  gap: clamp(56px, 9vw, 140px);
+}
+
+.titleBlock h1 {
+  max-width: 960px;
+  margin: clamp(40px, 8vw, 94px) 0 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(68px, 10.4vw, 150px);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.84;
+  text-wrap: balance;
+}
+
+.statusBlock {
+  max-width: 460px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-dark);
+}
+
+.status {
+  display: inline-flex;
+  min-height: 32px;
+  padding: 0 12px;
+  align-items: center;
+  border: 1px solid #4a4a46;
+  border-radius: 100px;
+  color: #d4d4cf;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.body {
+  margin-top: 34px;
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.82;
+}
+
+.body :global(p) {
+  margin: 0 0 1.1em;
+}
+
+.body :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.primaryLink,
+.writingLink {
+  display: inline-flex;
+  min-height: 44px;
+  margin-top: 34px;
+  padding: 12px 0;
+  align-items: center;
+  gap: 22px;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+  font-size: 11px;
+}
+
+.audience {
+  padding: var(--section-space-lg) 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.audienceGrid {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.4fr) minmax(0, 1.6fr);
+  gap: clamp(44px, 9vw, 140px);
+}
+
+.audience h2,
+.sectionHeading h2,
+.writing h2 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(50px, 7vw, 98px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.audience ul {
+  margin: clamp(54px, 7vw, 90px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.audience li {
+  max-width: 760px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line-dark);
+  color: var(--grey);
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.55;
+}
+
+.audience li:last-child {
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.themes {
+  padding: var(--section-space-lg) 0;
+  background: var(--ivory);
+  color: var(--black);
+}
+
+.sectionHeading {
+  display: grid;
+  margin-bottom: clamp(70px, 10vw, 130px);
+  grid-template-columns: minmax(180px, 0.4fr) minmax(0, 1.6fr);
+  gap: clamp(44px, 9vw, 140px);
+}
+
+.themeList {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-light);
+  list-style: none;
+}
+
+.themeList li {
+  display: grid;
+  min-height: 190px;
+  padding: 34px 0;
+  align-items: center;
+  grid-template-columns: minmax(72px, 0.18fr) minmax(230px, 0.66fr) minmax(0, 1.16fr);
+  gap: 30px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.themeList span {
+  color: #777770;
+  font-size: 9px;
+}
+
+.themeList h3 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(33px, 4vw, 54px);
+  font-weight: 400;
+}
+
+.themeList p {
+  max-width: 540px;
+  margin: 0;
+  color: #555550;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.writing {
+  padding: var(--section-space-lg) 0;
+}
+
+.writingGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.6fr);
+  gap: clamp(60px, 10vw, 160px);
+}
+
+.writing h2 {
+  margin-top: 30px;
+}
+
+.writingGrid > div:last-child {
+  align-self: end;
+}
+
+.writingGrid > div:last-child > p {
+  margin: 0;
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.82;
+}
+
+@media (max-width: 900px) {
+  .heroGrid,
+  .audienceGrid,
+  .sectionHeading,
+  .writingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroGrid {
+    min-height: auto;
+  }
+
+  .statusBlock {
+    max-width: 660px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding-top: 136px;
+  }
+
+  .titleBlock h1 {
+    font-size: clamp(58px, 18vw, 86px);
+  }
+
+  .themeList li {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .themeList p {
+    grid-column: 2;
+  }
+}
