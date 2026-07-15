@@ -229,14 +229,14 @@ Only one row may be `in-progress` at a time.
 | 10 | Shared Writing navigation and editorial components | `done` (2026-07-15) |
 | 11 | Blog index and Blog detail pages | `done` (2026-07-15) |
 | 12 | Journal index and Journal detail pages | `done` (2026-07-15) |
-| 13 | Unified Feed and Home feed integration | `todo` |
-| 14 | Projects index and StudyRise case study | `todo` |
-| 15 | Work page | `todo` |
-| 16 | Documentaries page and film presentation | `todo` |
-| 17 | Timeline page | `todo` |
-| 18 | Bookshelf page | `todo` |
-| 19 | Course page | `todo` |
-| 20 | Contact page and secure form delivery | `todo` |
+| 13 | Unified Feed and Home feed integration | `done` (2026-07-15) |
+| 14 | Projects index and StudyRise case study | `done` (2026-07-15) |
+| 15 | Work page | `done` (2026-07-15) |
+| 16 | Documentaries page and film presentation | `done` (2026-07-15; approved film rehearsal in Session 23) |
+| 17 | Timeline page | `done` (2026-07-15) |
+| 18 | Bookshelf page | `done` (2026-07-15; personal notes in Session 23) |
+| 19 | Course page | `done` (2026-07-15) |
+| 20 | Contact page and secure form delivery | `in-progress` (page/protections done; real delivery configuration deferred) |
 | 21 | Search, AI discoverability, metadata, sitemap, and RSS | `todo` |
 | 22 | Full mobile, accessibility, motion, and performance pass | `todo` |
 | 23 | Photography integration, content seeding, author rehearsal | `todo` |
@@ -254,7 +254,7 @@ until the build can show the exact slot or workflow being decided.
 |---|---|---|
 | Session 05 | Sanity sign-in and secure preview token | Resolved 2026-07-15; read token and revalidation secret configured locally and in Vercel Production/Preview |
 | Session 06–09 | Personal portraits and Father archive images | Exact-ratio labelled placeholders remain until supplied |
-| Session 14 | Three clean StudyRise interface captures | Existing official preview remains temporarily |
+| Session 14 | Three clean StudyRise interface captures | Three exact-purpose placeholders are built and Sanity-authorable; existing official preview remains the primary visual |
 | Session 16 | One or two approved films and Istiaque's context | Build with private test data; do not publish invented context |
 | Session 18 | Personal notes for starter books | Covers/placeholders can be prepared; notes stay draft |
 | Session 20 | Contact recipient and final delivery provider | Form UI can be built; real delivery waits for configuration |
@@ -686,7 +686,27 @@ preview to the same source of truth.
 
 **Done when:** all supported content interleaves correctly and the Home preview agrees with Feed.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: live merged Feed over Blog, Journal, Father, Projects, and Documentaries; deterministic
+  publish-date ordering; URL-backed accessible type filters; stable image/no-image rows; eight-item
+  load-more pagination; RSS at `/feed.xml`; an RSS metadata alternate; Home and Feed queries aligned
+  to the same eligible content, ordering, labels, and destinations
+- Files/areas: `app/(site)/feed/page.tsx`, `components/writing/FeedIndex.tsx`,
+  `app/feed.xml/route.ts`, shared metadata/editorial helpers, Feed GROQ, and Feed CSS
+- Verified: strict TypeScript, zero-warning lint, both Sanity contracts, schema extraction, and the
+  optimized production build pass; `/feed` and `/feed.xml` return 200 and are indexable; RSS has the
+  correct content type and alternate link; desktop and phone review found no overflow, clipped
+  controls, console warnings, or console errors
+- Assets/content: the public dataset remains intentionally empty, so the honest complete-stream
+  state renders; no post, project update, film, date, excerpt, or image was invented
+- Decisions: filters deep-link through `?type=`; project publication uses `publishedAt`; films link
+  to their index until Session 16 supplies their full presentation; the Home teaser remains a
+  smaller projection of the same Feed contract
+- Remaining: populated interleaving, filter counts, and load-more behaviour are type/build-verified
+  but await real content in Session 23 or a labelled temporary draft rehearsal
+- Next entry point: Session 14, present StudyRise as the initial complete project
 
 ## Session 14 — Projects and StudyRise
 
@@ -697,7 +717,29 @@ and GitHub; Sanity media with three screenshot placeholders; omit unapproved con
 **Done when:** StudyRise proves the builder positioning to a general visitor without becoming a
 technical feature list.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: cinematic Projects index with StudyRise as the complete initial project; a general-audience
+  `/projects/studyrise` case study covering the study problem, system, capabilities, build story,
+  product views, stack, live site, and GitHub; future approved-project rendering; branded 404 for
+  unknown projects; expanded Sanity project authoring for publication timing and up to five product
+  screenshots
+- Files/areas: `app/(site)/projects/`, `components/ProjectIndex.tsx`,
+  `components/ProjectCaseStudy.tsx`, project schema/query/types, official StudyRise preview, and
+  Projects/case-study CSS
+- Verified: the shared quality gate and schema extraction pass; `/projects` and
+  `/projects/studyrise` were reviewed at 1440×1000 and 390×844 with correct metadata, links, image
+  behaviour, active navigation, no final horizontal overflow, and no console warnings/errors;
+  an unapproved slug returns the branded 404
+- Assets/content: the existing official StudyRise preview is the primary visual; Today dashboard,
+  Study plan, and Progress & analytics have exact-purpose placeholders wired to Sanity; no MedLink,
+  hospital tool, smoking tracker, user claim, result, date, or unapproved project was published
+- Decisions: confirmed source facts provide the launch fallback so Projects feels complete before
+  Sanity seeding; published Sanity copy/media can replace and extend that record without code
+- Remaining: replace the three product placeholders with clean approved captures when supplied;
+  runtime-review a fully Sanity-authored project during Session 23
+- Next entry point: Session 15, build the curated public Work record
 
 ## Session 15 — Work
 
@@ -708,7 +750,26 @@ approved document exists; links to About, Projects, and Writing.
 **Done when:** Work establishes trust using only approved public facts and does not read like a
 dense résumé.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: responsive editorial Work page with approved D5 public framing, confirmed medical/public
+  health training, selected 2016–2018 experience, StudyRise founder role, five areas of focus,
+  optional Sanity work image, future publications/media room, an approved-PDF-only CV control, and
+  direct paths to About, Projects, and Writing
+- Files/areas: `app/(site)/work/page.tsx`, `components/Work.tsx`, Work singleton query/type/schema,
+  global RSS metadata support, and Work CSS
+- Verified: the shared quality gate and schema extraction pass; `/work` was reviewed at 1440×1000
+  and 390×844 with the photo placeholder, disabled CV state, full chronology, correct active nav,
+  no horizontal overflow, and no console warnings/errors; refreshed code graph has 612 nodes and
+  1,036 edges
+- Assets/content: no current RMO, hospital-director, My Care Pro, publication, talk, CV, employer
+  date, or work photograph was invented; the detailed titles excluded by D5 remain absent
+- Decisions: use the approved broad D5 role line while keeping the Home's confirmed identity line;
+  enable CV only when both the Studio toggle and a real uploaded PDF are present
+- Remaining: optional work photograph, public CV, interviews, publications, and detailed current
+  roles remain intentionally absent until separately approved and supplied
+- Next entry point: Session 16, build the documentary index and performant film presentation
 
 ## Session 16 — Documentaries
 
@@ -718,7 +779,27 @@ personal context and themes from Sanity, channel link, video metadata, and Feed 
 **Done when:** at least one approved film plays without harming mobile performance and newly
 published films enter Feed automatically.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done; the approved-film content rehearsal remains intentionally deferred
+- Completed: 2026-07-15
+- Built: cinematic film index with newest featured presentation, responsive archive grid,
+  click-to-load `youtube-nocookie.com` playback, automatic YouTube thumbnail plus Sanity override,
+  designed invalid/missing-thumbnail states, approved context and multi-theme fields, canonical
+  channel links, conditional `VideoObject` metadata, and Feed/RSS destinations that open the exact
+  film anchor
+- Files/areas: `app/(site)/documentaries/page.tsx`, `components/Documentaries.tsx`,
+  `components/YouTubeFacade.tsx`, YouTube/editorial/JSON-LD helpers, documentary schema/query/type,
+  remote-image configuration, and Documentary CSS
+- Verified: shared quality gate and schema extraction pass; YouTube URL parsing is runtime-checked
+  for watch, short, embed, and privacy-enhanced formats; the indexable empty public state was
+  reviewed at 1440×1000 and 390×844 with zero preloaded YouTube iframes, no overflow, and no
+  console warnings/errors
+- Assets/content: no film title, subject, date, thumbnail, or personal context was invented; the
+  page links to the confirmed YouTube channel while waiting for C5 approval
+- Remaining: select one or two real films, approve the context, and click-test populated playback
+  during Session 23; the code path is type/build-verified but cannot honestly satisfy that content
+  rehearsal before an approved film exists
+- Next entry point: Session 17, build the confirmed life arc
 
 ## Session 17 — Timeline
 
@@ -729,7 +810,26 @@ only confirmed dates are seeded.
 **Done when:** the whole journey is understandable as a narrative on phone and desktop without
 animation being necessary to access the information.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: seven-event confirmed opening chronology; Medicine, Tech, Personal, and Australia threads;
+  responsive cinematic progression; reduced-motion-safe reveals; deliberate Sanity story order;
+  optional event deep links; and direct About, Father, Projects, and Work continuations
+- Files/areas: `app/(site)/timeline/page.tsx`, `components/Timeline.tsx`, timeline schema/query/type,
+  shared hash/smooth-scroll coordination, and Timeline CSS
+- Verified: shared quality gate and schema extraction pass; all seven confirmed events render in
+  source order; `/timeline#event-mph` lands below the fixed navigation at desktop and phone sizes;
+  desktop and 390×844 review found no horizontal overflow, clipped narrative, console warning, or
+  console error, and no information depends on motion
+- Assets/content: only D7-confirmed dates and established public facts are present; My Care Pro,
+  birth, school, faith, fitness, and other unapproved personal milestones remain absent
+- Decisions: the confirmed code fallback keeps the launch page complete until a deliberately
+  ordered Sanity chronology replaces it; partial unreviewed CMS timelines do not mix with the
+  canonical fallback
+- Remaining: add optional approved personal milestones or an Australia section-break photograph
+  in Session 23
+- Next entry point: Session 18, build the reading library
 
 ## Session 18 — Bookshelf
 
@@ -739,7 +839,26 @@ Journal Read entries, responsive image treatment, and graceful missing-cover sta
 **Done when:** five starter books can be managed in Sanity and each note sounds personal rather
 than generated or assumed.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done; approved personal notes and covers remain intentionally deferred
+- Completed: 2026-07-15
+- Built: light editorial, cover-led library; exact 2:3 Sanity covers and designed fallbacks;
+  URL-backed All/Reading/Read/Want-to-read filters; five confirmed starter titles; honest
+  unpublished status/note treatment; direct Journal Read-to-book anchors; and optional shelf order
+- Files/areas: `app/(site)/bookshelf/page.tsx`, `components/Bookshelf.tsx`, shared editorial/filter
+  helpers, book schema/query/type, exact-ratio image primitive, and Bookshelf CSS
+- Verified: shared quality gate and schema extraction pass; five confirmed titles render; filters
+  announce empty results and preserve their URL state; book anchors land below navigation; desktop
+  and 390×844 review found and fixed the initial title orphan and intrinsic-width overflow, with no
+  final horizontal overflow or console warnings/errors; refreshed code graph has 651 nodes and
+  1,069 edges
+- Assets/content: no author, reading status, cover, or personal opinion was assumed; the private C6
+  tone samples remain unpublished
+- Decisions: source-confirmed titles form the complete no-CMS fallback; once reviewed Sanity books
+  exist, their real authors, statuses, covers, order, and Istiaque-authored notes take over
+- Remaining: approve C6 notes, upload/source approved covers, and runtime-review populated filters
+  plus a Journal Read cross-link during Session 23
+- Next entry point: Session 19, build the intentional Course coming-later route
 
 ## Session 19 — Course
 
@@ -749,7 +868,23 @@ Sanity fields so a future course can replace the minimal state without a redesig
 
 **Done when:** the page feels intentional while making no promise beyond current reality.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: complete indexable Course route with an intentional Coming later state, factual purpose
+  and audience, broad future themes, current Writing doorway, and no signup, price, date, module,
+  outcome, or enrolment claim
+- Files/areas: Course route/component/styles; explicit Course GROQ projection and TypeScript type;
+  expanded Course singleton with status, audience, themes, Writing link, and available-only action
+- Verified: shared quality gate and schema extraction pass; `http://localhost:3000/course` reviewed
+  at 1440×1000 and 390×844 with no horizontal overflow or console warning/error
+- Assets/content: no image is required; neutral fallback copy publishes only the confirmed future
+  direction, while a published Sanity singleton can replace it without changing the layout
+- Decisions: keep registration, waitlist, format, dates, curriculum, pricing, and outcomes absent
+  until approved; show a course action only when the CMS status is explicitly Available
+- Remaining: none for the honest Coming later version; future offer/content approval remains a
+  separate enhancement
+- Next entry point: Session 20, complete Contact while preserving the deferred delivery decision
 
 ## Session 20 — Contact
 
@@ -759,7 +894,28 @@ where appropriate, and delivery through the selected provider.
 
 **Done when:** a real test message reaches Istiaque and invalid/repeated submissions fail safely.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: in-progress
+- Completed: 2026-07-15 (implementation; delivery rehearsal pending)
+- Built: complete indexable Contact route; confirmed social directory; no public email; accessible
+  Name/Email/Message form with inline errors, first-error focus, pending/success/error states,
+  honeypot, same-origin and content-size checks, shared client/server validation, hashed per-instance
+  rate limiting, and a fail-closed Resend handoff
+- Files/areas: Contact route/components/styles; `/api/contact`; contact validation and private
+  delivery helpers; Contact GROQ/type/schema; environment example; automated Contact contract
+- Verified: shared quality gate and schema extraction pass; invalid payload returns 400, cross-origin
+  submission 403, honeypot 200 without delivery, unconfigured delivery 503, and the sixth repeated
+  valid request 429; `http://localhost:3000/contact` reviewed at 1440×1000 and 390×844 with no
+  overflow, public email link, console warning, or console error; refreshed code graph has 708
+  nodes and 1,172 edges
+- Assets/content: canonical six social URLs come from the same public register as the Footer and
+  Person entity; no recipient, sender, token, or email address is committed or sent to the browser
+- Decisions: require both the Sanity Enable contact form switch and four private server variables;
+  keep the form clearly unavailable rather than accepting messages that cannot be delivered
+- Remaining: D8 is still deferred. Configure `CONTACT_FORM_ENABLED`, `RESEND_API_KEY`,
+  `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL`, enable the Contact singleton, send one real message,
+  confirm arrival, and repeat the production abuse checks before marking Session 20 done
+- Next entry point: configure and verify real delivery; then close Session 20 and begin Session 21
 
 ## Session 21 — Search and discoverability
 

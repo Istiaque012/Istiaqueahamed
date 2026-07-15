@@ -106,14 +106,59 @@ export type Project = BaseContent & {
   name: string
   slug?: string
   tagline?: string
-  summary?: string
-  body?: PortableTextBlock[]
+  description?: PortableTextBlock[]
   coverImage?: SanityImageWithMetadata
+  screenshots?: Array<SanityImageWithMetadata & { _key: string }>
   techStack?: string[]
   liveUrl?: string
   githubUrl?: string
   status?: string
   featured?: boolean
+}
+
+export type WorkPage = BaseContent & {
+  _type: 'workPage'
+  publicFraming?: PortableTextBlock[]
+  areasOfFocus?: Array<{
+    _key: string
+    title: string
+    description?: string
+  }>
+  workImage?: SanityImageWithMetadata
+  cvEnabled?: boolean
+  cvFile?: {
+    asset?: {
+      url?: string
+      originalFilename?: string
+    }
+  }
+}
+
+export type RouteLink = {
+  label?: string
+  href?: string
+}
+
+export type CoursePage = BaseContent & {
+  _type: 'coursePage'
+  status?: 'comingLater' | 'inDevelopment' | 'available'
+  headline?: string
+  body?: PortableTextBlock[]
+  intendedAudience?: string[]
+  themes?: Array<{
+    _key: string
+    title: string
+    description?: string
+  }>
+  writingLink?: RouteLink
+  primaryAction?: RouteLink
+}
+
+export type ContactPage = BaseContent & {
+  _type: 'contactPage'
+  welcomeCopy?: PortableTextBlock[]
+  formEnabled?: boolean
+  successMessage?: string
 }
 
 export type Documentary = BaseContent & {
@@ -123,6 +168,8 @@ export type Documentary = BaseContent & {
   thumbnail?: SanityImageWithMetadata
   description?: string
   topic?: string
+  themes?: string[]
+  featured?: boolean
 }
 
 export type Book = BaseContent & {
@@ -132,6 +179,7 @@ export type Book = BaseContent & {
   coverImage?: SanityImageWithMetadata
   note?: string
   status?: 'Reading' | 'Read' | 'Want to read'
+  sortOrder?: number
 }
 
 export type TimelineEvent = BaseContent & {
@@ -139,7 +187,12 @@ export type TimelineEvent = BaseContent & {
   year?: string
   title: string
   description?: string
-  category?: string
+  category?: 'Medicine' | 'Tech' | 'Personal' | 'Australia'
+  sortOrder?: number
+  relatedLink?: {
+    label?: string
+    href?: string
+  }
 }
 
 export type FeedItem = {

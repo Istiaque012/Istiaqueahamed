@@ -12,7 +12,8 @@ export default function ScrollManager() {
 
     const frame = window.requestAnimationFrame(() => {
       if (window.location.hash) {
-        document.querySelector(window.location.hash)?.scrollIntoView();
+        const id = decodeURIComponent(window.location.hash.slice(1));
+        document.getElementById(id)?.scrollIntoView();
       } else {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       }

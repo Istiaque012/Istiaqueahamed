@@ -35,7 +35,10 @@ export function createPageMetadata({
   return {
     title,
     description,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      types: { "application/rss+xml": `${SITE_URL}/feed.xml` },
+    },
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
     openGraph: {
       title,

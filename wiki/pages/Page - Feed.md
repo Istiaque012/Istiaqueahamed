@@ -1,7 +1,8 @@
 ---
 title: Page - Feed
 type: page
-status: planned
+status: done
+visibility: public
 created: 2026-06-28
 updated: 2026-07-15
 tags: [project/website, page]
@@ -43,12 +44,13 @@ Back to [[Site Architecture]]
 - Restrained motion as items enter on scroll (see [[Design System#Motion]])
 - The father items can carry a subtler, quieter tag treatment
 
-## Shared foundation — 2026-07-15
+## Built — Session 13
 
-The `/feed` route now carries the completed Writing navigator, dark editorial scaffold, honest
-empty state, and cross-links into Blog and Journal. Shared row/card, metadata, filter, no-image,
-pagination, and destination helpers are ready for Session 13 to connect to the existing merged GROQ
-query. The route remains noindex and `status: planned` until that real stream is produced.
+The public `/feed` route now uses the live merged Sanity chronology shared with the Home teaser.
+It has URL-backed filters for all five content families, stable image/no-image rows, eight-item
+load-more pagination, honest empty/no-result states, and RSS at `/feed.xml`. Feed is indexable and
+advertises its RSS alternate. The populated interaction path awaits approved content; the empty
+public dataset does not block the production system.
 
 ---
 

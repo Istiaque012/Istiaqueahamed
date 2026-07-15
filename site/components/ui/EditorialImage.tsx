@@ -4,7 +4,7 @@ type MediaPlaceholderProps = {
   altGuidance: string;
   className?: string;
   label?: string;
-  ratio?: "portrait" | "landscape" | "square" | "wide";
+  ratio?: "book" | "portrait" | "landscape" | "square" | "wide";
 };
 
 export function MediaPlaceholder({

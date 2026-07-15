@@ -462,3 +462,58 @@ Completed the Blog and Journal reading experiences on the Session 10 shared Writ
   content (Session 23) or a labelled test draft for runtime review.
 - Updated the [[Build Roadmap]] Phase 3 checkboxes, the [[BUILD-PLAN]] progress table and Session
   11–12 Handoffs, and the [[Page - Blog]]/[[Page - Journal]] rows in `index.md`.
+
+## [2026-07-15] build | Sessions 13–15 Feed, Projects, and Work completed
+Completed the unified publishing stream and the first two Work-and-making pages without publishing
+unapproved content or professional detail.
+- **Feed**: live merged Blog/Journal/Father/Project/Documentary chronology, URL-backed filters,
+  stable image/no-image rows, load-more pagination, aligned Home teaser rules, and `/feed.xml` RSS.
+- **Projects**: StudyRise-led index and full general-audience case study with the official preview,
+  three Sanity-authorable screenshot placeholders, live/GitHub links, and future approved-project support.
+- **Work**: approved broad D5 framing, confirmed training and selected experience, five focus areas,
+  optional work image, future media room, PDF-gated CV control, and About/Projects/Writing paths.
+- Added project publication/screenshot fields, the Work CV file field, stricter live-contract checks,
+  indexable page metadata, canonical/RSS alternates, and responsive styling. Detailed current roles,
+  unapproved projects, publications, CV, personal photographs, and product claims remain absent.
+- Strict TypeScript, zero-warning lint, both Sanity contracts, enforced schema extraction, and the
+  Next.js production build pass. Desktop and phone review found and fixed one StudyRise title overflow;
+  all final reviewed routes have no horizontal overflow, clipped controls, console warnings, or errors.
+- Refreshed the codebase-memory graph after the final code pass: 612 nodes and 1,036 edges.
+
+## [2026-07-15] build | Sessions 16–18 Documentaries, Timeline, and Bookshelf completed
+Completed the final film, life-archive, and reading pages before the minimal Course and Contact work.
+- **Documentaries:** built featured/archive presentation, click-to-load privacy-enhanced YouTube
+  facade, automatic/custom thumbnail fallbacks, approved context/themes, conditional video
+  metadata, channel links, and Feed/RSS anchors without inventing a film or loading an iframe in
+  the empty public state.
+- **Timeline:** built a seven-event confirmed chronology across Medicine, Tech, Personal, and
+  Australia, with deliberate Sanity order, optional related links, reduced-motion-safe reveals,
+  fixed-navigation-safe event hashes, and About/Father/Projects/Work continuations. Unapproved
+  personal milestones and My Care Pro remain absent.
+- **Bookshelf:** built the exact 2:3 cover library, URL-backed status filters, five confirmed
+  source titles, Sanity-managed covers/status/order/notes, direct Journal book anchors, and honest
+  unpublished states. Private C6 tone samples were not published as personal opinions.
+- The shared quality gate and schema extraction pass. Desktop and 390×844 browser QA found and
+  fixed deep-link reset, a desktop Bookshelf title orphan, and a phone intrinsic-width overflow;
+  final routes are indexable, have no horizontal overflow, and report no console warnings/errors.
+- Approved film selection/context, book covers/notes, and populated playback/filter rehearsal move
+  to Session 23 alongside the planned content-seeding pass.
+- Refreshed the final codebase-memory graph: 651 nodes and 1,069 edges.
+
+## [2026-07-15] build | Sessions 19–20 Course and Contact advanced
+Completed the honest Course experience and all code-owned Contact work without accepting messages
+before a private inbox is connected.
+- **Course:** replaced the placeholder with a complete indexable Coming later room, factual audience,
+  broad future themes, current Writing doorway, and a Sanity model that reveals a course action only
+  after explicit Available status. No waitlist, price, date, format, module, outcome, or sales claim
+  is published.
+- **Contact:** built the indexable form/social route, canonical six-link directory, no-public-email
+  boundary, shared client/server validation, first-error focus, async states, honeypot, same-origin
+  and size checks, hashed per-instance rate limiting, and a fail-closed Resend handoff.
+- The shared quality gate, schema extraction, and Contact contract pass. Local API checks returned
+  the expected 400/403/503/429 results; 1440×1000 and 390×844 reviews found no overflow, public
+  email link, console warning, or console error. The refreshed graph contains 708 nodes and 1,172
+  edges.
+- Session 19 is done. Session 20 remains in-progress because D8 still defers the provider/recipient:
+  the live form stays clearly disabled until four private delivery variables are configured, the
+  Sanity switch is enabled, and a real message is confirmed in Istiaque's inbox.

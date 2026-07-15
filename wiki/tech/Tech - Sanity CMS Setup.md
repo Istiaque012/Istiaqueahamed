@@ -54,9 +54,11 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - slug
 - tagline
 - coverImage
+- screenshots (up to five approved product views)
 - description (Portable Text)
 - techStack (array)
 - liveUrl / githubUrl
+- publishedAt (Feed ordering)
 - status (Live / In progress / Concept)
 - featured (boolean — StudyRise is featured)
 
@@ -64,9 +66,10 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - title
 - youtubeUrl (for embed)
 - thumbnail
-- description
+- description (required approved public context)
 - publishedAt
-- topic / theme
+- primary topic / up to five supporting themes
+- featured (newest featured film opens the page)
 
 ### `book` → [[Page - Bookshelf]]
 - title
@@ -74,27 +77,40 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - coverImage
 - note (what it meant to me)
 - status (Reading / Read / Want to read)
+- optional shelf order
 
 ### `timelineEvent` → [[Page - Timeline]]
 - year
 - title
 - description
 - category (Medicine / Tech / Personal / Australia)
+- optional story order
+- optional related-page link
 
 ### Singletons (one-off documents)
 - `siteSettings` — name, tagline, bio, social links, OG image, Person-schema fields
 - `homePage` — editable Home copy and personal-image slots
 - `aboutPage` — the six story blocks for [[Page - About]]
 - `fatherPage` — opening copy and archive image slots
-- `workPage` — approved public framing and optional work image
-- `coursePage` — content for [[Page - Course (AI in Healthcare)]]
-- `contactPage` — welcome copy and form destination settings
+- `workPage` — approved public framing, focus areas, optional work image, and approved-PDF-only CV control
+- `coursePage` — status, approved context, intended audience, broad themes, current Writing link,
+  and an Available-only action for [[Page - Course (AI in Healthcare)]]
+- `contactPage` — welcome copy, success message, and the author-controlled form switch for
+  [[Page - Contact]]; delivery credentials and recipient stay in private server variables
 
 ---
 
 ## The feed query
 
 The [[Page - Feed]] doesn't have its own schema. It's a GROQ query that pulls `blogPost`, `journalEntry`, `fatherPiece`, `project`, and `documentary`, merges them, and sorts by `publishedAt` descending. Each item carries a `_type` so the UI can show the right tag and filter.
+
+Session 13 now exposes that same contract as the complete visitor Feed and `/feed.xml` RSS. Home's
+smaller teaser keeps the same eligibility, order, label, and destination rules, so the two surfaces
+cannot disagree about what is newest.
+
+Session 16 keeps Documentary publication in the same Feed/RSS contract and now sends each Feed
+link to the film's stable page anchor. YouTube embeds are facades: the external player loads only
+after a visitor chooses Play.
 
 Home uses two related queries: one optional published Blog/Journal item with
 `featureOnHome == true`, plus the three newest published Blog/Journal items excluding that item.

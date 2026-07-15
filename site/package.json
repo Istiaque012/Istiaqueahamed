@@ -13,7 +13,8 @@
     "lint": "eslint . --max-warnings=0",
     "verify:sanity-authoring": "sanity exec scripts/verify-sanity-authoring.ts",
     "verify:sanity-live": "sanity exec scripts/verify-sanity-live.ts",
-    "quality": "npm run typecheck && npm run lint && npm run verify:sanity-authoring && npm run verify:sanity-live && npm run build"
+    "verify:contact": "sanity exec scripts/verify-contact.ts",
+    "quality": "npm run typecheck && npm run lint && npm run verify:sanity-authoring && npm run verify:sanity-live && npm run verify:contact && npm run build"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.4",

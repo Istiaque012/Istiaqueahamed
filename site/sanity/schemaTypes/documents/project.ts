@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export const project = defineType({
   name: 'project',
@@ -18,10 +18,27 @@ export const project = defineType({
       description: 'One-line public explanation for project cards.',
     }),
     defineField({ name: 'coverImage', type: 'imageWithMetadata' }),
-    defineField({ name: 'description', type: 'portableContent' }),
+    defineField({
+      name: 'screenshots',
+      type: 'array',
+      description: 'Approved product views. The website has labelled placeholders until these are uploaded.',
+      of: [defineArrayMember({ type: 'imageWithMetadata' })],
+      validation: (rule) => rule.max(5),
+    }),
+    defineField({
+      name: 'description',
+      type: 'portableContent',
+      description: 'The approved build story, written for a general visitor.',
+    }),
     defineField({ name: 'techStack', type: 'array', of: [{ type: 'string' }], options: { layout: 'tags' } }),
     defineField({ name: 'liveUrl', type: 'url' }),
     defineField({ name: 'githubUrl', type: 'url' }),
+    defineField({
+      name: 'publishedAt',
+      type: 'datetime',
+      description: 'Controls where this project appears in the public Feed.',
+      validation: (rule) => rule.required(),
+    }),
     defineField({
       name: 'status',
       type: 'string',

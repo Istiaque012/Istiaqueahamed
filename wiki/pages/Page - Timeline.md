@@ -1,9 +1,9 @@
 ---
 title: Page - Timeline
 type: page
-status: planned
+status: done
 created: 2026-06-28
-updated: 2026-07-14
+updated: 2026-07-15
 visibility: public
 tags: [project/website, page]
 ---
@@ -38,10 +38,22 @@ Medicine · Tech · Personal · Australia
 - Vertical scroll timeline with cinematic motion — items reveal as you scroll (see [[Design System#Motion]])
 - This is a signature, animated page; a place to show off the "Framer-style or better" motion
 - Keep each entry short; let the arc tell the story
+- The confirmed fallback has seven events and is replaced by the deliberately ordered Sanity
+  chronology once reviewed events exist
+- Every reveal has a reduced-motion equivalent; content is never gated by animation
+- Event and continuation links open [[Page - About]], [[Page - My Beloved Father]],
+  [[Page - Projects]], and [[Page - Work]]
 
 ## Schema
 
 `timelineEvent` — see [[Tech - Sanity CMS Setup#timelineEvent Page - Timeline]]
+
+## Build status — Session 17
+
+The complete responsive page is live with the four category threads, exact confirmed dates, a
+cinematic numbered rail, optional Sanity deep links and story order, and a four-route closing
+directory. Direct event hashes land below the fixed navigation on desktop and phone. My Care Pro
+and all unapproved personal dates remain absent.
 
 ---
 

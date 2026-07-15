@@ -23,14 +23,14 @@ tags: [project/website, planning, images]
 | 1 | Hero portrait — cinematic, dark, can be moody/partial | Home · hero | 4:5 (desktop crop 16:9 tolerant) | Istiaque Ahamed — medical doctor and healthcare systems builder | generated-placeholder — architectural visual in v1; portrait still needed |
 | 2 | Professional headshot (the canonical one, reused on socials) | About · intro block; OG fallback | 1:1 | Portrait of Dr. Istiaque Ahamed | placeholder — built and Sanity-authorable |
 | 3 | Natural-light human photo (desk/writing or candid) | About · "human side" block | 3:2 | Istiaque Ahamed writing at his desk | placeholder — built and Sanity-authorable |
-| 4 | Hospital / work environment photo | Work · header (optional) and About | 16:9 | Istiaque Ahamed at work in the hospital | placeholder — About slot built and Sanity-authorable |
+| 4 | Hospital / work environment photo | Work · header (optional) and About | 16:9 | Istiaque Ahamed at work in the hospital | placeholder — About and Work slots built and Sanity-authorable |
 | 5 | Father's photograph (the one photo that matters most) | My Beloved Father · opening | 4:5 | Istiaque Ahamed's father | placeholder — built and Sanity-authorable |
 | 6 | Father gallery — 2–4 restrained images (family, era photos) | My Beloved Father · gallery | mixed, displayed 3:2 | — (write per photo) | placeholder — three built slots; up to four Sanity-authorable images |
-| 7 | StudyRise screenshots — Today dashboard, study plan, analytics (3–5 clean captures) | Projects · featured; Home projects card | 16:10 (browser frame) | StudyRise study-planning app by Istiaque Ahamed — Today dashboard | supplied — official OG preview used in v1; detailed captures still needed later |
+| 7 | StudyRise screenshots — Today dashboard, study plan, analytics (3–5 clean captures) | Projects · featured; Home projects card | 16:10 (browser frame) | StudyRise study-planning app by Istiaque Ahamed — Today dashboard | supplied + placeholders — official preview live; three detailed slots built and Sanity-authorable |
 | 8 | My Care Pro visual | Omitted from initial public site | — | — | not-needed |
 | 9 | Blog cover images — 1 per post, editorial | Blog · per post (via Sanity) | 16:9 | per post | placeholder |
-| 10 | Documentary thumbnails (pulled from YouTube; custom if desired) | Documentaries · grid | 16:9 | per film | auto from YouTube |
-| 11 | Book covers × 5 starters | Bookshelf · grid | 2:3 | "<Title> — on Istiaque Ahamed's bookshelf" | sourced by Claude (public covers) |
+| 10 | Documentary thumbnails (pulled from YouTube; custom if desired) | Documentaries · grid | 16:9 | per film | live path — automatic YouTube thumbnail + Sanity override; approved film pending |
+| 11 | Book covers × 5 starters | Bookshelf · grid | 2:3 | "<Title> — on Istiaque Ahamed's bookshelf" | placeholder — exact-ratio fallback built and Sanity-authorable; approved covers pending |
 | 12 | Travel / Australia photo | Timeline · Australia section break; About | 16:9 | Istiaque Ahamed in Australia | placeholder — About slot built and Sanity-authorable |
 | 13 | Fitness photo (optional, tasteful) | About · human side / Timeline | 4:5 | Istiaque Ahamed — training | placeholder |
 | 14 | OG share image — name + photo + tagline composition | Site-wide meta | 1200×630 (1.91:1) | — | generated-placeholder — bespoke architectural card wired in v1; replace after #2 |

@@ -68,36 +68,37 @@ export const fatherPieceBySlugQuery = defineQuery(`
 
 // ── Projects ─────────────────────────────────────────────────────────────────
 export const projectsQuery = defineQuery(`
-  *[_type == "project"] | order(featured desc, name asc) {
+  *[_type == "project" && defined(slug.current)] | order(featured desc, publishedAt desc, name asc) {
     _id, _type, _updatedAt, name, "slug": slug.current, tagline,
     "coverImage": coverImage ${IMAGE}, techStack,
-    liveUrl, githubUrl, status, featured
+    liveUrl, githubUrl, publishedAt, status, featured
   }`)
 
 export const projectBySlugQuery = defineQuery(`
   *[_type == "project" && slug.current == $slug][0] {
     _id, _type, _updatedAt, name, "slug": slug.current, tagline,
-    "coverImage": coverImage ${IMAGE}, summary, body, techStack,
-    liveUrl, githubUrl, status, featured
+    "coverImage": coverImage ${IMAGE}, "screenshots": screenshots[] ${IMAGE},
+    description, techStack, liveUrl, githubUrl, publishedAt, status, featured
   }`)
 
 // ── Documentaries ────────────────────────────────────────────────────────────
 export const documentariesQuery = defineQuery(`
-  *[_type == "documentary"] | order(publishedAt desc) {
+  *[_type == "documentary"] | order(featured desc, publishedAt desc, _id asc) {
     _id, _type, _updatedAt, title, youtubeUrl, "thumbnail": thumbnail ${IMAGE},
-    description, topic, publishedAt
+    description, topic, themes, featured, publishedAt
   }`)
 
 // ── Books ────────────────────────────────────────────────────────────────────
 export const booksQuery = defineQuery(`
-  *[_type == "book"] | order(_createdAt desc) {
-    _id, _type, _updatedAt, title, author, "coverImage": coverImage ${IMAGE}, note, status
+  *[_type == "book"] | order(coalesce(sortOrder, 999) asc, title asc, _id asc) {
+    _id, _type, _updatedAt, title, author, "coverImage": coverImage ${IMAGE}, note, status, sortOrder
   }`)
 
 // ── Timeline ─────────────────────────────────────────────────────────────────
 export const timelineQuery = defineQuery(`
-  *[_type == "timelineEvent"] | order(year asc) {
-    _id, _type, _updatedAt, year, title, description, category
+  *[_type == "timelineEvent"] | order(coalesce(sortOrder, 999) asc, year asc, _id asc) {
+    _id, _type, _updatedAt, year, title, description, category, sortOrder,
+    relatedLink { label, href }
   }`)
 
 // ── Singletons ───────────────────────────────────────────────────────────────
@@ -200,9 +201,25 @@ export const fatherPageQuery = defineQuery(`
       "image": image ${IMAGE}
     }
   }`)
-export const workPageQuery = defineQuery(`*[_type == "workPage"][0]`)
-export const coursePageQuery = defineQuery(`*[_type == "coursePage"][0]`)
-export const contactPageQuery = defineQuery(`*[_type == "contactPage"][0]`)
+export const workPageQuery = defineQuery(`
+  *[_type == "workPage"][0] {
+    _id, _type, _updatedAt, publicFraming,
+    areasOfFocus[] { _key, title, description },
+    "workImage": workImage ${IMAGE},
+    cvEnabled,
+    cvFile { asset->{ url, originalFilename } }
+  }`)
+export const coursePageQuery = defineQuery(`
+  *[_type == "coursePage"][0] {
+    _id, _type, _updatedAt, status, headline, body, intendedAudience,
+    themes[] { _key, title, description },
+    writingLink { label, href },
+    primaryAction { label, href }
+  }`)
+export const contactPageQuery = defineQuery(`
+  *[_type == "contactPage"][0] {
+    _id, _type, _updatedAt, welcomeCopy, formEnabled, successMessage
+  }`)
 
 // ── The merged Feed ──────────────────────────────────────────────────────────
 // Pulls blogPost, journalEntry, fatherPiece, project, documentary into one
@@ -210,8 +227,10 @@ export const contactPageQuery = defineQuery(`*[_type == "contactPage"][0]`)
 // render the right tag and filter. Projects have no publishedAt → fall back to
 // _createdAt so they still interleave.
 export const feedQuery = defineQuery(`
-  *[_type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"]]
-    | order(coalesce(publishedAt, _createdAt) desc) {
+  *[
+    _type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"] &&
+    (_type == "documentary" || defined(slug.current))
+  ] | order(coalesce(publishedAt, _createdAt) desc, _id asc) {
       _id, _type, _updatedAt,
       "date": coalesce(publishedAt, _createdAt),
       "title": select(_type == "project" => name, title),
@@ -245,8 +264,10 @@ export const feedQuery = defineQuery(`
 
 // A short teaser for the Home page — top N of the same feed.
 export const feedTeaserQuery = defineQuery(`
-  *[_type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"]]
-    | order(coalesce(publishedAt, _createdAt) desc)[0...$limit] {
+  *[
+    _type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"] &&
+    (_type == "documentary" || defined(slug.current))
+  ] | order(coalesce(publishedAt, _createdAt) desc, _id asc)[0...$limit] {
       _id, _type, _updatedAt,
       "date": coalesce(publishedAt, _createdAt),
       "title": select(_type == "project" => name, title),

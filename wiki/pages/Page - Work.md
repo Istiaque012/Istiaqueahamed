@@ -1,9 +1,9 @@
 ---
 title: Page - Work
 type: page
-status: planned
+status: done
 created: 2026-06-28
-updated: 2026-07-14
+updated: 2026-07-15
 visibility: public
 tags: [project/website, page]
 ---
@@ -55,6 +55,14 @@ Preventive medicine · public health · healthcare systems & operations · healt
 
 - Restrained, premium, easy to scan
 - Pairs with the fuller life story in [[Page - Timeline]]
+
+## Built — Session 15
+
+`/work` is now a curated editorial record rather than a dense résumé: the approved broad role line,
+confirmed training, selected 2016–2018 experience, StudyRise, five focus areas, a future media room,
+and routes into About, Projects, and Writing. The optional work photograph stays a precise Sanity
+placeholder. The CV control remains disabled unless a real approved PDF is both uploaded and enabled;
+detailed current titles excluded by D5 do not appear.
 
 ---
 

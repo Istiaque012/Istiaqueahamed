@@ -1,9 +1,9 @@
 ---
 title: Page - Projects
 type: page
-status: planned
+status: done
 created: 2026-06-28
-updated: 2026-07-14
+updated: 2026-07-15
 visibility: public
 tags: [project/website, page]
 ---
@@ -54,6 +54,14 @@ A study-planning platform that turns exams and academic courses into structured 
 - Tech is shown but explained in human terms
 - Project updates flow into the [[Page - Feed]]
 - Editable project copy: [[Sample Content Drafts#C5 · StudyRise and documentary copy]]
+
+## Built — Session 14
+
+`/projects` now opens with StudyRise as a complete launch project, while `/projects/studyrise`
+explains the problem, system, capabilities, product views, build story, stack, live site, and GitHub
+for a general visitor. The existing official preview is live; three exact-purpose product-view
+placeholders are wired to a new Sanity screenshot array. Unknown/unapproved projects return the
+branded 404, and the initial page names no private concepts.
 
 ---
 

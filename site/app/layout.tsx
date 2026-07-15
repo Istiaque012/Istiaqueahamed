@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   },
   description:
     "Istiaque Ahamed is a doctor, healthcare leader, and founder working across Bangladesh and Australia. Medicine, technology, and the life in between.",
+  alternates: {
+    types: { "application/rss+xml": `${SITE_URL}/feed.xml` },
+  },
   openGraph: {
     title: "Istiaque Ahamed — Medicine, technology, and the life in between",
     description: "Doctor, healthcare leader, and founder working across Bangladesh and Australia.",

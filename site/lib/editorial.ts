@@ -14,11 +14,19 @@ export function formatEditorialDate(date?: string) {
 }
 
 export function feedItemHref(item: FeedItem) {
-  if (item._type === "documentary") return "/documentaries";
+  if (item._type === "documentary") return `/documentaries#${documentaryAnchorId(item._id)}`;
   if (item._type === "project") return item.slug ? `/projects/${item.slug}` : "/projects";
   if (item._type === "fatherPiece") return item.slug ? `/father/${item.slug}` : "/father";
   if (item._type === "journalEntry") return item.slug ? `/journal/${item.slug}` : "/journal";
   return item.slug ? `/blog/${item.slug}` : "/blog";
+}
+
+export function documentaryAnchorId(id: string) {
+  return `film-${id.replace(/[^A-Za-z0-9_-]/g, "-")}`;
+}
+
+export function bookAnchorId(id: string) {
+  return `book-${id.replace(/[^A-Za-z0-9_-]/g, "-")}`;
 }
 
 export function feedItemLabel(item: FeedItem) {
