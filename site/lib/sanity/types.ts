@@ -159,3 +159,41 @@ export type HomeWriting = {
   featured?: FeedItem | null
   latest: FeedItem[]
 }
+
+export type HomePage = BaseContent & {
+  _type: 'homePage'
+  presence?: {
+    headline?: string
+    roleLine?: string
+    portrait?: SanityImageWithMetadata
+  }
+  pointOfView?: PortableTextBlock[]
+  fatherDoorway?: {
+    copy?: PortableTextBlock[]
+    archiveImage?: SanityImageWithMetadata
+  }
+  foundation?: PortableTextBlock[]
+  studyRise?: PortableTextBlock[]
+  lifeInMotion?: Array<{
+    _key?: string
+    image?: SanityImageWithMetadata
+    label?: string
+  }>
+  contactInvitation?: PortableTextBlock[]
+}
+
+export type AboutPage = BaseContent & {
+  _type: 'aboutPage'
+  hook?: PortableTextBlock[]
+  credentials?: PortableTextBlock[]
+  whyMedicine?: PortableTextBlock[]
+  humanSide?: PortableTextBlock[]
+  whatThisSiteIs?: PortableTextBlock[]
+  cta?: PortableTextBlock[]
+  portrait?: SanityImageWithMetadata
+  lifestyleImages?: Array<{
+    _key?: string
+    image?: SanityImageWithMetadata
+    label?: string
+  }>
+}

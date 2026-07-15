@@ -1,7 +1,7 @@
 ---
 title: Page - Home
 type: page
-status: in-progress
+status: done
 created: 2026-06-28
 updated: 2026-07-15
 visibility: public
@@ -19,19 +19,18 @@ Back to [[Site Architecture]]
 
 ## Structure (top to bottom)
 
-1. **Hero** — full-screen, dark, cinematic
-   - Name large: **Istiaque Ahamed**
-   - Tagline: **Medicine, technology, and the life in between.**
-   - Role line: **Doctor, healthcare leader, and founder working across Bangladesh and Australia.**
-   - Strong photo
-   - Two CTAs: explore the story ([[Page - About]]) + see what he is building ([[Page - Projects]])
-2. **Short intro** — 2–3 lines capturing the whole person (doctor · builder · writer · son)
-3. **Identity strands** — a few elegant blocks hinting at the worlds: Medicine · Building (StudyRise) · Writing · Documentary · The journey. Each links deeper.
-4. **Current thinking + Feed preview** — one optional Blog/Journal piece pinned through Sanity's
-   **Feature on Home**, followed by the three newest published Blog/Journal items; with no pinned
-   piece, show the four newest. Continue into the latest items from [[Page - Feed]].
-5. **A line about the father** — a quiet, single sentence linking to [[Page - My Beloved Father]] (the emotional root)
-6. **Footer** — socials, bio line, schema
+1. **Presence** — name-led full-screen hero, approved public role framing, portrait slot, and paths
+   into [[Page - About]] and [[Page - Projects]].
+2. **Point of view** — the confirmed belief that good healthcare is also built through systems,
+   communication, leadership, discipline, and operational details.
+3. **Inheritance** — the early, warmer Father doorway and archive-image slot, before credentials.
+4. **Foundation** — confirmed medical training, BIRDEM internship, Macquarie MPH, and AMC path.
+5. **Proof of building** — StudyRise as the practical “doctor who builds” evidence.
+6. **Published** — one optional featured Blog/Journal item, then three de-duplicated latest pieces;
+   without a feature, the four latest pieces. Continue into the broader [[Page - Feed]] teaser.
+7. **Life in motion** — three authorable photo slots connecting the two-country, medicine, and
+   building strands without presenting them as separate identities.
+8. **Open door** — Contact action and the canonical [[Social Links]].
 
 ## Final navigation
 
@@ -50,18 +49,23 @@ The editable first-pass landing-page copy is in [[Sample Content Drafts#Landing 
 - Keep copy minimal; let space and photography carry it
 - Mobile: the hero must still feel cinematic on a phone
 
-## Production checkpoint — 2026-07-14
+## Production checkpoint — 2026-07-15
 
-- Landing page v1 built in `site/` with the confirmed navigation, name-led hero, tagline, public
-  role framing, editorial About, three identity strands, public timeline, StudyRise feature,
-  Writing preview, Father moment, social contact links, and responsive mobile navigation.
-- Added `/father` as the first secondary route and a distinct quieter doorway.
-- Added a generated monochrome architectural hero placeholder and a bespoke social preview card;
-  both are replaced or revisited when Istiaque supplies photography.
-- Local production build passes. Browser-checked at 1440×1000 and 390×844 with no horizontal
-  overflow, no console errors, and working mobile navigation.
-- Still pending for Home completion: real portrait, live Sanity selected-writing/Feed teaser, and
-  Istiaque's visual review of this first direction.
+- Home v2 is complete as eight cinematic scenes. Person, conviction, and Father now arrive before
+  the education arc; StudyRise provides the proof of building; life and Contact close the page.
+- The Home singleton supplies its portrait, role line, point of view, Father copy/image,
+  Foundation, StudyRise, life images, and Contact invitation. Confirmed public fallbacks keep the
+  page complete while those fields are empty.
+- Published Blog/Journal content is live: an optional Home feature is followed by three latest
+  non-duplicate pieces, or four latest pieces when no feature exists. The separate Feed teaser
+  draws from Blog, Journal, Father, Projects, and Documentaries.
+- The current public dataset is intentionally empty, so the page shows designed writing/Feed empty
+  states rather than sample posts presented as real publications.
+- Approved personal photography remains non-blocking: the hero, Father archive, and three life
+  slots use accessible exact-purpose placeholders that Sanity images replace without code changes.
+- TypeScript, zero-warning lint, Sanity authoring/live contracts, and the production build pass.
+  Browser review passed at 1440×1000, 390×844, and 360×800 with no overflow, clipped actions, or
+  console errors. Previews live in `site/.preview/session-06-*` and `session-07-*`.
 
 ## SEO
 

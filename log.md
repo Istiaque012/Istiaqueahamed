@@ -355,3 +355,33 @@ required preview and revalidation secrets.
   screenshots were saved under `site/.preview/session-05-*`.
   The final codebase-memory refresh was retried but its local transport disconnected again, so
   Session 06 should retry before code discovery.
+
+## [2026-07-15] build | Sessions 06–07 Home v2 completed
+Completed the full eight-scene Home rebuild and connected it to the live Sanity publishing layer.
+- Replaced Home v1 with Presence, point of view, early Father inheritance, confirmed Foundation,
+  StudyRise proof, published writing/Feed, life-in-motion, and Contact scenes.
+- Used the confirmed public identity framing and source-of-truth education/AMC facts; no
+  professional claim, memory, publication, date, testimonial, or personal photograph was invented.
+- Home now reads its singleton, optional featured Blog/Journal item, de-duplicated latest writing,
+  and latest complete Feed in parallel. Designed empty states appear while the public dataset is
+  intentionally empty.
+- Added responsive, accessible portrait/Father/life placeholders that approved Sanity images
+  replace without code changes; saved Session 06–07 desktop and phone previews in `site/.preview/`.
+- TypeScript, zero-warning lint, both Sanity contract checks, and the production build pass. All
+  eight scenes were browser-reviewed at 1440×1000 and 390×844, with an additional 360×800 hero
+  check; no overflow, clipped actions, console warnings, or console errors were found.
+
+## [2026-07-15] build | Session 08 About completed
+Completed the story-led About page and connected its personal imagery to Sanity.
+- Replaced the indexed route placeholder with six editorial scenes covering the opening identity,
+  verified training, Bangladesh–Australia arc, Father connection, human side, site purpose, and
+  closing invitation.
+- Added a resolved About singleton projection/type plus one square portrait and three lifestyle
+  image slots that retain designed placeholders until approved photographs are uploaded.
+- Kept every public claim aligned with the source-of-truth biography and omitted detailed current
+  employer/company titles; the page now reinforces the site-wide Person entity through visible
+  natural-language biography and dedicated metadata.
+- TypeScript, zero-warning lint, both Sanity contract checks, and the optimized production build
+  pass. Desktop, mobile, and narrow-mobile browser review found no horizontal overflow, clipped
+  controls, console warnings, or console errors; previews are saved in
+  `site/.preview/session-08-about-*`. The refreshed code graph contains 978 nodes and 1,180 edges.

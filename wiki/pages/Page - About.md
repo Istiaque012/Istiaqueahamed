@@ -1,9 +1,9 @@
 ---
 title: Page - About
 type: page
-status: planned
+status: done
 created: 2026-06-28
-updated: 2026-07-14
+updated: 2026-07-15
 visibility: public
 tags: [project/website, page]
 ---
@@ -43,6 +43,25 @@ Editable first-pass copy: [[Sample Content Drafts#C1 · About narrative]].
 - Editorial, photo-supported, generous space (see [[Design System]])
 - A natural-light, human photo here, not just the formal headshot
 - Optional CV download
+
+## Production checkpoint — 2026-07-15
+
+The public `/about` route is complete in the shared shell. It uses six story-led scenes:
+
+1. A light editorial opening with the natural-language identity statement and square portrait slot.
+2. Verified MBBS, BIRDEM internship, MPH, and AMC preparation in support of the story.
+3. A visible Bangladesh ↔ Australia bridge.
+4. A warmer Father scene linking into [[Page - My Beloved Father]].
+5. The human-side worlds and three author-editable lifestyle image slots.
+6. Site purpose, routes into Feed/Projects/Timeline, and an open closing action.
+
+The page is indexable and reinforces the existing site-wide Person schema through visible,
+extractable biographical language and dedicated metadata. Detailed current employer and company
+titles remain omitted. Every personal photograph remains a labelled, fixed-ratio placeholder until
+an approved image is uploaded in Sanity.
+
+Verification passed at 1440×1000, 390×844, and 360×800 with no horizontal overflow, clipped
+controls, browser warnings, or browser errors. Preview captures are stored in `site/.preview/`.
 
 ## SEO
 

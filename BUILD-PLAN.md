@@ -222,9 +222,9 @@ Only one row may be `in-progress` at a time.
 | 03 | Global shell, all routes, navigation, and page transitions | `done` (2026-07-15) |
 | 04 | Author-friendly Sanity schemas and Studio structure | `done` (2026-07-15) |
 | 05 | Live Sanity data, draft preview, visual editing, and images | `done` (2026-07-15) |
-| 06 | Home v2: Presence, point of view, and Father doorway | `todo` |
-| 07 | Home v2: Foundation, StudyRise, live content, life, contact | `todo` |
-| 08 | About page | `todo` |
+| 06 | Home v2: Presence, point of view, and Father doorway | `done` (2026-07-15) |
+| 07 | Home v2: Foundation, StudyRise, live content, life, contact | `done` (2026-07-15) |
+| 08 | About page | `done` (2026-07-15) |
 | 09 | Father index and Father detail pages | `todo` |
 | 10 | Shared Writing navigation and editorial components | `todo` |
 | 11 | Blog index and Blog detail pages | `todo` |
@@ -459,7 +459,27 @@ Father doorway with archive-image placeholder; art-direct desktop/mobile layouts
 
 **Done when:** person, conviction, and inheritance are clear before the first credential list.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a new name-led Presence scene with authorable Sanity portrait/name/role fields and an
+  approved factual fallback; responsive portrait placeholder; restrained hero motion; a public
+  healthcare-systems point-of-view scene; and an early, warmer Father doorway with an authorable
+  archive image and personal copy
+- Files/areas: `site/components/LandingPage.tsx`, Home route data assembly, Home Sanity projection
+  and types, global Home scene styling, and `site/.preview/session-06-home-{desktop,mobile}.png`
+- Verified: strict TypeScript, zero-warning ESLint, Sanity authoring/live contracts, and production
+  build pass; scenes 1–3 reviewed at 1440×1000 and 390×844, with an additional 360×800 check; no
+  horizontal overflow, clipped actions, console warnings/errors, or broken placeholder states
+- Assets/content: no personal photograph was invented; hero and Father slots use fixed-ratio,
+  accessible labelled placeholders until approved images are uploaded; all fallback identity,
+  belief, and Father copy traces to [[Discovery Answers]]
+- Decisions: use the confirmed “medical doctor, public health professional, and healthcare systems
+  builder” framing instead of the still-unconfirmed healthcare-leader wording; place inheritance
+  before credentials so person, conviction, and Father land first
+- Remaining: approved personal portrait and Father archive photography can replace placeholders in
+  Sanity without code changes; optional author-written Home copy can replace the factual fallbacks
+- Next entry point: Session 07, complete scenes 4–8 and connect live publishing states
 
 ## Session 07 — Home v2, scenes 4–8
 
@@ -470,7 +490,29 @@ elegant empty states before publishing.
 **Done when:** Home is complete, Sanity-driven, and communicates “doctor who builds” within 30
 seconds on mobile and desktop.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: confirmed-fact Foundation/education arc; responsive StudyRise proof scene; Sanity-driven
+  optional featured Blog/Journal item plus de-duplicated latest writing; latest complete-Feed
+  preview; intentional writing and Feed empty states; three-slot life-in-motion gallery; and final
+  Contact scene using the canonical social links
+- Files/areas: `site/app/(site)/page.tsx`, `site/components/LandingPage.tsx`, Home Sanity query/types,
+  global Home scene styling, and `site/.preview/session-07-home-writing-{desktop,mobile}.png`
+- Verified: strict TypeScript, zero-warning ESLint, both Sanity contract checks, and optimized Next.js
+  production build pass; all eight scenes reviewed at 1440×1000 and 390×844, plus the 360×800 hero;
+  no horizontal overflow, clipped interactive elements, console warnings/errors, or failed content
+  states; Home returns the expected empty publishing states against the currently empty public dataset
+- Assets/content: StudyRise uses its existing official preview; life-in-motion slots remain labelled
+  placeholders; no posts, dates, professional claims, memories, testimonials, or photographs were
+  invented
+- Decisions: Home fetches the singleton, Home writing, and Feed teaser in parallel; the featured item
+  is excluded from Latest Writing; show three latest items when featured or four when unfeatured;
+  Feed remains the broader Blog/Journal/Father/Project/Documentary stream
+- Remaining: approved writing and photography will populate these live scenes through Sanity; no
+  engineering blocker remains for Home
+- Next entry point: Session 08, build the story-led About page using the Home visual language and
+  confirmed natural-language biography
 
 ## Session 08 — About
 
@@ -480,7 +522,29 @@ Person-schema reinforcement; no detailed current titles.
 
 **Done when:** the full person is understandable without the page becoming a CV.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a story-led opening and natural-language identity statement; concise verified training;
+  a visible Bangladesh–Australia arc; warmer Father connection; a unified human-side scene across
+  medicine, systems, StudyRise, writing, documentary, fitness, and faith; site-purpose routes; and
+  a closing invitation
+- Files/areas: About route and component, About Sanity projection/type/schema, responsive About
+  styling, and `site/.preview/session-08-about-{desktop,mobile}.png`
+- Verified: strict TypeScript, zero-warning ESLint, both Sanity contract checks, and the optimized
+  production build pass; all six story blocks reviewed at 1440×1000 and 390×844, with an additional
+  360×800 opening check; no horizontal overflow, clipped controls, console warnings, or console
+  errors; codebase-memory refreshed to 978 nodes and 1,180 edges
+- Assets/content: the square portrait and three lifestyle slots are fixed-ratio, accessible,
+  author-editable Sanity placeholders; all biography, training, Father, interests, and location
+  language traces to confirmed public sources; detailed current employer/company titles remain omitted
+- Decisions: keep the page a personal story rather than a chronology or CV; use the Father register
+  for one restrained scene; reinforce Person identity through visible natural-language biography,
+  page metadata, and the existing site-wide Person schema
+- Remaining: approved portrait, desk, hospital, and Australia photographs can replace placeholders
+  through Sanity; no engineering blocker remains for About
+- Next entry point: Session 09, build the quieter Father index and reading experience without
+  inventing personal memories or archive content
 
 ## Session 09 — Father
 

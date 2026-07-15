@@ -102,8 +102,94 @@ export const timelineQuery = defineQuery(`
 
 // ── Singletons ───────────────────────────────────────────────────────────────
 export const siteSettingsQuery = defineQuery(`*[_type == "siteSettings"][0]`)
-export const homePageQuery = defineQuery(`*[_type == "homePage"][0]`)
-export const aboutPageQuery = defineQuery(`*[_type == "aboutPage"][0]`)
+export const homePageQuery = defineQuery(`
+  *[_type == "homePage"][0] {
+    _id, _type, _updatedAt,
+    presence {
+      headline,
+      roleLine,
+      portrait {
+        ...,
+        asset->{
+          _id,
+          url,
+          metadata {
+            lqip,
+            dimensions { width, height, aspectRatio }
+          }
+        }
+      }
+    },
+    pointOfView,
+    fatherDoorway {
+      copy,
+      archiveImage {
+        ...,
+        asset->{
+          _id,
+          url,
+          metadata {
+            lqip,
+            dimensions { width, height, aspectRatio }
+          }
+        }
+      }
+    },
+    foundation,
+    studyRise,
+    lifeInMotion[] {
+      _key,
+      label,
+      image {
+        ...,
+        asset->{
+          _id,
+          url,
+          metadata {
+            lqip,
+            dimensions { width, height, aspectRatio }
+          }
+        }
+      }
+    },
+    contactInvitation
+  }`)
+export const aboutPageQuery = defineQuery(`
+  *[_type == "aboutPage"][0] {
+    _id, _type, _updatedAt,
+    hook,
+    credentials,
+    whyMedicine,
+    humanSide,
+    whatThisSiteIs,
+    cta,
+    portrait {
+      ...,
+      asset->{
+        _id,
+        url,
+        metadata {
+          lqip,
+          dimensions { width, height, aspectRatio }
+        }
+      }
+    },
+    lifestyleImages[] {
+      _key,
+      label,
+      image {
+        ...,
+        asset->{
+          _id,
+          url,
+          metadata {
+            lqip,
+            dimensions { width, height, aspectRatio }
+          }
+        }
+      }
+    }
+  }`)
 export const fatherPageQuery = defineQuery(`*[_type == "fatherPage"][0]`)
 export const workPageQuery = defineQuery(`*[_type == "workPage"][0]`)
 export const coursePageQuery = defineQuery(`*[_type == "coursePage"][0]`)

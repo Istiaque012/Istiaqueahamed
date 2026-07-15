@@ -4,191 +4,263 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
-
-const socials = [
-  { label: "Instagram", href: "https://instagram.com/istiaqueahmd" },
-  { label: "YouTube", href: "https://www.youtube.com/@Istiaqamd" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/istiaque-amd/" },
-  { label: "GitHub", href: "https://github.com/Istiaque012" },
-];
+import SanityPortableText from "@/components/SanityPortableText";
+import { EditorialImage } from "@/components/ui";
+import { socialLinks } from "@/lib/navigation";
+import type { ResolvedSanityImage } from "@/lib/sanity/image";
+import type { FeedItem, HomePage, HomeWriting } from "@/lib/sanity/types";
 
 const milestones = [
-  { year: "2010–15", title: "Medical training", detail: "MBBS · Sylhet North East Medical College" },
-  { year: "2015", title: "Clinical foundation", detail: "Internship · BIRDEM" },
-  { year: "2019", title: "Public health", detail: "MPH · Macquarie University" },
-  { year: "2026", title: "Building for learners", detail: "StudyRise founded" },
-];
+  { year: "MBBS", title: "Medical training", detail: "Sylhet North East Medical College, Bangladesh" },
+  { year: "Internship", title: "Clinical foundation", detail: "BIRDEM, Bangladesh" },
+  { year: "MPH", title: "Public health", detail: "Macquarie University, Australia" },
+  { year: "Now", title: "The Australian pathway", detail: "Preparing for the AMC" },
+] as const;
 
-const strands = [
+const fallbackLifeSlots = [
   {
-    number: "01",
-    title: "Medicine",
-    text: "Clinical training remains the foundation of how I understand people, responsibility, and care.",
+    alt: "A candid portrait showing Istiaque's life between Bangladesh and Australia",
+    label: "Between two countries",
+    ratio: "portrait" as const,
   },
   {
-    number: "02",
-    title: "Systems",
-    text: "Good healthcare is shaped by communication, discipline, leadership, and the details patients always feel.",
+    alt: "Istiaque at work in a healthcare or hospital setting without patient information",
+    label: "Medicine in practice",
+    ratio: "landscape" as const,
   },
   {
-    number: "03",
-    title: "Technology",
-    text: "I build practical tools that turn complicated goals into clearer, more useful daily action.",
+    alt: "Istiaque writing or building StudyRise at his desk",
+    label: "Building after hours",
+    ratio: "portrait" as const,
   },
-];
+] as const;
 
-const writing = [
-  { type: "Medicine", title: "Good healthcare is built beyond the consultation room" },
-  { type: "Life in medicine", title: "Notes from the Australian medical pathway" },
-  { type: "Technology", title: "Why I build software as a doctor" },
-];
+type LifeImage = {
+  image?: ResolvedSanityImage;
+  label?: string;
+};
 
-export default function LandingPage() {
+type LandingPageProps = {
+  fatherImage?: ResolvedSanityImage;
+  feed: FeedItem[];
+  homePage: HomePage | null;
+  homeWriting: HomeWriting;
+  lifeImages: LifeImage[];
+  portrait?: ResolvedSanityImage;
+};
+
+const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+});
+
+function formatDate(date?: string) {
+  if (!date) return "Undated";
+  const value = new Date(date);
+  return Number.isNaN(value.getTime()) ? "Undated" : dateFormatter.format(value);
+}
+
+function itemHref(item: FeedItem) {
+  if (item._type === "documentary") return "/documentaries";
+  if (item._type === "project") return item.slug ? `/projects/${item.slug}` : "/projects";
+  if (item._type === "fatherPiece") return item.slug ? `/father/${item.slug}` : "/father";
+  if (item._type === "journalEntry") return item.slug ? `/journal/${item.slug}` : "/journal";
+  return item.slug ? `/blog/${item.slug}` : "/blog";
+}
+
+function itemType(item: FeedItem) {
+  const labels: Record<FeedItem["_type"], string> = {
+    blogPost: "Blog",
+    documentary: "Film",
+    fatherPiece: "Father",
+    journalEntry: "Journal",
+    project: "Project",
+  };
+  return labels[item._type];
+}
+
+export default function LandingPage({
+  fatherImage,
+  feed,
+  homePage,
+  homeWriting,
+  lifeImages,
+  portrait,
+}: LandingPageProps) {
+  const headline = homePage?.presence?.headline?.trim() || "Istiaque Ahamed";
+  const roleLine =
+    homePage?.presence?.roleLine?.trim() ||
+    "Medical doctor, public health professional, and healthcare systems builder.";
+  const latestWriting = homeWriting.latest
+    .filter((item) => item._id !== homeWriting.featured?._id)
+    .slice(0, homeWriting.featured ? 3 : 4);
+
   return (
     <main className="landing-page">
-      <section id="home" className="hero-section">
-        <motion.div
-          className="hero-image"
-          initial={{ scale: 1.04, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <Image
-            src="/images/hero-architecture.png"
-            alt="Monochrome architectural study of light, glass, and structure"
-            fill
+      <section id="home" className="home-presence" aria-labelledby="home-title">
+        <div className="home-presence__grain" aria-hidden="true" />
+        <div className="home-presence__portrait">
+          <EditorialImage
+            alt={portrait?.alt || "Portrait of Istiaque Ahamed"}
+            altGuidance="Waist-up editorial portrait of Istiaque, direct gaze, directional window light, dark neutral setting"
+            label="Hero portrait pending"
             priority
-            sizes="100vw"
+            ratio="portrait"
+            src={portrait?.src}
           />
-        </motion.div>
+        </div>
 
-        <div className="hero-content">
+        <div className="home-presence__content">
           <motion.p
-            className="section-label hero-label"
-            initial={{ opacity: 0, y: 18 }}
+            className="section-label"
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Doctor · Healthcare leader · Founder
+            Presence · Bangladesh ↔ Australia
           </motion.p>
-
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            id="home-title"
+            initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            Istiaque
-            <br />
-            <em>Ahamed</em>
+            {headline}
           </motion.h1>
-
           <motion.div
-            className="hero-bottom"
+            className="home-presence__bottom"
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div>
-              <p className="hero-tagline">Medicine, technology, and the life in between.</p>
-              <p className="hero-role">
-                Working across Bangladesh and Australia.
-              </p>
+              <p className="home-presence__tagline">Medicine, technology, and the life in between.</p>
+              <p className="home-presence__role">{roleLine}</p>
             </div>
-            <div className="hero-actions">
-              <Link href="#about" className="button button-light">
-                Explore my story <span aria-hidden="true">↓</span>
+            <div className="home-presence__actions">
+              <Link href="/about" className="button button-light">
+                Explore the story <span aria-hidden="true">↗</span>
               </Link>
-              <Link href="#projects" className="button button-line">
+              <Link href="/projects" className="button button-line">
                 See what I build <span aria-hidden="true">↗</span>
               </Link>
             </div>
           </motion.div>
         </div>
 
-        <div className="hero-index" aria-hidden="true">
-          <span>Bangladesh</span>
-          <span>23.8° N</span>
-          <span>Australia</span>
-        </div>
+        <p className="home-presence__index" aria-hidden="true">01 / 08 · One whole person</p>
       </section>
 
-      <section id="about" className="light-section intro-section">
-        <div className="section-shell intro-grid">
-          <Reveal className="section-heading-block">
-            <p className="section-label dark-label">01 · About</p>
-            <h2>A life built across more than one discipline.</h2>
+      <section className="home-conviction light-section" aria-labelledby="conviction-title">
+        <div className="section-shell home-conviction__grid">
+          <Reveal>
+            <p className="section-label dark-label">02 · Point of view</p>
+            <h2 id="conviction-title">Care is built long before the consultation begins.</h2>
           </Reveal>
-
-          <Reveal className="intro-copy" delay={0.1}>
-            <p className="intro-lead">
-              I am a medical doctor with a deep interest in public health, healthcare systems,
-              and the tools that can make care work better.
-            </p>
-            <p>
-              My life moves between clinical practice, leadership, technology, and the long
-              process of building a future across two countries. This is where those parts come
-              together.
-            </p>
-            <Link href="#work" className="text-link dark-link">
-              Follow the journey <span aria-hidden="true">↓</span>
+          <Reveal className="home-prose home-conviction__copy" delay={0.1}>
+            {homePage?.pointOfView?.length ? (
+              <SanityPortableText value={homePage.pointOfView} />
+            ) : (
+              <>
+                <p className="home-prose__lead">
+                  Good healthcare is not only built inside consultation rooms.
+                </p>
+                <p>
+                  It is built through systems, discipline, communication, leadership, and the
+                  small operational details patients never see but always feel.
+                </p>
+              </>
+            )}
+            <Link href="/work" className="text-link dark-link">
+              See the wider work <span aria-hidden="true">↗</span>
             </Link>
           </Reveal>
         </div>
       </section>
 
-      <section className="dark-section strands-section" aria-labelledby="strands-title">
-        <div className="section-shell">
-          <Reveal className="strands-header">
-            <p className="section-label">02 · The work</p>
-            <h2 id="strands-title">Three worlds.<br />One way of thinking.</h2>
+      <section className="home-father" aria-labelledby="father-doorway-title">
+        <div className="section-shell home-father__grid">
+          <Reveal className="home-father__image">
+            <EditorialImage
+              alt={fatherImage?.alt || "Family archive image connected to Istiaque's father"}
+              altGuidance="One approved family archive photograph of Istiaque's father, preserved with its natural texture and context"
+              label="Father archive image pending"
+              ratio="portrait"
+              src={fatherImage?.src}
+            />
           </Reveal>
-
-          <div className="strands-list">
-            {strands.map((strand, index) => (
-              <Reveal key={strand.title} className="strand-row" delay={index * 0.08}>
-                <span className="strand-number">{strand.number}</span>
-                <h3>{strand.title}</h3>
-                <p>{strand.text}</p>
-              </Reveal>
-            ))}
+          <div className="home-father__copy">
+            <Reveal>
+              <p className="section-label">03 · Inheritance</p>
+              <p className="home-father__eyebrow">Before the credentials, there was an example.</p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <blockquote id="father-doorway-title">
+                {homePage?.fatherDoorway?.copy?.length ? (
+                  <SanityPortableText value={homePage.fatherDoorway.copy} />
+                ) : (
+                  <p>
+                    My journey in medicine began with my father. He was a doctor, and the life he
+                    lived shaped the path I chose.
+                  </p>
+                )}
+              </blockquote>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <Link href="/father" className="text-link">
+                Enter My Beloved Father <span aria-hidden="true">→</span>
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      <section id="work" className="work-section">
+      <section className="home-foundation dark-section" aria-labelledby="foundation-title">
         <div className="section-shell">
-          <Reveal className="work-intro">
-            <p className="section-label">03 · Journey</p>
-            <h2>Medicine is the foundation. Systems are the wider view.</h2>
-            <p>
-              Doctor, healthcare leader, and founder working across Bangladesh and Australia.
-            </p>
+          <Reveal className="home-foundation__intro">
+            <p className="section-label">04 · Foundation</p>
+            <h2 id="foundation-title">Medicine is the foundation. Systems are the wider view.</h2>
+            <div className="home-prose home-foundation__copy">
+              {homePage?.foundation?.length ? (
+                <SanityPortableText value={homePage.foundation} />
+              ) : (
+                <p>
+                  Training in Bangladesh, public health in Australia, and a continuing path
+                  through medicine connect the two countries that shape this life.
+                </p>
+              )}
+            </div>
           </Reveal>
-
-          <div className="milestone-list">
+          <div className="home-foundation__timeline">
             {milestones.map((milestone, index) => (
-              <Reveal key={milestone.year} className="milestone-row" delay={index * 0.06}>
-                <span>{milestone.year}</span>
+              <Reveal key={milestone.year} className="home-foundation__row" delay={index * 0.06}>
+                <span>0{index + 1}</span>
+                <strong>{milestone.year}</strong>
                 <h3>{milestone.title}</h3>
                 <p>{milestone.detail}</p>
               </Reveal>
             ))}
           </div>
+          <Reveal>
+            <Link href="/timeline" className="text-link home-foundation__link">
+              Follow the complete timeline <span aria-hidden="true">↗</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
-      <section id="projects" className="light-section project-section">
+      <section id="projects" className="home-build light-section" aria-labelledby="build-title">
         <div className="section-shell">
-          <Reveal className="project-title-row">
+          <Reveal className="home-build__heading">
             <div>
-              <p className="section-label dark-label">04 · Featured project</p>
-              <h2>StudyRise</h2>
+              <p className="section-label dark-label">05 · Proof of building</p>
+              <h2 id="build-title">StudyRise</h2>
             </div>
-            <p>Live on the web · Founded 2026</p>
+            <p>Live at studyrise.app</p>
           </Reveal>
-
-          <div className="project-grid">
-            <Reveal className="project-visual">
+          <div className="home-build__grid">
+            <Reveal className="home-build__visual">
               <Image
                 src="/images/studyrise-og.png"
                 alt="StudyRise study-planning platform showing readiness and study progress"
@@ -197,25 +269,28 @@ export default function LandingPage() {
                 sizes="(max-width: 900px) 100vw, 62vw"
               />
             </Reveal>
-
-            <Reveal className="project-copy" delay={0.12}>
-              <p className="project-kicker">A study plan that becomes a daily system.</p>
-              <p>
-                StudyRise helps students turn large exams and academic courses into structured
-                daily work. Planning, focused study, revision, question practice, and progress
-                live in one clear workspace.
+            <Reveal className="home-build__copy" delay={0.12}>
+              <p className="home-build__kicker">A study plan that becomes a daily system.</p>
+              <div className="home-prose">
+                {homePage?.studyRise?.length ? (
+                  <SanityPortableText value={homePage.studyRise} />
+                ) : (
+                  <p>
+                    StudyRise turns exams and academic courses into structured daily work — from
+                    planning and focus to revision, question practice, and progress.
+                  </p>
+                )}
+              </div>
+              <p className="home-build__aside">
+                Built with React, Vite, Supabase, and Vercel. A doctor using software to make the
+                next useful step clearer.
               </p>
-              <ul>
-                <li>Exam and academic planning</li>
-                <li>Spaced repetition and question tracking</li>
-                <li>Daily focus and progress analytics</li>
-              </ul>
-              <div className="project-links">
+              <div className="home-build__links">
                 <Link href="https://studyrise.app" target="_blank" rel="noreferrer" className="button button-dark">
                   Visit StudyRise <span aria-hidden="true">↗</span>
                 </Link>
-                <Link href="https://github.com/Istiaque012" target="_blank" rel="noreferrer me" className="text-link dark-link">
-                  GitHub profile <span aria-hidden="true">↗</span>
+                <Link href="/projects" className="text-link dark-link">
+                  See the build story <span aria-hidden="true">↗</span>
                 </Link>
               </div>
             </Reveal>
@@ -223,68 +298,129 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="writing" className="dark-section writing-section">
-        <div className="section-shell writing-grid">
-          <Reveal className="writing-heading">
-            <p className="section-label">05 · Writing</p>
-            <h2>Notes from the life in between.</h2>
-            <p>
-              Medicine, systems, books, discipline, and the experience of building across two
-              countries.
-            </p>
+      <section id="writing" className="home-publishing dark-section" aria-labelledby="writing-title">
+        <div className="section-shell">
+          <Reveal className="home-publishing__heading">
+            <div>
+              <p className="section-label">06 · Published</p>
+              <h2 id="writing-title">Notes from the life in between.</h2>
+            </div>
+            <p>Blog, journal, projects, films, and the Father archive — one living record.</p>
           </Reveal>
 
-          <div className="writing-list">
-            {writing.map((item, index) => (
-              <Reveal key={item.title} className="writing-row" delay={index * 0.08}>
-                <div>
-                  <span>{item.type}</span>
-                  <span>0{index + 1}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <span className="writing-arrow" aria-hidden="true">↗</span>
+          <div className="home-writing">
+            {homeWriting.featured ? (
+              <Reveal className="home-writing__featured">
+                <Link href={itemHref(homeWriting.featured)}>
+                  <div className="home-writing__meta">
+                    <span>Featured on Home</span>
+                    <span>{itemType(homeWriting.featured)} · {formatDate(homeWriting.featured.date)}</span>
+                  </div>
+                  <h3>{homeWriting.featured.title}</h3>
+                  {homeWriting.featured.excerpt ? <p>{homeWriting.featured.excerpt}</p> : null}
+                  <span className="home-writing__arrow" aria-hidden="true">↗</span>
+                </Link>
               </Reveal>
-            ))}
-            <Reveal>
-              <p className="writing-note">First essays are being prepared for publication.</p>
+            ) : null}
+
+            <div className="home-writing__latest">
+              {latestWriting.length ? (
+                latestWriting.map((item, index) => (
+                  <Reveal key={item._id} className="home-writing__row" delay={index * 0.06}>
+                    <Link href={itemHref(item)}>
+                      <div className="home-writing__meta">
+                        <span>{itemType(item)}{item.tag ? ` · ${item.tag}` : ""}</span>
+                        <span>{formatDate(item.date)}</span>
+                      </div>
+                      <h3>{item.title}</h3>
+                      <span className="home-writing__arrow" aria-hidden="true">↗</span>
+                    </Link>
+                  </Reveal>
+                ))
+              ) : (
+                <Reveal className="home-empty-state">
+                  <p className="section-label">Latest writing</p>
+                  <h3>The first pieces are being prepared.</h3>
+                  <p>Published Blog and Journal entries will appear here automatically.</p>
+                  <Link href="/feed" className="text-link">Visit Writing <span aria-hidden="true">↗</span></Link>
+                </Reveal>
+              )}
+            </div>
+          </div>
+
+          <div className="home-feed">
+            <Reveal className="home-feed__intro">
+              <p className="section-label">Latest from the complete Feed</p>
+              <Link href="/feed" className="text-link">Open the Feed <span aria-hidden="true">↗</span></Link>
             </Reveal>
+            {feed.length ? (
+              <div className="home-feed__list">
+                {feed.map((item, index) => (
+                  <Reveal key={item._id} className="home-feed__item" delay={index * 0.05}>
+                    <Link href={itemHref(item)}>
+                      <span>0{index + 1}</span>
+                      <span>{itemType(item)}</span>
+                      <strong>{item.title}</strong>
+                      <span>{formatDate(item.date)}</span>
+                    </Link>
+                  </Reveal>
+                ))}
+              </div>
+            ) : (
+              <Reveal className="home-feed__empty">
+                <p>The Feed is quiet for now. New public work will arrive here without a site update.</p>
+              </Reveal>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="father-section" aria-labelledby="father-title">
-        <div className="father-inner">
-          <Reveal>
-            <p className="section-label">06 · My beloved father</p>
+      <section className="home-life light-section" aria-labelledby="life-title">
+        <div className="section-shell">
+          <Reveal className="home-life__heading">
+            <p className="section-label dark-label">07 · Life in motion</p>
+            <h2 id="life-title">Not separate identities. One evolving life.</h2>
           </Reveal>
-          <Reveal delay={0.1}>
-            <blockquote id="father-title">
-              “My journey in medicine began with my father. He was a doctor, and the life he
-              lived shaped the path I chose.”
-            </blockquote>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <Link href="/father" className="text-link">
-              Enter this space <span aria-hidden="true">→</span>
-            </Link>
-          </Reveal>
+          <div className="home-life__gallery">
+            {fallbackLifeSlots.map((slot, index) => {
+              const item = lifeImages[index];
+              return (
+                <Reveal className={`home-life__image home-life__image--${index + 1}`} delay={index * 0.08} key={slot.label}>
+                  <EditorialImage
+                    alt={item?.image?.alt || slot.alt}
+                    altGuidance={slot.alt}
+                    caption={item?.image?.caption}
+                    label={item?.label?.trim() || slot.label}
+                    ratio={slot.ratio}
+                    src={item?.image?.src}
+                  />
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      <section id="contact" className="light-section contact-section">
-        <div className="section-shell contact-grid">
+      <section id="contact" className="home-contact" aria-labelledby="contact-title">
+        <div className="section-shell home-contact__grid">
           <Reveal>
-            <p className="section-label dark-label">07 · Contact</p>
-            <h2>For thoughtful conversations.</h2>
+            <p className="section-label">08 · Open door</p>
+            <h2 id="contact-title">For thoughtful conversations.</h2>
           </Reveal>
-          <Reveal className="contact-copy" delay={0.1}>
-            <p>
-              I welcome thoughtful messages about medicine, healthcare, technology, building,
-              speaking, or a meaningful collaboration.
-            </p>
-            <div className="social-list">
-              {socials.map((social) => (
-                <Link key={social.label} href={social.href} target="_blank" rel="noreferrer me">
+          <Reveal className="home-contact__copy" delay={0.1}>
+            <div className="home-prose">
+              {homePage?.contactInvitation?.length ? (
+                <SanityPortableText value={homePage.contactInvitation} />
+              ) : (
+                <p>Medicine, healthcare systems, technology, building, and the ideas between them.</p>
+              )}
+            </div>
+            <Link href="/contact" className="button button-light">
+              Send a message <span aria-hidden="true">↗</span>
+            </Link>
+            <div className="home-contact__socials">
+              {socialLinks.map((social) => (
+                <Link key={social.label} href={social.href} target="_blank" rel="me noreferrer">
                   {social.label}<span aria-hidden="true">↗</span>
                 </Link>
               ))}
@@ -292,7 +428,6 @@ export default function LandingPage() {
           </Reveal>
         </div>
       </section>
-
     </main>
   );
 }

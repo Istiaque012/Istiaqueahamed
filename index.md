@@ -48,8 +48,8 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Pages (one brief each)
 | Page | Job of the page | Visibility | Status |
 |---|---|---|---|
-| [[Page - Home]] | Landing v1 built and browser-verified; portrait + live Feed wiring remain | `public` | in-progress |
-| [[Page - About]] | Curious → convinced; story-first, credentials in support | `public` | planned |
+| [[Page - Home]] | Eight-scene Home v2 complete with early Father doorway, StudyRise proof, live writing/Feed, and photo placeholders | `public` | done |
+| [[Page - About]] | Story-led identity complete: training, Father, human side, two-country arc, purpose, and photo slots | `public` | done |
 | [[Page - Feed]] | One reverse-chronological stream of everything published | `public` | planned |
 | [[Page - Blog]] | Crafted long-form authority; the SEO engine | `public` | planned |
 | [[Page - Journal]] | Rawer, honest "letters to the internet" | `public` | planned |
