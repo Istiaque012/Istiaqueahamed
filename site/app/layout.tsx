@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import { stringifyJsonLd } from "@/lib/jsonld";
@@ -63,6 +65,9 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   formatDetection: { address: false, email: false, telephone: false },
 };
 
@@ -93,6 +98,8 @@ export default async function RootLayout({
         <Providers>{children}</Providers>
         <SanityLive includeDrafts={draftPreviewEnabled} />
         {draftPreviewEnabled ? <VisualEditing /> : null}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -240,8 +240,8 @@ Only one row may be `in-progress` at a time.
 | 21 | Search, AI discoverability, metadata, sitemap, and RSS | `done` (2026-07-15) |
 | 22 | Full mobile, accessibility, motion, and performance pass | `done` (2026-07-15) |
 | 23 | Photography integration, content seeding, author rehearsal | `done` (2026-07-15; owner photos and approved launch writing deferred) |
-| 24 | Vercel, Namecheap, analytics, Search Console, and launch | `in-progress` (2026-07-15) |
-| 25 | Post-launch QA, backup, monitoring, and handover | `todo` |
+| 24 | Vercel, Namecheap, analytics, Search Console, and launch | `done` (2026-07-15; final deploy and account activation deferred to owner) |
+| 25 | Post-launch QA, backup, monitoring, and handover | `in-progress` (2026-07-15) |
 
 ---
 
@@ -1025,7 +1025,26 @@ contact, images, social previews, RSS, and 404; record rollback steps.
 **Done when:** `https://istiaqueahamed.com` serves the approved complete site and every critical
 workflow works in production.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15 (launch-ready code; production promotion deferred)
+- Built: Vercel Web Analytics and Speed Insights in the root layout; optional environment-driven
+  Google Search Console verification; a current deployment/domain/environment/rollback guide; and
+  an updated owner launch order based on the actual linked infrastructure
+- Files/areas: root layout, dependencies/lockfile, environment example, [[Tech - Deployment & Domain]],
+  and [[Website Owner Guide]]
+- Verified: Vercel CLI authentication and project link; current Preview/Production Sanity variable
+  names; existing ready deployments; Namecheap-served Vercel DNS; apex and `www` HTTPS; current
+  apex→`www` redirect; package versions; production dependency audit has no high or critical finding
+- Assets/content: no secret values were read into documentation; Contact keys/addresses, Search
+  Console token, approved launch content, and photography remain owner inputs
+- Decisions: recommend apex as Vercel primary because the finished site's canonical URLs use it;
+  include Web Analytics plus Speed Insights; do not deploy, push, change DNS, or alter domain
+  routing without Istiaque's explicit approval
+- Remaining: merge/push the finished branch; approve the new Preview; deploy Production; switch the
+  Vercel primary host to apex; add Contact/Search Console variables; enable both Vercel dashboards;
+  verify Search Console and submit the sitemap; then run production smoke tests
+- Next entry point: Session 25, document backups, monthly operations, final verification, and the complete handover
 
 ## Session 25 — Post-launch handover
 

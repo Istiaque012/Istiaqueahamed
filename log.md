@@ -561,3 +561,19 @@ inventing the missing personal material.
 - The authenticated create/publish/update/unpublish/delete rehearsal and all current Studio/schema
   contracts remain verified. Personal photographs, memories, opinions, film context, and launch
   writing remain deferred by design rather than being guessed or published as placeholders.
+
+## [2026-07-15] build | Session 24 launch readiness completed
+Finished every code-owned launch integration and documented the remaining account-bound promotion.
+- Added Vercel Web Analytics and Speed Insights to the root layout and an optional
+  `GOOGLE_SITE_VERIFICATION` metadata path, so Search Console activation needs no later code edit.
+- Verified the linked `istiaqueahamed` Vercel project, authenticated CLI, ready deployments, six
+  existing Sanity environment names in Preview/Production, Namecheap-served Vercel DNS, and HTTPS
+  on both apex and `www`.
+- Found that the public domain still serves the earlier build and redirects apex to `www`, while
+  the finished site's canonical URLs use the apex. The launch guide now requires the apex to be
+  selected as Vercel primary when the new branch is promoted.
+- Rewrote [[Tech - Deployment & Domain]] with the actual state, environment-name inventory,
+  ordered launch steps, dashboard activation, Search Console submission, smoke tests, and rollback.
+- No push, deployment, DNS, or domain-routing change was made because repository rules require
+  Istiaque's explicit approval. The production dependency audit has no high or critical finding;
+  fourteen moderate transitive findings remain for routine dependency maintenance.

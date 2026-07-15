@@ -108,11 +108,11 @@ The engineering is ready; these need your material, accounts, or final approval.
   [[DECISIONS-NEEDED]] Part B.
 - Connect private Contact delivery: Resend account/domain, recipient, sender, the four private
   variables, the Studio form switch, and one real inbox test. Never paste these secrets into Studio.
-- Merge and push the finished build, connect the Vercel project with `site/` as its root, confirm
-  all private environment variables, and review the Vercel preview.
-- Point Namecheap DNS to Vercel, confirm HTTPS and the preferred host redirect, then test all
-  thirteen pages on the live domain.
-- Enable Vercel Analytics, verify Google Search Console, and submit
+- Merge and push the finished build, confirm the existing Vercel project's private environment
+  variables, and review the new Preview. The project, Namecheap DNS, and HTTPS are already connected.
+- In Vercel Domains, make `istiaqueahamed.com` the primary host so `www` redirects to it, matching
+  the website's canonical URLs; then test all thirteen pages on the updated live domain.
+- Enable Vercel Web Analytics and Speed Insights, verify Google Search Console, and submit
   `https://istiaqueahamed.com/sitemap.xml`.
 
 ### Safe to do after launch

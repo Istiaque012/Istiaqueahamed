@@ -62,7 +62,9 @@ Back to [[00 - START HERE]]
 - [x] Full mobile, accessibility, animation, and performance audit.
 - [x] Publishing guide, image workflow, and authoring infrastructure; approved personal photos and
   launch writing are explicitly deferred to the owner checklist.
-- [ ] Vercel preview/production, Namecheap DNS, analytics, Search Console, and launch.
+- [x] Linked Vercel/Namecheap/HTTPS infrastructure, analytics and Search Console code, launch order,
+  and rollback are ready; final branch push, production promotion, and account activation are on
+  the owner checklist.
 - [ ] Post-launch QA, backup procedure, monitoring, and handover.
 
 ## Session rule
