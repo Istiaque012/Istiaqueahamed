@@ -11,10 +11,12 @@
     "start": "next start",
     "typecheck": "tsc --noEmit --pretty false",
     "lint": "eslint . --max-warnings=0",
-    "quality": "npm run typecheck && npm run lint && npm run build"
+    "verify:sanity-authoring": "sanity exec scripts/verify-sanity-authoring.ts",
+    "quality": "npm run typecheck && npm run lint && npm run verify:sanity-authoring && npm run build"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.4",
+    "@sanity/icons": "5.0.0",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "6.5.0",
     "framer-motion": "^11.3.8",

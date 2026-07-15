@@ -263,3 +263,43 @@ Completed and verified the final navigation layer and route foundation for all t
   mobile shell screenshots in `site/.preview/session-03-shell-*`.
 - The required codebase-memory refresh was attempted three times but its local transport was
   disconnected; Session 04 should retry before schema discovery.
+
+## [2026-07-15] build | Session 04 Sanity authoring advanced
+Materially advanced the Sanity authoring session and left it in progress for authenticated Studio
+verification.
+- Refreshed codebase-memory successfully, then added guided rich-text/image/link object schemas,
+  completed Home/Father/Work/Contact singletons, added Home-feature and SEO fields to writing
+  schemas, and reorganised Studio into Website, Writing, Father, Projects, Films, Timeline, and
+  Bookshelf.
+- Added author-friendly create shortcuts for Blog, Journal, and Father drafts while preserving
+  existing document type names and avoiding seeded/invented public content.
+- `npm run typecheck`, zero-warning `npm run lint`, `npm run build`, and Sanity schema extraction
+  pass. Browser checks confirm `/studio` reaches the Sanity login screen at desktop and mobile
+  sizes with no console errors or horizontal overflow.
+- Completion is blocked by Sanity authentication: the available browser session is not signed in,
+  so the custom desk labels, singleton editors, and create shortcuts still need a signed-in pass.
+
+## [2026-07-15] build | Session 04 auth verification retried
+Retried the remaining Session 04 Studio verification without starting Session 05.
+- Refreshed codebase-memory successfully and preserved the existing Session 04 code changes.
+- `/studio` still stops at "Choose login provider" in both the in-app browser and Chrome; desktop
+  1440px and mobile 390px checks show no console errors or horizontal overflow before auth.
+- `npm run typecheck` and zero-warning `npm run lint` passed. The sandboxed quality build failed
+  only because Google Fonts could not be fetched; rerunning `npm run build` with network access
+  passed.
+- Session 04 remains in progress until Istiaque signs in to Sanity and the actual custom Studio
+  desk labels, singleton editors, create shortcuts, and draft creation can be checked.
+
+## [2026-07-15] build | Session 04 Sanity authoring completed
+Completed the authenticated authoring workflow and closed Session 04 without starting Session 05.
+- Signed in with the project-owner GitHub identity and exercised the real Studio desk, Website
+  singletons, Writing views, complete Blog/Journal/Father shortcut menu, and a guided Blog draft.
+- The browser pass exposed duplicate Timeline and Bookshelf desk IDs; fixed the structure, added an
+  API version to the custom Feed list, and strengthened the automated contract against duplicate
+  top-level IDs.
+- Added Studio/document icons and the missing Opinion, Personal, and Observation shortcuts. No test
+  content was saved or published.
+- `npm run quality`, the 17-schema/16-shortcut authoring contract, and Sanity schema extraction pass.
+  Clean 1440px and 390px checks have no fresh console warnings/errors or horizontal overflow.
+- The final codebase-memory refresh was attempted but its local transport disconnected; Session 05
+  should retry before discovery.
