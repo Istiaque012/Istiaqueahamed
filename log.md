@@ -303,3 +303,10 @@ Completed the authenticated authoring workflow and closed Session 04 without sta
   Clean 1440px and 390px checks have no fresh console warnings/errors or horizontal overflow.
 - The final codebase-memory refresh was attempted but its local transport disconnected; Session 05
   should retry before discovery.
+
+## [2026-07-15] build | Session 04 graph index finalized
+Finalized the generated code graph after the Session 04 merge.
+- A post-merge refresh on updated `main` completed successfully with 929 nodes and 1,109
+  relationships, replacing the incomplete pre-merge artifact.
+- Updated the Session 04 Handoff so Session 05 can begin with the fresh graph instead of retrying a
+  resolved transport issue. No website or Sanity content changed.

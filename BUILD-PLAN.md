@@ -397,18 +397,18 @@ understanding schemas or code.
   correct default without saving content; the real browser pass found and fixed duplicate Timeline
   and Bookshelf IDs, then a clean 1440px and 390px pass showed no fresh console warning, error, or
   horizontal overflow; `npm run quality`, the 17-type/16-shortcut authoring contract, and Sanity
-  schema extraction pass
+  schema extraction pass; the post-merge codebase-memory refresh completed with 929 nodes and
+  1,109 relationships
 - Assets/content: no public content seeded; no personal facts, photos, testimonials, dates,
   contact details, or private claims invented; all photo fields remain author-editable
 - Decisions: keep existing document type names stable; add metadata to image fields instead of
   replacing public field names; keep the Feed as a Studio preview list and not a separate document
   type; use the project-owner GitHub login for Studio; leave the contact form disabled by default
   until Session 20 delivery is configured
-- Remaining: codebase-memory's final refresh transport disconnected; retry it before Session 05
-  discovery. Live content fetching, draft mode, visual preview, and image delivery belong to
-  Session 05 and were not started here
-- Next entry point: Session 05, retry codebase-memory first, then connect the validated schemas to
-  typed live queries, draft preview, and the image pipeline
+- Remaining: no Session 04 product work. Live content fetching, draft mode, visual preview, and
+  image delivery belong to Session 05 and were not started here
+- Next entry point: Session 05, use the refreshed codebase-memory graph first, then connect the
+  validated schemas to typed live queries, draft preview, and the image pipeline
 
 ## Session 05 — Live content, preview, and images
 
