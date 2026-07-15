@@ -517,3 +517,18 @@ before a private inbox is connected.
 - Session 19 is done. Session 20 remains in-progress because D8 still defers the provider/recipient:
   the live form stays clearly disabled until four private delivery variables are configured, the
   Sanity switch is enabled, and a real message is confirmed in Istiaque's inbox.
+
+## [2026-07-15] build | Session 21 search and discoverability completed
+Completed the site-wide search, sharing, and AI-discoverability layer using only confirmed public facts.
+- Corrected the canonical identity to “medical doctor, public health professional, and healthcare
+  systems builder” and reused one social register across Person schema, Footer, and Contact.
+- Added Person, WebSite, Breadcrumb, Article, Video, Book, and Project structured data where
+  appropriate; unique route metadata and social cards; canonical URLs; favicons; web manifest;
+  published-content sitemap; robots rules; RSS; and a factual `/llms.txt`.
+- Resized the existing social card to its declared 1200×630 dimensions and kept drafts, Studio,
+  API routes, visual-lab pages, private facts, and placeholders out of indexing.
+- The full quality gate and 26-route production build pass. All thirteen public routes plus the
+  StudyRise detail were checked for metadata, structured data, overflow, and console health; robots,
+  sitemap, manifest, `/llms.txt`, and RSS all return successfully.
+- Google Search Console, off-site profile consistency, and an optional photo-led social card remain
+  owner tasks because they require account access or approved imagery.

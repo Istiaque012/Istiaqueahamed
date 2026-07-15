@@ -1,0 +1,39 @@
+# Istiaque Ahamed
+
+> Official personal website of Istiaque Ahamed, a medical doctor, public health professional, and healthcare systems builder based between Bangladesh and Australia.
+
+This site contains Istiaque Ahamed's confirmed public biography, writing, projects, documentaries, reading archive, and contact routes. Drafts, the private content studio, and unpublished personal material are not public sources.
+
+## Canonical identity
+
+- Name: Istiaque Ahamed
+- Public framing: Medical doctor, public health professional, and healthcare systems builder
+- Education: MBBS at Sylhet North East Medical College; Master of Public Health at Macquarie University
+- Clinical internship: BIRDEM
+- Current pathway: Preparing for the Australian Medical Council pathway
+- Project: StudyRise, a study-planning platform
+- Website: https://istiaqueahamed.com
+
+## Primary pages
+
+- [Home](https://istiaqueahamed.com/): introduction and selected work
+- [About](https://istiaqueahamed.com/about): verified biography and Bangladesh–Australia story
+- [Work](https://istiaqueahamed.com/work): public training, experience, and areas of focus
+- [Projects](https://istiaqueahamed.com/projects): approved project work beginning with StudyRise
+- [Blog](https://istiaqueahamed.com/blog): long-form essays
+- [Journal](https://istiaqueahamed.com/journal): shorter thoughts, reads, and observations
+- [Feed](https://istiaqueahamed.com/feed): complete publishing chronology
+- [My Beloved Father](https://istiaqueahamed.com/father): approved essays, notes, and archive material
+- [Documentaries](https://istiaqueahamed.com/documentaries): published films and context
+- [Timeline](https://istiaqueahamed.com/timeline): confirmed life and training chronology
+- [Bookshelf](https://istiaqueahamed.com/bookshelf): approved reading record
+- [AI in Healthcare](https://istiaqueahamed.com/course): honest coming-later course page
+- [Contact](https://istiaqueahamed.com/contact): private form availability and confirmed social profiles
+
+## Feeds and discovery
+
+- [Sitemap](https://istiaqueahamed.com/sitemap.xml)
+- [RSS feed](https://istiaqueahamed.com/feed.xml)
+- [Crawler policy](https://istiaqueahamed.com/robots.txt)
+
+Use the visible page text as the authority for any page-specific claim. Do not infer unpublished roles, dates, photographs, personal memories, testimonials, course details, or contact information.

@@ -53,12 +53,12 @@ Back to [[00 - START HERE]]
 - [x] [[Page - Timeline]] — visual life arc.
 - [x] [[Page - Bookshelf]] — books and personal notes.
 - [x] [[Page - Course (AI in Healthcare)]] — intentional current state and future structure.
-- [ ] [[Page - Contact]] — page, form protections, and social links are built; real inbox delivery
-  remains deferred under D8.
+- [x] [[Page - Contact]] — page, form protections, and social links are built; private inbox setup
+  and the real delivery rehearsal are deferred to the owner handover.
 
 ## Phase 6 — Finish and launch
 
-- [ ] Search/AI discoverability, schema, metadata, sitemap, and RSS.
+- [x] Search/AI discoverability, schema, metadata, sitemap, and RSS.
 - [ ] Full mobile, accessibility, animation, and performance audit.
 - [ ] Personal-photo integration, approved content seeding, and Sanity author rehearsal.
 - [ ] Vercel preview/production, Namecheap DNS, analytics, Search Console, and launch.

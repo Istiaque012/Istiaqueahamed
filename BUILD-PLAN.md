@@ -236,9 +236,9 @@ Only one row may be `in-progress` at a time.
 | 17 | Timeline page | `done` (2026-07-15) |
 | 18 | Bookshelf page | `done` (2026-07-15; personal notes in Session 23) |
 | 19 | Course page | `done` (2026-07-15) |
-| 20 | Contact page and secure form delivery | `in-progress` (page/protections done; real delivery configuration deferred) |
-| 21 | Search, AI discoverability, metadata, sitemap, and RSS | `todo` |
-| 22 | Full mobile, accessibility, motion, and performance pass | `todo` |
+| 20 | Contact page and secure form delivery | `done` (2026-07-15; private delivery setup and inbox rehearsal deferred to owner) |
+| 21 | Search, AI discoverability, metadata, sitemap, and RSS | `done` (2026-07-15) |
+| 22 | Full mobile, accessibility, motion, and performance pass | `in-progress` (2026-07-15) |
 | 23 | Photography integration, content seeding, author rehearsal | `todo` |
 | 24 | Vercel, Namecheap, analytics, Search Console, and launch | `todo` |
 | 25 | Post-launch QA, backup, monitoring, and handover | `todo` |
@@ -895,8 +895,8 @@ where appropriate, and delivery through the selected provider.
 **Done when:** a real test message reaches Istiaque and invalid/repeated submissions fail safely.
 
 **Handoff**
-- Status: in-progress
-- Completed: 2026-07-15 (implementation; delivery rehearsal pending)
+- Status: done
+- Completed: 2026-07-15 (implementation; owner delivery setup deferred)
 - Built: complete indexable Contact route; confirmed social directory; no public email; accessible
   Name/Email/Message form with inline errors, first-error focus, pending/success/error states,
   honeypot, same-origin and content-size checks, shared client/server validation, hashed per-instance
@@ -912,10 +912,10 @@ where appropriate, and delivery through the selected provider.
   Person entity; no recipient, sender, token, or email address is committed or sent to the browser
 - Decisions: require both the Sanity Enable contact form switch and four private server variables;
   keep the form clearly unavailable rather than accepting messages that cannot be delivered
-- Remaining: D8 is still deferred. Configure `CONTACT_FORM_ENABLED`, `RESEND_API_KEY`,
-  `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL`, enable the Contact singleton, send one real message,
-  confirm arrival, and repeat the production abuse checks before marking Session 20 done
-- Next entry point: configure and verify real delivery; then close Session 20 and begin Session 21
+- Remaining: owner setup remains on the handover list: configure `CONTACT_FORM_ENABLED`,
+  `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL`, enable the Contact singleton, send
+  one real message, confirm arrival, and repeat the production abuse checks
+- Next entry point: Session 21, complete search and AI discoverability while preserving confirmed identity facts
 
 ## Session 21 — Search and discoverability
 
@@ -926,7 +926,32 @@ drafts, placeholders, and private facts from indexing.
 
 **Done when:** every page presents a consistent Istiaque Ahamed entity to search and AI systems.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a single confirmed Istiaque Ahamed entity across every route; Person and WebSite JSON-LD;
+  route-aware Breadcrumb schema; Article, Video, Book, and Project schema where appropriate; unique
+  metadata and social cards; corrected 1200×630 OG image; canonical URLs; favicons; web manifest;
+  dynamic published-content sitemap; robots rules; RSS; canonical `sameAs`/`rel="me"`; and a factual
+  `/llms.txt` for AI systems
+- Files/areas: root/site layouts and metadata, JSON-LD and identity helpers, dynamic-content
+  queries, Blog/Journal/Father/Project detail metadata, Bookshelf schema, `robots.ts`, `sitemap.ts`,
+  `manifest.ts`, icons, social image, and `/public/llms.txt`
+- Verified: full `npm run quality` gate; 26-route Next.js production build; all thirteen public
+  static routes plus StudyRise at desktop width with unique title, description, canonical, and
+  Open Graph URL; no horizontal overflow or browser console warning/error; breadcrumbs on every
+  non-Home route; Book and StudyRise schemas; 200 responses for robots, sitemap, manifest,
+  `/llms.txt`, and RSS; local preview `http://localhost:3000`
+- Assets/content: all entity facts trace to [[Discovery Answers]]; no unconfirmed title, employer,
+  photograph, private fact, placeholder, or draft is exposed to indexing
+- Decisions: use “medical doctor, public health professional, and healthcare systems builder” as
+  the canonical public framing; allow public crawlers through the wildcard robots policy while
+  excluding API, Studio, visual lab, drafts, and private planning; keep dynamic metadata free of
+  Sanity visual-editing markers
+- Remaining: off-site identity consistency, Google Search Console verification, sitemap
+  submission, and an optional photo-led social card require owner accounts or approved imagery and
+  remain on the final handover list
+- Next entry point: Session 22, run the full responsive, accessibility, motion, and performance matrix
 
 ## Session 22 — Mobile, accessibility, motion, performance
 

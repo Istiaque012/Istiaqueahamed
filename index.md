@@ -34,7 +34,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 |---|---|---|---|
 | [[Vision & Positioning]] | One site for one whole life — not a CV; who he is and is becoming | `private` | planned |
 | [[Audience & Goals]] | Who the site is for and what success looks like | `private` | planned |
-| [[SEO & Discoverability]] | Own "Istiaque Ahamed" on Google and in AI search | `mixed` | planned |
+| [[SEO & Discoverability]] | Confirmed entity, metadata, structured data, sitemap, robots, RSS, and AI-readable site summary | `mixed` | done |
 | [[Content Strategy]] | Distinct Blog/Journal/Father formats, complete Feed, and Sanity-curated Home writing | `private` | in-progress |
 | [[Creative Direction - Full Freedom]] | Seven clear navigation entrances organising the complete 13-page cinematic site | `private` | proposed |
 | [[Build Roadmap]] | All 13 pages preserved across six reviewable production phases | `private` | in-progress |
@@ -61,7 +61,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Page - Course (AI in Healthcare)]] | Intentional Coming later room with factual audience, future-ready Sanity structure, and no sales promise | `public` | done |
 | [[Page - Timeline]] | Confirmed seven-event life arc with four threads, accessible motion, and deep links | `public` | done |
 | [[Page - Bookshelf]] | Five-title reading library with Sanity status/notes, URL filters, and honest fallbacks | `public` | done |
-| [[Page - Contact]] | Private form UI, secure fail-closed endpoint, and confirmed socials; real inbox delivery still deferred | `public` | in-progress |
+| [[Page - Contact]] | Private form UI, secure fail-closed endpoint, and confirmed socials; owner inbox setup is documented for later | `public` | done |
 
 ## Tech
 | Page | Summary | Visibility | Status |

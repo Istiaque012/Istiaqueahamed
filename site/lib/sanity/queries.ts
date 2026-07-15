@@ -38,6 +38,25 @@ export const blogPostBySlugQuery = defineQuery(`
 
 export const blogSlugsQuery = defineQuery(`*[_type == "blogPost" && defined(slug.current)].slug.current`)
 
+// Published, indexable detail routes for the Next.js sitemap. The Sanity client
+// uses the published perspective, so drafts never enter this list.
+export const sitemapEntriesQuery = defineQuery(`
+  *[
+    (_type == "blogPost" && defined(slug.current)) ||
+    (_type == "journalEntry" && defined(slug.current)) ||
+    (_type == "fatherPiece" && defined(slug.current)) ||
+    (_type == "project" && defined(slug.current))
+  ] {
+    "path": select(
+      _type == "blogPost" => "/blog/" + slug.current,
+      _type == "journalEntry" => "/journal/" + slug.current,
+      _type == "fatherPiece" => "/father/" + slug.current,
+      _type == "project" => "/projects/" + slug.current
+    ),
+    "updatedAt": _updatedAt
+  }
+`)
+
 // ── Journal ──────────────────────────────────────────────────────────────────
 export const journalEntriesQuery = defineQuery(`
   *[_type == "journalEntry" && defined(slug.current)] | order(publishedAt desc) {

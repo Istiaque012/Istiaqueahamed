@@ -1,6 +1,11 @@
-import { SITE_URL } from "@/lib/person";
+import { PERSON_ID, SITE_URL } from "@/lib/person";
 
-const AUTHOR = { "@type": "Person", name: "Istiaque Ahamed", url: SITE_URL } as const;
+const AUTHOR = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Istiaque Ahamed",
+  url: SITE_URL,
+} as const;
 
 type ArticleJsonLdInput = {
   title: string;
@@ -19,6 +24,29 @@ type VideoJsonLdInput = {
   uploadDate?: string;
   thumbnailUrl?: string;
   videoId?: string;
+};
+
+type BreadcrumbJsonLdItem = {
+  name: string;
+  path: string;
+};
+
+type BookJsonLdInput = {
+  author?: string;
+  description?: string;
+  imageUrl?: string;
+  path: string;
+  title: string;
+};
+
+type ProjectJsonLdInput = {
+  description?: string;
+  githubUrl?: string;
+  imageUrl?: string;
+  liveUrl?: string;
+  name: string;
+  path: string;
+  techStack?: string[];
 };
 
 /**
@@ -79,6 +107,63 @@ export function videoJsonLd({
     embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
     url,
     author: AUTHOR,
+  };
+}
+
+export function breadcrumbJsonLd(items: BreadcrumbJsonLdItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: new URL(item.path, SITE_URL).toString(),
+    })),
+  };
+}
+
+export function bookJsonLd({
+  author,
+  description,
+  imageUrl,
+  path,
+  title,
+}: BookJsonLdInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: title,
+    url: new URL(path, SITE_URL).toString(),
+    ...(author ? { author: { "@type": "Person", name: author } } : {}),
+    ...(description ? { description } : {}),
+    ...(imageUrl ? { image: imageUrl } : {}),
+  };
+}
+
+export function projectJsonLd({
+  description,
+  githubUrl,
+  imageUrl,
+  liveUrl,
+  name,
+  path,
+  techStack,
+}: ProjectJsonLdInput) {
+  const pageUrl = new URL(path, SITE_URL).toString();
+  const sameAs = [liveUrl, githubUrl].filter((value): value is string => Boolean(value));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": name === "StudyRise" ? ["Project", "SoftwareApplication"] : "Project",
+    name,
+    url: pageUrl,
+    mainEntityOfPage: pageUrl,
+    founder: AUTHOR,
+    ...(description ? { description } : {}),
+    ...(imageUrl ? { image: imageUrl } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
+    ...(techStack?.length ? { keywords: techStack.join(", ") } : {}),
   };
 }
 
