@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SanityPortableText from "@/components/SanityPortableText";
 import { articleJsonLd } from "@/lib/jsonld";
-import { formatEditorialDate } from "@/lib/editorial";
+import { bookAnchorId, formatEditorialDate } from "@/lib/editorial";
 import type { JournalEntry } from "@/lib/sanity/types";
 
 type JournalArticleProps = {
@@ -55,7 +55,7 @@ export default function JournalArticle({ entry }: JournalArticleProps) {
           <div>
             <h2>{entry.relatedBook.title}</h2>
             {entry.relatedBook.author ? <p>{entry.relatedBook.author}</p> : null}
-            <Link className="text-link" href="/bookshelf">
+            <Link className="text-link" href={`/bookshelf#${bookAnchorId(entry.relatedBook._id)}`}>
               See it on the Bookshelf <span aria-hidden="true">→</span>
             </Link>
           </div>

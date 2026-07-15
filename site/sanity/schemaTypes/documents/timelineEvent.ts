@@ -18,10 +18,31 @@ export const timelineEvent = defineType({
       type: 'string',
       options: { list: ['Medicine', 'Tech', 'Personal', 'Australia'], layout: 'radio' },
       initialValue: 'Medicine',
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: 'sortOrder',
+      title: 'Story order',
+      type: 'number',
+      description: 'Optional. Lower numbers appear first; use this when date labels do not sort naturally.',
+      validation: (r) => r.integer().min(0),
+    }),
+    defineField({
+      name: 'relatedLink',
+      title: 'Continue to',
+      type: 'routeLink',
+      description: 'Optional related page, such as About, Father, Projects, or Work.',
     }),
   ],
   orderings: [
-    { title: 'Year, ascending', name: 'yearAsc', by: [{ field: 'year', direction: 'asc' }] },
+    {
+      title: 'Story order',
+      name: 'storyOrder',
+      by: [
+        { field: 'sortOrder', direction: 'asc' },
+        { field: 'year', direction: 'asc' },
+      ],
+    },
   ],
   preview: { select: { title: 'title', subtitle: 'year' } },
 })

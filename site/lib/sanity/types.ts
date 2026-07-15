@@ -141,6 +141,8 @@ export type Documentary = BaseContent & {
   thumbnail?: SanityImageWithMetadata
   description?: string
   topic?: string
+  themes?: string[]
+  featured?: boolean
 }
 
 export type Book = BaseContent & {
@@ -150,6 +152,7 @@ export type Book = BaseContent & {
   coverImage?: SanityImageWithMetadata
   note?: string
   status?: 'Reading' | 'Read' | 'Want to read'
+  sortOrder?: number
 }
 
 export type TimelineEvent = BaseContent & {
@@ -157,7 +160,12 @@ export type TimelineEvent = BaseContent & {
   year?: string
   title: string
   description?: string
-  category?: string
+  category?: 'Medicine' | 'Tech' | 'Personal' | 'Australia'
+  sortOrder?: number
+  relatedLink?: {
+    label?: string
+    href?: string
+  }
 }
 
 export type FeedItem = {

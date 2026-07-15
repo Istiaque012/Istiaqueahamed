@@ -479,3 +479,23 @@ unapproved content or professional detail.
   Next.js production build pass. Desktop and phone review found and fixed one StudyRise title overflow;
   all final reviewed routes have no horizontal overflow, clipped controls, console warnings, or errors.
 - Refreshed the codebase-memory graph after the final code pass: 612 nodes and 1,036 edges.
+
+## [2026-07-15] build | Sessions 16–18 Documentaries, Timeline, and Bookshelf completed
+Completed the final film, life-archive, and reading pages before the minimal Course and Contact work.
+- **Documentaries:** built featured/archive presentation, click-to-load privacy-enhanced YouTube
+  facade, automatic/custom thumbnail fallbacks, approved context/themes, conditional video
+  metadata, channel links, and Feed/RSS anchors without inventing a film or loading an iframe in
+  the empty public state.
+- **Timeline:** built a seven-event confirmed chronology across Medicine, Tech, Personal, and
+  Australia, with deliberate Sanity order, optional related links, reduced-motion-safe reveals,
+  fixed-navigation-safe event hashes, and About/Father/Projects/Work continuations. Unapproved
+  personal milestones and My Care Pro remain absent.
+- **Bookshelf:** built the exact 2:3 cover library, URL-backed status filters, five confirmed
+  source titles, Sanity-managed covers/status/order/notes, direct Journal book anchors, and honest
+  unpublished states. Private C6 tone samples were not published as personal opinions.
+- The shared quality gate and schema extraction pass. Desktop and 390×844 browser QA found and
+  fixed deep-link reset, a desktop Bookshelf title orphan, and a phone intrinsic-width overflow;
+  final routes are indexable, have no horizontal overflow, and report no console warnings/errors.
+- Approved film selection/context, book covers/notes, and populated playback/filter rehearsal move
+  to Session 23 alongside the planned content-seeding pass.
+- Refreshed the final codebase-memory graph: 651 nodes and 1,069 edges.

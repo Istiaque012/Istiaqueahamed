@@ -83,21 +83,22 @@ export const projectBySlugQuery = defineQuery(`
 
 // ── Documentaries ────────────────────────────────────────────────────────────
 export const documentariesQuery = defineQuery(`
-  *[_type == "documentary"] | order(publishedAt desc) {
+  *[_type == "documentary"] | order(featured desc, publishedAt desc, _id asc) {
     _id, _type, _updatedAt, title, youtubeUrl, "thumbnail": thumbnail ${IMAGE},
-    description, topic, publishedAt
+    description, topic, themes, featured, publishedAt
   }`)
 
 // ── Books ────────────────────────────────────────────────────────────────────
 export const booksQuery = defineQuery(`
-  *[_type == "book"] | order(_createdAt desc) {
-    _id, _type, _updatedAt, title, author, "coverImage": coverImage ${IMAGE}, note, status
+  *[_type == "book"] | order(coalesce(sortOrder, 999) asc, title asc, _id asc) {
+    _id, _type, _updatedAt, title, author, "coverImage": coverImage ${IMAGE}, note, status, sortOrder
   }`)
 
 // ── Timeline ─────────────────────────────────────────────────────────────────
 export const timelineQuery = defineQuery(`
-  *[_type == "timelineEvent"] | order(year asc) {
-    _id, _type, _updatedAt, year, title, description, category
+  *[_type == "timelineEvent"] | order(coalesce(sortOrder, 999) asc, year asc, _id asc) {
+    _id, _type, _updatedAt, year, title, description, category, sortOrder,
+    relatedLink { label, href }
   }`)
 
 // ── Singletons ───────────────────────────────────────────────────────────────

@@ -232,9 +232,9 @@ Only one row may be `in-progress` at a time.
 | 13 | Unified Feed and Home feed integration | `done` (2026-07-15) |
 | 14 | Projects index and StudyRise case study | `done` (2026-07-15) |
 | 15 | Work page | `done` (2026-07-15) |
-| 16 | Documentaries page and film presentation | `todo` |
-| 17 | Timeline page | `todo` |
-| 18 | Bookshelf page | `todo` |
+| 16 | Documentaries page and film presentation | `done` (2026-07-15; approved film rehearsal in Session 23) |
+| 17 | Timeline page | `done` (2026-07-15) |
+| 18 | Bookshelf page | `done` (2026-07-15; personal notes in Session 23) |
 | 19 | Course page | `todo` |
 | 20 | Contact page and secure form delivery | `todo` |
 | 21 | Search, AI discoverability, metadata, sitemap, and RSS | `todo` |
@@ -779,7 +779,27 @@ personal context and themes from Sanity, channel link, video metadata, and Feed 
 **Done when:** at least one approved film plays without harming mobile performance and newly
 published films enter Feed automatically.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done; the approved-film content rehearsal remains intentionally deferred
+- Completed: 2026-07-15
+- Built: cinematic film index with newest featured presentation, responsive archive grid,
+  click-to-load `youtube-nocookie.com` playback, automatic YouTube thumbnail plus Sanity override,
+  designed invalid/missing-thumbnail states, approved context and multi-theme fields, canonical
+  channel links, conditional `VideoObject` metadata, and Feed/RSS destinations that open the exact
+  film anchor
+- Files/areas: `app/(site)/documentaries/page.tsx`, `components/Documentaries.tsx`,
+  `components/YouTubeFacade.tsx`, YouTube/editorial/JSON-LD helpers, documentary schema/query/type,
+  remote-image configuration, and Documentary CSS
+- Verified: shared quality gate and schema extraction pass; YouTube URL parsing is runtime-checked
+  for watch, short, embed, and privacy-enhanced formats; the indexable empty public state was
+  reviewed at 1440×1000 and 390×844 with zero preloaded YouTube iframes, no overflow, and no
+  console warnings/errors
+- Assets/content: no film title, subject, date, thumbnail, or personal context was invented; the
+  page links to the confirmed YouTube channel while waiting for C5 approval
+- Remaining: select one or two real films, approve the context, and click-test populated playback
+  during Session 23; the code path is type/build-verified but cannot honestly satisfy that content
+  rehearsal before an approved film exists
+- Next entry point: Session 17, build the confirmed life arc
 
 ## Session 17 — Timeline
 
@@ -790,7 +810,26 @@ only confirmed dates are seeded.
 **Done when:** the whole journey is understandable as a narrative on phone and desktop without
 animation being necessary to access the information.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: seven-event confirmed opening chronology; Medicine, Tech, Personal, and Australia threads;
+  responsive cinematic progression; reduced-motion-safe reveals; deliberate Sanity story order;
+  optional event deep links; and direct About, Father, Projects, and Work continuations
+- Files/areas: `app/(site)/timeline/page.tsx`, `components/Timeline.tsx`, timeline schema/query/type,
+  shared hash/smooth-scroll coordination, and Timeline CSS
+- Verified: shared quality gate and schema extraction pass; all seven confirmed events render in
+  source order; `/timeline#event-mph` lands below the fixed navigation at desktop and phone sizes;
+  desktop and 390×844 review found no horizontal overflow, clipped narrative, console warning, or
+  console error, and no information depends on motion
+- Assets/content: only D7-confirmed dates and established public facts are present; My Care Pro,
+  birth, school, faith, fitness, and other unapproved personal milestones remain absent
+- Decisions: the confirmed code fallback keeps the launch page complete until a deliberately
+  ordered Sanity chronology replaces it; partial unreviewed CMS timelines do not mix with the
+  canonical fallback
+- Remaining: add optional approved personal milestones or an Australia section-break photograph
+  in Session 23
+- Next entry point: Session 18, build the reading library
 
 ## Session 18 — Bookshelf
 
@@ -800,7 +839,26 @@ Journal Read entries, responsive image treatment, and graceful missing-cover sta
 **Done when:** five starter books can be managed in Sanity and each note sounds personal rather
 than generated or assumed.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done; approved personal notes and covers remain intentionally deferred
+- Completed: 2026-07-15
+- Built: light editorial, cover-led library; exact 2:3 Sanity covers and designed fallbacks;
+  URL-backed All/Reading/Read/Want-to-read filters; five confirmed starter titles; honest
+  unpublished status/note treatment; direct Journal Read-to-book anchors; and optional shelf order
+- Files/areas: `app/(site)/bookshelf/page.tsx`, `components/Bookshelf.tsx`, shared editorial/filter
+  helpers, book schema/query/type, exact-ratio image primitive, and Bookshelf CSS
+- Verified: shared quality gate and schema extraction pass; five confirmed titles render; filters
+  announce empty results and preserve their URL state; book anchors land below navigation; desktop
+  and 390×844 review found and fixed the initial title orphan and intrinsic-width overflow, with no
+  final horizontal overflow or console warnings/errors; refreshed code graph has 651 nodes and
+  1,069 edges
+- Assets/content: no author, reading status, cover, or personal opinion was assumed; the private C6
+  tone samples remain unpublished
+- Decisions: source-confirmed titles form the complete no-CMS fallback; once reviewed Sanity books
+  exist, their real authors, statuses, covers, order, and Istiaque-authored notes take over
+- Remaining: approve C6 notes, upload/source approved covers, and runtime-review populated filters
+  plus a Journal Read cross-link during Session 23
+- Next entry point: Session 19, build the intentional Course coming-later route
 
 ## Session 19 — Course
 

@@ -46,12 +46,12 @@ Back to [[00 - START HERE]]
 
 - [x] [[Page - Projects]] — StudyRise case study and future-ready index.
 - [x] [[Page - Work]] — curated public professional record.
-- [ ] [[Page - Documentaries]] — films, context, and performant embeds.
+- [x] [[Page - Documentaries]] — films, context, and performant embeds.
 
 ## Phase 5 — Life archive and contact
 
-- [ ] [[Page - Timeline]] — visual life arc.
-- [ ] [[Page - Bookshelf]] — books and personal notes.
+- [x] [[Page - Timeline]] — visual life arc.
+- [x] [[Page - Bookshelf]] — books and personal notes.
 - [ ] [[Page - Course (AI in Healthcare)]] — intentional current state and future structure.
 - [ ] [[Page - Contact]] — secure form and social links.
 

@@ -24,6 +24,15 @@ export default function SmoothScroll() {
       wheelMultiplier: 0.9,
     });
 
+    const scrollToHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const target = id ? document.getElementById(id) : null;
+      if (target) lenis.scrollTo(target, { immediate: true });
+    };
+
+    const hashFrame = requestAnimationFrame(scrollToHash);
+    window.addEventListener("hashchange", scrollToHash);
+
     let raf = 0;
     const loop = (time: number) => {
       lenis.raf(time);
@@ -32,6 +41,8 @@ export default function SmoothScroll() {
     raf = requestAnimationFrame(loop);
 
     return () => {
+      window.removeEventListener("hashchange", scrollToHash);
+      cancelAnimationFrame(hashFrame);
       cancelAnimationFrame(raf);
       lenis.destroy();
     };

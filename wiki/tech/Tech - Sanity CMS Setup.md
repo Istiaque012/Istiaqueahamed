@@ -66,9 +66,10 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - title
 - youtubeUrl (for embed)
 - thumbnail
-- description
+- description (required approved public context)
 - publishedAt
-- topic / theme
+- primary topic / up to five supporting themes
+- featured (newest featured film opens the page)
 
 ### `book` → [[Page - Bookshelf]]
 - title
@@ -76,12 +77,15 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - coverImage
 - note (what it meant to me)
 - status (Reading / Read / Want to read)
+- optional shelf order
 
 ### `timelineEvent` → [[Page - Timeline]]
 - year
 - title
 - description
 - category (Medicine / Tech / Personal / Australia)
+- optional story order
+- optional related-page link
 
 ### Singletons (one-off documents)
 - `siteSettings` — name, tagline, bio, social links, OG image, Person-schema fields
@@ -101,6 +105,10 @@ The [[Page - Feed]] doesn't have its own schema. It's a GROQ query that pulls `b
 Session 13 now exposes that same contract as the complete visitor Feed and `/feed.xml` RSS. Home's
 smaller teaser keeps the same eligibility, order, label, and destination rules, so the two surfaces
 cannot disagree about what is newest.
+
+Session 16 keeps Documentary publication in the same Feed/RSS contract and now sends each Feed
+link to the film's stable page anchor. YouTube embeds are facades: the external player loads only
+after a visitor chooses Play.
 
 Home uses two related queries: one optional published Blog/Journal item with
 `featureOnHome == true`, plus the three newest published Blog/Journal items excluding that item.

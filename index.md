@@ -57,10 +57,10 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Page - My Beloved Father]] | Quiet Father room complete with Essay/Note publishing, reading view, archive gallery, and honest empty states | `public` | done |
 | [[Page - Projects]] | Complete StudyRise-led index and case study with Sanity product media and no unapproved concepts | `public` | done |
 | [[Page - Work]] | Curated approved training, experience, focus, future media, and gated CV record | `public` | done |
-| [[Page - Documentaries]] | His films — a doctor who tells stories on camera | `public` | planned |
+| [[Page - Documentaries]] | Performant film room with approved context, lazy YouTube playback, and exact Feed anchors | `public` | done |
 | [[Page - Course (AI in Healthcare)]] | AI-for-doctors course — minimal "coming soon" for now | `public` | planned-minimal |
-| [[Page - Timeline]] | The whole life arc in one scroll, Bangladesh → Australia | `public` | planned |
-| [[Page - Bookshelf]] | What he reads — intellectual depth, a human touch | `public` | planned |
+| [[Page - Timeline]] | Confirmed seven-event life arc with four threads, accessible motion, and deep links | `public` | done |
+| [[Page - Bookshelf]] | Five-title reading library with Sanity status/notes, URL filters, and honest fallbacks | `public` | done |
 | [[Page - Contact]] | Easy, confident ways to reach and follow him | `public` | planned |
 
 ## Tech

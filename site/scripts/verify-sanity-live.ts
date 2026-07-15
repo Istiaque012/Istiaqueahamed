@@ -1,6 +1,8 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
+import { extractYouTubeId } from '../lib/youtube'
+
 const root = process.cwd()
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -19,6 +21,8 @@ const requiredFiles = [
   'lib/sanity/tags.ts',
   'lib/sanity/types.ts',
   'components/SanityPortableText.tsx',
+  'components/YouTubeFacade.tsx',
+  'lib/youtube.ts',
   'app/api/draft-mode/enable/route.ts',
   'app/api/draft-mode/disable/route.ts',
   'app/api/revalidate/route.ts',
@@ -57,6 +61,38 @@ assert(projectSchema.includes("name: 'publishedAt'"), 'Project schema must provi
 
 const workSchema = read('sanity/schemaTypes/singletons/workPage.ts')
 assert(workSchema.includes("name: 'cvFile'"), 'Work schema must keep the approved CV file separate from its toggle')
+
+const documentarySchema = read('sanity/schemaTypes/documents/documentary.ts')
+assert(documentarySchema.includes("name: 'featured'"), 'Documentary schema must support a featured film')
+assert(documentarySchema.includes("name: 'themes'"), 'Documentary schema must support multiple approved themes')
+
+const timelineSchema = read('sanity/schemaTypes/documents/timelineEvent.ts')
+assert(timelineSchema.includes("name: 'sortOrder'"), 'Timeline schema must support deliberate story order')
+assert(timelineSchema.includes("name: 'relatedLink'"), 'Timeline events must support related-page links')
+
+const bookSchema = read('sanity/schemaTypes/documents/book.ts')
+for (const field of ['note', 'status', 'sortOrder']) {
+  assert(bookSchema.includes(`name: '${field}'`), `Book schema must expose ${field}`)
+}
+
+for (const route of ['documentaries', 'timeline', 'bookshelf']) {
+  const page = read(`app/(site)/${route}/page.tsx`)
+  assert(!page.includes('noIndex: true'), `${route} must be indexable after its page session`)
+}
+
+const editorial = read('lib/editorial.ts')
+assert(editorial.includes('/documentaries#'), 'Documentary Feed destinations must open the matching film')
+
+const youtubeId = 'dQw4w9WgXcQ'
+for (const url of [
+  `https://www.youtube.com/watch?v=${youtubeId}`,
+  `https://youtu.be/${youtubeId}`,
+  `https://www.youtube-nocookie.com/embed/${youtubeId}`,
+  `https://www.youtube.com/shorts/${youtubeId}`,
+]) {
+  assert(extractYouTubeId(url) === youtubeId, `Unsupported YouTube URL format: ${url}`)
+}
+assert(extractYouTubeId('https://example.com/watch?v=dQw4w9WgXcQ') === undefined, 'Non-YouTube URLs must fail closed')
 
 for (const imageField of ['coverImage', 'image', 'thumbnail']) {
   assert(queries.includes(`"${imageField}":`), `Missing image projection for ${imageField}`)

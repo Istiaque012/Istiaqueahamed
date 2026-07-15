@@ -29,8 +29,8 @@ tags: [project/website, planning, images]
 | 7 | StudyRise screenshots — Today dashboard, study plan, analytics (3–5 clean captures) | Projects · featured; Home projects card | 16:10 (browser frame) | StudyRise study-planning app by Istiaque Ahamed — Today dashboard | supplied + placeholders — official preview live; three detailed slots built and Sanity-authorable |
 | 8 | My Care Pro visual | Omitted from initial public site | — | — | not-needed |
 | 9 | Blog cover images — 1 per post, editorial | Blog · per post (via Sanity) | 16:9 | per post | placeholder |
-| 10 | Documentary thumbnails (pulled from YouTube; custom if desired) | Documentaries · grid | 16:9 | per film | auto from YouTube |
-| 11 | Book covers × 5 starters | Bookshelf · grid | 2:3 | "<Title> — on Istiaque Ahamed's bookshelf" | sourced by Claude (public covers) |
+| 10 | Documentary thumbnails (pulled from YouTube; custom if desired) | Documentaries · grid | 16:9 | per film | live path — automatic YouTube thumbnail + Sanity override; approved film pending |
+| 11 | Book covers × 5 starters | Bookshelf · grid | 2:3 | "<Title> — on Istiaque Ahamed's bookshelf" | placeholder — exact-ratio fallback built and Sanity-authorable; approved covers pending |
 | 12 | Travel / Australia photo | Timeline · Australia section break; About | 16:9 | Istiaque Ahamed in Australia | placeholder — About slot built and Sanity-authorable |
 | 13 | Fitness photo (optional, tasteful) | About · human side / Timeline | 4:5 | Istiaque Ahamed — training | placeholder |
 | 14 | OG share image — name + photo + tagline composition | Site-wide meta | 1200×630 (1.91:1) | — | generated-placeholder — bespoke architectural card wired in v1; replace after #2 |
