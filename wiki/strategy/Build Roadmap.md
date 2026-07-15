@@ -59,7 +59,7 @@ Back to [[00 - START HERE]]
 ## Phase 6 — Finish and launch
 
 - [x] Search/AI discoverability, schema, metadata, sitemap, and RSS.
-- [ ] Full mobile, accessibility, animation, and performance audit.
+- [x] Full mobile, accessibility, animation, and performance audit.
 - [ ] Personal-photo integration, approved content seeding, and Sanity author rehearsal.
 - [ ] Vercel preview/production, Namecheap DNS, analytics, Search Console, and launch.
 - [ ] Post-launch QA, backup procedure, monitoring, and handover.

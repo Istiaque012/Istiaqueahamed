@@ -16,7 +16,7 @@
   --ivory: #f1f0eb;
   --white: #f7f7f4;
   --grey: #a5a5a0;
-  --grey-dark: #656560;
+  --grey-dark: #85857f;
   --line-dark: #2a2a28;
   --line-light: #cfcec8;
   --section-space-sm: clamp(72px, 9vw, 120px);
@@ -38,7 +38,7 @@
   --father-surface: #1b1813;
   --father-text: #eee9df;
   --father-muted: #aaa296;
-  --father-faint: #746c60;
+  --father-faint: #898175;
   --father-line: #302b24;
   background: var(--father-bg);
   color: var(--father-text);
@@ -698,7 +698,9 @@ textarea {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
   outline: 2px solid var(--white);
   outline-offset: 5px;
 }
@@ -962,6 +964,8 @@ textarea:focus-visible {
 }
 
 .light-section {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
   background: var(--ivory);
   color: var(--black);
 }
@@ -3022,6 +3026,12 @@ textarea:focus-visible {
   border-bottom-color: currentColor;
 }
 
+.ui-field input:focus-visible,
+.ui-field textarea:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
 .ui-field input::placeholder,
 .ui-field textarea::placeholder { color: var(--text-faint); }
 
@@ -3593,7 +3603,13 @@ textarea:focus-visible {
     border-bottom: 1px solid var(--line-dark);
   }
 
-  .global-mobile-nav__writing > div a { color: #b9b9b4; font-size: 12px; }
+  .global-mobile-nav__writing > div a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: #b9b9b4;
+    font-size: 12px;
+  }
 
   .global-mobile-nav > a[aria-current="page"],
   .global-mobile-nav__writing[data-active="true"] > a,
@@ -4346,6 +4362,10 @@ textarea:focus-visible {
 }
 
 .writing-scaffold--blog {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
+  --text-muted: #5f5f59;
+  --text-faint: #666660;
   background: var(--ivory);
   color: var(--black);
 }
@@ -5565,6 +5585,8 @@ textarea:focus-visible {
 }
 
 .projects-index__featured {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
   background: var(--ivory);
   color: var(--black);
 }
@@ -6516,6 +6538,8 @@ textarea:focus-visible {
 }
 
 .documentaries-page__channel {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
   background: var(--ivory);
   color: var(--black);
 }
@@ -6671,6 +6695,8 @@ textarea:focus-visible {
 }
 
 .timeline-page__continue {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
   padding: var(--section-space-lg) 0;
   background: var(--ivory);
   color: var(--black);
@@ -6706,7 +6732,7 @@ textarea:focus-visible {
 
 .timeline-page__continue a > span,
 .timeline-page__continue a > small {
-  color: #73736d;
+  color: #666660;
   font-size: 9px;
   text-transform: uppercase;
 }
@@ -6733,6 +6759,8 @@ textarea:focus-visible {
 
 /* ── Session 18 · Bookshelf ─────────────────────────────────────────────── */
 .bookshelf-page {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
   background: var(--ivory);
   color: var(--black);
 }
@@ -6827,7 +6855,7 @@ textarea:focus-visible {
   padding-bottom: 12px;
   justify-content: space-between;
   border-bottom: 1px solid var(--line-light);
-  color: #74746e;
+  color: #666660;
   font-size: 9px;
   text-transform: uppercase;
 }
@@ -6856,7 +6884,7 @@ textarea:focus-visible {
 }
 
 .bookshelf-page__note--pending {
-  color: #777771;
+  color: #666660;
   font-style: italic;
 }
 
@@ -6869,6 +6897,8 @@ textarea:focus-visible {
 }
 
 .bookshelf-page__journal {
+  --grey: #a5a5a0;
+  --grey-dark: #85857f;
   background: var(--black);
   color: var(--white);
 }

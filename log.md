@@ -532,3 +532,17 @@ Completed the site-wide search, sharing, and AI-discoverability layer using only
   sitemap, manifest, `/llms.txt`, and RSS all return successfully.
 - Google Search Console, off-site profile consistency, and an optional photo-led social card remain
   owner tasks because they require account access or approved imagery.
+
+## [2026-07-15] build | Session 22 responsive accessibility and performance completed
+Closed the full-site usability and performance pass against the production build.
+- Raised muted text contrast across dark, ivory, Father, Blog, Projects, Documentary, Course,
+  Timeline, Bookshelf, and Contact registers; restored explicit focus rings for form fields and
+  summaries; and gave nested mobile Writing links a 44 px minimum target.
+- Verified skip link, landmarks, headings, control names, image alternatives, form descriptions,
+  focus trapping/restoration, reduced-motion behaviour, coarse-pointer smooth-scroll bypass,
+  responsive image sizing, lazy video, font loading, query caching, and pagination foundations.
+- Every one of the thirteen public routes now scores 100 for Lighthouse mobile accessibility and
+  SEO. Home, StudyRise, and Contact score 90, 92, and 94 for mobile performance respectively, all
+  with 100 best practices, zero measured layout shift, and 20–30 ms total blocking time.
+- The complete quality gate and 26-route production build pass. The durable audit record is
+  `site/.preview/session-22-audit.md`; large raw Lighthouse files stay local and ignored.

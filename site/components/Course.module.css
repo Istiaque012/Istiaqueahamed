@@ -120,6 +120,8 @@
 }
 
 .themes {
+  --grey: #5f5f59;
+  --grey-dark: #666660;
   padding: var(--section-space-lg) 0;
   background: var(--ivory);
   color: var(--black);
@@ -150,7 +152,7 @@
 }
 
 .themeList span {
-  color: #777770;
+  color: #666660;
   font-size: 9px;
 }
 

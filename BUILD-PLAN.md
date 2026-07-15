@@ -238,8 +238,8 @@ Only one row may be `in-progress` at a time.
 | 19 | Course page | `done` (2026-07-15) |
 | 20 | Contact page and secure form delivery | `done` (2026-07-15; private delivery setup and inbox rehearsal deferred to owner) |
 | 21 | Search, AI discoverability, metadata, sitemap, and RSS | `done` (2026-07-15) |
-| 22 | Full mobile, accessibility, motion, and performance pass | `in-progress` (2026-07-15) |
-| 23 | Photography integration, content seeding, author rehearsal | `todo` |
+| 22 | Full mobile, accessibility, motion, and performance pass | `done` (2026-07-15) |
+| 23 | Photography integration, content seeding, author rehearsal | `in-progress` (2026-07-15) |
 | 24 | Vercel, Namecheap, analytics, Search Console, and launch | `todo` |
 | 25 | Post-launch QA, backup, monitoring, and handover | `todo` |
 
@@ -963,7 +963,27 @@ Vitals checks.
 **Done when:** key routes target ≥90 Lighthouse mobile scores, no critical accessibility issue
 remains, and the animations feel composed on mid-range phones.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a site-wide accessibility and legibility close-out; WCAG-compliant muted text in dark,
+  ivory, Father, Blog, Projects, Documentary, Course, Timeline, Bookshelf, and Contact registers;
+  visible field/select/summary focus; and 44 px nested mobile Writing targets
+- Files/areas: global visual/focus tokens, Contact and Course light-section tokens, and
+  `site/.preview/session-22-audit.md`
+- Verified: full `npm run quality`; 26-route production build; Lighthouse mobile accessibility and
+  SEO score 100 on every one of the thirteen public routes; Home 90, StudyRise 92, and Contact 94
+  mobile performance, all with 100 best practices, zero measured layout shift, and 20–30 ms total
+  blocking time; complete prior-session phone/desktop browser reviews plus the final production
+  route matrix report at `site/.preview/session-22-audit.md`
+- Assets/content: no personal asset or public copy changed; labelled intentional photo/content
+  placeholders remain for Session 23 and the owner handover
+- Decisions: preserve the restrained editorial palette while raising every functional and small
+  muted label to accessible contrast; retain Motion/Lenis because reduced-motion and coarse-pointer
+  fallbacks are already explicit and key-route blocking time remains low
+- Remaining: approved personal photography and launch writing are owner inputs, not accessibility
+  defects; real-device production checks remain part of the post-deployment owner list
+- Next entry point: Session 23, document the nontechnical author workflow and separate missing owner content from completed publishing infrastructure
 
 ## Session 23 — Photography, content, author rehearsal
 
