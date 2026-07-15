@@ -546,3 +546,18 @@ Closed the full-site usability and performance pass against the production build
   with 100 best practices, zero measured layout shift, and 20–30 ms total blocking time.
 - The complete quality gate and 26-route production build pass. The durable audit record is
   `site/.preview/session-22-audit.md`; large raw Lighthouse files stay local and ignored.
+
+## [2026-07-15] build | Session 23 owner publishing handover completed
+Converted the ready Sanity publishing system into a plain-language operating guide without
+inventing the missing personal material.
+- Added [[Website Owner Guide]] with simple Studio steps for Blog, Journal, Father, Projects, Films,
+  Timeline, Bookshelf, page editing, image upload/crop/alt text, Preview, Publish, Home featuring,
+  unpublishing, safety checks, and basic troubleshooting.
+- Recorded exactly what appears automatically after each content type is published and what to do
+  if a live page looks unchanged.
+- Collected the remaining owner inputs and account-bound actions into clear before-launch and
+  after-launch lists: photos, approved writing, Contact delivery, Vercel, Namecheap, analytics,
+  Search Console, social consistency, and monthly checks.
+- The authenticated create/publish/update/unpublish/delete rehearsal and all current Studio/schema
+  contracts remain verified. Personal photographs, memories, opinions, film context, and launch
+  writing remain deferred by design rather than being guessed or published as placeholders.

@@ -73,5 +73,6 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Reference
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
+| [[Website Owner Guide]] | Plain-language publishing, photo, launch, safety, and deferred-owner checklist | `private` | done |
 | [[Social Links]] | Canonical social URLs — footer, Contact, `Person.sameAs` | `public` | in-progress |
 | [[Sample Content Drafts]] | Private editable copy for the landing page and Part B content prompts | `private` | in-progress |

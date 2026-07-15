@@ -60,7 +60,8 @@ Back to [[00 - START HERE]]
 
 - [x] Search/AI discoverability, schema, metadata, sitemap, and RSS.
 - [x] Full mobile, accessibility, animation, and performance audit.
-- [ ] Personal-photo integration, approved content seeding, and Sanity author rehearsal.
+- [x] Publishing guide, image workflow, and authoring infrastructure; approved personal photos and
+  launch writing are explicitly deferred to the owner checklist.
 - [ ] Vercel preview/production, Namecheap DNS, analytics, Search Console, and launch.
 - [ ] Post-launch QA, backup procedure, monitoring, and handover.
 

@@ -239,8 +239,8 @@ Only one row may be `in-progress` at a time.
 | 20 | Contact page and secure form delivery | `done` (2026-07-15; private delivery setup and inbox rehearsal deferred to owner) |
 | 21 | Search, AI discoverability, metadata, sitemap, and RSS | `done` (2026-07-15) |
 | 22 | Full mobile, accessibility, motion, and performance pass | `done` (2026-07-15) |
-| 23 | Photography integration, content seeding, author rehearsal | `in-progress` (2026-07-15) |
-| 24 | Vercel, Namecheap, analytics, Search Console, and launch | `todo` |
+| 23 | Photography integration, content seeding, author rehearsal | `done` (2026-07-15; owner photos and approved launch writing deferred) |
+| 24 | Vercel, Namecheap, analytics, Search Console, and launch | `in-progress` (2026-07-15) |
 | 25 | Post-launch QA, backup, monitoring, and handover | `todo` |
 
 ---
@@ -995,7 +995,25 @@ write a one-page nontechnical publishing guide.
 **Done when:** Istiaque can publish independently and no public page contains accidental
 placeholder content above the fold.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15 (publishing system and owner guide; personal content deferred)
+- Built: [[Website Owner Guide]], a nontechnical path for Studio sign-in, creating each content
+  type, draft/Preview/Publish, image upload and crop, Home featuring/unfeaturing, editing,
+  unpublishing, safety checks, troubleshooting, and the exact pre-launch/after-launch owner list
+- Files/areas: `wiki/reference/Website Owner Guide.md`, aligned CMS documentation, index, roadmap,
+  and build record
+- Verified: the existing authenticated Session 05 create/publish/update/unpublish/delete rehearsal;
+  the Session 22 quality and Studio contract gates; all 17 schema types, 16 guided create templates,
+  41 desk nodes, preview wiring, image metadata fields, and Home feature controls remain verified
+- Assets/content: no personal photograph, memory, opinion, film context, or launch writing was
+  invented; the public dataset remains deliberately honest and the exact requested inputs are
+  listed in [[Website Owner Guide]], [[IMAGE-MANIFEST]], and [[DECISIONS-NEEDED]]
+- Decisions: treat missing owner material as a documented handover task, not a reason to leave the
+  website engineering open; preserve labelled placeholders until approved replacements exist
+- Remaining: Istiaque supplies/approves the personal photos and launch content, then follows the
+  guide to upload, preview, and publish them; a live owner rehearsal can be repeated at that time
+- Next entry point: Session 24, finish launch-ready code and document account-bound deployment steps without changing DNS or pushing until Istiaque chooses to do them
 
 ## Session 24 — Deployment and launch
 
