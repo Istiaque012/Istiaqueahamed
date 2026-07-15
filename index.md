@@ -6,11 +6,11 @@ updated: 2026-07-15
 
 # 📇 Index
 
-The catalog of every page in this wiki. Claude reads this first when answering a question, then
+The catalog of every page in this wiki. Codex reads this first when answering a question, then
 drills into the relevant pages. Updated on every ingest, filed query, and lint pass.
 
 **Visibility** — `public` = intended for the live, AI-indexed site; `private` = internal planning;
-`mixed` = both. See [CLAUDE.md](CLAUDE.md) §3.
+`mixed` = both. See [AGENTS.md](AGENTS.md) §3.
 
 ---
 
@@ -38,6 +38,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Content Strategy]] | Distinct Blog/Journal/Father formats, complete Feed, and Sanity-curated Home writing | `private` | in-progress |
 | [[Creative Direction - Full Freedom]] | Seven clear navigation entrances organising the complete 13-page cinematic site | `private` | proposed |
 | [[Build Roadmap]] | All 13 pages preserved across six reviewable production phases | `private` | in-progress |
+| [[Codex Capability Strategy]] | Targeted skills, plugins, custom workflow, and adoption order for building and operating the site | `private` | in-progress |
 
 ## Site
 | Page | Summary | Visibility | Status |
@@ -51,8 +52,8 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Page - Home]] | Eight-scene Home v2 complete with early Father doorway, StudyRise proof, live writing/Feed, and photo placeholders | `public` | done |
 | [[Page - About]] | Story-led identity complete: training, Father, human side, two-country arc, purpose, and photo slots | `public` | done |
 | [[Page - Feed]] | Complete stream planned; shared Writing navigation, editorial primitives, and honest scaffold are built | `public` | planned |
-| [[Page - Blog]] | Long-form authority planned; shared light editorial scaffold and component system are built | `public` | planned |
-| [[Page - Journal]] | Short honest writing planned; shared dark editorial scaffold and component system are built | `public` | planned |
+| [[Page - Blog]] | Live long-form index (featured, category filters, load-more) and article pages with related essays and Article schema | `public` | done |
+| [[Page - Journal]] | Live short-form index grouped by month with Thought/Read/Observation filters and minimal entry pages | `public` | done |
 | [[Page - My Beloved Father]] | Quiet Father room complete with Essay/Note publishing, reading view, archive gallery, and honest empty states | `public` | done |
 | [[Page - Projects]] | The doctor who builds — StudyRise and more, for a general audience | `public` | planned |
 | [[Page - Work]] | Education and public professional framing; detailed current titles omitted | `public` | planned |

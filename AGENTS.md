@@ -137,8 +137,25 @@ sources. Report findings; apply the fixes Istiaque approves; log the pass.
 
 - **Istiaque**: curates sources, explores, asks questions, makes the final call on ⚠️ items, decides
   what's public. Reviews in Obsidian (graph view shows the shape of the vault).
-- **Codex**: all the bookkeeping — summarizing, cross-referencing, filing, keeping `index.md`,
-  `log.md`, and cross-links current, flagging contradictions. Touch as many pages as a change needs.
+- **The agent (Claude or Codex)**: all the bookkeeping — summarizing, cross-referencing, filing,
+  keeping `index.md`, `log.md`, and cross-links current, flagging contradictions. Touch as many pages
+  as a change needs.
+
+### Working with two agents (Claude + Codex)
+
+Istiaque builds this site with **both Claude and Codex**. They share one repo and must be
+interchangeable, so:
+
+- **`AGENTS.md` (Codex) and `CLAUDE.md` (Claude) are kept byte-identical** except for the filename in
+  the title and the "you are here" tree marker. Edit both together whenever the schema changes.
+- **The handoff is the contract.** Whichever agent runs a session reads the previous session's
+  **Handoff** block in `BUILD-PLAN.md`, the last two `log.md` entries, and `git log` to resume. It
+  does not matter which agent wrote the previous session.
+- **Only one session is `in-progress` at a time** (BUILD-PLAN progress table). Before starting, check
+  that no session is already open; if one is, continue it rather than opening a new one.
+- **Commit at clean checkpoints** with clear messages so the other agent can pick up from a known
+  green state. Leave the working tree building (`npm run quality` in `site/`) before handing off.
+- Neither agent invents personal facts, photos, or dates; both follow the same public/private rule.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Page - Blog
 type: page
-status: planned
+status: done
 created: 2026-06-28
 updated: 2026-07-15
 tags: [project/website, page]
@@ -13,6 +13,12 @@ Back to [[Site Architecture]]
 
 > [!abstract] Job of this page
 > Thought leadership. Longer, crafted writing that builds authority and shows how he thinks. The engine of [[SEO & Discoverability]].
+
+> [!info] Built (Session 11 · 2026-07-15)
+> Live at `/blog` on the shared light editorial register: featured essay hero, category filters,
+> `Load more` pagination, cover/no-image cards, and an honest empty state. `/blog/[slug]` renders
+> the cover, Portable Text body, related essays, article Open Graph, and `Article` JSON-LD. See
+> [[BUILD-PLAN]] Session 11.
 
 ---
 

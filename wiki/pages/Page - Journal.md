@@ -1,7 +1,7 @@
 ---
 title: Page - Journal
 type: page
-status: planned
+status: done
 created: 2026-06-28
 updated: 2026-07-15
 tags: [project/website, page]
@@ -13,6 +13,12 @@ Back to [[Site Architecture]]
 
 > [!abstract] Job of this page
 > The raw, honest side of his mind. Shorter and rawer than the [[Page - Blog]]. A "letter to the internet" — honest but crafted. Fully public.
+
+> [!info] Built (Session 12 · 2026-07-15)
+> Live at `/journal` on the shared dark register: entries grouped by month with Thought/Read/
+> Observation filters and a related-book line on Read rows. `/journal/[slug]` is a minimal reading
+> view with a related-book aside linking to the Bookshelf, article metadata, and `Article` JSON-LD.
+> See [[BUILD-PLAN]] Session 12.
 
 ---
 
