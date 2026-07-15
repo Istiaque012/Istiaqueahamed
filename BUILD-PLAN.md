@@ -220,7 +220,7 @@ Only one row may be `in-progress` at a time.
 | 01 | Foundations hardening and verification baseline | `done` (2026-07-15) |
 | 02 | Visual system v2 and reusable interaction primitives | `done` (2026-07-15) |
 | 03 | Global shell, all routes, navigation, and page transitions | `done` (2026-07-15) |
-| 04 | Author-friendly Sanity schemas and Studio structure | `todo` |
+| 04 | Author-friendly Sanity schemas and Studio structure | `done` (2026-07-15) |
 | 05 | Live Sanity data, draft preview, visual editing, and images | `todo` |
 | 06 | Home v2: Presence, point of view, and Father doorway | `todo` |
 | 07 | Home v2: Foundation, StudyRise, live content, life, contact | `todo` |
@@ -380,7 +380,35 @@ add `featureOnHome` to Blog and Journal; add page/media singletons; organise Stu
 **Done when:** Istiaque can create the right draft from plain-language Studio navigation without
 understanding schemas or code.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: guided Blog, Journal, Father, Project, Documentary, Book, and Timeline documents;
+  Home-feature controls for Blog/Journal; reusable rich-text, image-with-alt/caption, and route-link
+  objects; all seven page/settings singletons and their queries; icon-led Studio sections for
+  Website, Writing, Father, Projects, Films, Timeline, and Bookshelf; all Blog categories, Journal
+  formats, and Father formats as guided create shortcuts; an automated authoring-contract check
+- Files/areas: `site/sanity/schemaTypes/`, `site/sanity.config.ts`, `site/sanity/structure.ts`,
+  `site/lib/sanity/queries.ts`, `site/scripts/verify-sanity-authoring.ts`, package files,
+  `site/.preview/session-04-studio-{desktop,mobile}.png`, and codebase-memory artifact
+- Verified: the authenticated Studio desk was exercised with its administrator GitHub identity;
+  all seven top-level sections and Website/Writing children render, Home opens as a singleton,
+  the create menu exposes every guided shortcut, and a Health & Medicine Blog draft opens with the
+  correct default without saving content; the real browser pass found and fixed duplicate Timeline
+  and Bookshelf IDs, then a clean 1440px and 390px pass showed no fresh console warning, error, or
+  horizontal overflow; `npm run quality`, the 17-type/16-shortcut authoring contract, and Sanity
+  schema extraction pass
+- Assets/content: no public content seeded; no personal facts, photos, testimonials, dates,
+  contact details, or private claims invented; all photo fields remain author-editable
+- Decisions: keep existing document type names stable; add metadata to image fields instead of
+  replacing public field names; keep the Feed as a Studio preview list and not a separate document
+  type; use the project-owner GitHub login for Studio; leave the contact form disabled by default
+  until Session 20 delivery is configured
+- Remaining: codebase-memory's final refresh transport disconnected; retry it before Session 05
+  discovery. Live content fetching, draft mode, visual preview, and image delivery belong to
+  Session 05 and were not started here
+- Next entry point: Session 05, retry codebase-memory first, then connect the validated schemas to
+  typed live queries, draft preview, and the image pipeline
 
 ## Session 05 — Live content, preview, and images
 

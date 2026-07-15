@@ -7,9 +7,19 @@ export const siteSettings = defineType({
   // Singleton — one document; managed via structure, not the create menu.
   fields: [
     defineField({ name: 'name', type: 'string', description: 'Full name (feeds Person schema)' }),
-    defineField({ name: 'tagline', type: 'string' }),
-    defineField({ name: 'bio', title: 'Bio (natural-language, for AI search)', type: 'text', rows: 5 }),
-    defineField({ name: 'ogImage', title: 'Default OG image', type: 'image', options: { hotspot: true } }),
+    defineField({
+      name: 'tagline',
+      type: 'string',
+      description: 'Approved public tagline used across metadata and prominent page areas.',
+    }),
+    defineField({
+      name: 'bio',
+      title: 'Bio (natural-language, for AI search)',
+      type: 'text',
+      rows: 5,
+      description: 'Canonical public identity summary. Keep this aligned with the raw source.',
+    }),
+    defineField({ name: 'ogImage', title: 'Default OG image', type: 'imageWithMetadata' }),
     defineField({
       name: 'socialLinks',
       type: 'array',

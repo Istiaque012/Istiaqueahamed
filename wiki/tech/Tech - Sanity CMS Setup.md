@@ -1,7 +1,7 @@
 ---
 title: Tech - Sanity CMS Setup
 type: tech
-status: in-progress
+status: done
 visibility: private
 created: 2026-06-28
 updated: 2026-07-15
@@ -112,14 +112,22 @@ automatically in Latest Writing.
 - **Bookshelf** — books and notes
 
 Every form uses plain-language descriptions, validation, sensible initial values, and a preview.
-The Blog and Journal create menus start with the correct format already selected.
+The create menu offers guided shortcuts for all four Blog categories, all three Journal formats,
+and Father essays/notes, each with the correct format already selected. Section and document icons
+make the desk scannable without exposing schema names.
+
+> [!success] Session 04 verified
+> The authenticated Studio was checked with the project-owner GitHub identity. The seven desk
+> sections, Website singletons, Writing views, complete shortcut menu, and a guided Blog draft all
+> work as intended. Fresh 1440px and 390px passes showed no console warnings/errors or horizontal
+> overflow, and no test content was saved.
 
 ## Draft and visual preview
 
-The Studio Presentation view shows the real website beside the editing form. Draft Mode keeps
-unpublished work private while letting Istiaque preview it at desktop and mobile sizes. Image
-fields support upload, alt text, captions, and hotspot/crop controls so the same personal picture
-can be art-directed for different layouts.
+Session 05 adds the Studio Presentation view so the real website can sit beside the editing form.
+Draft Mode will keep unpublished work private while letting Istiaque preview it at desktop and
+mobile sizes. Image fields already support upload, alt text, captions, and hotspot/crop controls so
+the same personal picture can be art-directed for different layouts.
 
 ---
 

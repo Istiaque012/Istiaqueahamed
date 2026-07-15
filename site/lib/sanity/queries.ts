@@ -10,13 +10,13 @@ const READING_TIME = `"readingTime": round(length(pt::text(body)) / 5 / 200)`
 export const blogPostsQuery = groq`
   *[_type == "blogPost" && defined(slug.current)] | order(publishedAt desc) {
     _id, title, "slug": slug.current, category, excerpt, coverImage,
-    publishedAt, featured, ${READING_TIME}
+    publishedAt, featured, featureOnHome, homeFeatureRank, seoTitle, seoDescription, ${READING_TIME}
   }`
 
 export const blogPostBySlugQuery = groq`
   *[_type == "blogPost" && slug.current == $slug][0] {
     _id, title, "slug": slug.current, category, excerpt, coverImage, body,
-    publishedAt, featured, ${READING_TIME}
+    publishedAt, featured, featureOnHome, homeFeatureRank, seoTitle, seoDescription, ${READING_TIME}
   }`
 
 export const blogSlugsQuery = groq`*[_type == "blogPost" && defined(slug.current)].slug.current`
@@ -24,13 +24,13 @@ export const blogSlugsQuery = groq`*[_type == "blogPost" && defined(slug.current
 // ── Journal ──────────────────────────────────────────────────────────────────
 export const journalEntriesQuery = groq`
   *[_type == "journalEntry" && defined(slug.current)] | order(publishedAt desc) {
-    _id, title, "slug": slug.current, type, publishedAt,
+    _id, title, "slug": slug.current, type, publishedAt, featureOnHome, homeFeatureRank,
     relatedBook->{ _id, title, author }
   }`
 
 export const journalEntryBySlugQuery = groq`
   *[_type == "journalEntry" && slug.current == $slug][0] {
-    _id, title, "slug": slug.current, type, body, publishedAt,
+    _id, title, "slug": slug.current, type, body, publishedAt, featureOnHome, homeFeatureRank,
     relatedBook->{ _id, title, author, coverImage }
   }`
 
@@ -67,8 +67,12 @@ export const timelineQuery = groq`
 
 // ── Singletons ───────────────────────────────────────────────────────────────
 export const siteSettingsQuery = groq`*[_type == "siteSettings"][0]`
+export const homePageQuery = groq`*[_type == "homePage"][0]`
 export const aboutPageQuery = groq`*[_type == "aboutPage"][0]`
+export const fatherPageQuery = groq`*[_type == "fatherPage"][0]`
+export const workPageQuery = groq`*[_type == "workPage"][0]`
 export const coursePageQuery = groq`*[_type == "coursePage"][0]`
+export const contactPageQuery = groq`*[_type == "contactPage"][0]`
 
 // ── The merged Feed ──────────────────────────────────────────────────────────
 // Pulls blogPost, journalEntry, fatherPiece, project, documentary into one

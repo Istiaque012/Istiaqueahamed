@@ -5,13 +5,19 @@ export const timelineEvent = defineType({
   title: 'Timeline Event',
   type: 'document',
   fields: [
-    defineField({ name: 'year', type: 'string', validation: (r) => r.required() }),
+    defineField({
+      name: 'year',
+      type: 'string',
+      description: 'Use only a confirmed year/date label.',
+      validation: (r) => r.required(),
+    }),
     defineField({ name: 'title', type: 'string', validation: (r) => r.required() }),
     defineField({ name: 'description', type: 'text', rows: 3 }),
     defineField({
       name: 'category',
       type: 'string',
       options: { list: ['Medicine', 'Tech', 'Personal', 'Australia'], layout: 'radio' },
+      initialValue: 'Medicine',
     }),
   ],
   orderings: [

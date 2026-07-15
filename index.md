@@ -66,7 +66,7 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
 | [[Tech Stack Decision]] | Hardened Next.js 16 + React 19 + Sanity 6 foundation and repeatable quality gate | `private` | done |
-| [[Tech - Sanity CMS Setup]] | Existing schemas plus planned Home curation, visual preview, and author-friendly Studio | `private` | in-progress |
+| [[Tech - Sanity CMS Setup]] | Complete guided schemas, singletons, shortcuts, and authenticated plain-language Studio desk | `private` | done |
 | [[Tech - Deployment & Domain]] | Vercel hosting + istiaqueahamed.com | `private` | planned |
 
 ## Reference
