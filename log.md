@@ -592,3 +592,18 @@ Closed the 26-session engineering plan and separated every owner-only activation
   The current live domain serves the earlier production build; the new production recheck therefore
   follows owner approval to merge/push/deploy, as documented in the handover.
 - Refreshed the final codebase-memory graph: 15,730 nodes and 16,238 edges, status ready.
+
+## [2026-07-16] build | Production deployment completed
+Pushed the finished website branch and deployed the current build to Vercel Production after
+Istiaque approved publication.
+- Pushed `codex/complete-website-build` to GitHub and opened draft PR #9:
+  `https://github.com/Istiaque012/Istiaqueahamed/pull/9`.
+- Deployed Vercel production deployment `dpl_2UxWnG4RvsgkQuf4sgTgbTbyAYr9`; Vercel marked it
+  `READY` and aliased it to `www.istiaqueahamed.com`, `istiaqueahamed.com`, and project URLs.
+- Verified `https://www.istiaqueahamed.com` returns the new build with the current title,
+  structured data, Sanity portrait, Vercel Analytics, and Speed Insights.
+- Basic HTTP smoke test returned 200 for all thirteen public routes plus `robots.txt`,
+  `sitemap.xml`, `feed.xml`, and `manifest.webmanifest`.
+- Remaining owner/dashboard actions: merge PR #9 to `main` when ready, make the apex domain primary
+  in Vercel so it matches canonical URLs, enable Vercel Analytics/Speed Insights dashboards,
+  configure Contact delivery, and verify Search Console.

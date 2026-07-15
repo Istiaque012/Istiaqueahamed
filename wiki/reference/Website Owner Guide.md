@@ -4,7 +4,7 @@ type: reference
 status: done
 visibility: private
 created: 2026-07-15
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, handover, publishing, sanity]
 ---
 
@@ -97,9 +97,9 @@ permission to publish.
 
 ## Things still due from Istiaque
 
-The engineering is ready; these need your material, accounts, or final approval.
+The site is live; these need your material, accounts, or final approval.
 
-### Before the public launch
+### Still due after deployment
 
 - Supply the approved portrait/headshot, Father photograph/archive scans, lifestyle/work/Australia
   photos, three clean StudyRise screenshots, and any approved book covers. See [[IMAGE-MANIFEST]].
@@ -108,10 +108,10 @@ The engineering is ready; these need your material, accounts, or final approval.
   [[DECISIONS-NEEDED]] Part B.
 - Connect private Contact delivery: Resend account/domain, recipient, sender, the four private
   variables, the Studio form switch, and one real inbox test. Never paste these secrets into Studio.
-- Merge and push the finished build, confirm the existing Vercel project's private environment
-  variables, and review the new Preview. The project, Namecheap DNS, and HTTPS are already connected.
+- Review and merge draft PR #9 when you want `main` to match the production site. The finished branch
+  is already pushed and deployed.
 - In Vercel Domains, make `istiaqueahamed.com` the primary host so `www` redirects to it, matching
-  the website's canonical URLs; then test all thirteen pages on the updated live domain.
+  the website's canonical URLs; then visually test all thirteen pages on the updated live domain.
 - Enable Vercel Web Analytics and Speed Insights, verify Google Search Console, and submit
   `https://istiaqueahamed.com/sitemap.xml`.
 

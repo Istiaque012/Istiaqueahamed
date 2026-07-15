@@ -1,7 +1,7 @@
 ---
 title: Index
 type: system
-updated: 2026-07-15
+updated: 2026-07-16
 ---
 
 # 📇 Index
@@ -68,12 +68,12 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 |---|---|---|---|
 | [[Tech Stack Decision]] | Hardened Next.js 16 + React 19 + Sanity 6 foundation and repeatable quality gate | `private` | done |
 | [[Tech - Sanity CMS Setup]] | Guided schemas, Studio desk, live preview wiring, signed revalidation, and the publish/update/unpublish rehearsal are done | `private` | done |
-| [[Tech - Deployment & Domain]] | Linked Vercel/Namecheap/HTTPS state, environment inventory, launch order, preferred host, and rollback | `private` | in-progress |
+| [[Tech - Deployment & Domain]] | Current production deployment, pushed branch, PR, Vercel/Namecheap state, remaining apex-primary cleanup, and rollback | `private` | in-progress |
 | [[Website Operations & Maintenance]] | Sanity backups, five-minute monthly checks, incidents, environment names, and future enhancements | `private` | done |
 
 ## Reference
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[Website Owner Guide]] | Plain-language publishing, photo, launch, safety, and deferred-owner checklist | `private` | done |
+| [[Website Owner Guide]] | Plain-language Studio publishing, live-site usage, safety, and remaining owner/dashboard checklist | `private` | done |
 | [[Social Links]] | Canonical social URLs — footer, Contact, `Person.sameAs` | `public` | in-progress |
 | [[Sample Content Drafts]] | Private editable copy for the landing page and Part B content prompts | `private` | in-progress |

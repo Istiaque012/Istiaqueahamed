@@ -4,7 +4,7 @@ type: tech
 status: in-progress
 visibility: private
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, tech, deployment]
 ---
 
@@ -13,9 +13,9 @@ tags: [project/website, tech, deployment]
 Back to [[00 - START HERE]] · Parent: [[Tech Stack Decision]]
 
 > [!abstract] Current truth
-> Vercel project `istiaqueahamed` is linked, Namecheap DNS reaches Vercel, and HTTPS works. The
-> finished branch has not been pushed or promoted because repository rules require Istiaque to ask
-> for a push. The public domain therefore still serves the earlier build.
+> The finished branch is pushed, a draft PR is open, and the current build is deployed to Vercel
+> Production. `www.istiaqueahamed.com` serves the new site. The remaining domain cleanup is to make
+> the apex domain primary so it matches the site's canonical URLs.
 
 ## What is already connected
 
@@ -27,6 +27,10 @@ Back to [[00 - START HERE]] · Parent: [[Tech Stack Decision]]
 - Apex and `www` both reach Vercel with HTTPS
 - Current live redirect: apex → `www`
 - Intended canonical in the finished code: apex (`https://istiaqueahamed.com`)
+- Pushed branch: `codex/complete-website-build`
+- Draft PR: `https://github.com/Istiaque012/Istiaqueahamed/pull/9`
+- Production deployment: `dpl_2UxWnG4RvsgkQuf4sgTgbTbyAYr9`
+- Production inspect URL: `https://vercel.com/istiaques-projects/istiaqueahamed/2UxWnG4RvsgkQuf4sgTgbTbyAYr9`
 
 > [!warning] Preferred host must be aligned
 > In Vercel Domains, make `istiaqueahamed.com` the primary domain so `www` redirects to the apex.
@@ -59,20 +63,30 @@ The finished code includes Vercel Web Analytics and Speed Insights in the root l
 new production deployment, open the Vercel project and enable both dashboard products. No Google
 Analytics integration is needed for the initial launch.
 
-## Final deployment — simple order
+## Production deployment completed — 2026-07-16
+
+Deployed with Vercel CLI from the linked project root. The production build generated all 26
+Next.js routes and Vercel marked the deployment `READY`.
+
+Basic HTTP smoke test passed on:
+
+- All thirteen public pages: Home, About, Feed, Blog, Journal, Father, Projects, Work,
+  Documentaries, Course, Timeline, Bookshelf, and Contact
+- `robots.txt`
+- `sitemap.xml`
+- `feed.xml`
+- `manifest.webmanifest`
+
+## Remaining launch cleanup — simple order
 
 1. Add the approved photos and launch writing in Studio, or consciously launch with the labelled
    placeholders listed in [[IMAGE-MANIFEST]].
-2. Merge the finished branch to `main` and push it when Istiaque approves.
-3. Open the new Vercel Preview and check Home, Studio, Contact, StudyRise, one writing page, and a
-   phone-sized view.
-4. Confirm the environment names above for both Preview and Production.
-5. Promote/deploy `main` to Production.
-6. In Vercel Domains, make the apex domain primary; verify `www` redirects to the apex.
-7. Enable Web Analytics and Speed Insights.
-8. Add the site in Google Search Console, copy its token into `GOOGLE_SITE_VERIFICATION`, redeploy,
+2. Review and merge draft PR #9 when `main` should match the production deployment.
+3. In Vercel Domains, make the apex domain primary; verify `www` redirects to the apex.
+4. Enable Web Analytics and Speed Insights.
+5. Add the site in Google Search Console, copy its token into `GOOGLE_SITE_VERIFICATION`, redeploy,
    verify, and submit `https://istiaqueahamed.com/sitemap.xml`.
-9. Complete the production smoke test in [[Website Owner Guide]].
+6. Complete a human visual review on phone and desktop using [[Website Owner Guide]].
 
 If Vercel asks for DNS changes, copy the exact record it displays into Namecheap Advanced DNS.
 Do not guess a CNAME value: Vercel can assign a project-specific record. DNS changes can take time
@@ -87,13 +101,16 @@ to propagate, and existing mail-related MX/TXT records must not be removed.
 - [x] OG image, favicons, web manifest, 404, robots, sitemap, RSS, and structured data built
 - [x] Vercel Web Analytics and Speed Insights code installed
 - [x] Search Console verification code path built
-- [ ] Finished branch merged/pushed and new Preview approved
-- [ ] Current build deployed to Production
+- [x] Finished branch pushed to GitHub
+- [x] Draft PR opened against `main`
+- [x] Current build deployed to Production
+- [x] Basic production HTTP smoke test passed
+- [ ] Draft PR merged to `main`
 - [ ] Apex chosen as the primary Vercel domain
 - [ ] Contact delivery variables configured and real inbox test passed
 - [ ] Vercel Analytics and Speed Insights enabled in the dashboard
 - [ ] Google Search Console verified and sitemap submitted
-- [ ] Thirteen-route production smoke test passed
+- [ ] Human phone/desktop production visual review passed
 
 ## Rollback
 
