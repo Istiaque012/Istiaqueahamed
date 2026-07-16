@@ -23,6 +23,10 @@ its own production session and completion criteria.
 [[Design System]] · [[Content Strategy]] · [[Tech - Sanity CMS Setup]] ·
 [[IMAGE-MANIFEST|IMAGE-MANIFEST.md]] · [[DECISIONS-NEEDED]]
 
+**Release state — 2026-07-16:** PR #9 is merged to `main`. Production deployment
+`dpl_8CskJUszbiXThcMSqZXDvQD4n9eV` contains the direct Feed navigation and Blog/Journal-only
+publishing model; route, metadata, RSS, responsive, and live-console checks pass.
+
 ---
 
 ## 1. Complete website

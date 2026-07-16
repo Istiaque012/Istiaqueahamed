@@ -37,8 +37,8 @@ What happens automatically:
 
 | You publish | Where it appears |
 |---|---|
-| Blog post | Blog, Feed, RSS, and Home's latest writing |
-| Journal entry | Journal, Feed, RSS, and Home's latest writing |
+| Blog post | Blog, Feed, RSS, and Home's latest Feed section |
+| Journal entry | Journal, Feed, RSS, and Home's latest Feed section |
 | Father piece | Father page |
 | Project | Projects |
 | Film | Documentaries |
@@ -111,8 +111,6 @@ The site is live; these need your material, accounts, or final approval.
   [[DECISIONS-NEEDED]] Part B.
 - Connect private Contact delivery: Resend account/domain, recipient, sender, the four private
   variables, the Studio form switch, and one real inbox test. Never paste these secrets into Studio.
-- Review and merge draft PR #9 when you want `main` to match the production site. The finished branch
-  is already pushed and deployed.
 - In Vercel Domains, make `istiaqueahamed.com` the primary host so `www` redirects to it, matching
   the website's canonical URLs; then visually test all thirteen pages on the updated live domain.
 - Enable Vercel Web Analytics and Speed Insights, verify Google Search Console, and submit

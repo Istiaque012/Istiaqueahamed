@@ -632,3 +632,17 @@ surfaces, verification scripts, and operating documentation.
   and responsive browser QA at 1440 px and 390 px with no horizontal overflow or application
   console errors. The only local warning was the expected temporary `localhost:3100` Sanity CORS
   notice.
+
+## [2026-07-16] build | Feed release deployed and merged
+Published the verified Feed simplification to Vercel Production and merged the website release into
+`main` through PR #9.
+- Pushed commit `d05b28d` to `codex/complete-website-build` and updated the existing PR rather than
+  opening a duplicate.
+- Deployed Vercel production release `dpl_8CskJUszbiXThcMSqZXDvQD4n9eV`; Vercel marked it `READY`
+  and aliased it to `https://www.istiaqueahamed.com`.
+- Verified 200 responses for Home, Feed, Blog, Journal, RSS, sitemap, and `llms.txt`; confirmed the
+  live Feed copy and Blog/Journal-only RSS contract.
+- Repeated live browser checks at desktop and mobile widths with the correct global and local active
+  states, no horizontal overflow, and no console warnings or errors.
+- PR #9 was marked ready after checks passed and merged into `main`. The remaining host cleanup is
+  unchanged: choose the apex as Vercel primary so `www` redirects to the canonical apex URL.
