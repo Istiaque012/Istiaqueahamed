@@ -19,8 +19,8 @@ destinations remain the clearest entrance to the site; Feed directly gathers Blo
 the footer/in-page routes expose Documentaries, Timeline, Bookshelf, and Course. Every page receives
 its own production session and completion criteria.
 
-**Companion files:** [[Creative Direction - Full Freedom]] · [[Site Architecture]] ·
-[[Design System]] · [[Content Strategy]] · [[Tech - Sanity CMS Setup]] ·
+**Companion files:** [[Site Architecture]] · [[Design System]] · [[Content Strategy]] ·
+[[Tech - Sanity CMS Setup]] ·
 [[IMAGE-MANIFEST|IMAGE-MANIFEST.md]] · [[DECISIONS-NEEDED]]
 
 **Release state — 2026-07-16:** PR #9 is merged to `main`. Production deployment
@@ -276,7 +276,7 @@ optional post-launch session after privacy, cost, and draft-only behaviour are a
 ## Session 00 — Strategy and baseline
 
 **Completed:**
-- Reconciled the research and [[Creative Direction - Full Freedom]] with the complete roadmap.
+- Reconciled the research, confirmed navigation, and complete roadmap.
 - Confirmed current code contains Home v1, `/father`, `/studio`, Motion, Lenis, Person metadata,
   Sanity schemas, and query foundations.
 - Preserved all thirteen pages and defined a session for each destination.
@@ -1068,7 +1068,7 @@ next improvement has a clear starting point.
   maintenance, incident shortcuts, environment-name inventory, and ranked future enhancements;
   final owner-guide cross-links and closed build/page statuses
 - Files/areas: operations and owner documentation, Contact/Social/MOC truth alignment, index,
-  roadmap, build record, and final log
+  build record, and final log
 - Verified: Sanity 6 export/import CLI help; current Git/Vercel/Sanity/domain state; live domain
   currently renders the earlier Home client experience while the finished branch remains local;
   the latest code quality gate and all Session 22 accessibility/performance evidence remain green;
@@ -1097,5 +1097,4 @@ All thirteen pages remain in scope. Only these optional capabilities wait for re
 
 ---
 
-Related: [[Build Roadmap]] · [[Creative Direction - Full Freedom]] · [[Site Architecture]] ·
-[[Tech Stack Decision]]
+Related: [[Site Architecture]] · [[Tech Stack Decision]]

@@ -11,3 +11,4 @@ Personal Web/
 # Editor / tooling
 .claude/
 .vscode/
+.vercel/

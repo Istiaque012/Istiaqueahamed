@@ -104,4 +104,4 @@ StudyRise uses React + Vite + Supabase. This website using Sanity instead of Sup
 
 ---
 
-Related: [[Tech - Sanity CMS Setup]] · [[Tech - Deployment & Domain]] · [[Design System]] · [[Build Roadmap]]
+Related: [[Tech - Sanity CMS Setup]] · [[Tech - Deployment & Domain]] · [[Design System]]

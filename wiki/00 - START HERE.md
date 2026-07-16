@@ -4,7 +4,7 @@ project: istiaqueahamed.com
 owner: Istiaque Ahamed
 status: in-progress
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, index, moc]
 ---
 
@@ -33,8 +33,6 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 - [[Audience & Goals]] — who I want to reach and why
 - [[SEO & Discoverability]] — how to own my name on Google + AI search
 - [[Content Strategy]] — what to write, how often, the rules
-- [[Build Roadmap]] — the order we build everything in
-- [[Codex Capability Strategy]] — which skills, plugins, and operating workflows to use when
 
 ### The site itself
 - [[Site Architecture]] — every page, mapped
@@ -96,7 +94,7 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 - [ ] Three words a close friend would use to describe me
 - [ ] Approved launch writing and first Father piece
 - [ ] Contact inbox connection and real delivery test
-- [ ] Finished branch promotion, apex-primary alignment, analytics, and Search Console activation
+- [ ] Apex-primary alignment, Analytics/Speed Insights activation, and Search Console setup
 
 ---
 

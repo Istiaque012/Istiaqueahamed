@@ -20,8 +20,8 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Build system (root)
 | Page | Summary | Visibility | Status |
 |---|---|---|---|
-| [[BUILD-PLAN]] | Completed 26-session engineering plan; owner content/account activation is filed separately | `private` | done |
-| [[DECISIONS-NEEDED]] | All ⚠️ decisions (D1–D10) + content Istiaque must write (C1–C7), answerable inline | `private` | in-progress |
+| [[BUILD-PLAN]] | Completed 26-session engineering plan and durable production handoff | `private` | done |
+| [[DECISIONS-NEEDED]] | Current owner inputs and account actions that keep the launch moving | `private` | in-progress |
 | [[IMAGE-MANIFEST]] | Image slots and placeholders; photos are non-blocking and My Care Pro is omitted | `private` | in-progress |
 
 ## Sources (`raw/` — immutable)
@@ -37,9 +37,6 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[SEO & Discoverability]] | Confirmed entity, metadata, structured data, sitemap, robots, RSS, and AI-readable site summary | `mixed` | done |
 | [[Content Strategy]] | Blog and Journal publish into one Feed; Father, Projects, and films keep distinct destinations | `private` | in-progress |
 | [[Feed, Blog & Journal Plan]] | Implemented migration: Feed replaces Writing and gathers Blog plus Journal only | `private` | done |
-| [[Creative Direction - Full Freedom]] | Seven clear navigation entrances organising the complete 13-page cinematic site | `private` | proposed |
-| [[Build Roadmap]] | All 13 pages completed across six reviewable production phases, with owner launch tasks separated | `private` | done |
-| [[Codex Capability Strategy]] | Targeted skills, plugins, custom workflow, and adoption order for building and operating the site | `private` | in-progress |
 
 ## Site
 | Page | Summary | Visibility | Status |

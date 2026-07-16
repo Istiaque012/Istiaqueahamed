@@ -646,3 +646,14 @@ Published the verified Feed simplification to Vercel Production and merged the w
   states, no horizontal overflow, and no console warnings or errors.
 - PR #9 was marked ready after checks passed and merged into `main`. The remaining host cleanup is
   unchanged: choose the apex as Vercel primary so `www` redirects to the canonical apex URL.
+
+## [2026-07-16] lint | Removed completed planning and local build noise
+Pruned the workspace to keep the LLM wiki focused on the current website and owner actions.
+- Removed the obsolete Claude-only build prompt, duplicate completed roadmap, superseded creative
+  exploration, and transient Codex capability plan; their durable decisions remain in the canonical
+  architecture, design, build, tech, and owner-guide pages.
+- Replaced the historical decision register with a concise current owner-action list and refreshed
+  wiki navigation/cross-links.
+- Removed tracked session screenshots and audit artifacts with no runtime or wiki role, plus local
+  reproducible build caches and Vercel link metadata. Raw sources, the current handoff, owner guide,
+  image manifest, production code, and codebase graph remain intact.
