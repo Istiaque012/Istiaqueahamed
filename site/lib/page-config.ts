@@ -22,9 +22,9 @@ export const pageConfigs = {
   },
   feed: {
     title: "Feed",
-    eyebrow: "Everything published",
-    description: "The complete reverse-chronological publishing stream from Istiaque Ahamed.",
-    intro: "Blog essays, Journal entries, Father pieces, projects, and films will meet here in one chronology.",
+    eyebrow: "Blog & Journal",
+    description: "Blog posts and Journal entries from Istiaque Ahamed, ordered by publication date.",
+    intro: "A chronological stream of longer Blog posts and shorter Journal entries.",
     path: "/feed",
     session: "13",
   },

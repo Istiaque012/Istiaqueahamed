@@ -3,7 +3,7 @@ title: Page - Blog
 type: page
 status: done
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, page]
 ---
 
@@ -48,12 +48,11 @@ From [[Content Strategy]]: write for one person, never include patient details, 
 - Editorial typography, comfortable reading measure
 - Serif body is an option here for a premium long-read feel (see [[Design System#Typography]])
 
-## Shared foundation — 2026-07-15
+## Shared Feed foundation — 2026-07-16
 
-The `/blog` route now carries the completed Writing navigator, light editorial scaffold, honest
-empty state, and cross-links into Feed and Journal. Shared card/row, metadata, category-filter,
-no-image, pagination, date, and destination helpers are ready for Session 11. The route remains
-noindex and `status: planned` until the real Blog index and detail renderer are complete.
+The `/blog` route carries the shared **All · Blog · Journal** Feed navigator, light editorial
+register, honest empty state, and cross-links into Feed and Journal. Blog and its detail pages keep
+their existing URLs, metadata, category filters, cards, pagination, and Article schema.
 
 ---
 

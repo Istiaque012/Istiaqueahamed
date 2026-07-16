@@ -3,7 +3,7 @@ title: Page - Home
 type: page
 status: done
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 visibility: public
 tags: [project/website, page]
 ---
@@ -27,17 +27,17 @@ Back to [[Site Architecture]]
 4. **Foundation** — confirmed medical training, BIRDEM internship, Macquarie MPH, and AMC path.
 5. **Proof of building** — StudyRise as the practical “doctor who builds” evidence.
 6. **Published** — one optional featured Blog/Journal item, then three de-duplicated latest pieces;
-   without a feature, the four latest pieces. Continue into the broader [[Page - Feed]] teaser.
+   without a feature, the four latest pieces. Continue through one [[Page - Feed]] action.
 7. **Life in motion** — three authorable photo slots connecting the two-country, medicine, and
    building strands without presenting them as separate identities.
 8. **Open door** — Contact action and the canonical [[Social Links]].
 
 ## Final navigation
 
-**Home · About · Father · Writing · Projects · Work · Contact**
+**Home · About · Father · Feed · Projects · Work · Contact**
 
-"Father" remains top-level so it is easy to find. "Writing" is the entry point for the
-[[Page - Feed]], [[Page - Blog]], and [[Page - Journal]]. See [[Site Architecture]].
+"Father" remains top-level so it is easy to find. "Feed" is the direct reader entry point for
+[[Page - Blog]] and [[Page - Journal]]. See [[Site Architecture]].
 
 ## Working copy
 
@@ -57,10 +57,10 @@ The editable first-pass landing-page copy is in [[Sample Content Drafts#Landing 
   Foundation, StudyRise, life images, and Contact invitation. Confirmed public fallbacks keep the
   page complete while those fields are empty.
 - Published Blog/Journal content is live: an optional Home feature is followed by three latest
-  non-duplicate pieces, or four latest pieces when no feature exists. The separate Feed teaser
-  draws from Blog, Journal, Father, Projects, and Documentaries.
-- The current public dataset is intentionally empty, so the page shows designed writing/Feed empty
-  states rather than sample posts presented as real publications.
+  non-duplicate pieces, or four latest pieces when no feature exists. A single Feed action follows;
+  the earlier duplicate all-site teaser and query are removed.
+- The current public dataset is intentionally empty, so the page shows one designed Feed empty
+  state rather than sample posts presented as real publications.
 - Approved personal photography remains non-blocking: the hero, Father archive, and three life
   slots use accessible exact-purpose placeholders that Sanity images replace without code changes.
 - TypeScript, zero-warning lint, Sanity authoring/live contracts, and the production build pass.

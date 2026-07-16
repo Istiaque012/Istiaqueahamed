@@ -3,7 +3,7 @@ title: Build Plan
 type: system
 status: done
 visibility: private
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, planning, build, sessions]
 ---
 
@@ -15,7 +15,7 @@ tags: [project/website, planning, build, sessions]
 > so the next session knows exactly what exists, what was verified, and where to resume.
 
 This plan preserves the complete **thirteen-page roadmap**. The seven confirmed top-navigation
-destinations remain the clearest entrance to the site; Writing groups Feed, Blog, and Journal, and
+destinations remain the clearest entrance to the site; Feed directly gathers Blog and Journal, and
 the footer/in-page routes expose Documentaries, Timeline, Bookshelf, and Course. Every page receives
 its own production session and completion criteria.
 
@@ -29,10 +29,10 @@ its own production session and completion criteria.
 
 ### Confirmed top navigation
 
-**Home · About · Father · Writing · Projects · Work · Contact**
+**Home · About · Father · Feed · Projects · Work · Contact**
 
-Writing opens **Feed · Blog · Journal** and defaults to Feed. It is a navigation group, not a
-fourteenth public page. Father remains a direct top-level link.
+Feed is a direct link with **All · Blog · Journal** local navigation. It is an automatic view, not a
+third publishing format or a fourteenth public page. Father remains a direct top-level link.
 
 ### Thirteen public pages
 
@@ -40,7 +40,7 @@ fourteenth public page. Father remains a direct top-level link.
 |---|---|---|---|
 | 1 | Home | `/` | Eight-scene cinematic introduction with selected live content |
 | 2 | About | `/about` | Complete story, identity, and two-country arc |
-| 3 | Feed | `/feed` | Reverse-chronological stream of everything published |
+| 3 | Feed | `/feed` | Reverse-chronological stream of Blog and Journal |
 | 4 | Blog | `/blog` | Crafted long-form essays and authority-building writing |
 | 5 | Journal | `/journal` | Shorter Thoughts, Reads, and Observations |
 | 6 | My Beloved Father | `/father` | Quiet personal space, essays, notes, and photographs |
@@ -109,8 +109,8 @@ sections and short, guided forms. Drafts never appear publicly.
 - `siteSettings`, `homePage`, `aboutPage`, `fatherPage`, `workPage`, `coursePage`, `contactPage` —
   singletons for editable copy, media, links, and metadata.
 
-The Feed is a query over Blog, Journal, Father, Projects, and Documentaries, ordered by publish
-date. Home has one optional prominent item selected with `featureOnHome`, followed by the three
+The Feed is a query over Blog and Journal, ordered by publish date. Home has one optional prominent
+item selected with `featureOnHome`, followed by the three
 newest published Blog/Journal items, excluding any duplicate of the featured item. If nothing is
 featured, Home shows the four newest items. Missing cover images use a designed typographic
 fallback.

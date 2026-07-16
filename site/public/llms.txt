@@ -22,7 +22,7 @@ This site contains Istiaque Ahamed's confirmed public biography, writing, projec
 - [Projects](https://istiaqueahamed.com/projects): approved project work beginning with StudyRise
 - [Blog](https://istiaqueahamed.com/blog): long-form essays
 - [Journal](https://istiaqueahamed.com/journal): shorter thoughts, reads, and observations
-- [Feed](https://istiaqueahamed.com/feed): complete publishing chronology
+- [Feed](https://istiaqueahamed.com/feed): combined Blog and Journal chronology
 - [My Beloved Father](https://istiaqueahamed.com/father): approved essays, notes, and archive material
 - [Documentaries](https://istiaqueahamed.com/documentaries): published films and context
 - [Timeline](https://istiaqueahamed.com/timeline): confirmed life and training chronology

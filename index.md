@@ -35,7 +35,8 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 | [[Vision & Positioning]] | One site for one whole life — not a CV; who he is and is becoming | `private` | planned |
 | [[Audience & Goals]] | Who the site is for and what success looks like | `private` | planned |
 | [[SEO & Discoverability]] | Confirmed entity, metadata, structured data, sitemap, robots, RSS, and AI-readable site summary | `mixed` | done |
-| [[Content Strategy]] | Distinct Blog/Journal/Father formats, complete Feed, and Sanity-curated Home writing | `private` | in-progress |
+| [[Content Strategy]] | Blog and Journal publish into one Feed; Father, Projects, and films keep distinct destinations | `private` | in-progress |
+| [[Feed, Blog & Journal Plan]] | Implemented migration: Feed replaces Writing and gathers Blog plus Journal only | `private` | done |
 | [[Creative Direction - Full Freedom]] | Seven clear navigation entrances organising the complete 13-page cinematic site | `private` | proposed |
 | [[Build Roadmap]] | All 13 pages completed across six reviewable production phases, with owner launch tasks separated | `private` | done |
 | [[Codex Capability Strategy]] | Targeted skills, plugins, custom workflow, and adoption order for building and operating the site | `private` | in-progress |
@@ -49,9 +50,9 @@ drills into the relevant pages. Updated on every ingest, filed query, and lint p
 ## Pages (one brief each)
 | Page | Job of the page | Visibility | Status |
 |---|---|---|---|
-| [[Page - Home]] | Eight-scene Home v2 complete with early Father doorway, StudyRise proof, live writing/Feed, and photo placeholders | `public` | done |
+| [[Page - Home]] | Eight-scene Home v2 complete with one Blog/Journal Feed scene, early Father doorway, StudyRise proof, and photo placeholders | `public` | done |
 | [[Page - About]] | Story-led identity complete: training, Father, human side, two-country arc, purpose, and photo slots | `public` | done |
-| [[Page - Feed]] | Live unified chronology with filters, stable rows, load-more, RSS, and aligned Home teaser | `public` | done |
+| [[Page - Feed]] | Live Blog/Journal chronology with All/Blog/Journal navigation, load-more, RSS, and aligned Home publishing | `public` | done |
 | [[Page - Blog]] | Live long-form index (featured, category filters, load-more) and article pages with related essays and Article schema | `public` | done |
 | [[Page - Journal]] | Live short-form index grouped by month with Thought/Read/Observation filters and minimal entry pages | `public` | done |
 | [[Page - My Beloved Father]] | Quiet Father room complete with Essay/Note publishing, reading view, archive gallery, and honest empty states | `public` | done |

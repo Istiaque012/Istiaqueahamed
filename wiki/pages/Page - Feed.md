@@ -4,7 +4,7 @@ type: page
 status: done
 visibility: public
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, page]
 ---
 
@@ -13,7 +13,8 @@ tags: [project/website, page]
 Back to [[Site Architecture]]
 
 > [!abstract] Job of this page
-> The pulse of the site. One reverse-chronological stream of everything published, so anyone can follow the journey from a single place. The page people bookmark.
+> The reader-facing home for Istiaque's Blog and Journal: one reverse-chronological stream, with
+> clear paths into long-form and short-form writing.
 
 ---
 
@@ -21,37 +22,37 @@ Back to [[Site Architecture]]
 
 - Blog posts → [[Page - Blog]]
 - Journal entries → [[Page - Journal]]
-- Father pieces → [[Page - My Beloved Father]]
-- Project updates → [[Page - Projects]]
-- Documentaries → [[Page - Documentaries]]
 
 ## Behaviour
 
 - Merged and sorted by `publishedAt`, newest first
-- Each item shows a **type tag** (Blog / Journal / Father / Project / Documentary)
-- **Filter** by type: All · Blog · Journal · My Beloved Father · Projects · Documentaries
+- Each item shows a **type tag** (Blog / Journal)
+- Shared local navigation: **All · Blog · Journal**
+- Feed-page filters: **All · Blog · Journal**, reflected in the URL
 - Each item links to its full view
-- The home page shows a **preview** (latest 5–8) with "see everything →"
+- The home page shows one optional featured item plus the newest Blog/Journal items and an
+  **Open the Feed** action
 
 ## Technical
 
-- A GROQ query across all content types (see [[Tech - Sanity CMS Setup#The feed query]])
+- A GROQ query across `blogPost` and `journalEntry` (see [[Tech - Sanity CMS Setup#The feed query]])
 - No separate schema — it's a view over existing content
 
 ## Design notes
 
 - Clean list rows, type tag, title, date, reading time
 - Restrained motion as items enter on scroll (see [[Design System#Motion]])
-- The father items can carry a subtler, quieter tag treatment
+- Blog cover images remain optional; Journal stays text-first
 
-## Built — Session 13
+## Built — 2026-07-16
 
-The public `/feed` route now uses the live merged Sanity chronology shared with the Home teaser.
-It has URL-backed filters for all five content families, stable image/no-image rows, eight-item
-load-more pagination, honest empty/no-result states, and RSS at `/feed.xml`. Feed is indexable and
-advertises its RSS alternate. The populated interaction path awaits approved content; the empty
-public dataset does not block the production system.
+The public `/feed` route is the direct primary-navigation destination for Blog and Journal. It has
+All/Blog/Journal local navigation and URL-backed filters, stable image/no-image rows, eight-item
+load-more pagination, honest empty/no-result states, and matching RSS at `/feed.xml`. Feed remains
+active throughout Blog, Journal, and their detail routes. Father pieces, projects, and films no
+longer enter Feed or RSS.
 
 ---
 
-Related: [[Site Architecture#The feed is the spine]] · [[Tech - Sanity CMS Setup]]
+Related: [[Feed, Blog & Journal Plan]] · [[Site Architecture#Feed is the publishing doorway]] ·
+[[Tech - Sanity CMS Setup]]

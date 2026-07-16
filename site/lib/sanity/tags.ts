@@ -22,10 +22,10 @@ export function tagsForDocumentType(type: SanityDocumentType | string): string[]
   const typeTag = SANITY_TAGS[type as keyof typeof SANITY_TAGS]
 
   if (!typeTag) {
-    return [SANITY_TAGS.feed]
+    return []
   }
 
-  if (['blogPost', 'journalEntry', 'fatherPiece', 'project', 'documentary'].includes(type)) {
+  if (['blogPost', 'journalEntry'].includes(type)) {
     return [typeTag, SANITY_TAGS.feed, SANITY_TAGS.homePage]
   }
 

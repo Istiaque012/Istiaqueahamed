@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { writingNavigation } from "@/lib/navigation";
+import { feedNavigation } from "@/lib/navigation";
 
 const descriptions = {
-  "/feed": "Everything published",
+  "/feed": "Blog + Journal",
   "/blog": "Long-form essays",
   "/journal": "Thoughts, reads, observations",
 } as const;
@@ -14,10 +14,10 @@ export default function WritingNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="writing-system-nav" aria-label="Writing sections">
-      <p>Writing</p>
+    <nav className="writing-system-nav" aria-label="Feed sections">
+      <p>Feed</p>
       <div>
-        {writingNavigation.map((item) => {
+        {feedNavigation.map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
           return (
             <Link aria-current={active ? "page" : undefined} href={item.href} key={item.href}>

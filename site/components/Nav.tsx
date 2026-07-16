@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { topNavigation, writingNavigation } from "@/lib/navigation";
+import { feedNavigation, topNavigation } from "@/lib/navigation";
 
 function routeIsActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -16,9 +16,8 @@ export default function Nav() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
   const mobileNavRef = useRef<HTMLElement>(null);
-  const writingDetailsRef = useRef<HTMLDetailsElement>(null);
   const { scrollYProgress } = useScroll();
-  const writingActive = writingNavigation.some((item) => routeIsActive(pathname, item.href));
+  const feedActive = feedNavigation.some((item) => routeIsActive(pathname, item.href));
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -62,6 +61,7 @@ export default function Nav() {
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
+  const topRouteIsActive = (href: string) => href === "/feed" ? feedActive : routeIsActive(pathname, href);
 
   return (
     <>
@@ -74,42 +74,15 @@ export default function Nav() {
           </Link>
 
           <nav className="global-nav" aria-label="Primary navigation">
-            {topNavigation.map((item) =>
-              item.kind === "writing" ? (
-                <details
-                  className="writing-menu"
-                  data-active={writingActive || undefined}
-                  key={item.label}
-                  ref={writingDetailsRef}
-                >
-                  <summary>Writing</summary>
-                  <div className="writing-menu__panel">
-                    <p>Writing</p>
-                    {writingNavigation.map((writingItem) => (
-                      <Link
-                        aria-current={routeIsActive(pathname, writingItem.href) ? "page" : undefined}
-                        href={writingItem.href}
-                        key={writingItem.href}
-                        onClick={() => {
-                          if (writingDetailsRef.current) writingDetailsRef.current.open = false;
-                        }}
-                      >
-                        <span>{writingItem.index}</span>
-                        {writingItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                </details>
-              ) : (
-                <Link
-                  aria-current={routeIsActive(pathname, item.href) ? "page" : undefined}
-                  href={item.href}
-                  key={item.href}
-                >
-                  {item.label}
-                </Link>
-              ),
-            )}
+            {topNavigation.map((item) => (
+              <Link
+                aria-current={topRouteIsActive(item.href) ? "page" : undefined}
+                href={item.href}
+                key={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           <button
@@ -137,43 +110,18 @@ export default function Nav() {
               ref={mobileNavRef}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             >
-              {topNavigation.map((item, index) =>
-                item.kind === "writing" ? (
-                  <div
-                    className="global-mobile-nav__writing"
-                    data-active={writingActive || undefined}
-                    key={item.label}
-                  >
-                    <Link href="/feed" onClick={closeMenu}>
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                      Writing
-                    </Link>
-                    <div>
-                      {writingNavigation.map((writingItem) => (
-                        <Link
-                          aria-current={routeIsActive(pathname, writingItem.href) ? "page" : undefined}
-                          href={writingItem.href}
-                          key={writingItem.href}
-                          onClick={closeMenu}
-                        >
-                          {writingItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    aria-current={routeIsActive(pathname, item.href) ? "page" : undefined}
-                    href={item.href}
-                    key={item.href}
-                    onClick={closeMenu}
-                    ref={index === 0 ? firstMobileLinkRef : undefined}
-                  >
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    {item.label}
-                  </Link>
-                ),
-              )}
+              {topNavigation.map((item, index) => (
+                <Link
+                  aria-current={topRouteIsActive(item.href) ? "page" : undefined}
+                  href={item.href}
+                  key={item.href}
+                  onClick={closeMenu}
+                  ref={index === 0 ? firstMobileLinkRef : undefined}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {item.label}
+                </Link>
+              ))}
             </motion.nav>
           ) : null}
         </AnimatePresence>

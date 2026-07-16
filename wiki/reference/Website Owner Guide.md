@@ -25,7 +25,7 @@ Sign in to Studio with the Sanity/GitHub account already connected to the projec
 
 ## Publish a Blog post, Journal entry, or Father piece
 
-1. Open `/studio` and choose **Writing** or **Father**.
+1. Open `/studio` and choose **Blog & Journal** or **Father**.
 2. Press the create button and choose the ready-made type, such as **Blog post — Opinion**,
    **Journal entry — Thought**, or **Father piece — Note**.
 3. Add the title, press **Generate** beside the slug if shown, add the date, and write the body.
@@ -39,11 +39,14 @@ What happens automatically:
 |---|---|
 | Blog post | Blog, Feed, RSS, and Home's latest writing |
 | Journal entry | Journal, Feed, RSS, and Home's latest writing |
-| Father piece | Father page, Feed, and RSS |
-| Project | Projects, Feed, and RSS |
-| Film | Documentaries, Feed, and RSS |
+| Father piece | Father page |
+| Project | Projects |
+| Film | Documentaries |
 | Timeline event | Timeline |
 | Book | Bookshelf |
+
+You never create a Feed item. Publishing a Blog post or Journal entry updates Feed and RSS
+automatically. **Feed preview** in Studio is read-only.
 
 ## Put a Blog or Journal item in the large Home position
 

@@ -9,7 +9,7 @@ import { EditorialImage } from "@/components/ui";
 import { feedItemHref, feedItemLabel, formatEditorialDate } from "@/lib/editorial";
 import { socialLinks } from "@/lib/navigation";
 import type { ResolvedSanityImage } from "@/lib/sanity/image";
-import type { FeedItem, HomePage, HomeWriting } from "@/lib/sanity/types";
+import type { HomePage, HomeWriting } from "@/lib/sanity/types";
 
 const milestones = [
   { year: "MBBS", title: "Medical training", detail: "Sylhet North East Medical College, Bangladesh" },
@@ -43,7 +43,6 @@ type LifeImage = {
 
 type LandingPageProps = {
   fatherImage?: ResolvedSanityImage;
-  feed: FeedItem[];
   homePage: HomePage | null;
   homeWriting: HomeWriting;
   lifeImages: LifeImage[];
@@ -52,7 +51,6 @@ type LandingPageProps = {
 
 export default function LandingPage({
   fatherImage,
-  feed,
   homePage,
   homeWriting,
   lifeImages,
@@ -268,14 +266,14 @@ export default function LandingPage({
         </div>
       </section>
 
-      <section id="writing" className="home-publishing dark-section" aria-labelledby="writing-title">
+      <section id="feed" className="home-publishing dark-section" aria-labelledby="feed-title">
         <div className="section-shell">
           <Reveal className="home-publishing__heading">
             <div>
               <p className="section-label">06 · Published</p>
-              <h2 id="writing-title">Notes from the life in between.</h2>
+              <h2 id="feed-title">Notes from the life in between.</h2>
             </div>
-            <p>Blog, journal, projects, films, and the Father archive — one living record.</p>
+            <p>Longer Blog posts and shorter Journal entries, gathered in one living Feed.</p>
           </Reveal>
 
           <div className="home-writing">
@@ -312,36 +310,18 @@ export default function LandingPage({
                   <p className="section-label">Latest writing</p>
                   <h3>The first pieces are being prepared.</h3>
                   <p>Published Blog and Journal entries will appear here automatically.</p>
-                  <Link href="/feed" className="text-link">Visit Writing <span aria-hidden="true">↗</span></Link>
+                  <Link href="/feed" className="text-link">Open the Feed <span aria-hidden="true">↗</span></Link>
                 </Reveal>
               )}
             </div>
           </div>
 
-          <div className="home-feed">
-            <Reveal className="home-feed__intro">
-              <p className="section-label">Latest from the complete Feed</p>
+          <Reveal className="home-feed">
+            <div className="home-feed__intro">
+              <p className="section-label">Blog & Journal</p>
               <Link href="/feed" className="text-link">Open the Feed <span aria-hidden="true">↗</span></Link>
-            </Reveal>
-            {feed.length ? (
-              <div className="home-feed__list">
-                {feed.map((item, index) => (
-                  <Reveal key={item._id} className="home-feed__item" delay={index * 0.05}>
-                    <Link href={feedItemHref(item)}>
-                      <span>0{index + 1}</span>
-                      <span>{feedItemLabel(item)}</span>
-                      <strong>{item.title}</strong>
-                      <span>{formatEditorialDate(item.date)}</span>
-                    </Link>
-                  </Reveal>
-                ))}
-              </div>
-            ) : (
-              <Reveal className="home-feed__empty">
-                <p>The Feed is quiet for now. New public work will arrive here without a site update.</p>
-              </Reveal>
-            )}
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

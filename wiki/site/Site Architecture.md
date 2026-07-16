@@ -2,7 +2,7 @@
 title: Site Architecture
 type: architecture
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 visibility: private
 tags: [project/website, architecture, moc]
 ---
@@ -19,7 +19,7 @@ The full map of every page, what it does, and whether it's managed in the CMS.
 
 The confirmed top navigation is:
 
-**Home · About · Father · Writing · Projects · Work · Contact**
+**Home · About · Father · Feed · Projects · Work · Contact**
 
 ```
 istiaqueahamed.com
@@ -27,8 +27,8 @@ istiaqueahamed.com
 ├── Home                  → the cinematic first impression
 ├── About                 → the full story
 ├── My Beloved Father     → its own quiet space; nav label "Father"
-├── Writing               → navigation group; defaults to Feed (no separate 14th page)
-│   ├── Feed              → everything I publish, one stream
+├── Feed                  → Blog + Journal, newest first
+│   ├── All               → combined Blog/Journal chronology
 │   ├── Blog              → 4 categories, long-form
 │   └── Journal           → short Thought / Read / Observation
 ├── Projects              → StudyRise at initial launch
@@ -44,8 +44,7 @@ Footer / in-page routes
 
 > [!tip] Father discoverability
 > Use `/father` as the short URL and "Father" as the nav label; keep **My Beloved Father** as the
-> page heading. Link to it again from the Home father moment, the About story, the Feed filter,
-> and the footer.
+> page heading. Link to it again from the Home father moment, the About story, and the footer.
 
 ---
 
@@ -55,7 +54,7 @@ Footer / in-page routes
 |---|---|---|---|
 | Home | First impression, pulls feed | Partly | [[Page - Home]] |
 | About | The full story, 6 blocks | Mostly static | [[Page - About]] |
-| Feed | All content, one stream | Auto (queries all) | [[Page - Feed]] |
+| Feed | Blog + Journal, one stream | Auto (queries both) | [[Page - Feed]] |
 | Blog | Long-form, 4 categories | ✅ Yes | [[Page - Blog]] |
 | Journal | Short entries, 3 types | ✅ Yes | [[Page - Journal]] |
 | My Beloved Father | Essays + notes + photos | ✅ Yes | [[Page - My Beloved Father]] |
@@ -69,9 +68,11 @@ Footer / in-page routes
 
 ---
 
-## The feed is the spine
+## Feed is the publishing doorway
 
-The [[Page - Feed]] deserves special attention. Every CMS content type (blog, journal, father, project, documentary) carries a `publishedAt` date. Next.js queries them all and merges into one reverse-chronological stream, filterable by type. This is what someone bookmarks to follow the journey, and it's surfaced on the home page too.
+The [[Page - Feed]] merges published Blog and Journal documents into one reverse-chronological
+stream. Blog and Journal remain distinct formats and routes; Feed is their automatic reader-facing
+container. Father, Projects, and Documentaries keep their own destinations.
 
 ---
 
@@ -89,7 +90,7 @@ services" to "one person, one whole life."
 | 3 | Credibility strip | client-logo row | institutions: Sylhet NE Medical College · BIRDEM · Macquarie (MPH) · AMC | [[Page - Work]] |
 | 4 | About block | "Meet Meily" photo + intro + skill tags | "Meet Istiaque" + facet tags | [[Page - About]] |
 | 5 | Projects feature | case-study presentation | StudyRise | [[Page - Projects]] |
-| 6 | Writing + Feed teaser | (new) | selected Blog/Journal pieces + latest from Feed | [[Page - Feed]] |
+| 6 | Feed | (new) | optional featured Blog/Journal piece + latest writing + Feed action | [[Page - Feed]] |
 | 7 | Father moment | — (no equivalent) | a quiet break into the "different room" | [[Page - My Beloved Father]] |
 | 8 | Stats / FAQ | counters + accordion | reusable credibility components (optional) | — |
 | 9 | Contact CTA footer | "let's create together" | confident reach-out + [[Social Links]] | [[Page - Contact]] |
@@ -111,14 +112,14 @@ services" to "one person, one whole life."
 - Smooth page transitions (see [[Design System#Motion]])
 - Person schema + correct meta on every page (see [[SEO & Discoverability]])
 
-### Implementation checkpoint — 2026-07-15
+### Implementation checkpoint — 2026-07-16
 
 The final shared shell and all thirteen public route paths are implemented as responsive,
 honest scaffolds. The seven top-navigation entries organise those destinations; the footer keeps
 the complete public route directory visible. Session 03 passed the complete desktop and mobile
 route matrix, narrow 360px overflow checks, keyboard skip/Escape/focus containment, active states,
-Writing transitions, and the production build. Unfinished page scaffolds remain `noindex` until
-their dedicated build sessions replace them with approved content.
+and the production build. The post-launch Feed migration then replaced the Writing disclosure with
+a direct Feed link and preserved its active state across Feed, Blog, Journal, and detail routes.
 
 ---
 

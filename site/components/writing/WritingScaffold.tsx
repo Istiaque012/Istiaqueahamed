@@ -21,7 +21,7 @@ export default function WritingScaffold({
       <section className="writing-scaffold__body" aria-label={`${config.title} publishing status`}>
         <EditorialEmptyState
           description="Published work will appear here automatically from Sanity. No sample article, date, or opinion has been invented for the empty state."
-          title={current === "feed" ? "The complete stream is quiet for now." : `The first ${config.title} pieces are being prepared.`}
+          title={current === "feed" ? "The Feed is quiet for now." : `The first ${config.title} pieces are being prepared.`}
         />
         <WritingCrossLinks current={current} />
       </section>

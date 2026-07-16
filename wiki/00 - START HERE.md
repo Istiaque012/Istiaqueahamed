@@ -76,7 +76,7 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 | **Stack** | Next.js + Sanity + Framer Motion + Vercel |
 | **Aesthetic** | Dark, cinematic, minimal, masculine, premium editorial |
 | **Total pages** | 13 |
-| **CMS-managed** | Blog, Journal, Father section, Projects, Documentaries, Feed |
+| **CMS-managed** | Blog, Journal, Father section, Projects, Documentaries; Feed is automatic |
 | **Primary goal** | Be recognised — own my name, show the full person |
 
 ---

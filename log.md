@@ -607,3 +607,28 @@ Istiaque approved publication.
 - Remaining owner/dashboard actions: merge PR #9 to `main` when ready, make the apex domain primary
   in Vercel so it matches canonical URLs, enable Vercel Analytics/Speed Insights dashboards,
   configure Contact delivery, and verify Search Console.
+
+## [2026-07-16] query | Feed, Blog, and Journal navigation approved
+Planned the post-launch simplification of the public publishing system after reviewing the current
+Writing submenu, all-site Feed, Blog, Journal, Home, RSS, Sanity Studio, and discoverability layer.
+- Feed will replace Writing in the primary navigation and act as a direct link rather than a
+  desktop/mobile submenu.
+- Feed and RSS will contain Blog and Journal only, with All · Blog · Journal local navigation.
+- Father, Projects, and Documentaries will remain in their own destinations; Home will consolidate
+  its duplicate writing/feed surfaces into one Blog/Journal-led section.
+- Existing schemas and `/feed`, `/blog`, and `/journal` URLs remain, avoiding content or redirect
+  migrations. The complete implementation and acceptance plan is filed in
+  [[Feed, Blog & Journal Plan]].
+
+## [2026-07-16] build | Feed navigation and publishing model implemented
+Implemented the approved Feed simplification across the public site, Sanity authoring model, SEO
+surfaces, verification scripts, and operating documentation.
+- Replaced the global Writing disclosure with one direct Feed link while preserving Feed's active
+  state across `/feed`, `/blog`, `/journal`, and their detail routes.
+- Limited Feed, RSS, Home invalidation, and Studio's combined preview to Blog posts and Journal
+  entries; Father pieces, Projects, and Documentaries remain in their own destinations.
+- Consolidated Home's duplicate writing/feed surfaces into one Blog-and-Journal-led Feed section.
+- Passed the full `npm run quality` suite, `git diff --check`, Sanity live/authoring verification,
+  and responsive browser QA at 1440 px and 390 px with no horizontal overflow or application
+  console errors. The only local warning was the expected temporary `localhost:3100` Sanity CORS
+  notice.

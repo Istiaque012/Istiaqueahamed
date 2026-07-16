@@ -3,7 +3,7 @@ title: Page - Course (AI in Healthcare)
 type: page
 status: done
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 visibility: public
 tags: [project/website, page, future]
 ---
@@ -23,13 +23,13 @@ Back to [[Site Architecture]]
 - Complete dark editorial route at `/course`, indexable with canonical metadata
 - Clear **Coming later** status, factual intended audience, and broad territory the future course
   may explore
-- Direct link to current Writing so visitors have a useful path now
+- Direct link to the current Feed so visitors have a useful path now
 - No waitlist, signup, price, date, format, module, testimonial, outcome, or sales claim
 - Available-only action: the primary course link cannot appear until the Sanity status is explicitly
   moved to `Available`
 
 The neutral public fallback does not publish the private C7 draft. A reviewed, published Sanity
-singleton can replace the headline, context, audience, themes, and Writing link without a redesign.
+singleton can replace the headline, context, audience, themes, and Feed link without a redesign.
 
 ## Sanity authoring
 
@@ -39,7 +39,7 @@ singleton can replace the headline, context, audience, themes, and Writing link 
 - one-statement headline and approved rich-text context
 - up to five intended-audience lines
 - up to six broad future themes
-- a relevant Writing link
+- a relevant Feed, Blog, or Journal link
 - an Available-only primary course action
 
 ## Scope for later (v2 — when ready)
@@ -56,7 +56,7 @@ singleton can replace the headline, context, audience, themes, and Writing link 
 
 ## Design notes
 
-- Dark cinematic hero with an explicit status, followed by audience, territory, and Writing scenes
+- Dark cinematic hero with an explicit status, followed by audience, territory, and Feed scenes
 - The layout handles the future transition from Coming later to Available without a page redesign
 - No photography is required for the current version
 

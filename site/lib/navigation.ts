@@ -1,17 +1,17 @@
-export const writingNavigation = [
-  { index: "01", label: "Feed", href: "/feed" },
+export const feedNavigation = [
+  { index: "01", label: "All", href: "/feed" },
   { index: "02", label: "Blog", href: "/blog" },
   { index: "03", label: "Journal", href: "/journal" },
 ] as const;
 
 export const topNavigation = [
-  { kind: "link", label: "Home", href: "/" },
-  { kind: "link", label: "About", href: "/about" },
-  { kind: "link", label: "Father", href: "/father" },
-  { kind: "writing", label: "Writing", href: "/feed" },
-  { kind: "link", label: "Projects", href: "/projects" },
-  { kind: "link", label: "Work", href: "/work" },
-  { kind: "link", label: "Contact", href: "/contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Father", href: "/father" },
+  { label: "Feed", href: "/feed" },
+  { label: "Projects", href: "/projects" },
+  { label: "Work", href: "/work" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const footerNavigation = [
@@ -25,8 +25,12 @@ export const footerNavigation = [
     ],
   },
   {
-    label: "Writing",
-    items: writingNavigation,
+    label: "Feed",
+    items: [
+      { label: "All posts", href: "/feed" },
+      ...feedNavigation.slice(1),
+      { label: "RSS", href: "/feed.xml" },
+    ],
   },
   {
     label: "Practice",
