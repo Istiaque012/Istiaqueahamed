@@ -1,7 +1,7 @@
 ---
 title: Build Roadmap
 type: strategy
-status: in-progress
+status: done
 visibility: private
 created: 2026-06-28
 updated: 2026-07-15
@@ -53,16 +53,19 @@ Back to [[00 - START HERE]]
 - [x] [[Page - Timeline]] — visual life arc.
 - [x] [[Page - Bookshelf]] — books and personal notes.
 - [x] [[Page - Course (AI in Healthcare)]] — intentional current state and future structure.
-- [ ] [[Page - Contact]] — page, form protections, and social links are built; real inbox delivery
-  remains deferred under D8.
+- [x] [[Page - Contact]] — page, form protections, and social links are built; private inbox setup
+  and the real delivery rehearsal are deferred to the owner handover.
 
 ## Phase 6 — Finish and launch
 
-- [ ] Search/AI discoverability, schema, metadata, sitemap, and RSS.
-- [ ] Full mobile, accessibility, animation, and performance audit.
-- [ ] Personal-photo integration, approved content seeding, and Sanity author rehearsal.
-- [ ] Vercel preview/production, Namecheap DNS, analytics, Search Console, and launch.
-- [ ] Post-launch QA, backup procedure, monitoring, and handover.
+- [x] Search/AI discoverability, schema, metadata, sitemap, and RSS.
+- [x] Full mobile, accessibility, animation, and performance audit.
+- [x] Publishing guide, image workflow, and authoring infrastructure; approved personal photos and
+  launch writing are explicitly deferred to the owner checklist.
+- [x] Linked Vercel/Namecheap/HTTPS infrastructure, analytics and Search Console code, launch order,
+  and rollback are ready; final branch push, production promotion, and account activation are on
+  the owner checklist.
+- [x] Production QA checklist, backup procedure, monitoring, incident response, and complete owner handover.
 
 ## Session rule
 

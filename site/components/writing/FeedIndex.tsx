@@ -16,15 +16,7 @@ import type { PageConfig } from "@/lib/page-config";
 
 const ALL = "All";
 const PAGE_SIZE = 8;
-const FILTERS = [ALL, "Blog", "Journal", "My Beloved Father", "Projects", "Documentaries"] as const;
-
-const filterForKind: Record<string, (typeof FILTERS)[number]> = {
-  Blog: "Blog",
-  Father: "My Beloved Father",
-  Film: "Documentaries",
-  Journal: "Journal",
-  Project: "Projects",
-};
+const FILTERS = [ALL, "Blog", "Journal"] as const;
 
 export type FeedViewItem = EditorialItem & { id: string };
 
@@ -42,7 +34,7 @@ export default function FeedIndex({
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   const filtered = useMemo(
-    () => (active === ALL ? items : items.filter((item) => filterForKind[item.kind] === active)),
+    () => (active === ALL ? items : items.filter((item) => item.kind === active)),
     [active, items],
   );
   const shown = filtered.slice(0, visible);
@@ -64,15 +56,15 @@ export default function FeedIndex({
         <h1>{config.title}</h1>
         <p>{config.intro}</p>
         <Link className="feed-index__rss" href="/feed.xml">
-          Follow by RSS <span aria-hidden="true">↗</span>
+          Follow the Feed by RSS <span aria-hidden="true">↗</span>
         </Link>
       </header>
 
       {items.length ? (
-        <section className="feed-index__body" aria-label="Complete publishing feed">
+        <section className="feed-index__body" aria-label="Blog and Journal feed">
           <div className="feed-index__toolbar">
             <p className="section-label">
-              {active === ALL ? "Complete chronology" : active}
+              {active === ALL ? "Blog & Journal" : active}
               <span> · {filtered.length}</span>
             </p>
             <EditorialFilters active={active} filters={FILTERS} onSelect={selectFilter} />
@@ -111,7 +103,7 @@ export default function FeedIndex({
               ))}
             </ol>
           ) : (
-            <p className="feed-index__none" role="status">No {active.toLowerCase()} item has been published yet.</p>
+            <p className="feed-index__none" role="status">No {active.toLowerCase()} post has been published yet.</p>
           )}
 
           {hasMore ? (
@@ -127,8 +119,8 @@ export default function FeedIndex({
       ) : (
         <section className="writing-scaffold__body" aria-label="Feed publishing status">
           <EditorialEmptyState
-            description="Blog essays, Journal entries, Father pieces, projects, and films will enter this chronology automatically when they are published. Nothing has been invented to fill it."
-            title="The complete stream is quiet for now."
+            description="Published Blog posts and Journal entries will enter this chronology automatically. Nothing has been invented to fill it."
+            title="The Feed is quiet for now."
           />
           <WritingCrossLinks current="feed" />
         </section>

@@ -7,7 +7,7 @@ export const nav = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Father", href: "/father" },
-  { label: "Writing", href: "#writing" },
+  { label: "Feed", href: "#feed" },
   { label: "Projects", href: "#projects" },
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },

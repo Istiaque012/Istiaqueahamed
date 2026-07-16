@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Providers from "@/components/Providers";
-import { personJsonLd, SITE_URL } from "@/lib/person";
+import { stringifyJsonLd } from "@/lib/jsonld";
+import { identityJsonLd, PUBLIC_ROLE, SITE_URL } from "@/lib/person";
 import { SanityLive } from "@/lib/sanity/live";
 import { sanityReadToken } from "@/sanity/env";
 
@@ -26,20 +29,26 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Istiaque Ahamed — Doctor, Healthcare Leader & Founder",
+    default: "Istiaque Ahamed — Medical Doctor & Healthcare Systems Builder",
     template: "%s · Istiaque Ahamed",
   },
   description:
-    "Istiaque Ahamed is a doctor, healthcare leader, and founder working across Bangladesh and Australia. Medicine, technology, and the life in between.",
+    `Istiaque Ahamed is a ${PUBLIC_ROLE.toLowerCase()} based between Bangladesh and Australia. Medicine, technology, and the life in between.`,
+  authors: [{ name: "Istiaque Ahamed", url: SITE_URL }],
+  creator: "Istiaque Ahamed",
+  publisher: "Istiaque Ahamed",
+  category: "Personal website",
   alternates: {
+    canonical: SITE_URL,
     types: { "application/rss+xml": `${SITE_URL}/feed.xml` },
   },
   openGraph: {
     title: "Istiaque Ahamed — Medicine, technology, and the life in between",
-    description: "Doctor, healthcare leader, and founder working across Bangladesh and Australia.",
+    description: `${PUBLIC_ROLE} based between Bangladesh and Australia.`,
     url: SITE_URL,
     siteName: "Istiaque Ahamed",
     type: "website",
+    locale: "en_US",
     images: [
       {
         url: "/og.png",
@@ -52,10 +61,19 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Istiaque Ahamed — Medicine, technology, and the life in between",
-    description: "Doctor, healthcare leader, and founder working across Bangladesh and Australia.",
+    description: `${PUBLIC_ROLE} based between Bangladesh and Australia.`,
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
+  formatDetection: { address: false, email: false, telephone: false },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#080808",
 };
 
 export default async function RootLayout({
@@ -75,11 +93,13 @@ export default async function RootLayout({
       <body>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: stringifyJsonLd(identityJsonLd) }}
         />
         <Providers>{children}</Providers>
         <SanityLive includeDrafts={draftPreviewEnabled} />
         {draftPreviewEnabled ? <VisualEditing /> : null}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

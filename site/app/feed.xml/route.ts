@@ -51,7 +51,7 @@ export async function GET() {
     '<rss version="2.0"><channel>',
     "<title>Istiaque Ahamed — Feed</title>",
     `<link>${SITE_URL}/feed</link>`,
-    "<description>Blog essays, Journal entries, Father pieces, projects, and films by Istiaque Ahamed.</description>",
+    "<description>Blog posts and Journal entries by Istiaque Ahamed.</description>",
     "<language>en</language>",
     latestDate ? `<lastBuildDate>${latestDate}</lastBuildDate>` : "",
     entries,

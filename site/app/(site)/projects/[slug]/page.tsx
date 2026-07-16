@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import ProjectCaseStudy from "@/components/ProjectCaseStudy";
+import { projectJsonLd, stringifyJsonLd } from "@/lib/jsonld";
 import { createPageMetadata } from "@/lib/metadata";
 import { fetchSanity } from "@/lib/sanity/fetch";
 import { resolveSanityImage, type ResolvedSanityImage } from "@/lib/sanity/image";
@@ -17,6 +18,14 @@ const getProject = cache((slug: string) => fetchSanity<Project | null>({
   tags: [SANITY_TAGS.project],
 }));
 
+const getProjectMetadata = cache((slug: string) => fetchSanity<Project | null>({
+  query: projectBySlugQuery,
+  params: { slug },
+  requestTag: `project-metadata-${slug}`,
+  stega: false,
+  tags: [SANITY_TAGS.project],
+}));
+
 const studyRiseCover: ResolvedSanityImage = {
   alt: "StudyRise study-planning platform showing readiness and study progress",
   height: 630,
@@ -26,7 +35,7 @@ const studyRiseCover: ResolvedSanityImage = {
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const project = await getProject(slug);
+  const project = await getProjectMetadata(slug);
 
   if (!project && slug !== "studyrise") {
     return createPageMetadata({
@@ -66,5 +75,24 @@ export default async function ProjectDetailPage({ params }: Props) {
     width: 1440,
   }));
 
-  return <ProjectCaseStudy cover={cover} project={project} screenshots={screenshots} slug={slug} />;
+  const name = project?.name || "StudyRise";
+  const jsonLd = projectJsonLd({
+    name,
+    description: project?.tagline || "A study-planning platform that turns demanding exams and academic courses into structured daily study systems.",
+    path: `/projects/${slug}`,
+    imageUrl: cover?.src,
+    liveUrl: project?.liveUrl || (slug === "studyrise" ? "https://studyrise.app" : undefined),
+    githubUrl: project?.githubUrl || (slug === "studyrise" ? "https://github.com/Istiaque012" : undefined),
+    techStack: project?.techStack?.length ? project.techStack : slug === "studyrise" ? ["React", "Vite", "Supabase", "Vercel"] : undefined,
+  });
+
+  return (
+    <>
+      <script
+        dangerouslySetInnerHTML={{ __html: stringifyJsonLd(jsonLd) }}
+        type="application/ld+json"
+      />
+      <ProjectCaseStudy cover={cover} project={project} screenshots={screenshots} slug={slug} />
+    </>
+  );
 }

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="IA monogram">
+  <rect width="512" height="512" rx="96" fill="#080808"/>
+  <path d="M144 128h64v256h-64z" fill="#f1eee8"/>
+  <path d="M274 128h72l86 256h-67l-18-59h-87l-18 59h-67l99-256zm3 141h53l-25-84-28 84z" fill="#f1eee8"/>
+</svg>

@@ -4,7 +4,7 @@ type: strategy
 status: in-progress
 visibility: private
 created: 2026-06-28
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, strategy, content]
 ---
 
@@ -28,7 +28,8 @@ Consistency over frequency. A few honest, well-made things beat a flood of shall
 | Project update | Short | On milestones | [[Page - Projects]] |
 | Documentary | Video + context | On release | [[Page - Documentaries]] |
 
-All of these surface together in the [[Page - Feed]].
+Blog and Journal surface together in the [[Page - Feed]]. Father pieces, Projects, and
+Documentaries remain in their own distinct destinations.
 
 ## What appears on Home
 
@@ -39,10 +40,10 @@ prominent position without changing code.
 - A draft never appears on Home.
 - Turning **Feature on Home** off removes only the prominent pin. The piece can still appear in
   Latest Writing while it is among the newest published items.
-- Father pieces stay in the Father space and Feed unless a separate, deliberate Home treatment is
-  approved; they are not mixed into ordinary promotional cards.
+- Father pieces stay in the Father space unless a separate, deliberate Home treatment is approved;
+  they are not mixed into ordinary promotional cards.
 - Home shows one optional featured piece plus the three newest Blog/Journal items. If no piece is
-  featured, it shows the four newest. [[Page - Feed]] remains the complete chronology.
+  featured, it shows the four newest. [[Page - Feed]] presents the same two formats chronologically.
 
 ## Blog categories
 
@@ -83,22 +84,24 @@ To launch with substance, aim for:
 
 Depth and consistency are what build the entity authority described in [[SEO & Discoverability]]. Writing isn't decoration here; it's the engine of recognition.
 
-## Shared publishing experience — 2026-07-15
+## Shared Feed experience — 2026-07-16
 
-The visitor-facing Writing language is now implemented before the individual indexes are populated:
+- Feed is a direct primary-navigation destination, not a separate format and not a disclosure menu.
+- Feed, Blog, and Journal share **All · Blog · Journal** local navigation with clear active states.
+- Feed and `/feed.xml` contain published Blog and Journal items only.
+- Home uses one featured/latest Blog-and-Journal scene and one Feed action; the duplicate all-site
+  teaser and query are removed.
+- Father, Projects, and Documentaries keep their own public destinations.
+- Empty public datasets display one explicit quiet state. No sample post, date, opinion, excerpt,
+  or cover is created merely to fill the design.
 
-- Writing is a navigation group, never a separate fourteenth page. It opens to **Feed** by default.
-- Feed, Blog, and Journal share one in-page three-destination navigator with clear active states and
-  plain-language descriptions; the interface does not require visitors to understand Sanity types.
-- Reusable metadata, editorial card, row, filter, pagination, no-image, empty-state, and cross-link
-  patterns are ready for Sessions 11–13.
-- Home now uses the same canonical date, content label, and destination helpers as the future indexes.
-- Empty public datasets display an explicit quiet state. No sample post, date, opinion, excerpt, or
-  cover is created merely to fill the design.
+## Feed navigation decision — 2026-07-16
 
-The three route scaffolds remain noindex until their dedicated sessions connect the real published
-datasets and finish the page-specific behavior.
+> [!success] Implemented
+> [[Feed, Blog & Journal Plan]] replaced the public **Writing** navigation label with **Feed**.
+> The existing schemas and `/feed`, `/blog`, and `/journal` URLs remain unchanged.
 
 ---
 
-Related: [[Vision & Positioning]] · [[SEO & Discoverability]] · [[Page - Blog]] · [[Page - Journal]]
+Related: [[Vision & Positioning]] · [[SEO & Discoverability]] · [[Feed, Blog & Journal Plan]] ·
+[[Page - Blog]] · [[Page - Journal]]

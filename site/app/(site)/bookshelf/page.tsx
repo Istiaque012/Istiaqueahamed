@@ -1,4 +1,6 @@
 import Bookshelf, { type BookshelfView } from "@/components/Bookshelf";
+import { bookAnchorId } from "@/lib/editorial";
+import { bookJsonLd, stringifyJsonLd } from "@/lib/jsonld";
 import { createPageMetadata } from "@/lib/metadata";
 import { pageConfigs } from "@/lib/page-config";
 import { fetchSanity } from "@/lib/sanity/fetch";
@@ -45,13 +47,27 @@ export default async function BookshelfPage({
     title: book.title,
   }));
   const usesConfirmedFallback = authored.length === 0;
+  const books = usesConfirmedFallback ? confirmedStarterBooks : authored;
+  const booksJsonLd = books.map((book) => bookJsonLd({
+    author: book.author,
+    description: book.note,
+    imageUrl: book.cover?.src,
+    path: `/bookshelf#${bookAnchorId(book.id)}`,
+    title: book.title,
+  }));
 
   return (
-    <Bookshelf
-      books={usesConfirmedFallback ? confirmedStarterBooks : authored}
-      initialStatus={initialStatus}
-      key={initialStatus}
-      usesConfirmedFallback={usesConfirmedFallback}
-    />
+    <>
+      <script
+        dangerouslySetInnerHTML={{ __html: stringifyJsonLd(booksJsonLd) }}
+        type="application/ld+json"
+      />
+      <Bookshelf
+        books={books}
+        initialStatus={initialStatus}
+        key={initialStatus}
+        usesConfirmedFallback={usesConfirmedFallback}
+      />
+    </>
   );
 }

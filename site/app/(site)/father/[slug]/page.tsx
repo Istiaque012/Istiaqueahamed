@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import FatherArticle from "@/components/FatherArticle";
 import { createPageMetadata } from "@/lib/metadata";
 import { fetchSanity } from "@/lib/sanity/fetch";
-import { resolveSanityImage } from "@/lib/sanity/image";
+import { buildImageUrl, resolveSanityImage } from "@/lib/sanity/image";
 import { fatherPieceBySlugQuery } from "@/lib/sanity/queries";
 import { SANITY_TAGS } from "@/lib/sanity/tags";
 import type { FatherPiece } from "@/lib/sanity/types";
@@ -19,9 +19,19 @@ const getFatherPiece = cache((slug: string) =>
   }),
 );
 
+const getFatherPieceMetadata = cache((slug: string) =>
+  fetchSanity<FatherPiece | null>({
+    query: fatherPieceBySlugQuery,
+    params: { slug },
+    requestTag: `father-piece-metadata-${slug}`,
+    stega: false,
+    tags: [SANITY_TAGS.fatherPiece],
+  }),
+);
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const piece = await getFatherPiece(slug);
+  const piece = await getFatherPieceMetadata(slug);
 
   if (!piece) {
     return createPageMetadata({
@@ -32,10 +42,20 @@ export async function generateMetadata({ params }: Props) {
     });
   }
 
+  const socialImage = buildImageUrl(piece.image, (image) =>
+    image.width(1200).height(630).fit("crop").quality(82),
+  );
+
   return createPageMetadata({
     title: `${piece.title} · My Beloved Father`,
     description: `An approved ${piece.format.toLowerCase()} by Istiaque Ahamed in My Beloved Father.`,
     path: `/father/${slug}`,
+    type: "article",
+    publishedTime: piece.publishedAt,
+    modifiedTime: piece._updatedAt,
+    section: `My Beloved Father · ${piece.format}`,
+    imageUrl: socialImage,
+    imageAlt: piece.image?.alt || `Archive image for ${piece.title}`,
   });
 }
 

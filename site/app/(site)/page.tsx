@@ -1,11 +1,11 @@
 import LandingPage from "@/components/LandingPage";
 import { resolveSanityImage } from "@/lib/sanity/image";
 import { fetchSanity } from "@/lib/sanity/fetch";
-import { feedTeaserQuery, homePageQuery, homeWritingQuery } from "@/lib/sanity/queries";
-import type { FeedItem, HomePage, HomeWriting } from "@/lib/sanity/types";
+import { homePageQuery, homeWritingQuery } from "@/lib/sanity/queries";
+import type { HomePage, HomeWriting } from "@/lib/sanity/types";
 
 export default async function Home() {
-  const [homePage, homeWriting, feed] = await Promise.all([
+  const [homePage, homeWriting] = await Promise.all([
     fetchSanity<HomePage | null>({
       query: homePageQuery,
       requestTag: "home-page",
@@ -15,12 +15,6 @@ export default async function Home() {
       query: homeWritingQuery,
       requestTag: "home-writing",
       tags: ["sanity:homePage", "sanity:blogPost", "sanity:journalEntry"],
-    }),
-    fetchSanity<FeedItem[]>({
-      query: feedTeaserQuery,
-      params: { limit: 3 },
-      requestTag: "home-feed",
-      tags: ["sanity:feed"],
     }),
   ]);
 
@@ -46,7 +40,6 @@ export default async function Home() {
   return (
     <LandingPage
       fatherImage={fatherImage}
-      feed={feed ?? []}
       homePage={homePage}
       homeWriting={homeWriting ?? { featured: null, latest: [] }}
       lifeImages={lifeImages}

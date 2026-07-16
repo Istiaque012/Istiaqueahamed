@@ -93,7 +93,7 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 - `aboutPage` — the six story blocks for [[Page - About]]
 - `fatherPage` — opening copy and archive image slots
 - `workPage` — approved public framing, focus areas, optional work image, and approved-PDF-only CV control
-- `coursePage` — status, approved context, intended audience, broad themes, current Writing link,
+- `coursePage` — status, approved context, intended audience, broad themes, current Feed link,
   and an Available-only action for [[Page - Course (AI in Healthcare)]]
 - `contactPage` — welcome copy, success message, and the author-controlled form switch for
   [[Page - Contact]]; delivery credentials and recipient stay in private server variables
@@ -102,25 +102,19 @@ How content is modelled in Sanity. These "schemas" define what you can write and
 
 ## The feed query
 
-The [[Page - Feed]] doesn't have its own schema. It's a GROQ query that pulls `blogPost`, `journalEntry`, `fatherPiece`, `project`, and `documentary`, merges them, and sorts by `publishedAt` descending. Each item carries a `_type` so the UI can show the right tag and filter.
-
-Session 13 now exposes that same contract as the complete visitor Feed and `/feed.xml` RSS. Home's
-smaller teaser keeps the same eligibility, order, label, and destination rules, so the two surfaces
-cannot disagree about what is newest.
-
-Session 16 keeps Documentary publication in the same Feed/RSS contract and now sends each Feed
-link to the film's stable page anchor. YouTube embeds are facades: the external player loads only
-after a visitor chooses Play.
+The [[Page - Feed]] doesn't have its own schema. Its GROQ query pulls `blogPost` and `journalEntry`,
+sorts them by `publishedAt` descending with an `_id` tie-breaker, and projects only the fields used
+by the Feed rows and RSS. Father, Project, and Documentary documents remain in their own queries.
 
 Home uses two related queries: one optional published Blog/Journal item with
 `featureOnHome == true`, plus the three newest published Blog/Journal items excluding that item.
 With no featured item, Home shows the four newest. A newly published Blog post therefore appears
-automatically in Latest Writing.
+automatically in Home's publishing scene. The earlier duplicate all-site teaser query is removed.
 
 ## Studio structure — what Istiaque sees
 
 - **Website** — Home, About, Father, Work, Course, Contact, and Settings
-- **Writing** — Blog posts, Journal entries, and a read-only Feed preview
+- **Blog & Journal** — Blog posts, Journal entries, and a read-only Feed preview
 - **Father** — Father essays and notes
 - **Projects** — StudyRise and future approved projects
 - **Films** — Documentaries
@@ -134,7 +128,7 @@ make the desk scannable without exposing schema names.
 
 > [!success] Session 04 verified
 > The authenticated Studio was checked with the project-owner GitHub identity. The seven desk
-> sections, Website singletons, Writing views, complete shortcut menu, and a guided Blog draft all
+> sections, Website singletons, Blog & Journal views, complete shortcut menu, and a guided Blog draft all
 > work as intended. Fresh 1440px and 390px passes showed no console warnings/errors or horizontal
 > overflow, and no test content was saved.
 
@@ -162,11 +156,14 @@ the same personal picture can be art-directed for different layouts.
 3. Write in a rich editor — add images, format text
 4. Preview the unpublished page; optionally select **Feature on Home** for the prominent pin
 5. Hit **Publish**
-6. It appears on its page, in Feed, and automatically in Home's Latest Writing; a selected piece
-   also receives the prominent Home position
+6. A Blog or Journal item appears on its own page, in Feed/RSS, and in Home's publishing scene; a
+   selected piece also receives the prominent Home position. Other content stays in its own section.
 
 > [!tip] No code, ever, after setup
 > Once the schemas above are built, you never touch code to publish. The Studio is your whole writing world.
+
+For the short owner workflow, photo rules, unpublishing steps, and pre-publish checklist, use
+[[Website Owner Guide]].
 
 ---
 

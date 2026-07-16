@@ -18,9 +18,19 @@ const getJournalEntry = cache((slug: string) =>
   }),
 );
 
+const getJournalEntryMetadata = cache((slug: string) =>
+  fetchSanity<JournalEntry | null>({
+    query: journalEntryBySlugQuery,
+    params: { slug },
+    requestTag: `journal-entry-metadata-${slug}`,
+    stega: false,
+    tags: [SANITY_TAGS.journalEntry],
+  }),
+);
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const entry = await getJournalEntry(slug);
+  const entry = await getJournalEntryMetadata(slug);
 
   if (!entry) {
     return createPageMetadata({

@@ -81,7 +81,7 @@ export function EditorialPagination({
   totalPages: number;
 }) {
   return (
-    <nav className="editorial-pagination" aria-label="Writing pagination">
+    <nav className="editorial-pagination" aria-label="Editorial pagination">
       {previousHref ? <Link href={previousHref}>← Previous</Link> : <span aria-disabled="true">← Previous</span>}
       <p>Page {currentPage} <span>of {totalPages}</span></p>
       {nextHref ? <Link href={nextHref}>Next →</Link> : <span aria-disabled="true">Next →</span>}
@@ -91,14 +91,14 @@ export function EditorialPagination({
 
 export function WritingCrossLinks({ current }: { current: "feed" | "blog" | "journal" }) {
   const links = [
-    { key: "feed", href: "/feed", label: "See the complete Feed" },
+    { key: "feed", href: "/feed", label: "See all Blog and Journal posts" },
     { key: "blog", href: "/blog", label: "Read long-form Blog essays" },
     { key: "journal", href: "/journal", label: "Open the shorter Journal" },
   ] as const;
 
   return (
-    <aside className="writing-cross-links" aria-label="More writing">
-      <p>Continue through Writing</p>
+    <aside className="writing-cross-links" aria-label="More from the Feed">
+      <p>Continue through the Feed</p>
       {links.filter((link) => link.key !== current).map((link) => (
         <Link href={link.href} key={link.key}>{link.label}<span aria-hidden="true">↗</span></Link>
       ))}

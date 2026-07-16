@@ -517,3 +517,132 @@ before a private inbox is connected.
 - Session 19 is done. Session 20 remains in-progress because D8 still defers the provider/recipient:
   the live form stays clearly disabled until four private delivery variables are configured, the
   Sanity switch is enabled, and a real message is confirmed in Istiaque's inbox.
+
+## [2026-07-15] build | Session 21 search and discoverability completed
+Completed the site-wide search, sharing, and AI-discoverability layer using only confirmed public facts.
+- Corrected the canonical identity to “medical doctor, public health professional, and healthcare
+  systems builder” and reused one social register across Person schema, Footer, and Contact.
+- Added Person, WebSite, Breadcrumb, Article, Video, Book, and Project structured data where
+  appropriate; unique route metadata and social cards; canonical URLs; favicons; web manifest;
+  published-content sitemap; robots rules; RSS; and a factual `/llms.txt`.
+- Resized the existing social card to its declared 1200×630 dimensions and kept drafts, Studio,
+  API routes, visual-lab pages, private facts, and placeholders out of indexing.
+- The full quality gate and 26-route production build pass. All thirteen public routes plus the
+  StudyRise detail were checked for metadata, structured data, overflow, and console health; robots,
+  sitemap, manifest, `/llms.txt`, and RSS all return successfully.
+- Google Search Console, off-site profile consistency, and an optional photo-led social card remain
+  owner tasks because they require account access or approved imagery.
+
+## [2026-07-15] build | Session 22 responsive accessibility and performance completed
+Closed the full-site usability and performance pass against the production build.
+- Raised muted text contrast across dark, ivory, Father, Blog, Projects, Documentary, Course,
+  Timeline, Bookshelf, and Contact registers; restored explicit focus rings for form fields and
+  summaries; and gave nested mobile Writing links a 44 px minimum target.
+- Verified skip link, landmarks, headings, control names, image alternatives, form descriptions,
+  focus trapping/restoration, reduced-motion behaviour, coarse-pointer smooth-scroll bypass,
+  responsive image sizing, lazy video, font loading, query caching, and pagination foundations.
+- Every one of the thirteen public routes now scores 100 for Lighthouse mobile accessibility and
+  SEO. Home, StudyRise, and Contact score 90, 92, and 94 for mobile performance respectively, all
+  with 100 best practices, zero measured layout shift, and 20–30 ms total blocking time.
+- The complete quality gate and 26-route production build pass. The durable audit record is
+  `site/.preview/session-22-audit.md`; large raw Lighthouse files stay local and ignored.
+
+## [2026-07-15] build | Session 23 owner publishing handover completed
+Converted the ready Sanity publishing system into a plain-language operating guide without
+inventing the missing personal material.
+- Added [[Website Owner Guide]] with simple Studio steps for Blog, Journal, Father, Projects, Films,
+  Timeline, Bookshelf, page editing, image upload/crop/alt text, Preview, Publish, Home featuring,
+  unpublishing, safety checks, and basic troubleshooting.
+- Recorded exactly what appears automatically after each content type is published and what to do
+  if a live page looks unchanged.
+- Collected the remaining owner inputs and account-bound actions into clear before-launch and
+  after-launch lists: photos, approved writing, Contact delivery, Vercel, Namecheap, analytics,
+  Search Console, social consistency, and monthly checks.
+- The authenticated create/publish/update/unpublish/delete rehearsal and all current Studio/schema
+  contracts remain verified. Personal photographs, memories, opinions, film context, and launch
+  writing remain deferred by design rather than being guessed or published as placeholders.
+
+## [2026-07-15] build | Session 24 launch readiness completed
+Finished every code-owned launch integration and documented the remaining account-bound promotion.
+- Added Vercel Web Analytics and Speed Insights to the root layout and an optional
+  `GOOGLE_SITE_VERIFICATION` metadata path, so Search Console activation needs no later code edit.
+- Verified the linked `istiaqueahamed` Vercel project, authenticated CLI, ready deployments, six
+  existing Sanity environment names in Preview/Production, Namecheap-served Vercel DNS, and HTTPS
+  on both apex and `www`.
+- Found that the public domain still serves the earlier build and redirects apex to `www`, while
+  the finished site's canonical URLs use the apex. The launch guide now requires the apex to be
+  selected as Vercel primary when the new branch is promoted.
+- Rewrote [[Tech - Deployment & Domain]] with the actual state, environment-name inventory,
+  ordered launch steps, dashboard activation, Search Console submission, smoke tests, and rollback.
+- No push, deployment, DNS, or domain-routing change was made because repository rules require
+  Istiaque's explicit approval. The production dependency audit has no high or critical finding;
+  fourteen moderate transitive findings remain for routine dependency maintenance.
+
+## [2026-07-15] build | Session 25 operations and final handover completed
+Closed the 26-session engineering plan and separated every owner-only activation from the finished build.
+- Added [[Website Operations & Maintenance]] with the verified Sanity export command, restore
+  boundary, backup ownership, five-minute monthly checks, quarterly maintenance, incident actions,
+  environment-name inventory, and optional future enhancements.
+- Closed the Contact page as an implemented fail-closed experience while keeping provider/inbox
+  activation explicit; marked the built `rel="me"` social task complete and retained the off-site
+  identity consistency items for Istiaque.
+- Updated the master MOC, index, roadmap, build plan, owner guide, deployment guide, and page truths
+  so the next helper can resume from files rather than chat history.
+- The finished code remains on `codex/complete-website-build` and has not been pushed or promoted.
+  The current live domain serves the earlier production build; the new production recheck therefore
+  follows owner approval to merge/push/deploy, as documented in the handover.
+- Refreshed the final codebase-memory graph: 15,730 nodes and 16,238 edges, status ready.
+
+## [2026-07-16] build | Production deployment completed
+Pushed the finished website branch and deployed the current build to Vercel Production after
+Istiaque approved publication.
+- Pushed `codex/complete-website-build` to GitHub and opened draft PR #9:
+  `https://github.com/Istiaque012/Istiaqueahamed/pull/9`.
+- Deployed Vercel production deployment `dpl_2UxWnG4RvsgkQuf4sgTgbTbyAYr9`; Vercel marked it
+  `READY` and aliased it to `www.istiaqueahamed.com`, `istiaqueahamed.com`, and project URLs.
+- Verified `https://www.istiaqueahamed.com` returns the new build with the current title,
+  structured data, Sanity portrait, Vercel Analytics, and Speed Insights.
+- Basic HTTP smoke test returned 200 for all thirteen public routes plus `robots.txt`,
+  `sitemap.xml`, `feed.xml`, and `manifest.webmanifest`.
+- Remaining owner/dashboard actions: merge PR #9 to `main` when ready, make the apex domain primary
+  in Vercel so it matches canonical URLs, enable Vercel Analytics/Speed Insights dashboards,
+  configure Contact delivery, and verify Search Console.
+
+## [2026-07-16] query | Feed, Blog, and Journal navigation approved
+Planned the post-launch simplification of the public publishing system after reviewing the current
+Writing submenu, all-site Feed, Blog, Journal, Home, RSS, Sanity Studio, and discoverability layer.
+- Feed will replace Writing in the primary navigation and act as a direct link rather than a
+  desktop/mobile submenu.
+- Feed and RSS will contain Blog and Journal only, with All · Blog · Journal local navigation.
+- Father, Projects, and Documentaries will remain in their own destinations; Home will consolidate
+  its duplicate writing/feed surfaces into one Blog/Journal-led section.
+- Existing schemas and `/feed`, `/blog`, and `/journal` URLs remain, avoiding content or redirect
+  migrations. The complete implementation and acceptance plan is filed in
+  [[Feed, Blog & Journal Plan]].
+
+## [2026-07-16] build | Feed navigation and publishing model implemented
+Implemented the approved Feed simplification across the public site, Sanity authoring model, SEO
+surfaces, verification scripts, and operating documentation.
+- Replaced the global Writing disclosure with one direct Feed link while preserving Feed's active
+  state across `/feed`, `/blog`, `/journal`, and their detail routes.
+- Limited Feed, RSS, Home invalidation, and Studio's combined preview to Blog posts and Journal
+  entries; Father pieces, Projects, and Documentaries remain in their own destinations.
+- Consolidated Home's duplicate writing/feed surfaces into one Blog-and-Journal-led Feed section.
+- Passed the full `npm run quality` suite, `git diff --check`, Sanity live/authoring verification,
+  and responsive browser QA at 1440 px and 390 px with no horizontal overflow or application
+  console errors. The only local warning was the expected temporary `localhost:3100` Sanity CORS
+  notice.
+
+## [2026-07-16] build | Feed release deployed and merged
+Published the verified Feed simplification to Vercel Production and merged the website release into
+`main` through PR #9.
+- Pushed commit `d05b28d` to `codex/complete-website-build` and updated the existing PR rather than
+  opening a duplicate.
+- Deployed Vercel production release `dpl_8CskJUszbiXThcMSqZXDvQD4n9eV`; Vercel marked it `READY`
+  and aliased it to `https://www.istiaqueahamed.com`.
+- Verified 200 responses for Home, Feed, Blog, Journal, RSS, sitemap, and `llms.txt`; confirmed the
+  live Feed copy and Blog/Journal-only RSS contract.
+- Repeated live browser checks at desktop and mobile widths with the correct global and local active
+  states, no horizontal overflow, and no console warnings or errors.
+- PR #9 was marked ready after checks passed and merged into `main`. The remaining host cleanup is
+  unchanged: choose the apex as Vercel primary so `www` redirects to the canonical apex URL.

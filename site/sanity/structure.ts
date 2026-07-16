@@ -26,8 +26,8 @@ const VideoIcon = sanityIcon('video')
 const EarthGlobeIcon = sanityIcon('earth-globe')
 const EnvelopeIcon = sanityIcon('envelope')
 
-const feedTypes = ['blogPost', 'journalEntry', 'fatherPiece', 'project', 'documentary']
-const customDeskTypes = [...feedTypes, 'timelineEvent', 'book']
+const feedTypes = ['blogPost', 'journalEntry']
+const customDeskTypes = [...feedTypes, 'fatherPiece', 'project', 'documentary', 'timelineEvent', 'book']
 const schemaIcons: Record<string, ComponentType> = {
   aboutPage: UserIcon,
   blogPost: DocumentTextIcon,
@@ -86,12 +86,12 @@ export const structure: StructureResolver = (S) => {
             ]),
         ),
       S.listItem()
-        .title('Writing')
+        .title('Blog & Journal')
         .id('writing')
         .icon(EditIcon)
         .child(
           S.list()
-            .title('Writing')
+            .title('Blog & Journal')
             .items([
               documentListItem('blogPost', 'Blog posts'),
               documentListItem('journalEntry', 'Journal entries'),

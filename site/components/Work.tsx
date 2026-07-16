@@ -98,7 +98,7 @@ export default function Work({
       <section className="work-page__next">
         <div className="section-shell">
           <p className="section-label">Continue the story</p>
-          <div><Link href="/about"><span>01</span><strong>About</strong><small>The person behind the record</small><b aria-hidden="true">↗</b></Link><Link href="/projects"><span>02</span><strong>Projects</strong><small>See what the work builds</small><b aria-hidden="true">↗</b></Link><Link href="/feed"><span>03</span><strong>Writing</strong><small>Follow the evolving record</small><b aria-hidden="true">↗</b></Link></div>
+          <div><Link href="/about"><span>01</span><strong>About</strong><small>The person behind the record</small><b aria-hidden="true">↗</b></Link><Link href="/projects"><span>02</span><strong>Projects</strong><small>See what the work builds</small><b aria-hidden="true">↗</b></Link><Link href="/feed"><span>03</span><strong>Feed</strong><small>Blog and Journal, newest first</small><b aria-hidden="true">↗</b></Link></div>
         </div>
       </section>
     </main>

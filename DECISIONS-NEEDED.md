@@ -39,9 +39,9 @@ And where is istiaqueahamed.com's DNS managed (registrar name), so we can point 
 Nav should show 5–7 of the 13 pages. **Recommendation:** Home · About · Feed · Writing (Blog +
 Journal) · Work & Building (Projects + Work + Documentaries) · Contact — Father, Timeline,
 Bookshelf, Course reachable via footer + in-page links. OK, or adjust?
-> **Answer:** ✅ Resolved 2026-07-14 — Home · About · Father · Writing · Projects · Work ·
-> Contact. "Father" stays top-level for immediate visibility. "Writing" is the hub for Feed,
-> Blog, and Journal; the remaining pages are reached through in-page links and the footer.
+> **Answer:** ✅ Superseded 2026-07-16 — Home · About · Father · Feed · Projects · Work · Contact.
+> "Father" stays top-level for immediate visibility. Feed is a direct destination with All · Blog ·
+> Journal local navigation; the remaining pages are reached through in-page links and the footer.
 
 ### D4 · Final tagline ⚠️ — *needed by Chunk 4 (placeholder OK until launch)*
 Pick or remix one (from [[Page - Home]]):

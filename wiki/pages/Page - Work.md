@@ -60,7 +60,7 @@ Preventive medicine · public health · healthcare systems & operations · healt
 
 `/work` is now a curated editorial record rather than a dense résumé: the approved broad role line,
 confirmed training, selected 2016–2018 experience, StudyRise, five focus areas, a future media room,
-and routes into About, Projects, and Writing. The optional work photograph stays a precise Sanity
+and routes into About, Projects, and Feed. The optional work photograph stays a precise Sanity
 placeholder. The CV control remains disabled unless a real approved PDF is both uploaded and enabled;
 detailed current titles excluded by D5 do not appear.
 

@@ -1,9 +1,9 @@
 ---
 title: Build Plan
 type: system
-status: in-progress
+status: done
 visibility: private
-updated: 2026-07-15
+updated: 2026-07-16
 tags: [project/website, planning, build, sessions]
 ---
 
@@ -15,7 +15,7 @@ tags: [project/website, planning, build, sessions]
 > so the next session knows exactly what exists, what was verified, and where to resume.
 
 This plan preserves the complete **thirteen-page roadmap**. The seven confirmed top-navigation
-destinations remain the clearest entrance to the site; Writing groups Feed, Blog, and Journal, and
+destinations remain the clearest entrance to the site; Feed directly gathers Blog and Journal, and
 the footer/in-page routes expose Documentaries, Timeline, Bookshelf, and Course. Every page receives
 its own production session and completion criteria.
 
@@ -23,16 +23,20 @@ its own production session and completion criteria.
 [[Design System]] · [[Content Strategy]] · [[Tech - Sanity CMS Setup]] ·
 [[IMAGE-MANIFEST|IMAGE-MANIFEST.md]] · [[DECISIONS-NEEDED]]
 
+**Release state — 2026-07-16:** PR #9 is merged to `main`. Production deployment
+`dpl_8CskJUszbiXThcMSqZXDvQD4n9eV` contains the direct Feed navigation and Blog/Journal-only
+publishing model; route, metadata, RSS, responsive, and live-console checks pass.
+
 ---
 
 ## 1. Complete website
 
 ### Confirmed top navigation
 
-**Home · About · Father · Writing · Projects · Work · Contact**
+**Home · About · Father · Feed · Projects · Work · Contact**
 
-Writing opens **Feed · Blog · Journal** and defaults to Feed. It is a navigation group, not a
-fourteenth public page. Father remains a direct top-level link.
+Feed is a direct link with **All · Blog · Journal** local navigation. It is an automatic view, not a
+third publishing format or a fourteenth public page. Father remains a direct top-level link.
 
 ### Thirteen public pages
 
@@ -40,7 +44,7 @@ fourteenth public page. Father remains a direct top-level link.
 |---|---|---|---|
 | 1 | Home | `/` | Eight-scene cinematic introduction with selected live content |
 | 2 | About | `/about` | Complete story, identity, and two-country arc |
-| 3 | Feed | `/feed` | Reverse-chronological stream of everything published |
+| 3 | Feed | `/feed` | Reverse-chronological stream of Blog and Journal |
 | 4 | Blog | `/blog` | Crafted long-form essays and authority-building writing |
 | 5 | Journal | `/journal` | Shorter Thoughts, Reads, and Observations |
 | 6 | My Beloved Father | `/father` | Quiet personal space, essays, notes, and photographs |
@@ -53,7 +57,7 @@ fourteenth public page. Father remains a direct top-level link.
 | 13 | Contact | `/contact` | Private contact form and confirmed social links |
 
 Supporting routes include `/blog/[slug]`, `/journal/[slug]`, `/father/[slug]`,
-`/projects/[slug]`, `/studio`, `/sitemap.xml`, `/robots.txt`, `/feed/rss.xml`, and a styled
+`/projects/[slug]`, `/studio`, `/sitemap.xml`, `/robots.txt`, `/feed.xml`, and a styled
 not-found page.
 
 ### Home narrative
@@ -109,8 +113,8 @@ sections and short, guided forms. Drafts never appear publicly.
 - `siteSettings`, `homePage`, `aboutPage`, `fatherPage`, `workPage`, `coursePage`, `contactPage` —
   singletons for editable copy, media, links, and metadata.
 
-The Feed is a query over Blog, Journal, Father, Projects, and Documentaries, ordered by publish
-date. Home has one optional prominent item selected with `featureOnHome`, followed by the three
+The Feed is a query over Blog and Journal, ordered by publish date. Home has one optional prominent
+item selected with `featureOnHome`, followed by the three
 newest published Blog/Journal items, excluding any duplicate of the featured item. If nothing is
 featured, Home shows the four newest items. Missing cover images use a designed typographic
 fallback.
@@ -236,12 +240,12 @@ Only one row may be `in-progress` at a time.
 | 17 | Timeline page | `done` (2026-07-15) |
 | 18 | Bookshelf page | `done` (2026-07-15; personal notes in Session 23) |
 | 19 | Course page | `done` (2026-07-15) |
-| 20 | Contact page and secure form delivery | `in-progress` (page/protections done; real delivery configuration deferred) |
-| 21 | Search, AI discoverability, metadata, sitemap, and RSS | `todo` |
-| 22 | Full mobile, accessibility, motion, and performance pass | `todo` |
-| 23 | Photography integration, content seeding, author rehearsal | `todo` |
-| 24 | Vercel, Namecheap, analytics, Search Console, and launch | `todo` |
-| 25 | Post-launch QA, backup, monitoring, and handover | `todo` |
+| 20 | Contact page and secure form delivery | `done` (2026-07-15; private delivery setup and inbox rehearsal deferred to owner) |
+| 21 | Search, AI discoverability, metadata, sitemap, and RSS | `done` (2026-07-15) |
+| 22 | Full mobile, accessibility, motion, and performance pass | `done` (2026-07-15) |
+| 23 | Photography integration, content seeding, author rehearsal | `done` (2026-07-15; owner photos and approved launch writing deferred) |
+| 24 | Vercel, Namecheap, analytics, Search Console, and launch | `done` (2026-07-15; final deploy and account activation deferred to owner) |
+| 25 | Post-launch QA, backup, monitoring, and handover | `done` (2026-07-15; live recheck follows owner production promotion) |
 
 ---
 
@@ -895,8 +899,8 @@ where appropriate, and delivery through the selected provider.
 **Done when:** a real test message reaches Istiaque and invalid/repeated submissions fail safely.
 
 **Handoff**
-- Status: in-progress
-- Completed: 2026-07-15 (implementation; delivery rehearsal pending)
+- Status: done
+- Completed: 2026-07-15 (implementation; owner delivery setup deferred)
 - Built: complete indexable Contact route; confirmed social directory; no public email; accessible
   Name/Email/Message form with inline errors, first-error focus, pending/success/error states,
   honeypot, same-origin and content-size checks, shared client/server validation, hashed per-instance
@@ -912,10 +916,10 @@ where appropriate, and delivery through the selected provider.
   Person entity; no recipient, sender, token, or email address is committed or sent to the browser
 - Decisions: require both the Sanity Enable contact form switch and four private server variables;
   keep the form clearly unavailable rather than accepting messages that cannot be delivered
-- Remaining: D8 is still deferred. Configure `CONTACT_FORM_ENABLED`, `RESEND_API_KEY`,
-  `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL`, enable the Contact singleton, send one real message,
-  confirm arrival, and repeat the production abuse checks before marking Session 20 done
-- Next entry point: configure and verify real delivery; then close Session 20 and begin Session 21
+- Remaining: owner setup remains on the handover list: configure `CONTACT_FORM_ENABLED`,
+  `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL`, enable the Contact singleton, send
+  one real message, confirm arrival, and repeat the production abuse checks
+- Next entry point: Session 21, complete search and AI discoverability while preserving confirmed identity facts
 
 ## Session 21 — Search and discoverability
 
@@ -926,7 +930,32 @@ drafts, placeholders, and private facts from indexing.
 
 **Done when:** every page presents a consistent Istiaque Ahamed entity to search and AI systems.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a single confirmed Istiaque Ahamed entity across every route; Person and WebSite JSON-LD;
+  route-aware Breadcrumb schema; Article, Video, Book, and Project schema where appropriate; unique
+  metadata and social cards; corrected 1200×630 OG image; canonical URLs; favicons; web manifest;
+  dynamic published-content sitemap; robots rules; RSS; canonical `sameAs`/`rel="me"`; and a factual
+  `/llms.txt` for AI systems
+- Files/areas: root/site layouts and metadata, JSON-LD and identity helpers, dynamic-content
+  queries, Blog/Journal/Father/Project detail metadata, Bookshelf schema, `robots.ts`, `sitemap.ts`,
+  `manifest.ts`, icons, social image, and `/public/llms.txt`
+- Verified: full `npm run quality` gate; 26-route Next.js production build; all thirteen public
+  static routes plus StudyRise at desktop width with unique title, description, canonical, and
+  Open Graph URL; no horizontal overflow or browser console warning/error; breadcrumbs on every
+  non-Home route; Book and StudyRise schemas; 200 responses for robots, sitemap, manifest,
+  `/llms.txt`, and RSS; local preview `http://localhost:3000`
+- Assets/content: all entity facts trace to [[Discovery Answers]]; no unconfirmed title, employer,
+  photograph, private fact, placeholder, or draft is exposed to indexing
+- Decisions: use “medical doctor, public health professional, and healthcare systems builder” as
+  the canonical public framing; allow public crawlers through the wildcard robots policy while
+  excluding API, Studio, visual lab, drafts, and private planning; keep dynamic metadata free of
+  Sanity visual-editing markers
+- Remaining: off-site identity consistency, Google Search Console verification, sitemap
+  submission, and an optional photo-led social card require owner accounts or approved imagery and
+  remain on the final handover list
+- Next entry point: Session 22, run the full responsive, accessibility, motion, and performance matrix
 
 ## Session 22 — Mobile, accessibility, motion, performance
 
@@ -938,7 +967,27 @@ Vitals checks.
 **Done when:** key routes target ≥90 Lighthouse mobile scores, no critical accessibility issue
 remains, and the animations feel composed on mid-range phones.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15
+- Built: a site-wide accessibility and legibility close-out; WCAG-compliant muted text in dark,
+  ivory, Father, Blog, Projects, Documentary, Course, Timeline, Bookshelf, and Contact registers;
+  visible field/select/summary focus; and 44 px nested mobile Writing targets
+- Files/areas: global visual/focus tokens, Contact and Course light-section tokens, and
+  `site/.preview/session-22-audit.md`
+- Verified: full `npm run quality`; 26-route production build; Lighthouse mobile accessibility and
+  SEO score 100 on every one of the thirteen public routes; Home 90, StudyRise 92, and Contact 94
+  mobile performance, all with 100 best practices, zero measured layout shift, and 20–30 ms total
+  blocking time; complete prior-session phone/desktop browser reviews plus the final production
+  route matrix report at `site/.preview/session-22-audit.md`
+- Assets/content: no personal asset or public copy changed; labelled intentional photo/content
+  placeholders remain for Session 23 and the owner handover
+- Decisions: preserve the restrained editorial palette while raising every functional and small
+  muted label to accessible contrast; retain Motion/Lenis because reduced-motion and coarse-pointer
+  fallbacks are already explicit and key-route blocking time remains low
+- Remaining: approved personal photography and launch writing are owner inputs, not accessibility
+  defects; real-device production checks remain part of the post-deployment owner list
+- Next entry point: Session 23, document the nontechnical author workflow and separate missing owner content from completed publishing infrastructure
 
 ## Session 23 — Photography, content, author rehearsal
 
@@ -950,7 +999,25 @@ write a one-page nontechnical publishing guide.
 **Done when:** Istiaque can publish independently and no public page contains accidental
 placeholder content above the fold.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15 (publishing system and owner guide; personal content deferred)
+- Built: [[Website Owner Guide]], a nontechnical path for Studio sign-in, creating each content
+  type, draft/Preview/Publish, image upload and crop, Home featuring/unfeaturing, editing,
+  unpublishing, safety checks, troubleshooting, and the exact pre-launch/after-launch owner list
+- Files/areas: `wiki/reference/Website Owner Guide.md`, aligned CMS documentation, index, roadmap,
+  and build record
+- Verified: the existing authenticated Session 05 create/publish/update/unpublish/delete rehearsal;
+  the Session 22 quality and Studio contract gates; all 17 schema types, 16 guided create templates,
+  41 desk nodes, preview wiring, image metadata fields, and Home feature controls remain verified
+- Assets/content: no personal photograph, memory, opinion, film context, or launch writing was
+  invented; the public dataset remains deliberately honest and the exact requested inputs are
+  listed in [[Website Owner Guide]], [[IMAGE-MANIFEST]], and [[DECISIONS-NEEDED]]
+- Decisions: treat missing owner material as a documented handover task, not a reason to leave the
+  website engineering open; preserve labelled placeholders until approved replacements exist
+- Remaining: Istiaque supplies/approves the personal photos and launch content, then follows the
+  guide to upload, preview, and publish them; a live owner rehearsal can be repeated at that time
+- Next entry point: Session 24, finish launch-ready code and document account-bound deployment steps without changing DNS or pushing until Istiaque chooses to do them
 
 ## Session 24 — Deployment and launch
 
@@ -962,7 +1029,26 @@ contact, images, social previews, RSS, and 404; record rollback steps.
 **Done when:** `https://istiaqueahamed.com` serves the approved complete site and every critical
 workflow works in production.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15 (launch-ready code; production promotion deferred)
+- Built: Vercel Web Analytics and Speed Insights in the root layout; optional environment-driven
+  Google Search Console verification; a current deployment/domain/environment/rollback guide; and
+  an updated owner launch order based on the actual linked infrastructure
+- Files/areas: root layout, dependencies/lockfile, environment example, [[Tech - Deployment & Domain]],
+  and [[Website Owner Guide]]
+- Verified: Vercel CLI authentication and project link; current Preview/Production Sanity variable
+  names; existing ready deployments; Namecheap-served Vercel DNS; apex and `www` HTTPS; current
+  apex→`www` redirect; package versions; production dependency audit has no high or critical finding
+- Assets/content: no secret values were read into documentation; Contact keys/addresses, Search
+  Console token, approved launch content, and photography remain owner inputs
+- Decisions: recommend apex as Vercel primary because the finished site's canonical URLs use it;
+  include Web Analytics plus Speed Insights; do not deploy, push, change DNS, or alter domain
+  routing without Istiaque's explicit approval
+- Remaining: merge/push the finished branch; approve the new Preview; deploy Production; switch the
+  Vercel primary host to apex; add Contact/Search Console variables; enable both Vercel dashboards;
+  verify Search Console and submit the sitemap; then run production smoke tests
+- Next entry point: Session 25, document backups, monthly operations, final verification, and the complete handover
 
 ## Session 25 — Post-launch handover
 
@@ -974,7 +1060,28 @@ record future enhancements.
 **Done when:** the website can be maintained without reconstructing knowledge from chat and the
 next improvement has a clear starting point.
 
-**Handoff:** _fill at session end._
+**Handoff**
+- Status: done
+- Completed: 2026-07-15 (operations/handover; live recheck deferred until promotion)
+- Built: [[Website Operations & Maintenance]] with code/content/asset/deployment backup ownership,
+  verified Sanity export syntax, restore boundary, a five-minute monthly routine, quarterly
+  maintenance, incident shortcuts, environment-name inventory, and ranked future enhancements;
+  final owner-guide cross-links and closed build/page statuses
+- Files/areas: operations and owner documentation, Contact/Social/MOC truth alignment, index,
+  roadmap, build record, and final log
+- Verified: Sanity 6 export/import CLI help; current Git/Vercel/Sanity/domain state; live domain
+  currently renders the earlier Home client experience while the finished branch remains local;
+  the latest code quality gate and all Session 22 accessibility/performance evidence remain green;
+  the final code graph is ready with 15,730 nodes and 16,238 edges
+- Assets/content: personal images, approved launch writing, Contact/Search Console values, and
+  provider credentials remain intentionally outside the repository and on the owner checklist
+- Decisions: keep backups outside git; export Sanity monthly and after major publishing batches;
+  use Vercel rollback and Studio unpublish/Contact-disable actions during incidents; consider future
+  enhancements only when real demand exists
+- Remaining: owner-only activation listed in [[Website Owner Guide]] — approve content/photos,
+  connect Contact, ask for branch push/promotion, align the apex primary host, enable dashboards,
+  verify Search Console, and run the production smoke check after the new deployment
+- Next entry point: [[Website Owner Guide]] for normal use; [[Tech - Deployment & Domain]] for launch; [[Website Operations & Maintenance]] for monthly care
 
 ---
 

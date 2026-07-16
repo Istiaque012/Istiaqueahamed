@@ -38,6 +38,25 @@ export const blogPostBySlugQuery = defineQuery(`
 
 export const blogSlugsQuery = defineQuery(`*[_type == "blogPost" && defined(slug.current)].slug.current`)
 
+// Published, indexable detail routes for the Next.js sitemap. The Sanity client
+// uses the published perspective, so drafts never enter this list.
+export const sitemapEntriesQuery = defineQuery(`
+  *[
+    (_type == "blogPost" && defined(slug.current)) ||
+    (_type == "journalEntry" && defined(slug.current)) ||
+    (_type == "fatherPiece" && defined(slug.current)) ||
+    (_type == "project" && defined(slug.current))
+  ] {
+    "path": select(
+      _type == "blogPost" => "/blog/" + slug.current,
+      _type == "journalEntry" => "/journal/" + slug.current,
+      _type == "fatherPiece" => "/father/" + slug.current,
+      _type == "project" => "/projects/" + slug.current
+    ),
+    "updatedAt": _updatedAt
+  }
+`)
+
 // ── Journal ──────────────────────────────────────────────────────────────────
 export const journalEntriesQuery = defineQuery(`
   *[_type == "journalEntry" && defined(slug.current)] | order(publishedAt desc) {
@@ -221,69 +240,24 @@ export const contactPageQuery = defineQuery(`
     _id, _type, _updatedAt, welcomeCopy, formEnabled, successMessage
   }`)
 
-// ── The merged Feed ──────────────────────────────────────────────────────────
-// Pulls blogPost, journalEntry, fatherPiece, project, documentary into one
-// stream sorted by publishedAt desc. Each item keeps its _type so the UI can
-// render the right tag and filter. Projects have no publishedAt → fall back to
-// _createdAt so they still interleave.
+// ── The Blog + Journal Feed ──────────────────────────────────────────────────
 export const feedQuery = defineQuery(`
   *[
-    _type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"] &&
-    (_type == "documentary" || defined(slug.current))
-  ] | order(coalesce(publishedAt, _createdAt) desc, _id asc) {
+    _type in ["blogPost", "journalEntry"] &&
+    defined(slug.current)
+  ] | order(publishedAt desc, _id asc) {
       _id, _type, _updatedAt,
-      "date": coalesce(publishedAt, _createdAt),
-      "title": select(_type == "project" => name, title),
+      "date": publishedAt,
+      title,
       "slug": slug.current,
-      "excerpt": select(
-        _type == "blogPost" => excerpt,
-        _type == "project" => tagline,
-        _type == "documentary" => description,
-        null
-      ),
+      "excerpt": select(_type == "blogPost" => excerpt, null),
       "tag": select(
         _type == "blogPost" => category,
         _type == "journalEntry" => type,
-        _type == "fatherPiece" => format,
-        _type == "project" => status,
-        _type == "documentary" => topic,
         _type
       ),
-      "readingTime": select(
-        _type in ["blogPost", "journalEntry", "fatherPiece"] => round(length(pt::text(body)) / 5 / 200),
-        null
-      ),
-      "image": select(
-        _type == "blogPost" => coverImage ${IMAGE},
-        _type == "fatherPiece" => image ${IMAGE},
-        _type == "project" => coverImage ${IMAGE},
-        _type == "documentary" => thumbnail ${IMAGE},
-        null
-      )
-    }`)
-
-// A short teaser for the Home page — top N of the same feed.
-export const feedTeaserQuery = defineQuery(`
-  *[
-    _type in ["blogPost", "journalEntry", "fatherPiece", "project", "documentary"] &&
-    (_type == "documentary" || defined(slug.current))
-  ] | order(coalesce(publishedAt, _createdAt) desc, _id asc)[0...$limit] {
-      _id, _type, _updatedAt,
-      "date": coalesce(publishedAt, _createdAt),
-      "title": select(_type == "project" => name, title),
-      "slug": slug.current,
-      "tag": select(
-        _type == "blogPost" => category,
-        _type == "journalEntry" => type,
-        _type == "fatherPiece" => format,
-        _type == "project" => status,
-        _type == "documentary" => topic,
-        _type
-      ),
-      "readingTime": select(
-        _type in ["blogPost", "journalEntry", "fatherPiece"] => round(length(pt::text(body)) / 5 / 200),
-        null
-      )
+      "readingTime": round(length(pt::text(body)) / 5 / 200),
+      "image": select(_type == "blogPost" => coverImage ${IMAGE}, null)
     }`)
 
 export const homeWritingQuery = defineQuery(`

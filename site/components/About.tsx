@@ -246,7 +246,7 @@ export default function About({ aboutPage, lifestyleImages, portrait }: AboutPro
               )}
             </div>
             <div className="about-purpose__routes">
-              <Link href="/feed"><span>01</span>Read the latest writing <b aria-hidden="true">↗</b></Link>
+              <Link href="/feed"><span>01</span>Open the Feed <b aria-hidden="true">↗</b></Link>
               <Link href="/projects"><span>02</span>See what I am building <b aria-hidden="true">↗</b></Link>
               <Link href="/timeline"><span>03</span>Follow the life arc <b aria-hidden="true">↗</b></Link>
             </div>
@@ -272,7 +272,7 @@ export default function About({ aboutPage, lifestyleImages, portrait }: AboutPro
               )}
             </div>
             <div className="about-closing__actions">
-              <Link className="button button-dark" href="/feed">Read the latest <span aria-hidden="true">↗</span></Link>
+              <Link className="button button-dark" href="/feed">Read the Feed <span aria-hidden="true">↗</span></Link>
               <Link className="text-link dark-link" href="/contact">Get in touch <span aria-hidden="true">↗</span></Link>
             </div>
           </Reveal>

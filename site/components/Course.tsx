@@ -35,7 +35,7 @@ export default function Course({ page }: { page?: CoursePage | null }) {
   const themes = page?.themes?.length ? page.themes : fallbackThemes
   const writingLink = page?.writingLink?.href && page.writingLink.label
     ? page.writingLink
-    : { href: '/blog', label: 'Read the latest writing' }
+    : { href: '/feed', label: 'Open the Feed' }
   const courseAction = status === 'available' && page?.primaryAction?.href && page.primaryAction.label
     ? page.primaryAction
     : null

@@ -19,6 +19,16 @@ const getBlogPost = cache((slug: string) =>
   }),
 );
 
+const getBlogPostMetadata = cache((slug: string) =>
+  fetchSanity<BlogPost | null>({
+    query: blogPostBySlugQuery,
+    params: { slug },
+    requestTag: `blog-post-metadata-${slug}`,
+    stega: false,
+    tags: [SANITY_TAGS.blogPost],
+  }),
+);
+
 const getBlogPosts = cache(() =>
   fetchSanity<BlogPost[]>({
     query: blogPostsQuery,
@@ -29,7 +39,7 @@ const getBlogPosts = cache(() =>
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const post = await getBlogPost(slug);
+  const post = await getBlogPostMetadata(slug);
 
   if (!post) {
     return createPageMetadata({

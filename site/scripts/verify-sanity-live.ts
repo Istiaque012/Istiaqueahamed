@@ -48,7 +48,6 @@ for (const queryName of [
   'booksQuery',
   'timelineQuery',
   'feedQuery',
-  'feedTeaserQuery',
   'homeWritingQuery',
   'workPageQuery',
   'coursePageQuery',
@@ -59,7 +58,18 @@ for (const queryName of [
 
 const projectSchema = read('sanity/schemaTypes/documents/project.ts')
 assert(projectSchema.includes("name: 'screenshots'"), 'Project schema must expose approved screenshot media')
-assert(projectSchema.includes("name: 'publishedAt'"), 'Project schema must provide Feed publication timing')
+assert(projectSchema.includes("name: 'publishedAt'"), 'Project schema must provide publication timing')
+
+const feedQuery = queries.slice(
+  queries.indexOf('export const feedQuery'),
+  queries.indexOf('export const homeWritingQuery'),
+)
+for (const typeName of ['blogPost', 'journalEntry']) {
+  assert(feedQuery.includes(typeName), `Feed query must include ${typeName}`)
+}
+for (const typeName of ['fatherPiece', 'project', 'documentary']) {
+  assert(!feedQuery.includes(typeName), `Feed query must exclude ${typeName}`)
+}
 
 const workSchema = read('sanity/schemaTypes/singletons/workPage.ts')
 assert(workSchema.includes("name: 'cvFile'"), 'Work schema must keep the approved CV file separate from its toggle')
@@ -93,7 +103,7 @@ for (const route of ['documentaries', 'timeline', 'bookshelf', 'course', 'contac
 }
 
 const editorial = read('lib/editorial.ts')
-assert(editorial.includes('/documentaries#'), 'Documentary Feed destinations must open the matching film')
+assert(editorial.includes('/documentaries#'), 'Documentary destinations must open the matching film')
 
 const youtubeId = 'dQw4w9WgXcQ'
 for (const url of [

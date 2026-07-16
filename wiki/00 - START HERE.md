@@ -2,8 +2,9 @@
 title: Personal Website Master Plan
 project: istiaqueahamed.com
 owner: Istiaque Ahamed
-status: planning
+status: in-progress
 created: 2026-06-28
+updated: 2026-07-15
 tags: [project/website, index, moc]
 ---
 
@@ -58,10 +59,12 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 - [[Tech Stack Decision]] — the full analysis + final recommendation
 - [[Tech - Sanity CMS Setup]]
 - [[Tech - Deployment & Domain]]
+- [[Website Operations & Maintenance]]
 
 ### Reference
 - [[Discovery Answers]] — my raw answers, the source of truth for all content
 - [[Social Links]]
+- [[Website Owner Guide]]
 
 ---
 
@@ -73,7 +76,7 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 | **Stack** | Next.js + Sanity + Framer Motion + Vercel |
 | **Aesthetic** | Dark, cinematic, minimal, masculine, premium editorial |
 | **Total pages** | 13 |
-| **CMS-managed** | Blog, Journal, Father section, Projects, Documentaries, Feed |
+| **CMS-managed** | Blog, Journal, Father section, Projects, Documentaries; Feed is automatic |
 | **Primary goal** | Be recognised — own my name, show the full person |
 
 ---
@@ -89,11 +92,11 @@ This vault is maintained as an [LLM Wiki](https://gist.github.com/karpathy/442a6
 
 ## ⏳ Open items
 
-- [ ] Final tagline (see [[Page - Home#Tagline options]])
 - [ ] Professional headshot + photo set
-- [ ] Confirm public-facing wording for roles/titles
 - [ ] Three words a close friend would use to describe me
-- [ ] YouTube embed vs link-out final call
+- [ ] Approved launch writing and first Father piece
+- [ ] Contact inbox connection and real delivery test
+- [ ] Finished branch promotion, apex-primary alignment, analytics, and Search Console activation
 
 ---
 

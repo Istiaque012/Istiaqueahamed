@@ -80,7 +80,7 @@ const requiredDeskTitles = [
   'Course',
   'Contact',
   'Settings and socials',
-  'Writing',
+  'Blog & Journal',
   'Blog posts',
   'Journal entries',
   'Feed preview',
@@ -259,13 +259,14 @@ for (const singletonName of requiredSingletons) {
 
 const feedPreview = nodes.find((node) => node.idValue === 'feedPreview')
 assert(feedPreview?.childValue, 'Missing Feed preview child list')
-assert(feedPreview.childValue.filterValue === '_type in $types', 'Feed preview must query shared feed types')
+assert(feedPreview.childValue.filterValue === '_type in $types', 'Feed preview must query the shared Feed types')
 assert(
   Array.isArray(feedPreview.childValue.paramsValue?.types) &&
-    documentTypeNames
-      .filter((typeName) => typeName !== 'book' && typeName !== 'timelineEvent')
-      .every((typeName) => (feedPreview.childValue?.paramsValue?.types as string[]).includes(typeName)),
-  'Feed preview params must include Blog, Journal, Father, Projects, and Films',
+    feedPreview.childValue.paramsValue.types.length === 2 &&
+    ['blogPost', 'journalEntry'].every((typeName) =>
+      (feedPreview.childValue?.paramsValue?.types as string[]).includes(typeName),
+    ),
+  'Feed preview params must include Blog and Journal only',
 )
 
 console.log(

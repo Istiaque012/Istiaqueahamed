@@ -1,7 +1,7 @@
 ---
 title: Page - Contact
 type: page
-status: in-progress
+status: done
 created: 2026-06-28
 updated: 2026-07-15
 visibility: public
@@ -42,8 +42,8 @@ The current fallback uses neutral public wording rather than publishing the priv
 > [!warning] Real delivery remains deferred
 > D8 in [[DECISIONS-NEEDED]] still defers the provider and recipient. The live environment does not
 > contain those four delivery settings, so the public form is clearly disabled and visitors are
-> directed to confirmed social profiles. Session 20 remains in-progress until a real message reaches
-> Istiaque and production abuse checks pass.
+> directed to confirmed social profiles. The page implementation is done; private provider setup
+> and the real inbox rehearsal are owner tasks in [[Website Owner Guide]].
 
 ## Verified failure behaviour
 

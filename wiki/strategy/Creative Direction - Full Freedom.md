@@ -53,8 +53,8 @@ entrances organise the complete thirteen-page roadmap:
 Home
 ├── About
 ├── Father
-├── Writing
-│   ├── Feed
+├── Feed
+│   ├── All
 │   ├── Blog
 │   └── Journal
 ├── Projects
@@ -68,8 +68,8 @@ Footer / in-page routes
 └── Course
 ```
 
-- **Writing** is the reader-friendly navigation group. It opens Feed, Blog, and Journal and
-  defaults to Feed; it does not create a fourteenth page.
+- **Feed** is the reader-friendly direct destination. It combines Blog and Journal and provides
+  All · Blog · Journal local navigation; it does not create a fourteenth page.
 - **Documentaries, Timeline, Bookshelf, and Course** remain full pages reached from the footer,
   related content, and contextual links.
 - The complete site is built session by session; pages may use honest minimal states until their
@@ -89,7 +89,7 @@ The Home page should unfold like an eight-scene profile:
    and the ongoing Bangladesh–Australia journey.
 5. **Proof of building** — StudyRise shown as a real product story with interface imagery, the
    problem, the response, and links to the live product and GitHub.
-6. **Current thinking** — three strong pieces from Writing, presented as editorial headlines
+6. **Current thinking** — three strong pieces from Feed, presented as editorial headlines
    rather than cards.
 7. **A life in motion** — a photographic sequence across medicine, work, fitness, books,
    technology, Bangladesh, and Australia. This shows the whole person without another paragraph
@@ -114,22 +114,20 @@ from composition, type, pacing, and interaction; it should not depend on fashion
 - Mobile is treated as the primary cinematic format: tall portrait crops, decisive type sizes,
   and one focal idea per screen.
 
-## Writing strategy
+## Feed strategy
 
-Visitors should not need to understand the CMS to navigate the writing. The Writing menu and
-shared design language make the relationship clear: Blog is long-form, Journal is short-form,
-and Feed is the complete chronology.
+Visitors should not need to understand the CMS to navigate the writing. The direct Feed route and
+shared design language make the relationship clear: Blog is long-form, Journal is short-form, and
+Feed is their combined chronology.
 
-Use three reader-facing formats across the Writing family:
+Use two reader-facing writing formats inside Feed:
 
 | Format | Purpose | Examples |
 |---|---|---|
 | Blog essays | Authority and depth | healthcare systems, medicine, technology |
 | Journal notes | Short, personal continuity | books, discipline, Australia, observations |
-| Films | Documentary storytelling | embedded films with a short personal context |
-
-Father pieces remain their own category and their own room. They can appear selectively in the
-Writing stream, but the site should never treat them as ordinary content inventory.
+Documentary films and Father pieces remain their own destinations. The site should never treat
+them as ordinary Feed inventory.
 
 The initial content pillars are:
 
@@ -187,15 +185,15 @@ however, and the current page still explains the identity in categories more tha
 person through story and evidence.
 
 The better path is an evolution, not a rebuild: replace the hero with personal photography,
-reorder the narrative, organise the Writing family clearly, bring Father forward, and let
+reorder the narrative, organise Feed, Blog, and Journal clearly, bring Father forward, and let
 StudyRise carry more specific proof.
 
 ## Recommended production order
 
 1. Recut Home around the eight-scene narrative using temporary personal-photo slots.
 2. Build About and Father so the emotional and factual core is complete.
-3. Build the shared Writing navigation, Blog, Journal, and Feed as connected but distinct
-   experiences.
+3. Build Feed as the direct publishing doorway, with Blog and Journal as connected but distinct
+   formats.
 4. Build the full StudyRise project story, Work, and Documentaries.
 5. Build Timeline, Bookshelf, Course, and Contact with honest content states.
 6. Add photography, structured search signals, final mobile polish, content seeding, and launch.

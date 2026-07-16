@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SanityPortableText from "@/components/SanityPortableText";
 import { EditorialImage } from "@/components/ui";
+import { articleJsonLd, stringifyJsonLd } from "@/lib/jsonld";
 import type { ResolvedSanityImage } from "@/lib/sanity/image";
 import type { FatherPiece } from "@/lib/sanity/types";
 
@@ -23,8 +24,21 @@ type FatherArticleProps = {
 };
 
 export default function FatherArticle({ image, piece }: FatherArticleProps) {
+  const jsonLd = articleJsonLd({
+    title: piece.title,
+    path: `/father/${piece.slug}`,
+    datePublished: piece.publishedAt,
+    dateModified: piece._updatedAt,
+    imageUrl: image?.src,
+    section: `My Beloved Father · ${piece.format}`,
+  });
+
   return (
     <main className="father-piece register-father">
+      <script
+        dangerouslySetInnerHTML={{ __html: stringifyJsonLd(jsonLd) }}
+        type="application/ld+json"
+      />
       <header className="father-piece__header">
         <Link className="father-piece__back" href="/father"><span aria-hidden="true">←</span> My Beloved Father</Link>
         <p className="section-label">{piece.format} · In his memory</p>

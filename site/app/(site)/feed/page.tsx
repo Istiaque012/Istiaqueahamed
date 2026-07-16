@@ -10,7 +10,7 @@ import type { FeedItem } from "@/lib/sanity/types";
 
 export const metadata = createPageMetadata({ ...pageConfigs.feed });
 
-const supportedFilters = ["All", "Blog", "Journal", "My Beloved Father", "Projects", "Documentaries"] as const;
+const supportedFilters = ["All", "Blog", "Journal"] as const;
 
 export default async function FeedPage({
   searchParams,
@@ -21,7 +21,7 @@ export default async function FeedPage({
   const initialFilter = supportedFilters.find((filter) => filter === type) || "All";
   const feed = await fetchSanity<FeedItem[]>({
     query: feedQuery,
-    requestTag: "complete-feed",
+    requestTag: "blog-journal-feed",
     tags: [SANITY_TAGS.feed],
   });
 

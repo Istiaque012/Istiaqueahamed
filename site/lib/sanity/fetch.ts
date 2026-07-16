@@ -9,6 +9,7 @@ type FetchOptions = {
   params?: QueryParams
   tags?: string[]
   requestTag: string
+  stega?: boolean
 }
 
 export async function fetchSanity<T>({
@@ -16,13 +17,14 @@ export async function fetchSanity<T>({
   params = {},
   requestTag,
   tags = [],
+  stega: stegaOverride,
 }: FetchOptions): Promise<T> {
   const { perspective, stega } = await getSanityFetchMode()
   const { data } = await sanityFetch({
     query,
     params,
     perspective,
-    stega,
+    stega: stegaOverride ?? stega,
     tags,
     requestTag,
   })

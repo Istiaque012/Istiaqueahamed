@@ -36,7 +36,7 @@ export const project = defineType({
     defineField({
       name: 'publishedAt',
       type: 'datetime',
-      description: 'Controls where this project appears in the public Feed.',
+      description: 'Controls the project publication date and ordering.',
       validation: (rule) => rule.required(),
     }),
     defineField({
