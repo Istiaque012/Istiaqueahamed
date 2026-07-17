@@ -99,7 +99,7 @@ export default function ProjectCaseStudy({
           <div className="section-shell project-case-study__split">
             <Reveal><p className="section-label dark-label">03 · Build story</p><h2 id="project-story-title">Medicine meets software in a practical system.</h2></Reveal>
             <Reveal className="project-case-study__prose" delay={0.08}>
-              <p>StudyRise brings together two established parts of Istiaque Ahamed’s work: medicine and software. The medical perspective keeps the pressure and complexity of demanding study visible; the product turns that complexity into structure.</p>
+              <p>StudyRise brings together two established interests: medicine and software. The medical perspective keeps the pressure and complexity of demanding study visible; the product turns that complexity into structure.</p>
               <p>MBBS Bangladesh Mode is production-ready. Exam Mode is built and being refined for pathways including AMC MCQ, PLAB 1, USMLE Step 1, and custom exams.</p>
             </Reveal>
           </div>

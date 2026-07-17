@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props) {
     title: `${name} · Project`,
     description: project?.tagline || "How StudyRise turns demanding exams and academic courses into structured daily study systems.",
     path: `/projects/${slug}`,
-    imageAlt: project?.coverImage?.alt || "StudyRise study-planning platform by Istiaque Ahamed",
+    imageAlt: project?.coverImage?.alt || "StudyRise study-planning platform showing readiness and study progress",
     imageUrl: project?.coverImage?.asset && "url" in project.coverImage.asset
       ? project.coverImage.asset.url
       : slug === "studyrise" ? "/images/studyrise-og.png" : undefined,
@@ -65,7 +65,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project && slug !== "studyrise") notFound();
 
   const cover = resolveSanityImage(project?.coverImage, {
-    fallbackAlt: `${project?.name || "StudyRise"} project by Istiaque Ahamed`,
+    fallbackAlt: `${project?.name || "StudyRise"} study-planning platform`,
     height: 875,
     width: 1400,
   }) || (slug === "studyrise" ? studyRiseCover : undefined);

@@ -58,7 +58,7 @@ export const pageConfigs = {
   projects: {
     title: "Projects",
     eyebrow: "The doctor who builds",
-    description: "Projects built by Istiaque Ahamed, beginning with StudyRise.",
+    description: "A record of product and project work, beginning with StudyRise.",
     intro: "Useful products explained through the problem, the response, and the real work behind them.",
     path: "/projects",
     session: "14",

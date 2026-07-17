@@ -14,7 +14,6 @@ const education = [
 
 const experience = [
   { period: "2016–2018", title: "Medical Officer", place: "Green Life Hospital & CD Path Hospital" },
-  { period: "Live", title: "Founder", place: "StudyRise" },
 ] as const;
 
 const defaultFocus = [

@@ -11,7 +11,6 @@ This site contains Istiaque Ahamed's confirmed public biography, writing, projec
 - Education: MBBS at Sylhet North East Medical College; Master of Public Health at Macquarie University
 - Clinical internship: BIRDEM
 - Current pathway: Preparing for the Australian Medical Council pathway
-- Project: StudyRise, a study-planning platform
 - Website: https://istiaqueahamed.com
 
 ## Primary pages
@@ -19,7 +18,7 @@ This site contains Istiaque Ahamed's confirmed public biography, writing, projec
 - [Home](https://istiaqueahamed.com/): introduction and selected work
 - [About](https://istiaqueahamed.com/about): verified biography and Bangladesh–Australia story
 - [Work](https://istiaqueahamed.com/work): public training, experience, and areas of focus
-- [Projects](https://istiaqueahamed.com/projects): approved project work beginning with StudyRise
+- [Projects](https://istiaqueahamed.com/projects): approved project and product work
 - [Blog](https://istiaqueahamed.com/blog): long-form essays
 - [Journal](https://istiaqueahamed.com/journal): shorter thoughts, reads, and observations
 - [Feed](https://istiaqueahamed.com/feed): combined Blog and Journal chronology

@@ -159,7 +159,7 @@ export function projectJsonLd({
     name,
     url: pageUrl,
     mainEntityOfPage: pageUrl,
-    founder: AUTHOR,
+    ...(name === "StudyRise" ? {} : { founder: AUTHOR }),
     ...(description ? { description } : {}),
     ...(imageUrl ? { image: imageUrl } : {}),
     ...(sameAs.length ? { sameAs } : {}),

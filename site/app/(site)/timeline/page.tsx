@@ -52,8 +52,8 @@ const confirmedTimeline: TimelineView[] = [
   {
     id: "studyrise",
     period: "2026",
-    title: "Founded StudyRise",
-    description: "Built a study-planning platform that turns demanding courses and exams into structured daily work.",
+    title: "StudyRise launched",
+    description: "A study-planning platform that turns demanding courses and exams into structured daily work.",
     category: "Tech",
     link: { href: "/projects/studyrise", label: "Open the StudyRise case study" },
   },
